@@ -23,6 +23,7 @@ type WorkflowsResponse struct {
 
 type Run struct {
 	ID         int       `json:"id"`
+	Name       string    `json:"name"`
 	Status     string    `json:"status"`
 	Conclusion string    `json:"conclusion"`
 	CreatedAt  time.Time `json:"created_at"`
@@ -92,7 +93,8 @@ func main() {
 		}
 		for _, run := range runsResp.WorkflowRun {
 			fmt.Printf(
-				"   %-12s  %-10s  triggered by: %-15s  %s\n",
+				"   %-30s  %-12s  %-10s  triggered by: %-15s  %s\n",
+				run.Name,
 				run.Status,
 				run.Conclusion,
 				run.Event,
