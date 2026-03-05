@@ -1,11 +1,13 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 type Workflow struct {
@@ -19,10 +21,24 @@ type WorkflowsResponse struct {
 	Workflows  []Workflow `json:"workflows"`
 }
 
+type Run struct {
+	ID         int       `json:"id"`
+	Status     string    `json:"status"`
+	Conclusion string    `json:"conclusion"`
+	CreatedAt  time.Time `json:"created_at"`
+	Event      string    `json:"event"`
+	HTMLURL    string    `json:"html_url"`
+}
+
+type TotalRun struct {
+	TotalCount  int   `json:"total_count"`
+	WorkflowRun []Run `json:"workflow_runs"`
+}
+
 func main() {
 	token := os.Getenv("Git_Token")
 
-	req, err := http.NewRequest("GET", "https://api.github.com/repos/urunc-dev/urunc/actions/workflows", nil)
+	req, err := http.NewRequestWithContext(context.Background(), "GET", "https://api.github.com/repos/urunc-dev/urunc/actions/workflows", nil)
 	if err != nil {
 		log.Fatalf("Unable to create request: %v", err)
 	}
@@ -50,9 +66,38 @@ func main() {
 		log.Fatalf("JSON decode failed: %v", err)
 	}
 
-	fmt.Printf("Total workflows: %d\n\n", result.TotalCount)
+	fmt.Printf("Found %d Worflows --- \n\n", result.TotalCount)
 	for _, wf := range result.Workflows {
-		fmt.Printf("ID: %d | Name: %s | File: %s\n",
-			wf.ID, wf.Name, wf.Path)
+		url := fmt.Sprintf("https://api.github.com/repos/urunc-dev/urunc/actions/workflows/%d/runs?per_page=10",
+			wf.ID,
+		)
+		req, err := http.NewRequestWithContext(context.Background(), "GET", url, nil)
+		if err != nil {
+			fmt.Println("error ", err)
+		}
+		req.Header.Set("Accept", "application/vnd.github+json")
+		req.Header.Set("X-GitHub-Api-Version", "2022-11-28")
+		resp, err := client.Do(req)
+		if err != nil {
+			fmt.Println("request error:", err)
+		}
+		var runsResp TotalRun
+		if err := json.NewDecoder(resp.Body).Decode(&runsResp); err != nil {
+			fmt.Println("decode error ", err)
+			resp.Body.Close()
+		}
+		resp.Body.Close()
+		if len(runsResp.WorkflowRun) == 0 {
+			fmt.Println("no runs found\n")
+		}
+		for _, run := range runsResp.WorkflowRun {
+			fmt.Printf(
+				"   %-12s  %-10s  triggered by: %-15s  %s\n",
+				run.Status,
+				run.Conclusion,
+				run.Event,
+				run.CreatedAt.Format("2006-01-02 15:04"),
+			)
+		}
 	}
 }
