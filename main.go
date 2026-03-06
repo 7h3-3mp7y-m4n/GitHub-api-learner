@@ -135,6 +135,6 @@ func main() {
 		log.Fatalf("failed to encode json %v ---> ", err)
 	}
 	fmt.Printf("Saved %d runs to runs.json\n", len(runs.WorkflowRuns))
-	fmt.Println("starting server on 8080 :)")
-	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
+	// fmt.Println("starting server on 8080 :)")
+	// log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
 }
