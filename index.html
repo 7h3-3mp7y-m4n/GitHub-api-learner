@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Workflow Runs</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 40px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #24292e;
+      color: white;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+
+    .failure {
+      color: red;
+      font-weight: bold;
+    }
+
+    .inprogress {
+      color: orange;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Workflow Runs</h1>
+
+<table id="runsTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Conclusion</th>
+      <th>Event</th>
+      <th>Created</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+
+  <tbody></tbody>
+</table>
+
+<script>
+fetch("stats.json")
+  .then(res => res.json())
+  .then(runs => {
+
+    const table = document.querySelector("#runsTable tbody")
+
+    runs.forEach(run => {
+
+      const row = document.createElement("tr")
+
+      let statusClass = ""
+      if (run.conclusion === "success") statusClass = "success"
+      if (run.conclusion === "failure") statusClass = "failure"
+      if (run.status === "in_progress") statusClass = "inprogress"
+
+      row.innerHTML = `
+        <td>${run.name}</td>
+        <td>${run.status}</td>
+        <td class="${statusClass}">${run.conclusion || "-"}</td>
+        <td>${run.event}</td>
+        <td>${new Date(run.created_at).toLocaleString()}</td>
+        <td><a href="${run.html_url}" target="_blank">View</a></td>
+      `
+
+      table.appendChild(row)
+
+    })
+
+  })
+</script>
+
+</body>
+</html>
