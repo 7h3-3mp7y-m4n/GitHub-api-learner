@@ -1,108 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GitHub Workflow Runs</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 40px;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-    }
-
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-
-    th {
-      background: #24292e;
-      color: white;
-    }
-
-    tr:hover {
-      background: #f1f1f1;
-    }
-
-    .success {
-      color: green;
-      font-weight: bold;
-    }
-
-    .failure {
-      color: red;
-      font-weight: bold;
-    }
-
-    .inprogress {
-      color: orange;
-      font-weight: bold;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>urunc CI Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<h1>Urunc Workflow Runs</h1>
+  <div class="header">
+    <div class="header-left">
+      <h1>urunc CI Dashboard</h1>
+    </div>
+    <div class="header-meta" id="header-meta">Loading...</div>
+  </div>
 
-<table id="runsTable">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th>Conclusion</th>
-      <th>Event</th>
-      <th>Created</th>
-      <th>Link</th>
-    </tr>
-  </thead>
+  <div id="error-box" style="display:none" class="error"></div>
 
-  <tbody></tbody>
-</table>
+  <!-- health summary -->
+  <div class="health-bar" id="health-bar">
+    <div>
+      <div class="health-score" id="health-score">—</div>
+      <div class="health-label">Overall Health</div>
+    </div>
+    <div class="health-divider"></div>
+    <div class="health-stat">
+      <div class="health-stat-value" id="stat-workflows">—</div>
+      <div class="health-stat-label">workflows</div>
+    </div>
+    <div class="health-stat">
+      <div class="health-stat-value" id="stat-required">—</div>
+      <div class="health-stat-label">required passing</div>
+    </div>
+    <div class="health-stat">
+      <div class="health-stat-value" id="stat-failing">—</div>
+      <div class="health-stat-label">currently failing</div>
+    </div>
+  </div>
 
-<script>
-fetch("stats.json")
-  .then(res => res.json())
-  .then(runs => {
+  <!-- workflow table -->
+  <div class="section-title">Workflows</div>
+  <table class="workflow-table">
+    <thead>
+      <tr>
+        <th>Workflow</th>
+        <th>Last Run</th>
+        <th>Failure Rate</th>
+        <th>History (oldest → newest)</th>
+        <th>Avg Duration</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody id="workflow-tbody">
+      <tr>
+        <td colspan="6" class="loading">Loading workflow data...</td>
+      </tr>
+    </tbody>
+  </table>
 
-    const table = document.querySelector("#runsTable tbody")
+  <footer>
+    <span>
+      Data from
+      <a href="https://github.com/urunc-dev/urunc" target="_blank">urunc-dev/urunc</a>
+      auto-updates every 1 hours
+    </span>
+  </footer>
 
-    runs.forEach(run => {
-
-      const row = document.createElement("tr")
-
-      let statusClass = ""
-      if (run.conclusion === "success") statusClass = "success"
-      if (run.conclusion === "failure") statusClass = "failure"
-      if (run.status === "in_progress") statusClass = "inprogress"
-
-      row.innerHTML = `
-        <td>${run.name}</td>
-        <td>${run.status}</td>
-        <td class="${statusClass}">${run.conclusion || "-"}</td>
-        <td>${run.event}</td>
-        <td>${new Date(run.created_at).toLocaleString()}</td>
-        <td><a href="${run.html_url}" target="_blank">View</a></td>
-      `
-
-      table.appendChild(row)
-
-    })
-
-  })
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>

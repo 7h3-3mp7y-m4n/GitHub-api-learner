@@ -6,13 +6,22 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"sort"
+	"strings"
 	"time"
+
+	"go.yaml.in/yaml/v3"
 )
 
 type Workflow struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
 	Path string `json:"path"`
+}
+
+type WorkflowsListResponse struct {
+	TotalCount int        `json:"total_count"`
+	Workflows  []Workflow `json:"workflows"`
 }
 
 type WorkflowsResponse struct {
@@ -25,116 +34,278 @@ type Run struct {
 	Name       string    `json:"name"`
 	Status     string    `json:"status"`
 	Conclusion string    `json:"conclusion"`
+	RunNumber  int       `json:"run_number"`
 	CreatedAt  time.Time `json:"created_at"`
-	Event      string    `json:"event"`
+	UpdatedAt  time.Time `json:"updated_at"`
 	HTMLURL    string    `json:"html_url"`
 }
 
-// func main() {
-// 	token := os.Getenv("Git_Token")
+type Config struct {
+	Settings struct {
+		SourceRepo         string `yaml:"source_repo"`
+		HistoryDays        int    `yaml:"history_days"`
+		RefreshInterval    int    `yaml:"refresh_interval"`
+		MaxRunsPerWorkflow int    `yaml:"max_runs_per_workflow"`
+	} `yaml:"settings"`
+	Workflows []struct {
+		Name        string `yaml:"name"`
+		Description string `yaml:"description"`
+		Critical    bool   `yaml:"critical"`
+	} `yaml:"workflows"`
+	RequiredTests []string `yaml:"required_tests"`
+}
 
-// 	req, err := http.NewRequestWithContext(context.Background(), "GET", "https://api.github.com/repos/urunc-dev/urunc/actions/workflows", nil)
-// 	if err != nil {
-// 		log.Fatalf("Unable to create request: %v", err)
-// 	}
+type WorkflowSummary struct {
+	Name            string   `json:"name"`
+	Description     string   `json:"description"`
+	Critical        bool     `json:"critical"`
+	Required        bool     `json:"required"`
+	TotalRuns       int      `json:"total_runs"`
+	FailedRuns      int      `json:"failed_runs"`
+	FailureRate     float64  `json:"failure_rate"`
+	AvgDurationSecs float64  `json:"avg_duration_secs"`
+	WeatherHistory  []string `json:"weather_history"`
+	LastRun         *Run     `json:"last_run"`
+}
 
-// 	req.Header.Set("Accept", "application/vnd.github+json")
-// 	req.Header.Set("X-GitHub-Api-Version", "2022-11-28")
+type DashboardData struct {
+	GeneratedAt   time.Time         `json:"generated_at"`
+	Repo          string            `json:"repo"`
+	OverallHealth float64           `json:"overall_health"`
+	Workflows     []WorkflowSummary `json:"workflows"`
+	RequiredTests []string          `json:"required_tests"`
+}
 
-// 	if token != "" {
-// 		req.Header.Set("Authorization", "Bearer "+token)
-// 	}
+type Client struct {
+	token string
+	repo  string
+	http  *http.Client
+}
 
-// 	client := &http.Client{}
-// 	resp, err := client.Do(req)
-// 	if err != nil {
-// 		log.Fatalf("Can't send the request: %v", err)
-// 	}
-// 	defer resp.Body.Close()
+func NewClient(token, repo string) *Client {
+	return &Client{
+		token: token,
+		repo:  repo,
+		http:  &http.Client{},
+	}
+}
 
-// 	if resp.StatusCode != http.StatusOK {
-// 		log.Fatalf("Unexpected status: %s", resp.Status)
-// 	}
-
-// 	var result WorkflowsResponse
-// 	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
-// 		log.Fatalf("JSON decode failed: %v", err)
-// 	}
-
-// 	fmt.Printf("Found %d Worflows --- \n\n", result.TotalCount)
-// 	for _, wf := range result.Workflows {
-// 		url := fmt.Sprintf("https://api.github.com/repos/urunc-dev/urunc/actions/workflows/%d/runs?per_page=10",
-// 			wf.ID,
-// 		)
-// 		req, err := http.NewRequestWithContext(context.Background(), "GET", url, nil)
-// 		if err != nil {
-// 			fmt.Println("error ", err)
-// 		}
-// 		req.Header.Set("Accept", "application/vnd.github+json")
-// 		req.Header.Set("X-GitHub-Api-Version", "2022-11-28")
-// 		resp, err := client.Do(req)
-// 		if err != nil {
-// 			fmt.Println("request error:", err)
-// 		}
-// 		var runsResp TotalRun
-// 		if err := json.NewDecoder(resp.Body).Decode(&runsResp); err != nil {
-// 			fmt.Println("decode error ", err)
-// 			resp.Body.Close()
-// 		}
-// 		resp.Body.Close()
-// 		if len(runsResp.WorkflowRun) == 0 {
-// 			fmt.Println("no runs found\n")
-// 		}
-// 		for _, run := range runsResp.WorkflowRun {
-// 			fmt.Printf(
-// 				"   %-30s  %-12s  %-10s  triggered by: %-15s  %s\n",
-// 				run.Name,
-// 				run.Status,
-// 				run.Conclusion,
-// 				run.Event,
-// 				run.CreatedAt.Format("2006-01-02 15:04"),
-// 			)
-// 		}
-// 	}
-// }
-
-func main() {
-	token := os.Getenv("GITHUB_TOKEN")
-	url := "https://api.github.com/repos/urunc-dev/urunc/actions/runs?per_page=100"
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		log.Fatalf("Unable to create request: %v", err)
+func (c *Client) get(url string, v interface{}) error {
+	req, _ := http.NewRequest("GET", url, nil)
+	if c.token != "" {
+		req.Header.Set("Authorization", "Bearer "+c.token)
 	}
 	req.Header.Set("Accept", "application/vnd.github+json")
-	req.Header.Set("X-GitHub-Api-Version", "2022-11-28")
 
-	if token != "" {
-		req.Header.Set("Authorization", "Bearer "+token)
-	}
-	client := http.Client{}
-	resp, err := client.Do(req)
+	resp, err := c.http.Do(req)
 	if err != nil {
-		log.Fatalf("can't send the request: %v", err)
+		return err
 	}
 	defer resp.Body.Close()
+
 	if resp.StatusCode != http.StatusOK {
-		log.Fatalf("unexpected status: %s", resp.Status)
+		return fmt.Errorf("GitHub API %d", resp.StatusCode)
 	}
-	var runs WorkflowsResponse
-	if err := json.NewDecoder(resp.Body).Decode(&runs); err != nil {
-		log.Fatalf("json decode failed: %v", err)
+	return json.NewDecoder(resp.Body).Decode(v)
+}
+
+func (c *Client) listWorkflows() ([]Workflow, error) {
+	url := fmt.Sprintf(
+		"https://api.github.com/repos/%s/actions/workflows?per_page=100",
+		c.repo,
+	)
+	var resp WorkflowsListResponse
+	if err := c.get(url, &resp); err != nil {
+		return nil, err
 	}
-	file, err := os.Create("stats.json")
+	return resp.Workflows, nil
+}
+
+func (c *Client) fetchRunsByWorkflowID(workflowID int, days int, limit int) ([]Run, error) {
+	cutoff := time.Now().AddDate(0, 0, -days)
+
+	url := fmt.Sprintf(
+		"https://api.github.com/repos/%s/actions/workflows/%d/runs?per_page=%d",
+		c.repo, workflowID, limit,
+	)
+
+	log.Printf("Fetching runs: %s", url)
+
+	var resp WorkflowsResponse
+	if err := c.get(url, &resp); err != nil {
+		return nil, err
+	}
+
+	log.Printf("Total runs from API: %d", len(resp.WorkflowRuns))
+
+	sort.Slice(resp.WorkflowRuns, func(i, j int) bool {
+		return resp.WorkflowRuns[i].CreatedAt.After(resp.WorkflowRuns[j].CreatedAt)
+	})
+
+	var filtered []Run
+
+	for _, r := range resp.WorkflowRuns {
+		if r.Status != "completed" {
+			continue
+		}
+
+		if r.CreatedAt.After(cutoff) || len(filtered) < 5 {
+			filtered = append(filtered, r)
+		}
+
+		if len(filtered) >= limit {
+			break
+		}
+	}
+
+	log.Printf("Runs after filter: %d", len(filtered))
+	return filtered, nil
+}
+
+func findWorkflowID(configName string, workflows []Workflow) (int, string, bool) {
+	lower := strings.ToLower(configName)
+
+	for _, wf := range workflows {
+		if strings.ToLower(wf.Name) == lower {
+			return wf.ID, wf.Name, true
+		}
+	}
+
+	for _, wf := range workflows {
+		filename := wf.Path[strings.LastIndex(wf.Path, "/")+1:]
+		filename = strings.TrimSuffix(filename, ".yml")
+		filename = strings.TrimSuffix(filename, ".yaml")
+		if strings.ToLower(filename) == lower {
+			return wf.ID, wf.Name, true
+		}
+	}
+
+	return 0, "", false
+}
+
+func buildWeather(runs []Run, days int) []string {
+	history := make([]string, days)
+	for i := range history {
+		history[i] = "unknown"
+	}
+	now := time.Now()
+
+	for i := 0; i < days; i++ {
+		start := now.AddDate(0, 0, -(days - 1 - i))
+		end := start.Add(24 * time.Hour)
+
+		for _, r := range runs {
+			if r.CreatedAt.After(start) && r.CreatedAt.Before(end) {
+				history[i] = r.Conclusion
+				break
+			}
+		}
+	}
+	return history
+}
+
+func buildSummary(runs []Run, name, desc string, critical, required bool, days int) WorkflowSummary {
+	var failed int
+	var totalDuration float64
+	var lastRun *Run
+
+	for i, r := range runs {
+		if r.Conclusion == "failure" {
+			failed++
+		}
+		totalDuration += r.UpdatedAt.Sub(r.CreatedAt).Seconds()
+		if i == 0 {
+			copy := r
+			lastRun = &copy
+		}
+	}
+
+	total := len(runs)
+	var failureRate, avg float64
+	if total > 0 {
+		failureRate = float64(failed) / float64(total) * 100
+		avg = totalDuration / float64(total)
+	}
+
+	return WorkflowSummary{
+		Name:            name,
+		Description:     desc,
+		Critical:        critical,
+		Required:        required,
+		TotalRuns:       total,
+		FailedRuns:      failed,
+		FailureRate:     failureRate,
+		AvgDurationSecs: avg,
+		WeatherHistory:  buildWeather(runs, days),
+		LastRun:         lastRun,
+	}
+}
+
+func main() {
+	cfgBytes, _ := os.ReadFile("config.yaml")
+	var cfg Config
+	yaml.Unmarshal(cfgBytes, &cfg)
+
+	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo)
+
+	allWorkflows, err := client.listWorkflows()
 	if err != nil {
-		log.Fatalf("cant create the json file %v", err)
+		log.Fatal(err)
 	}
-	defer file.Close()
-	encoder := json.NewEncoder(file)
-	encoder.SetIndent("", " ")
-	if err := encoder.Encode(runs.WorkflowRuns); err != nil {
-		log.Fatalf("failed to encode json %v ---> ", err)
+
+	requiredSet := map[string]bool{}
+	for _, r := range cfg.RequiredTests {
+		requiredSet[r] = true
 	}
-	fmt.Printf("Saved %d runs to runs.json\n", len(runs.WorkflowRuns))
-	// fmt.Println("starting server on 8080 :)")
+
+	var summaries []WorkflowSummary
+	var totalHealth float64
+
+	for _, wf := range cfg.Workflows {
+		id, realName, found := findWorkflowID(wf.Name, allWorkflows)
+		if !found {
+			log.Printf("Not found: %s", wf.Name)
+			continue
+		}
+
+		log.Printf("%s → %s (%d)", wf.Name, realName, id)
+
+		runs, _ := client.fetchRunsByWorkflowID(
+			id,
+			cfg.Settings.HistoryDays,
+			cfg.Settings.MaxRunsPerWorkflow,
+		)
+
+		sum := buildSummary(
+			runs,
+			realName,
+			wf.Description,
+			wf.Critical,
+			requiredSet[wf.Name],
+			cfg.Settings.HistoryDays,
+		)
+
+		summaries = append(summaries, sum)
+		totalHealth += (100 - sum.FailureRate)
+	}
+
+	health := 0.0
+	if len(summaries) > 0 {
+		health = totalHealth / float64(len(summaries))
+	}
+
+	data := DashboardData{
+		GeneratedAt:   time.Now().UTC(),
+		Repo:          cfg.Settings.SourceRepo,
+		OverallHealth: health,
+		Workflows:     summaries,
+		RequiredTests: cfg.RequiredTests,
+	}
+
+	out, _ := json.MarshalIndent(data, "", "  ")
+	os.WriteFile("stats.json", out, 0644)
+
+	log.Println("stats.json generated")
+
 	// log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
 }
