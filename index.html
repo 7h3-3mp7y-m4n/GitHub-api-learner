@@ -4,68 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>urunc CI Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="header">
-    <div class="header-left">
-      <h1>urunc CI Dashboard</h1>
+<header>
+  <h1>urunc CI Dashboard</h1>
+  <span class="last-updated" id="lastUpdated">—</span>
+</header>
+
+<main>
+  <!-- ── Stat cards ── -->
+  <div class="stats-grid">
+    <div class="stat-card health-card">
+      <div class="stat-label">Overall Health</div>
+      <div class="stat-value green" id="healthVal">—</div>
+      <div class="health-bar-track">
+        <div class="health-bar-fill" id="healthBarFill" style="width:0%"></div>
+      </div>
     </div>
-    <div class="header-meta" id="header-meta">Loading...</div>
+    <div class="stat-card total-card">
+      <div class="stat-label">workflows</div>
+      <div class="stat-value blue" id="totalVal">—</div>
+    </div>
+    <div class="stat-card pass-card">
+      <div class="stat-label">passing</div>
+      <div class="stat-value green" id="passVal">—</div>
+    </div>
+    <div class="stat-card fail-card">
+      <div class="stat-label">currently failing</div>
+      <div class="stat-value red" id="failVal">—</div>
+    </div>
   </div>
 
-  <div id="error-box" style="display:none" class="error"></div>
+  <!-- ── Filter bar ── -->
+  <div class="filter-bar">
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+      </svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="Search workflows…" />
+    </div>
 
-  <!-- health summary -->
-  <div class="health-bar" id="health-bar">
-    <div>
-      <div class="health-score" id="health-score">—</div>
-      <div class="health-label">Overall Health</div>
+    <div class="filter-chips">
+      <span class="chip active"      data-filter="all">All</span>
+      <span class="chip red-chip"    data-filter="failing">Failing</span>
+      <span class="chip green-chip"  data-filter="passing">Passing</span>
+      <span class="chip red-chip"    data-filter="critical">Critical</span>
+      <span class="chip orange-chip" data-filter="recent-failure">Recent Failure</span>
+      <span class="chip"             data-filter="recent-run">Recent Run</span>
+      <span class="chip"             data-filter="no-runs">No Runs</span>
     </div>
-    <div class="health-divider"></div>
-    <div class="health-stat">
-      <div class="health-stat-value" id="stat-workflows">—</div>
-      <div class="health-stat-label">workflows</div>
-    </div>
-    <div class="health-stat">
-      <div class="health-stat-value" id="stat-required">—</div>
-      <div class="health-stat-label">required passing</div>
-    </div>
-    <div class="health-stat">
-      <div class="health-stat-value" id="stat-failing">—</div>
-      <div class="health-stat-label">currently failing</div>
-    </div>
+
+    <span class="filter-count" id="filterCount"></span>
   </div>
 
-  <!-- workflow table -->
-  <div class="section-title">Workflows</div>
-  <table class="workflow-table">
-    <thead>
-      <tr>
-        <th>Workflow</th>
-        <th>Last Run</th>
-        <th>Failure Rate</th>
-        <th>History (oldest → newest)</th>
-        <th>Avg Duration</th>
-        <th>Link</th>
-      </tr>
-    </thead>
-    <tbody id="workflow-tbody">
-      <tr>
-        <td colspan="6" class="loading">Loading workflow data...</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- ── Table ── -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Workflow</th>
+          <th>Last Run</th>
+          <th>Failure Rate</th>
+          <th>History (oldest → newest)</th>
+          <th>Avg Duration</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody id="wfBody">
+        <tr class="loading-row"><td colspan="6">Loading workflow data...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
 
-  <footer>
-    <span>
-      Data from
-      <a href="https://github.com/urunc-dev/urunc" target="_blank">urunc-dev/urunc</a>
-      auto-updates every 1 hours
-    </span>
-  </footer>
+<footer>
+  Data from <a id="footerLink" href="#" target="_blank">—</a>
+  &nbsp;·&nbsp; auto-updates every hour
+</footer>
 
-  <script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

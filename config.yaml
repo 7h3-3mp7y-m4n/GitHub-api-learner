@@ -2,7 +2,7 @@ settings:
   source_repo: "urunc-dev/urunc"
   history_days: 7
   refresh_interval: 60
-  max_runs_per_workflow: 20
+  max_runs_per_workflow: 5
 
 workflows:
   - name: "add-git-trailers"
@@ -11,11 +11,11 @@ workflows:
 
   - name: "build"
     description: "Build workflow"
-    critical: true
+    critical: false
 
   - name: "build-latest"
     description: "Build latest version"
-    critical: true
+    critical: false
 
   - name: "build-trigger"
     description: "Trigger build pipeline"
@@ -35,7 +35,7 @@ workflows:
 
   - name: "ci_nightly"
     description: "Nightly builds"
-    critical: false
+    critical: true
 
   - name: "ci_on_push"
     description: "CI on push"
@@ -75,7 +75,7 @@ workflows:
 
   - name: "release-trigger"
     description: "Release pipeline"
-    critical: true
+    critical: false
 
   - name: "scorecard"
     description: "Security scorecard"
@@ -87,7 +87,7 @@ workflows:
 
   - name: "unit_test"
     description: "Unit tests"
-    critical: true
+    critical: false
 
   - name: "upload_s3"
     description: "Upload artifacts to S3"
@@ -95,12 +95,12 @@ workflows:
 
   - name: "urunc-deploy-test"
     description: "Deployment test"
-    critical: true
+    critical: false
 
   - name: "validate-files-and-commits"
     description: "Validation checks"
-    critical: true
+    critical: false
 
   - name: "vm_test"
     description: "VM tests"
-    critical: true
+    critical: false
