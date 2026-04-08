@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-08T05:13:39.509853203Z",
+  "generated_at": "2026-04-08T07:25:13.176070183Z",
   "repo": "urunc-dev/urunc",
-  "overall_health": 83.47826086956522,
+  "overall_health": 82.6086956521739,
   "workflows": [
     {
       "name": "add-git-trailers",
@@ -552,29 +552,57 @@
       "critical": true,
       "required": false,
       "total_runs": 5,
-      "failed_runs": 0,
-      "failure_rate": 0,
-      "avg_duration_secs": 4744.2,
+      "failed_runs": 1,
+      "failure_rate": 20,
+      "avg_duration_secs": 4948.2,
       "weather_history": [
         "unknown",
         "unknown",
         "success",
         "success",
-        "success",
         "action_required",
-        "action_required"
+        "action_required",
+        "failure"
       ],
       "last_run": {
-        "id": 24078675059,
+        "id": 24121901643,
         "name": "urunc CI",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 1553,
-        "created_at": "2026-04-07T11:19:47Z",
-        "updated_at": "2026-04-07T11:19:47Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24078675059"
+        "conclusion": "failure",
+        "run_number": 1554,
+        "created_at": "2026-04-08T06:45:30Z",
+        "updated_at": "2026-04-08T07:03:48Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121901643",
+        "failed_jobs": [
+          {
+            "id": 70377719853,
+            "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+            "conclusion": "failure",
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121901643/job/70377719853",
+            "log_snippet": "ignore_blockio_not_enabled_errors = false\nignore_rdt_not_enabled_errors = false\ndigest-mismatch: error\ndigest-mismatch: error\ngo: downloading github.com/pkg/errors v0.9.1\npanic: test timed out after 15m0s\nmake: *** [Makefile:268: test_nerdctl] Error 1\n##[error]Process completed with exit code 2.\nApr 08 07:03:11 runnervmtxuyr urunc[19379]: {\"blkMntPoint\":\"\",\"block\":\"\",\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/config.go:191\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers.getConfigFromJSON\",\"hypervisor\":\"qemu\",\"initrd\":\"\",\"level\":\"debug\",\"mountRootfs\":\"true\",\"msg\":\"urunc annotations\",\"source\":\"urunc.json\",\"subsystem\":\"unikontainers\",\"time\":\"2026-04-08T07:03:11Z\",\"unikernelBinary\":\"/.boot/kernel\",\"unikernelCmd\":\"/urunit /usr/sbin/nginx -g 'daemon off;error_log stderr debug;\",\"unikernelType\":\"linux\",\"unikernelVersion\":\"\"}\nApr 08 07:03:11 runnervmtxuyr urunc[19393]: {\"command\":[\"/usr/bin/qemu-system-x86_64\",\"-m\",\"536M\",\"-L\",\"/usr/share/qemu\",\"-cpu\",\"host\",\"-enable-kvm\",\"-display\",\"none\",\"-vga\",\"none\",\"-serial\",\"stdio\",\"-monitor\",\"null\",\"-smp\",\"1\",\"--sandbox\",\"on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny\",\"-kernel\",\"/.boot/kernel\",\"-net\",\"nic,model=virtio,macaddr=06:e0:33:53:10:48\",\"-net\",\"tap,script=no,downscript=no,ifname=tap0_urunc\",\"-device\",\"virtio-blk-pci,serial=rootfs,drive=rootfs\",\"-drive\",\"format=raw,if=none,id=rootfs,file=/dev/mapper/containerd-pool-snap-41\",\"-initrd\",\"/urunit.conf\",\"-no-reboot\",\"-nodefaults\",\"-append\",\"panic=-1 console=ttyS0 root=/dev/vda rw ip=10.4.0.15::10.4.0.1:255.255.255.0:urunc:eth0:off retain_initrd URUNIT_CONFIG=/sys/firmware/initrd init=/urunit -- /usr/sbin/nginx -g 'daemon off;error_log stderr debug;\"],\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/unikontainers.go:531\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers.(*Unikontainer).Exec\",\"level\":\"debug\",\"msg\":\"Ready to execve VMM\",\"subsystem\":\"unikontainers\",\"time\":\"2026-04-08T07:03:11Z\"}\nApr 08 07:03:20 runnervmtxuyr urunc[21133]: {\"blkMntPoint\":\"\",\"block\":\"\",\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/config.go:191\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers.getConfigFromJSON\",\"hypervisor\":\"firecracker\",\"initrd\":\"\",\"level\":\"debug\",\"mountRootfs\":\"true\",\"msg\":\"urunc annotations\",\"source\":\"urunc.json\",\"subsystem\":\"unikontainers\",\"time\":\"2026-04-08T07:03:20Z\",\"unikernelBinary\":\"/.boot/kernel\",\"unikernelCmd\":\"/urunit /usr/sbin/nginx -g 'daemon off;error_log stderr debug;\",\"unikernelType\":\"linux\",\"unikernelVersion\":\"\"}\nApr 08 07:03:20 runnervmtxuyr urunc[21145]: {\"Json\":\"{\\\"boot-source\\\":{\\\"kernel_image_path\\\":\\\"/.boot/kernel\\\",\\\"boot_args\\\":\\\"panic=-1 console=ttyS0 root=/dev/vda rw ip=10.4.0.20::10.4.0.1:255.255.255.0:urunc:eth0:off retain_initrd URUNIT_CONFIG=/sys/firmware/initrd init=/urunit -- /usr/sbin/nginx -g 'daemon off;error_log stderr debug;\\\",\\\"initrd_path\\\":\\\"/urunit.conf\\\"},\\\"machine-config\\\":{\\\"vcpu_count\\\":1,\\\"mem_size_mib\\\":512,\\\"smt\\\":false,\\\"track_dirty_pages\\\":false},\\\"drives\\\":[{\\\"drive_id\\\":\\\"FCrootfs\\\",\\\"is_read_only\\\":false,\\\"is_root_device\\\":false,\\\"path_on_host\\\":\\\"/dev/mapper/containerd-pool-snap-45\\\"}],\\\"network-interfaces\\\":[{\\\"iface_id\\\":\\\"net1\\\",\\\"guest_mac\\\":\\\"ba:87:ac:62:46:72\\\",\\\"host_dev_name\\\":\\\"tap0_urunc\\\"}],\\\"vsock\\\":{\\\"guest_cid\\\":0,\\\"uds_path\\\":\\\"\\\",\\\"vsock_id\\\":\\\"\\\"}}\",\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/hypervisors/firecracker.go:196\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers/hypervisors.(*Firecracker).BuildExecCmd\",\"level\":\"debug\",\"msg\":\"Firecracker json config\",\"subsystem\":\"monitors\",\"time\":\"2026-04-08T07:03:20Z\"}\nApr 08 07:03:26 runnervmtxuyr urunc[22616]: {\"command\":[\"/usr/bin/qemu-system-x86_64\",\"-m\",\"268M\",\"-L\",\"/usr/share/qemu\",\"-cpu\",\"host\",\"-enable-kvm\",\"-display\",\"none\",\"-vga\",\"none\",\"-serial\",\"stdio\",\"-monitor\",\"null\",\"-smp\",\"1\",\"--sandbox\",\"on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny\",\"-kernel\",\"/.boot/kernel\",\"-net\",\"nic,model=virtio,macaddr=f6:8d:35:3e:3b:5b\",\"-net\",\"tap,script=no,downscript=no,ifname=tap0_urunc\",\"-device\",\"virtio-blk-pci,serial=rootfs,drive=rootfs\",\"-drive\",\"format=raw,if=none,id=rootfs,file=/dev/mapper/containerd-pool-snap-51\",\"-device\",\"virtio-blk-pci,serial=vol7,drive=vol7\",\"-drive\",\"format=raw,if=none,id=vol7,file=/dev/loop5\",\"-initrd\",\"/urunit.conf\",\"-no-reboot\",\"-nodefaults\",\"-append\",\"panic=-1 console=ttyS0 root=/dev/vda rw ip=10.4.0.24::10.4.0.1:255.255.255.0:urunc:eth0:off retain_initrd URUNIT_CONFIG=/sys/firmware/initrd init=/urunit -- /bin/cat /proc/self/mountinfo\"],\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/unikontainers.go:531\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers.(*Unikontainer).Exec\",\"level\":\"debug\",\"msg\":\"Ready to execve VMM\",\"subsystem\":\"unikontainers\",\"time\":\"2026-04-08T07:03:26Z\"}\nWed, 08 Apr 2026 06:48:02 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b047/_pkg_.a -trimpath /tmp/go-build346885978/b047=\u003e -p math/bits -lang=go1.25 -std -complete -buildid uBLW8DoUlWfUhXhAL77P/uBLW8DoUlWfUhXhAL77P -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b047/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/math/bits/bits.go /opt/hostedtoolcache/go/1.25.4/x64/src/math/bits/bits_errors.go /opt/hostedtoolcache/go/1.25.4/x64/src/math/bits/bits_tables.go]\nWed, 08 Apr 2026 06:48:05 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b004/_pkg_.a -trimpath /tmp/go-build346885978/b004=\u003e -p errors -lang=go1.25 -std -complete -buildid RLzmcNTarYbVuC9D18Gr/RLzmcNTarYbVuC9D18Gr -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b004/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/errors/errors.go /opt/hostedtoolcache/go/1.25.4/x64/src/errors/join.go /opt/hostedtoolcache/go/1.25.4/x64/src/errors/wrap.go]\nWed, 08 Apr 2026 06:48:05 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b036/_pkg_.a -trimpath /tmp/go-build346885978/b036=\u003e -p internal/oserror -lang=go1.25 -std -complete -buildid wY5MIB3rs0irnYf2XRpX/wY5MIB3rs0irnYf2XRpX -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b036/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/internal/oserror/errors.go]\nWed, 08 Apr 2026 06:48:05 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b051/_pkg_.a -trimpath /tmp/go-build346885978/b051=\u003e -p syscall -lang=go1.25 -std -buildid ydGzvnO9VN2vWWPwGdF7/ydGzvnO9VN2vWWPwGdF7 -goversion go1.25.4 -symabis /tmp/go-build346885978/b051/symabis -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b051/importcfg -pack -asmhdr /tmp/go-build346885978/b051/go_asm.h /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/badlinkname_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/dirent.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/env_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/exec_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/exec_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/flock_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/forkpipe2.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/linkname_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/lsf_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/net.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/netlink_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/rlimit.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/rlimit_stub.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/setuidgid_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/sockcmsg_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/sockcmsg_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/sockcmsg_unix_other.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/syscall.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/syscall_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/syscall_linux_amd64.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/syscall_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/time_nofake.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/timestruct.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/zerrors_linux_amd64.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/zsyscall_linux_amd64.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/zsysnum_linux_amd64.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/ztypes_linux_amd64.go]\nWed, 08 Apr 2026 06:48:06 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b152/_pkg_.a -trimpath /tmp/go-build346885978/b152=\u003e -p internal/types/errors -lang=go1.25 -std -complete -buildid ffmIA0z_xbDrJeip3doS/ffmIA0z_xbDrJeip3doS -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b152/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/internal/types/errors/code_string.go /opt/hostedtoolcache/go/1.25.4/x64/src/internal/types/errors/codes.go]\nWed, 08 Apr 2026 06:48:06 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b003/_pkg_.a -trimpath /tmp/go-build346885978/b003=\u003e -p os -lang=go1.25 -std -buildid AxR5h0AEMJPKbjWIsThT/AxR5h0AEMJPKbjWIsThT -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b003/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/os/dir.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/dir_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/dirent_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/eloop_other.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/env.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/error.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/error_errno.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/exec.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/exec_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/exec_posix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/exec_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/executable.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/executable_procfs.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/file.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/file_open_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/file_posix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/file_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/getwd.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/path.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/path_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/pidfd_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/pipe2_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/proc.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/rawconn.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/removeall_at.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/removeall_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/root.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/root_nonwindows.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/root_openat.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/root_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/stat.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/stat_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/stat_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/sticky_notbsd.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/sys.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/sys_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/sys_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/tempfile.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/types.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/types_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/wait_waitid.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/zero_copy_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/zero_copy_posix.go]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/cgo, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/cgo -objdir /tmp/go-build346885978/b190/ -importpath runtime/cgo -import_runtime_cgo=false -import_syscall=false -ldflags=\"-O2\" \"-g\" \"-lpthread\" -- -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo/cgo.go]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [gcc -E -dM -m64 -I /tmp/go-build346885978/b190/ -O2 -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -I . /tmp/cgo-gcc-input-4268361622.c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/lib/gcc/x86_64-linux-gnu/11/cc1, Arguments: [/usr/lib/gcc/x86_64-linux-gnu/11/cc1 -E -quiet -I /tmp/go-build346885978/b190/ -I . -imultiarch x86_64-linux-gnu /tmp/cgo-gcc-input-4268361622.c -m64 -mtune=generic -march=x86-64 -Wall -Werror -Wdeclaration-after-statement -fno-stack-protector -O2 -fasynchronous-unwind-tables -Wformat-security -fstack-clash-protection -fcf-protection -dM -dumpbase cgo-gcc-input-4268361622.c -dumpbase-ext .c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [/usr/bin/gcc -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -gno-record-gcc-switches -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -o /tmp/go-build346885978/b190/_x001.o -c _cgo_export.c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/lib/gcc/x86_64-linux-gnu/11/cc1, Arguments: [/usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -I /tmp/go-build346885978/b190/ -imultiarch x86_64-linux-gnu -D_REENTRANT _cgo_export.c -quiet -dumpdir /tmp/go-build346885978/b190/ -dumpbase _x001.c -dumpbase-ext .c -m64 -mtune=generic -march=x86-64 -gno-record-gcc-switches -g -O2 -Wall -Werror -Wdeclaration-after-statement -fPIC -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -fno-stack-protector -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -fasynchronous-unwind-tables -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccayDD9W.s]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [/usr/bin/gcc -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -gno-record-gcc-switches -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -o /tmp/go-build346885978/b190/_x002.o -c cgo.cgo2.c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/lib/gcc/x86_64-linux-gnu/11/cc1, Arguments: [/usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -I /tmp/go-build346885978/b190/ -imultiarch x86_64-linux-gnu -D_REENTRANT cgo.cgo2.c -quiet -dumpdir /tmp/go-build346885978/b190/ -dumpbase _x002.c -dumpbase-ext .c -m64 -mtune=generic -march=x86-64 -gno-record-gcc-switches -g -O2 -Wall -Werror -Wdeclaration-after-statement -fPIC -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -fno-stack-protector -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -fasynchronous-unwind-tables -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEYsDgJ.s]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [/usr/bin/gcc -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -gno-record-gcc-switches -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -o /tmp/go-build346885978/b190/_x003.o -c gcc_context.c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b066/_pkg_.a -trimpath /tmp/go-build346885978/b066=\u003e -p fmt -lang=go1.25 -std -complete -buildid G33sm9-LvJXjtqT1QgZL/G33sm9-LvJXjtqT1QgZL -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b066/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/doc.go /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/errors.go /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/format.go /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/print.go /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/scan.go]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/lib/gcc/x86_64-linux-gnu/11/cc1, Arguments: [/usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -I /tmp/go-build346885978/b190/ -imultiarch x86_64-linux-gnu -D_REENTRANT gcc_context.c -quiet -dumpdir /tmp/go-build346885978/b190/ -dumpbase _x003.c -dumpbase-ext .c -m64 -mtune=generic -march=x86-64 -gno-record-gcc-switches -g -O2 -Wall -Werror -Wdeclaration-after-statement -fPIC -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -fno-stack-protector -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -fasynchronous-unwind-tables -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cczxHySw.s]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [/usr/bin/gcc -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -gno-record-gcc-switches -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -o /tmp/go-build346885978/b190/_x004.o -c gcc_fatalf.c]"
+          }
+        ]
       },
       "recent_runs": [
+        {
+          "id": 24121901643,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 1554,
+          "created_at": "2026-04-08T06:45:30Z",
+          "updated_at": "2026-04-08T07:03:48Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121901643",
+          "failed_jobs": [
+            {
+              "id": 70377719853,
+              "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121901643/job/70377719853",
+              "log_snippet": "ignore_blockio_not_enabled_errors = false\nignore_rdt_not_enabled_errors = false\ndigest-mismatch: error\ndigest-mismatch: error\ngo: downloading github.com/pkg/errors v0.9.1\npanic: test timed out after 15m0s\nmake: *** [Makefile:268: test_nerdctl] Error 1\n##[error]Process completed with exit code 2.\nApr 08 07:03:11 runnervmtxuyr urunc[19379]: {\"blkMntPoint\":\"\",\"block\":\"\",\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/config.go:191\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers.getConfigFromJSON\",\"hypervisor\":\"qemu\",\"initrd\":\"\",\"level\":\"debug\",\"mountRootfs\":\"true\",\"msg\":\"urunc annotations\",\"source\":\"urunc.json\",\"subsystem\":\"unikontainers\",\"time\":\"2026-04-08T07:03:11Z\",\"unikernelBinary\":\"/.boot/kernel\",\"unikernelCmd\":\"/urunit /usr/sbin/nginx -g 'daemon off;error_log stderr debug;\",\"unikernelType\":\"linux\",\"unikernelVersion\":\"\"}\nApr 08 07:03:11 runnervmtxuyr urunc[19393]: {\"command\":[\"/usr/bin/qemu-system-x86_64\",\"-m\",\"536M\",\"-L\",\"/usr/share/qemu\",\"-cpu\",\"host\",\"-enable-kvm\",\"-display\",\"none\",\"-vga\",\"none\",\"-serial\",\"stdio\",\"-monitor\",\"null\",\"-smp\",\"1\",\"--sandbox\",\"on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny\",\"-kernel\",\"/.boot/kernel\",\"-net\",\"nic,model=virtio,macaddr=06:e0:33:53:10:48\",\"-net\",\"tap,script=no,downscript=no,ifname=tap0_urunc\",\"-device\",\"virtio-blk-pci,serial=rootfs,drive=rootfs\",\"-drive\",\"format=raw,if=none,id=rootfs,file=/dev/mapper/containerd-pool-snap-41\",\"-initrd\",\"/urunit.conf\",\"-no-reboot\",\"-nodefaults\",\"-append\",\"panic=-1 console=ttyS0 root=/dev/vda rw ip=10.4.0.15::10.4.0.1:255.255.255.0:urunc:eth0:off retain_initrd URUNIT_CONFIG=/sys/firmware/initrd init=/urunit -- /usr/sbin/nginx -g 'daemon off;error_log stderr debug;\"],\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/unikontainers.go:531\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers.(*Unikontainer).Exec\",\"level\":\"debug\",\"msg\":\"Ready to execve VMM\",\"subsystem\":\"unikontainers\",\"time\":\"2026-04-08T07:03:11Z\"}\nApr 08 07:03:20 runnervmtxuyr urunc[21133]: {\"blkMntPoint\":\"\",\"block\":\"\",\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/config.go:191\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers.getConfigFromJSON\",\"hypervisor\":\"firecracker\",\"initrd\":\"\",\"level\":\"debug\",\"mountRootfs\":\"true\",\"msg\":\"urunc annotations\",\"source\":\"urunc.json\",\"subsystem\":\"unikontainers\",\"time\":\"2026-04-08T07:03:20Z\",\"unikernelBinary\":\"/.boot/kernel\",\"unikernelCmd\":\"/urunit /usr/sbin/nginx -g 'daemon off;error_log stderr debug;\",\"unikernelType\":\"linux\",\"unikernelVersion\":\"\"}\nApr 08 07:03:20 runnervmtxuyr urunc[21145]: {\"Json\":\"{\\\"boot-source\\\":{\\\"kernel_image_path\\\":\\\"/.boot/kernel\\\",\\\"boot_args\\\":\\\"panic=-1 console=ttyS0 root=/dev/vda rw ip=10.4.0.20::10.4.0.1:255.255.255.0:urunc:eth0:off retain_initrd URUNIT_CONFIG=/sys/firmware/initrd init=/urunit -- /usr/sbin/nginx -g 'daemon off;error_log stderr debug;\\\",\\\"initrd_path\\\":\\\"/urunit.conf\\\"},\\\"machine-config\\\":{\\\"vcpu_count\\\":1,\\\"mem_size_mib\\\":512,\\\"smt\\\":false,\\\"track_dirty_pages\\\":false},\\\"drives\\\":[{\\\"drive_id\\\":\\\"FCrootfs\\\",\\\"is_read_only\\\":false,\\\"is_root_device\\\":false,\\\"path_on_host\\\":\\\"/dev/mapper/containerd-pool-snap-45\\\"}],\\\"network-interfaces\\\":[{\\\"iface_id\\\":\\\"net1\\\",\\\"guest_mac\\\":\\\"ba:87:ac:62:46:72\\\",\\\"host_dev_name\\\":\\\"tap0_urunc\\\"}],\\\"vsock\\\":{\\\"guest_cid\\\":0,\\\"uds_path\\\":\\\"\\\",\\\"vsock_id\\\":\\\"\\\"}}\",\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/hypervisors/firecracker.go:196\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers/hypervisors.(*Firecracker).BuildExecCmd\",\"level\":\"debug\",\"msg\":\"Firecracker json config\",\"subsystem\":\"monitors\",\"time\":\"2026-04-08T07:03:20Z\"}\nApr 08 07:03:26 runnervmtxuyr urunc[22616]: {\"command\":[\"/usr/bin/qemu-system-x86_64\",\"-m\",\"268M\",\"-L\",\"/usr/share/qemu\",\"-cpu\",\"host\",\"-enable-kvm\",\"-display\",\"none\",\"-vga\",\"none\",\"-serial\",\"stdio\",\"-monitor\",\"null\",\"-smp\",\"1\",\"--sandbox\",\"on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny\",\"-kernel\",\"/.boot/kernel\",\"-net\",\"nic,model=virtio,macaddr=f6:8d:35:3e:3b:5b\",\"-net\",\"tap,script=no,downscript=no,ifname=tap0_urunc\",\"-device\",\"virtio-blk-pci,serial=rootfs,drive=rootfs\",\"-drive\",\"format=raw,if=none,id=rootfs,file=/dev/mapper/containerd-pool-snap-51\",\"-device\",\"virtio-blk-pci,serial=vol7,drive=vol7\",\"-drive\",\"format=raw,if=none,id=vol7,file=/dev/loop5\",\"-initrd\",\"/urunit.conf\",\"-no-reboot\",\"-nodefaults\",\"-append\",\"panic=-1 console=ttyS0 root=/dev/vda rw ip=10.4.0.24::10.4.0.1:255.255.255.0:urunc:eth0:off retain_initrd URUNIT_CONFIG=/sys/firmware/initrd init=/urunit -- /bin/cat /proc/self/mountinfo\"],\"file\":\"/home/runner/work/urunc/urunc/pkg/unikontainers/unikontainers.go:531\",\"func\":\"github.com/urunc-dev/urunc/pkg/unikontainers.(*Unikontainer).Exec\",\"level\":\"debug\",\"msg\":\"Ready to execve VMM\",\"subsystem\":\"unikontainers\",\"time\":\"2026-04-08T07:03:26Z\"}\nWed, 08 Apr 2026 06:48:02 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b047/_pkg_.a -trimpath /tmp/go-build346885978/b047=\u003e -p math/bits -lang=go1.25 -std -complete -buildid uBLW8DoUlWfUhXhAL77P/uBLW8DoUlWfUhXhAL77P -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b047/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/math/bits/bits.go /opt/hostedtoolcache/go/1.25.4/x64/src/math/bits/bits_errors.go /opt/hostedtoolcache/go/1.25.4/x64/src/math/bits/bits_tables.go]\nWed, 08 Apr 2026 06:48:05 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b004/_pkg_.a -trimpath /tmp/go-build346885978/b004=\u003e -p errors -lang=go1.25 -std -complete -buildid RLzmcNTarYbVuC9D18Gr/RLzmcNTarYbVuC9D18Gr -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b004/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/errors/errors.go /opt/hostedtoolcache/go/1.25.4/x64/src/errors/join.go /opt/hostedtoolcache/go/1.25.4/x64/src/errors/wrap.go]\nWed, 08 Apr 2026 06:48:05 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b036/_pkg_.a -trimpath /tmp/go-build346885978/b036=\u003e -p internal/oserror -lang=go1.25 -std -complete -buildid wY5MIB3rs0irnYf2XRpX/wY5MIB3rs0irnYf2XRpX -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b036/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/internal/oserror/errors.go]\nWed, 08 Apr 2026 06:48:05 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b051/_pkg_.a -trimpath /tmp/go-build346885978/b051=\u003e -p syscall -lang=go1.25 -std -buildid ydGzvnO9VN2vWWPwGdF7/ydGzvnO9VN2vWWPwGdF7 -goversion go1.25.4 -symabis /tmp/go-build346885978/b051/symabis -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b051/importcfg -pack -asmhdr /tmp/go-build346885978/b051/go_asm.h /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/badlinkname_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/dirent.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/env_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/exec_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/exec_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/flock_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/forkpipe2.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/linkname_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/lsf_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/net.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/netlink_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/rlimit.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/rlimit_stub.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/setuidgid_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/sockcmsg_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/sockcmsg_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/sockcmsg_unix_other.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/syscall.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/syscall_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/syscall_linux_amd64.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/syscall_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/time_nofake.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/timestruct.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/zerrors_linux_amd64.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/zsyscall_linux_amd64.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/zsysnum_linux_amd64.go /opt/hostedtoolcache/go/1.25.4/x64/src/syscall/ztypes_linux_amd64.go]\nWed, 08 Apr 2026 06:48:06 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b152/_pkg_.a -trimpath /tmp/go-build346885978/b152=\u003e -p internal/types/errors -lang=go1.25 -std -complete -buildid ffmIA0z_xbDrJeip3doS/ffmIA0z_xbDrJeip3doS -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b152/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/internal/types/errors/code_string.go /opt/hostedtoolcache/go/1.25.4/x64/src/internal/types/errors/codes.go]\nWed, 08 Apr 2026 06:48:06 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b003/_pkg_.a -trimpath /tmp/go-build346885978/b003=\u003e -p os -lang=go1.25 -std -buildid AxR5h0AEMJPKbjWIsThT/AxR5h0AEMJPKbjWIsThT -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b003/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/os/dir.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/dir_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/dirent_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/eloop_other.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/env.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/error.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/error_errno.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/exec.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/exec_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/exec_posix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/exec_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/executable.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/executable_procfs.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/file.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/file_open_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/file_posix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/file_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/getwd.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/path.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/path_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/pidfd_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/pipe2_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/proc.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/rawconn.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/removeall_at.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/removeall_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/root.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/root_nonwindows.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/root_openat.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/root_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/stat.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/stat_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/stat_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/sticky_notbsd.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/sys.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/sys_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/sys_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/tempfile.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/types.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/types_unix.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/wait_waitid.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/zero_copy_linux.go /opt/hostedtoolcache/go/1.25.4/x64/src/os/zero_copy_posix.go]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/cgo, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/cgo -objdir /tmp/go-build346885978/b190/ -importpath runtime/cgo -import_runtime_cgo=false -import_syscall=false -ldflags=\"-O2\" \"-g\" \"-lpthread\" -- -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo/cgo.go]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [gcc -E -dM -m64 -I /tmp/go-build346885978/b190/ -O2 -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -I . /tmp/cgo-gcc-input-4268361622.c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/lib/gcc/x86_64-linux-gnu/11/cc1, Arguments: [/usr/lib/gcc/x86_64-linux-gnu/11/cc1 -E -quiet -I /tmp/go-build346885978/b190/ -I . -imultiarch x86_64-linux-gnu /tmp/cgo-gcc-input-4268361622.c -m64 -mtune=generic -march=x86-64 -Wall -Werror -Wdeclaration-after-statement -fno-stack-protector -O2 -fasynchronous-unwind-tables -Wformat-security -fstack-clash-protection -fcf-protection -dM -dumpbase cgo-gcc-input-4268361622.c -dumpbase-ext .c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [/usr/bin/gcc -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -gno-record-gcc-switches -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -o /tmp/go-build346885978/b190/_x001.o -c _cgo_export.c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/lib/gcc/x86_64-linux-gnu/11/cc1, Arguments: [/usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -I /tmp/go-build346885978/b190/ -imultiarch x86_64-linux-gnu -D_REENTRANT _cgo_export.c -quiet -dumpdir /tmp/go-build346885978/b190/ -dumpbase _x001.c -dumpbase-ext .c -m64 -mtune=generic -march=x86-64 -gno-record-gcc-switches -g -O2 -Wall -Werror -Wdeclaration-after-statement -fPIC -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -fno-stack-protector -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -fasynchronous-unwind-tables -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccayDD9W.s]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [/usr/bin/gcc -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -gno-record-gcc-switches -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -o /tmp/go-build346885978/b190/_x002.o -c cgo.cgo2.c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/lib/gcc/x86_64-linux-gnu/11/cc1, Arguments: [/usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -I /tmp/go-build346885978/b190/ -imultiarch x86_64-linux-gnu -D_REENTRANT cgo.cgo2.c -quiet -dumpdir /tmp/go-build346885978/b190/ -dumpbase _x002.c -dumpbase-ext .c -m64 -mtune=generic -march=x86-64 -gno-record-gcc-switches -g -O2 -Wall -Werror -Wdeclaration-after-statement -fPIC -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -fno-stack-protector -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -fasynchronous-unwind-tables -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccEYsDgJ.s]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [/usr/bin/gcc -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -gno-record-gcc-switches -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -o /tmp/go-build346885978/b190/_x003.o -c gcc_context.c]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile, Arguments: [/opt/hostedtoolcache/go/1.25.4/x64/pkg/tool/linux_amd64/compile -o /tmp/go-build346885978/b066/_pkg_.a -trimpath /tmp/go-build346885978/b066=\u003e -p fmt -lang=go1.25 -std -complete -buildid G33sm9-LvJXjtqT1QgZL/G33sm9-LvJXjtqT1QgZL -goversion go1.25.4 -c=4 -nolocalimports -importcfg /tmp/go-build346885978/b066/importcfg -pack /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/doc.go /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/errors.go /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/format.go /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/print.go /opt/hostedtoolcache/go/1.25.4/x64/src/fmt/scan.go]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/lib/gcc/x86_64-linux-gnu/11/cc1, Arguments: [/usr/lib/gcc/x86_64-linux-gnu/11/cc1 -quiet -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -I /tmp/go-build346885978/b190/ -imultiarch x86_64-linux-gnu -D_REENTRANT gcc_context.c -quiet -dumpdir /tmp/go-build346885978/b190/ -dumpbase _x003.c -dumpbase-ext .c -m64 -mtune=generic -march=x86-64 -gno-record-gcc-switches -g -O2 -Wall -Werror -Wdeclaration-after-statement -fPIC -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -fno-stack-protector -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -fasynchronous-unwind-tables -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cczxHySw.s]\nWed, 08 Apr 2026 06:48:07 GMT:sudo process started: Exe: /usr/bin/x86_64-linux-gnu-gcc-11, Arguments: [/usr/bin/gcc -I /opt/hostedtoolcache/go/1.25.4/x64/src/runtime/cgo -fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build346885978/b190=/tmp/go-build -gno-record-gcc-switches -I /tmp/go-build346885978/b190/ -O2 -g -Wall -Werror -fno-stack-protector -Wdeclaration-after-statement -ffile-prefix-map=/opt/hostedtoolcache/go/1.25.4/x64=/_/GOROOT -frandom-seed=CShs5hkfbUNwhR3I5Uxn -o /tmp/go-build346885978/b190/_x004.o -c gcc_fatalf.c]"
+            }
+          ]
+        },
         {
           "id": 24078675059,
           "name": "urunc CI",
@@ -614,16 +642,6 @@
           "created_at": "2026-04-07T07:15:09Z",
           "updated_at": "2026-04-07T07:15:23Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24069271655"
-        },
-        {
-          "id": 24069188384,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 1549,
-          "created_at": "2026-04-07T07:12:48Z",
-          "updated_at": "2026-04-07T07:14:06Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24069188384"
         }
       ]
     },
@@ -635,27 +653,37 @@
       "total_runs": 5,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 47,
+      "avg_duration_secs": 70.8,
       "weather_history": [
         "unknown",
         "unknown",
-        "action_required",
         "success",
         "success",
         "action_required",
-        "action_required"
+        "action_required",
+        "success"
       ],
       "last_run": {
-        "id": 24078674939,
+        "id": 24121901583,
         "name": "CodeQL",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 944,
-        "created_at": "2026-04-07T11:19:47Z",
-        "updated_at": "2026-04-07T11:19:47Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24078674939"
+        "conclusion": "success",
+        "run_number": 945,
+        "created_at": "2026-04-08T06:45:30Z",
+        "updated_at": "2026-04-08T06:47:29Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121901583"
       },
       "recent_runs": [
+        {
+          "id": 24121901583,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 945,
+          "created_at": "2026-04-08T06:45:30Z",
+          "updated_at": "2026-04-08T06:47:29Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121901583"
+        },
         {
           "id": 24078674939,
           "name": "CodeQL",
@@ -695,16 +723,6 @@
           "created_at": "2026-04-07T07:15:09Z",
           "updated_at": "2026-04-07T07:17:15Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24069271591"
-        },
-        {
-          "id": 24045085147,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 940,
-          "created_at": "2026-04-06T18:35:08Z",
-          "updated_at": "2026-04-06T18:35:08Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24045085147"
         }
       ]
     },
@@ -716,27 +734,37 @@
       "total_runs": 5,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 13105.4,
+      "avg_duration_secs": 7.8,
       "weather_history": [
         "unknown",
         "unknown",
-        "success",
         "action_required",
         "success",
         "action_required",
-        "action_required"
+        "action_required",
+        "success"
       ],
       "last_run": {
-        "id": 24078674938,
+        "id": 24121901561,
         "name": "Dependency Review",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 774,
-        "created_at": "2026-04-07T11:19:47Z",
-        "updated_at": "2026-04-07T11:19:47Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24078674938"
+        "conclusion": "success",
+        "run_number": 775,
+        "created_at": "2026-04-08T06:45:30Z",
+        "updated_at": "2026-04-08T06:45:51Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121901561"
       },
       "recent_runs": [
+        {
+          "id": 24121901561,
+          "name": "Dependency Review",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 775,
+          "created_at": "2026-04-08T06:45:30Z",
+          "updated_at": "2026-04-08T06:45:51Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121901561"
+        },
         {
           "id": 24078674938,
           "name": "Dependency Review",
@@ -776,16 +804,6 @@
           "created_at": "2026-04-06T18:35:08Z",
           "updated_at": "2026-04-06T18:35:08Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24045085136"
-        },
-        {
-          "id": 24032972606,
-          "name": "Dependency Review",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 770,
-          "created_at": "2026-04-06T13:07:34Z",
-          "updated_at": "2026-04-07T07:19:23Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24032972606"
         }
       ]
     },
@@ -1081,27 +1099,37 @@
       "total_runs": 5,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 22404.6,
+      "avg_duration_secs": 13046.4,
       "weather_history": [
         "unknown",
         "unknown",
-        "skipped",
         "success",
         "action_required",
         "skipped",
-        "action_required"
+        "action_required",
+        "success"
       ],
       "last_run": {
-        "id": 24070110857,
+        "id": 24121838981,
         "name": "Add Git Trailers to PR commits",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 412,
-        "created_at": "2026-04-07T07:38:45Z",
-        "updated_at": "2026-04-07T07:38:45Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24070110857"
+        "conclusion": "success",
+        "run_number": 413,
+        "created_at": "2026-04-08T06:43:43Z",
+        "updated_at": "2026-04-08T06:44:06Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121838981"
       },
       "recent_runs": [
+        {
+          "id": 24121838981,
+          "name": "Add Git Trailers to PR commits",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 413,
+          "created_at": "2026-04-08T06:43:43Z",
+          "updated_at": "2026-04-08T06:44:06Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24121838981"
+        },
         {
           "id": 24070110857,
           "name": "Add Git Trailers to PR commits",
@@ -1141,16 +1169,6 @@
           "created_at": "2026-04-06T07:26:14Z",
           "updated_at": "2026-04-06T07:26:40Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24023104538"
-        },
-        {
-          "id": 24007788688,
-          "name": "Add Git Trailers to PR commits",
-          "status": "completed",
-          "conclusion": "skipped",
-          "run_number": 407,
-          "created_at": "2026-04-05T18:31:45Z",
-          "updated_at": "2026-04-06T07:31:59Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24007788688"
         }
       ]
     },
