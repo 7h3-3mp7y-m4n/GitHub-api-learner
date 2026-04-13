@@ -408,6 +408,7 @@ func main() {
 
 	out, _ := json.MarshalIndent(data, "", "  ")
 	os.WriteFile("stats.json", out, 0644)
-	log.Println("stats.json generated ...")
-	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
+	//debug
+	// log.Println("stats.json generated ...")
+	// log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
 }
