@@ -42,7 +42,7 @@ workflows:
 
   - name: "ci_nightly"
     description: "Nightly builds"
-    critical: false
+    critical: true
 
   - name: "ci_on_push"
     description: "CI on push"
@@ -58,15 +58,15 @@ workflows:
 
   - name: "kind_test"
     description: "Kubernetes tests"
-    critical: true
+    critical: false
 
   - name: "lint"
     description: "Lint checks"
-    critical: true
+    critical: false
 
   - name: "pr-merge"
     description: "PR merge checks"
-    critical: true
+    critical: false
 
   - name: "pr-takeover"
     description: "PR takeover automation"
@@ -94,7 +94,7 @@ workflows:
 
   - name: "unit_test"
     description: "Unit tests"
-    critical: true
+    critical: false
 
   - name: "upload_s3"
     description: "Upload artifacts to S3"
@@ -102,12 +102,12 @@ workflows:
 
   - name: "urunc-deploy-test"
     description: "Deployment test"
-    critical: true
+    critical: false
 
   - name: "validate-files-and-commits"
     description: "Validation checks"
-    critical: true
+    critical: false
 
   - name: "vm_test"
     description: "VM tests"
-    critical: true
+    critical: false
