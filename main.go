@@ -66,7 +66,7 @@ type Config struct {
 		MaxRunsPerWorkflow int    `yaml:"max_runs_per_workflow"`
 		RecentRunsInOutput int    `yaml:"recent_runs_in_output"`
 	} `yaml:"settings"`
-
+	Notify    NotifyConfig `yaml:"notify"`
 	Workflows []struct {
 		Name        string `yaml:"name"`
 		Description string `yaml:"description"`
@@ -180,7 +180,7 @@ func (c *Client) fetchLogLines(logURL string, maxLines int) ([]string, error) {
 	}
 
 	if serr := scanner.Err(); serr != nil {
-		log.Printf("    warn: scanner error reading log: %v (returning partial result)", serr)
+		log.Printf("warn: scanner error reading log: %v (returning partial result)", serr)
 	}
 
 	if len(matched) == 0 {
@@ -350,7 +350,7 @@ func main() {
 
 	recentLimit := cfg.Settings.RecentRunsInOutput
 	if recentLimit <= 0 {
-		recentLimit = 7
+		recentLimit = cfg.Settings.MaxRunsPerWorkflow
 	}
 
 	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo)
@@ -359,7 +359,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	var notifier *Notifier
+	if cfg.Notify.Enabled {
+		if os.Getenv("GITHUB_TOKEN") == "" {
+			log.Println("warn: notify.enabled=true but GITHUB_TOKEN not set — skipping notifications")
+		} else {
+			notifier = NewNotifier(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.Notify)
+			log.Printf("Notifier enabled -> target: %s, threshold: %d consecutive failures",
+				notifier.targetRepo, notifier.threshold)
+		}
+	}
 	var summaries []WorkflowSummary
 	var totalHealth float64
 
@@ -392,6 +401,9 @@ func main() {
 		summary.RecentRuns = recent
 		summaries = append(summaries, summary)
 		totalHealth += (100 - summary.FailureRate)
+		if notifier != nil {
+			notifier.Process(summary)
+		}
 	}
 
 	health := 0.0
@@ -409,6 +421,6 @@ func main() {
 	out, _ := json.MarshalIndent(data, "", "  ")
 	os.WriteFile("stats.json", out, 0644)
 	//debug
-	// log.Println("stats.json generated ...")
-	// log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
+	log.Println("stats.json generated ...")
+	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
 }

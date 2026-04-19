@@ -4,6 +4,13 @@ settings:
   refresh_interval: 60
   max_runs_per_workflow: 7
 
+notify:
+  enable: true
+  target_repo: "7h3-3mp7y-m4n/GitHub-api-learner"
+  label: "ci-failure" 
+  consecutive_failures: 2
+
+
 workflows:
   - name: "add-git-trailers"
     description: "Git trailer validation"
