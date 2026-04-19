@@ -136,14 +136,14 @@ func (n *Notifier) findOpenIssue(workflowName string) *Issue {
 	url := n.apiURL(fmt.Sprintf("/issues?state=open&labels=%s&per_page=50", n.label))
 	resp, err := n.do("GET", url, nil)
 	if err != nil {
-		log.Printf("  notify: warn: could not list issues: %v", err)
+		log.Printf("notify: warn: could not list issues: %v", err)
 		return nil
 	}
 	defer resp.Body.Close()
 
 	var issues IssuesResponse
 	if err := json.NewDecoder(resp.Body).Decode(&issues); err != nil {
-		log.Printf("  notify: warn: could not decode issues: %v", err)
+		log.Printf("notify: warn: could not decode issues: %v", err)
 		return nil
 	}
 
@@ -181,7 +181,7 @@ func (n *Notifier) createIssue(summary WorkflowSummary, consecutive int) {
 		"labels": []string{n.label},
 	})
 	if err != nil {
-		log.Printf("  notify: warn: could not create issue: %v", err)
+		log.Printf("notify: warn: could not create issue: %v", err)
 		return
 	}
 	defer resp.Body.Close()
@@ -189,7 +189,7 @@ func (n *Notifier) createIssue(summary WorkflowSummary, consecutive int) {
 	var created Issue
 	json.NewDecoder(resp.Body).Decode(&created)
 	if created.Number > 0 {
-		log.Printf("  notify: issue #%d created → %s", created.Number, created.HTMLURL)
+		log.Printf("notify: issue #%d created → %s", created.Number, created.HTMLURL)
 	}
 }
 
@@ -213,7 +213,7 @@ func buildIssueBody(summary WorkflowSummary, consecutive int, sourceRepo string)
 	lr := summary.LastRun
 	var sb strings.Builder
 
-	sb.WriteString(fmt.Sprintf("##Critical workflow failing: `%s`\n\n", summary.Name))
+	sb.WriteString(fmt.Sprintf("## Critical workflow failing: `%s`\n\n", summary.Name))
 	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** detected by the CI dashboard.\n\n", consecutive))
 
 	sb.WriteString("### Latest Run\n\n")
@@ -235,8 +235,8 @@ func buildIssueBody(summary WorkflowSummary, consecutive int, sourceRepo string)
 	}
 
 	sb.WriteString("---\n")
-	sb.WriteString("This issue was opened automatically by the CI dashboard. ")
-	sb.WriteString("Please close it manually once the issue is resolved._\n")
+	sb.WriteString("This issue was opened automatically by the CI dashboard.")
+	sb.WriteString("Please close it manually once the issue is resolved.\n")
 
 	return sb.String()
 }
@@ -245,7 +245,7 @@ func buildCommentBody(summary WorkflowSummary, consecutive int, sourceRepo strin
 	lr := summary.LastRun
 	var sb strings.Builder
 
-	sb.WriteString(fmt.Sprintf("###Still failing — run [#%d](%s)\n\n", lr.RunNumber, lr.HTMLURL))
+	sb.WriteString(fmt.Sprintf("### Still failing — run [#%d](%s)\n\n", lr.RunNumber, lr.HTMLURL))
 	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** as of %s.\n\n",
 		consecutive, lr.CreatedAt.Format(time.RFC1123)))
 	if len(lr.FailedJobs) > 0 {
