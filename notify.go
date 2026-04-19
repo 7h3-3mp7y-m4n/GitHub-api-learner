@@ -18,10 +18,11 @@ type NotifyConfig struct {
 }
 
 type Issue struct {
-	Number  int    `json:"number"`
-	Title   string `json:"title"`
-	State   string `json:"state"`
-	HTMLURL string `json:"html_url"`
+	Number    int       `json:"number"`
+	Title     string    `json:"title"`
+	State     string    `json:"state"`
+	HTMLURL   string    `json:"html_url"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 type IssuesResponse []Issue
@@ -33,6 +34,10 @@ type Notifier struct {
 	label      string
 	threshold  int
 	http       *http.Client
+}
+
+func shouldComment(issue *Issue) bool {
+	return time.Since(issue.UpdatedAt) >= 24*time.Hour
 }
 
 func NewNotifier(token, sourceRepo string, cfg NotifyConfig) *Notifier {
@@ -77,26 +82,28 @@ func (n *Notifier) Process(summary WorkflowSummary) {
 	if summary.LastRun == nil {
 		return
 	}
-
-	isFailing := summary.LastRun.Conclusion == "failure"
-	if !isFailing {
-		log.Printf("  notify: %q passing — no action (close issue manually if open)", summary.Name)
+	if summary.LastRun.Conclusion != "failure" {
+		log.Printf("notify: %q passing — no action", summary.Name)
 		return
 	}
-
 	consecutive := consecutiveFailures(summary.WeatherHistory)
-
 	existingIssue := n.findOpenIssue(summary.Name)
-
 	if existingIssue == nil && consecutive >= n.threshold {
 		log.Printf("notify: opening issue for %q (%d consecutive failures)", summary.Name, consecutive)
 		n.createIssue(summary, consecutive)
-	} else if existingIssue != nil {
-		log.Printf("notify: commenting on issue #%d for %q", existingIssue.Number, summary.Name)
-		n.addComment(existingIssue.Number, summary, consecutive)
-	} else {
-		log.Printf("notify: %q failing but threshold not yet reached (%d/%d)", summary.Name, consecutive, n.threshold)
+		return
 	}
+	if existingIssue != nil {
+		if shouldComment(existingIssue) {
+			log.Printf("notify: daily update on issue #%d for %q", existingIssue.Number, summary.Name)
+			n.addComment(existingIssue.Number, summary, consecutive)
+		} else {
+			log.Printf("notify: recent update exists for %q, skipping comment", summary.Name)
+		}
+		return
+	}
+	log.Printf("notify: %q failing but threshold not reached (%d/%d)",
+		summary.Name, consecutive, n.threshold)
 }
 
 func (n *Notifier) apiURL(path string) string {
