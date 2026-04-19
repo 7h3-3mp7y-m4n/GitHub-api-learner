@@ -250,7 +250,7 @@ func buildCommentBody(summary WorkflowSummary, consecutive int, sourceRepo strin
 		consecutive, lr.CreatedAt.Format(time.RFC1123)))
 	if len(lr.FailedJobs) > 0 {
 		for _, job := range lr.FailedJobs {
-			sb.WriteString(fmt.Sprintf("**✗ [%s](%s)**\n\n", job.Name, job.HTMLURL))
+			sb.WriteString(fmt.Sprintf("⚠️ **[%s](%s)**\n\n", job.Name, job.HTMLURL))
 			if job.LogSnippet != "" {
 				sb.WriteString("```\n")
 				sb.WriteString(job.LogSnippet)
