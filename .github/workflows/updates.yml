@@ -25,7 +25,7 @@ jobs:
       - name: Generate stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: go run ./main.go
+        run: go run .
 
       - name: Commit changes if needed
         run: |
