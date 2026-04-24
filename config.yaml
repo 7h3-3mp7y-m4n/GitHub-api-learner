@@ -60,9 +60,10 @@ workflows:
     description: "Kubernetes tests"
     critical: false
 
-  - name: "lint"
-    description: "Lint checks"
-    critical: false
+  # too much noise
+  # - name: "lint"
+  #   description: "Lint checks"
+  #   critical: false 
 
   - name: "pr-merge"
     description: "PR merge checks"

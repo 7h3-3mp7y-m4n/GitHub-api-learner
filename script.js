@@ -32,6 +32,30 @@ function esc(s) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
+(function() {
+  var saved = localStorage.getItem('ci-theme') || 'dark';
+  if (saved === 'light') document.body.classList.add('light');
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn      = document.getElementById('themeToggle');
+    var iconSun  = document.getElementById('iconSun');
+    var iconMoon = document.getElementById('iconMoon');
+
+    function syncIcons() {
+      var isLight = document.body.classList.contains('light');
+      iconSun.style.display  = isLight ? 'none'  : '';
+      iconMoon.style.display = isLight ? ''      : 'none';
+    }
+    syncIcons();
+
+    btn.addEventListener('click', function() {
+      document.body.classList.toggle('light');
+      var theme = document.body.classList.contains('light') ? 'light' : 'dark';
+      localStorage.setItem('ci-theme', theme);
+      syncIcons();
+    });
+  });
+})();
+
 
 var allWorkflows = [];
 var activeFilter = 'all';
