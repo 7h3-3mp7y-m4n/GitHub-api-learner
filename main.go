@@ -14,6 +14,49 @@ import (
 	"go.yaml.in/yaml/v3"
 )
 
+type Config struct {
+	Settings struct {
+		SourceRepo         string `yaml:"source_repo"`
+		MaxRunsPerWorkflow int    `yaml:"max_runs_per_workflow"`
+		RecentRunsInOutput int    `yaml:"recent_runs_in_output"`
+	} `yaml:"settings"`
+
+	Notify      NotifyConfig      `yaml:"notify"`
+	LogAnalysis LogAnalysisConfig `yaml:"log_analysis"`
+
+	Workflows []struct {
+		Name        string `yaml:"name"`
+		Description string `yaml:"description"`
+		Critical    bool   `yaml:"critical"`
+		Required    bool   `yaml:"required"`
+	} `yaml:"workflows"`
+}
+
+type LogAnalysisConfig struct {
+	MaxSignalsPerJob int                     `yaml:"max_signals_per_job"`
+	NoisePatterns    []string                `yaml:"noise_patterns"`
+	Categories       []FailureCategoryConfig `yaml:"categories"`
+}
+
+type FailureCategoryConfig struct {
+	Name     string   `yaml:"name"`
+	Priority int      `yaml:"priority"`
+	Patterns []string `yaml:"patterns"`
+}
+
+type SignalLine struct {
+	Line     string
+	Category string
+	Priority int
+}
+
+type LogSummary struct {
+	Signals     []SignalLine
+	ByCategory  map[string][]string
+	TopCategory string
+	Empty       bool
+}
+
 type Workflow struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
@@ -60,21 +103,6 @@ type JobsResponse struct {
 	Jobs []Job `json:"jobs"`
 }
 
-type Config struct {
-	Settings struct {
-		SourceRepo         string `yaml:"source_repo"`
-		MaxRunsPerWorkflow int    `yaml:"max_runs_per_workflow"`
-		RecentRunsInOutput int    `yaml:"recent_runs_in_output"`
-	} `yaml:"settings"`
-	Notify    NotifyConfig `yaml:"notify"`
-	Workflows []struct {
-		Name        string `yaml:"name"`
-		Description string `yaml:"description"`
-		Critical    bool   `yaml:"critical"`
-		Required    bool   `yaml:"required"`
-	} `yaml:"workflows"`
-}
-
 type WorkflowSummary struct {
 	Name            string   `json:"name"`
 	Description     string   `json:"description"`
@@ -97,18 +125,20 @@ type DashboardData struct {
 }
 
 type Client struct {
-	token   string
-	repo    string
-	http    *http.Client
-	logHTTP *http.Client
+	token       string
+	repo        string
+	http        *http.Client
+	logHTTP     *http.Client
+	logAnalysis LogAnalysisConfig
 }
 
-func NewClient(token, repo string) *Client {
+func NewClient(token, repo string, la LogAnalysisConfig) *Client {
 	return &Client{
-		token:   token,
-		repo:    repo,
-		http:    &http.Client{Timeout: 20 * time.Second},
-		logHTTP: &http.Client{Timeout: 2 * time.Minute},
+		token:       token,
+		repo:        repo,
+		http:        &http.Client{Timeout: 20 * time.Second},
+		logHTTP:     &http.Client{Timeout: 2 * time.Minute},
+		logAnalysis: la,
 	}
 }
 
@@ -126,7 +156,102 @@ func (c *Client) get(url string, v interface{}) error {
 	return json.NewDecoder(resp.Body).Decode(v)
 }
 
-func (c *Client) fetchLogLines(logURL string, maxLines int) ([]string, error) {
+func analyseLog(scanner *bufio.Scanner, cfg LogAnalysisConfig) LogSummary {
+	maxSignals := cfg.MaxSignalsPerJob
+	if maxSignals <= 0 {
+		maxSignals = 20
+	}
+	var signals []SignalLine
+	seen := make(map[string]bool)
+	for scanner.Scan() {
+		if len(signals) >= maxSignals {
+			break
+		}
+		clean := stripGHTimestamp(scanner.Text())
+		if clean == "" {
+			continue
+		}
+		lower := strings.ToLower(clean)
+		if matchesAny(lower, cfg.NoisePatterns) {
+			continue
+		}
+		for _, cat := range cfg.Categories {
+			if matchesAny(lower, cat.Patterns) && !seen[clean] {
+				seen[clean] = true
+				signals = append(signals, SignalLine{
+					Line:     clean,
+					Category: cat.Name,
+					Priority: cat.Priority,
+				})
+				break
+			}
+		}
+	}
+
+	if len(signals) == 0 {
+		return LogSummary{Empty: true}
+	}
+	sort.SliceStable(signals, func(i, j int) bool {
+		return signals[i].Priority < signals[j].Priority
+	})
+	byCategory := make(map[string][]string)
+	topPriority := signals[0].Priority
+	topCategory := signals[0].Category
+	for _, s := range signals {
+		byCategory[s.Category] = append(byCategory[s.Category], s.Line)
+		if s.Priority < topPriority {
+			topPriority = s.Priority
+			topCategory = s.Category
+		}
+	}
+
+	return LogSummary{
+		Signals:     signals,
+		ByCategory:  byCategory,
+		TopCategory: topCategory,
+	}
+}
+
+func renderSummary(s LogSummary) string {
+	if s.Empty {
+		return "(no actionable failure signal found in log)"
+	}
+
+	total := len(s.Signals)
+	var sb strings.Builder
+
+	fmt.Fprintf(&sb, "[%s] — %d signal(s) found\n", s.TopCategory, total)
+	sb.WriteString(strings.Repeat("─", 48) + "\n")
+
+	seen := make(map[string]bool)
+	var orderedCats []string
+	for _, sig := range s.Signals {
+		if !seen[sig.Category] {
+			seen[sig.Category] = true
+			orderedCats = append(orderedCats, sig.Category)
+		}
+	}
+
+	for _, cat := range orderedCats {
+		fmt.Fprintf(&sb, "-> %s\n", cat)
+		for _, line := range s.ByCategory[cat] {
+			fmt.Fprintf(&sb, "  %s\n", line)
+		}
+	}
+
+	return strings.TrimRight(sb.String(), "\n")
+}
+
+func matchesAny(lower string, patterns []string) bool {
+	for _, p := range patterns {
+		if strings.Contains(lower, strings.ToLower(p)) {
+			return true
+		}
+	}
+	return false
+}
+
+func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
 	var resp *http.Response
 	var err error
 
@@ -146,47 +271,44 @@ func (c *Client) fetchLogLines(logURL string, maxLines int) ([]string, error) {
 		}
 	}
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 	defer resp.Body.Close()
-
-	var matched []string
-	var tail []string
 
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Buffer(make([]byte, 256*1024), 256*1024)
 
-	for scanner.Scan() {
-		clean := stripGHTimestamp(scanner.Text())
-		if clean == "" {
+	summary := analyseLog(scanner, c.logAnalysis)
+	return renderSummary(summary), scanner.Err()
+}
+
+func (c *Client) enrichWithLogs(run *Run) {
+	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/runs/%d/jobs", c.repo, run.ID)
+	var resp JobsResponse
+	if err := c.get(url, &resp); err != nil {
+		log.Printf("warn: could not fetch jobs for run %d: %v", run.ID, err)
+		return
+	}
+
+	for _, job := range resp.Jobs {
+		if job.Conclusion != "failure" {
 			continue
 		}
-
-		tail = append(tail, clean)
-		if len(tail) > 20 {
-			tail = tail[1:]
+		logURL := fmt.Sprintf("https://api.github.com/repos/%s/actions/jobs/%d/logs", c.repo, job.ID)
+		log.Printf("fetching logs for failed job %d (%s)...", job.ID, job.Name)
+		snippet, err := c.fetchAndAnalyseLog(logURL)
+		if err != nil {
+			log.Printf("warn: could not fetch logs for job %d: %v", job.ID, err)
+			snippet = "(log fetch failed)"
 		}
-
-		if len(matched) < maxLines {
-			lower := strings.ToLower(clean)
-			if strings.Contains(lower, "error") ||
-				strings.Contains(lower, "fatal") ||
-				strings.Contains(lower, "failed") ||
-				strings.Contains(lower, "panic") ||
-				strings.Contains(lower, "exit code") {
-				matched = append(matched, clean)
-			}
-		}
+		run.FailedJobs = append(run.FailedJobs, FailedJob{
+			ID:         job.ID,
+			Name:       job.Name,
+			Conclusion: job.Conclusion,
+			HTMLURL:    job.HTMLURL,
+			LogSnippet: snippet,
+		})
 	}
-
-	if serr := scanner.Err(); serr != nil {
-		log.Printf("warn: scanner error reading log: %v (returning partial result)", serr)
-	}
-
-	if len(matched) == 0 {
-		return tail, nil
-	}
-	return matched, nil
 }
 
 func (c *Client) listWorkflows() ([]Workflow, error) {
@@ -204,37 +326,6 @@ func (c *Client) fetchRuns(workflowID int, limit int) ([]Run, error) {
 	var resp WorkflowsResponse
 	err := c.get(url, &resp)
 	return resp.WorkflowRuns, err
-}
-
-func (c *Client) enrichWithLogs(run *Run) {
-	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/runs/%d/jobs", c.repo, run.ID)
-	var resp JobsResponse
-	if err := c.get(url, &resp); err != nil {
-		log.Printf("  warn: could not fetch jobs for run %d: %v", run.ID, err)
-		return
-	}
-
-	for _, job := range resp.Jobs {
-		if job.Conclusion != "failure" {
-			continue
-		}
-		logURL := fmt.Sprintf("https://api.github.com/repos/%s/actions/jobs/%d/logs", c.repo, job.ID)
-		log.Printf("fetching logs for failed job %d (%s)...", job.ID, job.Name)
-		lines, err := c.fetchLogLines(logURL, 30)
-		snippet := ""
-		if err != nil {
-			log.Printf("warn: could not fetch logs for job %d: %v", job.ID, err)
-		} else {
-			snippet = strings.Join(lines, "\n")
-		}
-		run.FailedJobs = append(run.FailedJobs, FailedJob{
-			ID:         job.ID,
-			Name:       job.Name,
-			Conclusion: job.Conclusion,
-			HTMLURL:    job.HTMLURL,
-			LogSnippet: snippet,
-		})
-	}
 }
 
 func stripGHTimestamp(line string) string {
@@ -344,21 +435,27 @@ func buildSummary(runs []Run, name, desc string, critical, required bool) Workfl
 }
 
 func main() {
-	cfgBytes, _ := os.ReadFile("config.yaml")
+	cfgBytes, err := os.ReadFile("config.yaml")
+	if err != nil {
+		log.Fatalf("cannot read config.yaml: %v", err)
+	}
 	var cfg Config
-	yaml.Unmarshal(cfgBytes, &cfg)
+	if err := yaml.Unmarshal(cfgBytes, &cfg); err != nil {
+		log.Fatalf("cannot parse config.yaml: %v", err)
+	}
 
 	recentLimit := cfg.Settings.RecentRunsInOutput
 	if recentLimit <= 0 {
 		recentLimit = cfg.Settings.MaxRunsPerWorkflow
 	}
 
-	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo)
+	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
 
 	workflows, err := client.listWorkflows()
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	var notifier *Notifier
 	if cfg.Notify.Enabled {
 		if os.Getenv("GITHUB_TOKEN") == "" {
@@ -369,6 +466,7 @@ func main() {
 				notifier.targetRepo, notifier.threshold)
 		}
 	}
+
 	var summaries []WorkflowSummary
 	var totalHealth float64
 
@@ -418,9 +516,14 @@ func main() {
 		Workflows:     summaries,
 	}
 
-	out, _ := json.MarshalIndent(data, "", "  ")
-	os.WriteFile("stats.json", out, 0644)
-	//debug
-	// log.Println("stats.json generated ...")
+	out, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		log.Fatalf("cannot marshal stats: %v", err)
+	}
+	if err := os.WriteFile("stats.json", out, 0644); err != nil {
+		log.Fatalf("cannot write stats.json: %v", err)
+	}
+	// debug
+	// log.Println("stats.json generated.")
 	// log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
 }

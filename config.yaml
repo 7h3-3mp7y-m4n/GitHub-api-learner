@@ -5,11 +5,67 @@ settings:
   max_runs_per_workflow: 7
 
 notify:
-  enabled: true
-  target_repo: "7h3-3mp7y-m4n/GitHub-api-learner"
-  label: "ci-failure" 
-  consecutive_failures: 1
+  enabled: false
 
+log_analysis:
+  max_signals_per_job: 40
+  # Lines containing these patterns are ignored before analysis
+  noise_patterns:
+    - "sudo process started"
+    - "/usr/lib/gcc/"
+    - "/usr/bin/gcc"
+    - "gcc_fatalf.c"
+    - "-werror"
+    - "/opt/hostedtoolcache/"
+    - "arguments: ["
+    - "cc1,"
+    - "gmt:sudo process started"
+
+  # Lower priority number = more important
+  categories:
+    - name: "Crash / Timeout"
+      priority: 1
+      patterns:
+        - "panic:"
+        - "test timed out"
+        - "all goroutines are asleep"
+        - "deadlock"
+        - "segmentation violation"
+
+    - name: "Network Failure"
+      priority: 2
+      patterns:
+        - "connection reset by peer"
+        - "i/o timeout"
+        - "tls handshake timeout"
+        - "no route to host"
+        - "temporary failure in name resolution"
+        - "context deadline exceeded"
+
+    - name: "Test Failure"
+      priority: 3
+      patterns:
+        - "fail\t"
+        - "--- fail:"
+        - "failing specs"
+        - "expected"
+        - "received"
+
+    - name: "Build Failure"
+      priority: 4
+      patterns:
+        - "make: ***"
+        - "exit status"
+        - "process completed with exit code"
+        - "##[error]"
+        - "compilation terminated"
+
+    - name: "Fatal Runtime Error"
+      priority: 5
+      patterns:
+        - "level=fatal"
+        - "fatal msg="
+        - "failed to copy"
 
 workflows:
   - name: "add-git-trailers"
@@ -32,9 +88,10 @@ workflows:
     description: "Main CI workflow"
     critical: true
 
-  - name: "ci_devel"
-    description: "Development CI"
-    critical: false
+  # old and noisy
+  # - name: "ci_devel"
+  #   description: "Development CI"
+  #   critical: false
 
   - name: "ci_main"
     description: "Main branch CI"
@@ -56,9 +113,10 @@ workflows:
     description: "Dependency checks"
     critical: false
 
-  - name: "kind_test"
-    description: "Kubernetes tests"
-    critical: false
+  # noise again
+  # - name: "kind_test"
+  #   description: "Kubernetes tests"
+  #   critical: false
 
   # too much noise
   # - name: "lint"

@@ -23,7 +23,46 @@
   </header>
 
 <main>
-  <!-- ── Stat cards ── -->
+  <div class="stats-section-label">CI Activity · Last 24 Hours</div>
+
+<div class="stats-grid">
+
+  <!-- Success Rate -->
+  <div class="stat-card health-card">
+    <div class="stat-label">Success Rate</div>
+    <div class="stat-value green" id="healthTodayVal">—</div>
+
+    <div class="health-bar-track">
+      <div
+        class="health-bar-fill"
+        id="healthTodayBarFill"
+        style="width:0%"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Total Runs -->
+  <div class="stat-card total-card">
+    <div class="stat-label">Runs Executed</div>
+    <div class="stat-value blue" id="runsTodayVal">—</div>
+  </div>
+
+  <!-- Passed -->
+  <div class="stat-card pass-card">
+    <div class="stat-label">Passed</div>
+    <div class="stat-value green" id="passTodayVal">—</div>
+  </div>
+
+  <!-- Failed -->
+  <div class="stat-card fail-card">
+    <div class="stat-label">Failed</div>
+    <div class="stat-value red" id="failTodayVal">—</div>
+  </div>
+
+</div>
+
+  <!-- ── Stat cards all time ── -->
+  <div class="stats-section-label" style="margin-top: 20px;">All time</div>
   <div class="stats-grid">
     <div class="stat-card health-card">
       <div class="stat-label">Overall Health</div>
@@ -33,20 +72,20 @@
       </div>
     </div>
     <div class="stat-card total-card">
-      <div class="stat-label">workflows</div>
+      <div class="stat-label">Workflows</div>
       <div class="stat-value blue" id="totalVal">—</div>
     </div>
     <div class="stat-card pass-card">
-      <div class="stat-label">passing</div>
+      <div class="stat-label">Passing</div>
       <div class="stat-value green" id="passVal">—</div>
     </div>
     <div class="stat-card fail-card">
-      <div class="stat-label">currently failing</div>
+      <div class="stat-label">Currently Failing</div>
       <div class="stat-value red" id="failVal">—</div>
     </div>
   </div>
 
-  <!-- ── Filter bar ── -->
+  <!-- Filter bar -->
   <div class="filter-bar">
     <div class="search-wrap">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
@@ -69,14 +108,36 @@
     <span class="filter-count" id="filterCount"></span>
   </div>
 
-  <!-- ── Table ── -->
-  <div class="table-wrap">
+  <!-- Charts panel -->
+  <div class="charts-panel" id="chartsPanel">
+    <div class="charts-overview-grid">
+      <div class="chart-card">
+        <h3>Failure Rate by Workflow</h3>
+        <canvas id="chartPie"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Total Runs vs Failed Runs</h3>
+        <canvas id="chartBar"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Avg Duration</h3>
+        <canvas id="chartDuration"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Success Rate by Workflow</h3>
+        <canvas id="chartSuccess"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap" id="tableWrap">
     <table>
       <thead>
         <tr>
           <th>Workflow</th>
           <th>Last Run</th>
-          <th>Failure Rate</th>
+          <th>Success Rate</th>
           <th>History (oldest → newest)</th>
           <th>Avg Duration</th>
           <th>Link</th>
@@ -93,9 +154,7 @@
   Data from <a id="footerLink" href="#" target="_blank">—</a>
   &nbsp;·&nbsp; auto-updates every hour
 </footer>
-<script
-src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
