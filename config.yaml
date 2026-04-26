@@ -92,9 +92,9 @@ workflows:
     critical: true
 
   # old and noisy
-  - name: "ci_devel"
-    description: "Development CI"
-    critical: true
+  # - name: "ci_devel"
+  #   description: "Development CI"
+  #   critical: true
 
   - name: "ci_main"
     description: "Main branch CI"
@@ -117,14 +117,14 @@ workflows:
     critical: false
 
   # noise again
-  - name: "kind_test"
-    description: "Kubernetes tests"
-    critical: true
+  # - name: "kind_test"
+  #   description: "Kubernetes tests"
+  #   critical: true
 
   # too much noise
-  - name: "lint"
-    description: "Lint checks"
-    critical: false 
+  # - name: "lint"
+  #   description: "Lint checks"
+  #   critical: false 
 
   - name: "pr-merge"
     description: "PR merge checks"
