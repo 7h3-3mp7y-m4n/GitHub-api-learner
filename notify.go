@@ -66,10 +66,13 @@ func NewNotifier(token, sourceRepo string, cfg NotifyConfig) *Notifier {
 func consecutiveFailures(history []string) int {
 	count := 0
 	for i := len(history) - 1; i >= 0; i-- {
-		if history[i] == "failure" {
+		switch history[i] {
+		case "failure":
 			count++
-		} else {
-			break
+		case "success":
+			return count
+		default:
+			continue
 		}
 	}
 	return count

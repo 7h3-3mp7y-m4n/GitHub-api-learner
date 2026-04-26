@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-26T20:47:32.141206Z",
+  "generated_at": "2026-04-26T21:00:35.192839Z",
   "repo": "urunc-dev/urunc",
-  "overall_health": 87.14285714285714,
+  "overall_health": 78.26086956521739,
   "workflows": [
     {
       "name": "add-git-trailers",
@@ -295,6 +295,143 @@
           "created_at": "2025-05-29T18:19:40Z",
           "updated_at": "2025-05-29T18:25:32Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/15330609776"
+        }
+      ]
+    },
+    {
+      "name": "ci_devel",
+      "description": "Development CI",
+      "critical": true,
+      "required": false,
+      "total_runs": 7,
+      "failed_runs": 3,
+      "failure_rate": 42.857142857142854,
+      "avg_duration_secs": 13995.57142857143,
+      "weather_history": [
+        "failure",
+        "success",
+        "success",
+        "success",
+        "failure",
+        "success",
+        "failure"
+      ],
+      "last_run": {
+        "id": 20813265773,
+        "name": "urunc CI (manually triggered)",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_number": 116,
+        "created_at": "2026-01-08T10:12:48Z",
+        "updated_at": "2026-01-08T10:23:27Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/20813265773",
+        "failed_jobs": [
+          {
+            "id": 59783166092,
+            "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
+            "conclusion": "failure",
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/20813265773/job/59783166092",
+            "log_snippet": "(no actionable failure signal found in log)"
+          }
+        ]
+      },
+      "recent_runs": [
+        {
+          "id": 20813265773,
+          "name": "urunc CI (manually triggered)",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 116,
+          "created_at": "2026-01-08T10:12:48Z",
+          "updated_at": "2026-01-08T10:23:27Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/20813265773",
+          "failed_jobs": [
+            {
+              "id": 59783166092,
+              "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/20813265773/job/59783166092",
+              "log_snippet": "(no actionable failure signal found in log)"
+            }
+          ]
+        },
+        {
+          "id": 20812920856,
+          "name": "urunc CI (manually triggered)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 115,
+          "created_at": "2026-01-08T10:00:43Z",
+          "updated_at": "2026-01-08T10:11:35Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/20812920856"
+        },
+        {
+          "id": 20812619920,
+          "name": "urunc CI (manually triggered)",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 114,
+          "created_at": "2026-01-08T09:50:02Z",
+          "updated_at": "2026-01-08T09:58:27Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/20812619920",
+          "failed_jobs": [
+            {
+              "id": 59780397856,
+              "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/20812619920/job/59780397856",
+              "log_snippet": "(no actionable failure signal found in log)"
+            }
+          ]
+        },
+        {
+          "id": 19716150839,
+          "name": "urunc CI (manually triggered)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 113,
+          "created_at": "2025-11-26T20:09:48Z",
+          "updated_at": "2025-11-26T20:27:07Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/19716150839"
+        },
+        {
+          "id": 19273608173,
+          "name": "urunc CI (manually triggered)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 112,
+          "created_at": "2025-11-11T17:29:06Z",
+          "updated_at": "2025-11-11T17:39:29Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/19273608173"
+        },
+        {
+          "id": 18645706937,
+          "name": "urunc CI (manually triggered)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 111,
+          "created_at": "2025-10-20T07:44:45Z",
+          "updated_at": "2025-10-21T09:49:02Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/18645706937"
+        },
+        {
+          "id": 18645552428,
+          "name": "urunc CI (manually triggered)",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 110,
+          "created_at": "2025-10-20T07:37:22Z",
+          "updated_at": "2025-10-20T07:48:16Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/18645552428",
+          "failed_jobs": [
+            {
+              "id": 53152088076,
+              "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/18645552428/job/53152088076",
+              "log_snippet": "(no actionable failure signal found in log)"
+            }
+          ]
         }
       ]
     },
@@ -953,6 +1090,128 @@
           "created_at": "2026-04-24T07:47:30Z",
           "updated_at": "2026-04-24T07:47:46Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/24878435582"
+        }
+      ]
+    },
+    {
+      "name": "kind_test",
+      "description": "Kubernetes tests",
+      "critical": true,
+      "required": false,
+      "total_runs": 5,
+      "failed_runs": 5,
+      "failure_rate": 100,
+      "avg_duration_secs": 0,
+      "weather_history": [
+        "unknown",
+        "unknown",
+        "failure",
+        "failure",
+        "failure",
+        "failure",
+        "failure"
+      ],
+      "last_run": {
+        "id": 19272441804,
+        "name": ".github/workflows/kind_test.yml",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_number": 5,
+        "created_at": "2025-11-11T16:43:52Z",
+        "updated_at": "2025-11-11T16:43:52Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/19272441804"
+      },
+      "recent_runs": [
+        {
+          "id": 19272441804,
+          "name": ".github/workflows/kind_test.yml",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 5,
+          "created_at": "2025-11-11T16:43:52Z",
+          "updated_at": "2025-11-11T16:43:52Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/19272441804"
+        },
+        {
+          "id": 19272319888,
+          "name": ".github/workflows/kind_test.yml",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 4,
+          "created_at": "2025-11-11T16:39:21Z",
+          "updated_at": "2025-11-11T16:39:21Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/19272319888"
+        },
+        {
+          "id": 19272224782,
+          "name": ".github/workflows/kind_test.yml",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 3,
+          "created_at": "2025-11-11T16:35:26Z",
+          "updated_at": "2025-11-11T16:35:26Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/19272224782"
+        },
+        {
+          "id": 19272138888,
+          "name": ".github/workflows/kind_test.yml",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 2,
+          "created_at": "2025-11-11T16:31:58Z",
+          "updated_at": "2025-11-11T16:31:58Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/19272138888"
+        },
+        {
+          "id": 19271312687,
+          "name": ".github/workflows/kind_test.yml",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 1,
+          "created_at": "2025-11-11T16:01:21Z",
+          "updated_at": "2025-11-11T16:01:21Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/19271312687"
+        }
+      ]
+    },
+    {
+      "name": "lint",
+      "description": "Lint checks",
+      "critical": false,
+      "required": false,
+      "total_runs": 1,
+      "failed_runs": 1,
+      "failure_rate": 100,
+      "avg_duration_secs": 34641925,
+      "weather_history": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "failure"
+      ],
+      "last_run": {
+        "id": 13851353552,
+        "name": ".github/workflows/lint.yml",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_number": 283,
+        "created_at": "2025-03-14T06:44:58Z",
+        "updated_at": "2026-04-19T05:30:23Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/13851353552"
+      },
+      "recent_runs": [
+        {
+          "id": 13851353552,
+          "name": ".github/workflows/lint.yml",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 283,
+          "created_at": "2025-03-14T06:44:58Z",
+          "updated_at": "2026-04-19T05:30:23Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/13851353552"
         }
       ]
     },
