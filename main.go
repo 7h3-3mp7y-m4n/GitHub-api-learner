@@ -80,15 +80,16 @@ type FailedJob struct {
 }
 
 type Run struct {
-	ID         int         `json:"id"`
-	Name       string      `json:"name"`
-	Status     string      `json:"status"`
-	Conclusion string      `json:"conclusion"`
-	RunNumber  int         `json:"run_number"`
-	CreatedAt  time.Time   `json:"created_at"`
-	UpdatedAt  time.Time   `json:"updated_at"`
-	HTMLURL    string      `json:"html_url"`
-	FailedJobs []FailedJob `json:"failed_jobs,omitempty"`
+	ID           int         `json:"id"`
+	Name         string      `json:"name"`
+	Status       string      `json:"status"`
+	Conclusion   string      `json:"conclusion"`
+	RunNumber    int         `json:"run_number"`
+	CreatedAt    time.Time   `json:"created_at"`
+	UpdatedAt    time.Time   `json:"updated_at"`
+	RunStartedAt time.Time   `json:"run_started_at"`
+	HTMLURL      string      `json:"html_url"`
+	FailedJobs   []FailedJob `json:"failed_jobs,omitempty"`
 }
 
 type Job struct {
@@ -406,7 +407,11 @@ func buildSummary(runs []Run, name, desc string, critical, required bool) Workfl
 		if r.Conclusion == "failure" {
 			failed++
 		}
-		totalDuration += r.UpdatedAt.Sub(r.CreatedAt).Seconds()
+		start := r.RunStartedAt
+		if start.IsZero() {
+			start = r.CreatedAt
+		}
+		totalDuration += r.UpdatedAt.Sub(start).Seconds()
 	}
 	total := len(runs)
 	var failureRate, avg float64

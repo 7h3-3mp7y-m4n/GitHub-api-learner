@@ -151,9 +151,9 @@ func (n *Notifier) findOpenIssue(workflowName string) *Issue {
 	}
 
 	needle := issueTitle(workflowName)
-	for _, issue := range issues {
-		if issue.Title == needle {
-			return &issue
+	for i := range issues {
+		if issues[i].Title == needle {
+			return &issues[i]
 		}
 	}
 	return nil
