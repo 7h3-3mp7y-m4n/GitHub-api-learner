@@ -408,6 +408,26 @@ document.querySelectorAll('.chip').forEach(function (chip) {
   });
 });
 
+document.querySelectorAll('.clickable').forEach(function (card) {
+  card.addEventListener('click', function () {
+    var filter = card.dataset.filter;
+    if (!filter) return;
+
+    document.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('active'); });
+    var target = document.querySelector('.chip[data-filter="' + filter + '"]');
+    if (target) target.classList.add('active');
+
+    document.getElementById('chartsPanel').classList.remove('open');
+    document.getElementById('tableWrap').style.display = '';
+
+    activeFilter = filter;
+    applyFilters();
+
+    document.querySelector('.filter-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+
 document.getElementById('searchInput').addEventListener('input', function (e) {
   searchQuery = e.target.value.trim();
   applyFilters();

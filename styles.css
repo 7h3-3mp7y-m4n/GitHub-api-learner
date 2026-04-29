@@ -114,7 +114,17 @@ main { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
 
 .health-bar-track { margin-top: 12px; height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
 .health-bar-fill  { height: 100%; border-radius: 2px; transition: width 2s ease; }
-
+.clickable{
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s;
+}
+.clickable:hover{
+  border-color: var(--muted);
+  transform: translateY(-1px);
+}
+.clickable:active{
+  transform: translateY(0);
+}
 .filter-bar {
   display: flex;
   align-items: center;
