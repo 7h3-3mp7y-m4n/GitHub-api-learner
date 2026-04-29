@@ -212,6 +212,17 @@ func issueTitle(workflowName string) string {
 	return fmt.Sprintf("CI Failure: %s", workflowName)
 }
 
+func rawLogDetails(jobName, rawLog string) string {
+	var sb strings.Builder
+	sb.WriteString("<details>\n")
+	sb.WriteString(fmt.Sprintf("<summary>Full log — %s</summary>\n\n", jobName))
+	sb.WriteString("```\n")
+	sb.WriteString(rawLog)
+	sb.WriteString("\n```\n")
+	sb.WriteString("</details>\n\n")
+	return sb.String()
+}
+
 func buildIssueBody(summary WorkflowSummary, consecutive int, sourceRepo string) string {
 	lr := summary.LastRun
 	var sb strings.Builder
@@ -220,11 +231,12 @@ func buildIssueBody(summary WorkflowSummary, consecutive int, sourceRepo string)
 	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** detected by the CI dashboard.\n\n", consecutive))
 
 	sb.WriteString("### Latest Run\n\n")
-	sb.WriteString(fmt.Sprintf("| Field | Value |\n|---|---|\n"))
+	sb.WriteString("| Field | Value |\n|---|---|\n")
 	sb.WriteString(fmt.Sprintf("| Run | [#%d](%s) |\n", lr.RunNumber, lr.HTMLURL))
 	sb.WriteString(fmt.Sprintf("| Started | %s |\n", lr.CreatedAt.Format(time.RFC1123)))
 	sb.WriteString(fmt.Sprintf("| Conclusion | `%s` |\n", lr.Conclusion))
 	sb.WriteString(fmt.Sprintf("| Repo | [%s](https://github.com/%s) |\n\n", sourceRepo, sourceRepo))
+
 	if len(lr.FailedJobs) > 0 {
 		sb.WriteString("### Failed Jobs\n\n")
 		for _, job := range lr.FailedJobs {
@@ -233,6 +245,9 @@ func buildIssueBody(summary WorkflowSummary, consecutive int, sourceRepo string)
 				sb.WriteString("```\n")
 				sb.WriteString(job.LogSnippet)
 				sb.WriteString("\n```\n\n")
+			}
+			if job.RawLog != "" {
+				sb.WriteString(rawLogDetails(job.Name, job.RawLog))
 			}
 		}
 	}
@@ -251,6 +266,7 @@ func buildCommentBody(summary WorkflowSummary, consecutive int, sourceRepo strin
 	sb.WriteString(fmt.Sprintf("### Still failing — run [#%d](%s)\n\n", lr.RunNumber, lr.HTMLURL))
 	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** as of %s.\n\n",
 		consecutive, lr.CreatedAt.Format(time.RFC1123)))
+
 	if len(lr.FailedJobs) > 0 {
 		for _, job := range lr.FailedJobs {
 			sb.WriteString(fmt.Sprintf("⚠️ **[%s](%s)**\n\n", job.Name, job.HTMLURL))
@@ -258,6 +274,9 @@ func buildCommentBody(summary WorkflowSummary, consecutive int, sourceRepo strin
 				sb.WriteString("```\n")
 				sb.WriteString(job.LogSnippet)
 				sb.WriteString("\n```\n\n")
+			}
+			if job.RawLog != "" {
+				sb.WriteString(rawLogDetails(job.Name, job.RawLog))
 			}
 		}
 	}

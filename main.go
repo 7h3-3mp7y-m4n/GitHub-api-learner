@@ -77,6 +77,7 @@ type FailedJob struct {
 	Conclusion string `json:"conclusion"`
 	HTMLURL    string `json:"html_url"`
 	LogSnippet string `json:"log_snippet"`
+	RawLog     string `json:"raw_log"`
 }
 
 type Run struct {
@@ -252,7 +253,7 @@ func matchesAny(lower string, patterns []string) bool {
 	return false
 }
 
-func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
+func (c *Client) fetchAndAnalyseLog(logURL string) (string, string, error) {
 	var resp *http.Response
 	var err error
 
@@ -272,15 +273,40 @@ func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
 		}
 	}
 	if err != nil {
-		return "", err
+		return "", "", err
 	}
 	defer resp.Body.Close()
 
+	const maxRawBytes = 64 * 1024
+	var rawBuf strings.Builder
+	truncated := false
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Buffer(make([]byte, 256*1024), 256*1024)
+	summary := analyseLog(bufio.NewScanner(strings.NewReader("")), c.logAnalysis) // placeholder
+	var allLines []string
+	for scanner.Scan() {
+		allLines = append(allLines, scanner.Text())
+	}
+	if err := scanner.Err(); err != nil {
+		return "", "", err
+	}
+	lineReader := strings.NewReader(strings.Join(allLines, "\n"))
+	summary = analyseLog(bufio.NewScanner(lineReader), c.logAnalysis)
+	for _, line := range allLines {
+		clean := stripGHTimestamp(line)
+		if rawBuf.Len()+len(clean)+1 > maxRawBytes {
+			truncated = true
+			break
+		}
+		rawBuf.WriteString(clean)
+		rawBuf.WriteByte('\n')
+	}
+	raw := strings.TrimRight(rawBuf.String(), "\n")
+	if truncated {
+		raw += "\n\n[log truncated at 64KB]"
+	}
 
-	summary := analyseLog(scanner, c.logAnalysis)
-	return renderSummary(summary), scanner.Err()
+	return renderSummary(summary), raw, nil
 }
 
 func (c *Client) enrichWithLogs(run *Run) {
@@ -290,17 +316,17 @@ func (c *Client) enrichWithLogs(run *Run) {
 		log.Printf("warn: could not fetch jobs for run %d: %v", run.ID, err)
 		return
 	}
-
 	for _, job := range resp.Jobs {
 		if job.Conclusion != "failure" {
 			continue
 		}
 		logURL := fmt.Sprintf("https://api.github.com/repos/%s/actions/jobs/%d/logs", c.repo, job.ID)
 		log.Printf("fetching logs for failed job %d (%s)...", job.ID, job.Name)
-		snippet, err := c.fetchAndAnalyseLog(logURL)
+		snippet, raw, err := c.fetchAndAnalyseLog(logURL)
 		if err != nil {
 			log.Printf("warn: could not fetch logs for job %d: %v", job.ID, err)
 			snippet = "(log fetch failed)"
+			raw = ""
 		}
 		run.FailedJobs = append(run.FailedJobs, FailedJob{
 			ID:         job.ID,
@@ -308,6 +334,7 @@ func (c *Client) enrichWithLogs(run *Run) {
 			Conclusion: job.Conclusion,
 			HTMLURL:    job.HTMLURL,
 			LogSnippet: snippet,
+			RawLog:     raw,
 		})
 	}
 }
