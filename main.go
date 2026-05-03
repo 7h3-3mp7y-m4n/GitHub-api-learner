@@ -81,24 +81,35 @@ type FailedJob struct {
 }
 
 type Run struct {
-	ID           int         `json:"id"`
-	Name         string      `json:"name"`
-	Status       string      `json:"status"`
-	Conclusion   string      `json:"conclusion"`
-	RunNumber    int         `json:"run_number"`
-	CreatedAt    time.Time   `json:"created_at"`
-	UpdatedAt    time.Time   `json:"updated_at"`
-	RunStartedAt time.Time   `json:"run_started_at"`
-	HTMLURL      string      `json:"html_url"`
-	FailedJobs   []FailedJob `json:"failed_jobs,omitempty"`
+	ID           int          `json:"id"`
+	Name         string       `json:"name"`
+	Status       string       `json:"status"`
+	Conclusion   string       `json:"conclusion"`
+	RunNumber    int          `json:"run_number"`
+	CreatedAt    time.Time    `json:"created_at"`
+	UpdatedAt    time.Time    `json:"updated_at"`
+	RunStartedAt time.Time    `json:"run_started_at"`
+	HTMLURL      string       `json:"html_url"`
+	Jobs         []JobSummary `json:"jobs,omitempty"`
+	FailedJobs   []FailedJob  `json:"failed_jobs,omitempty"`
+	RunAttempt   int          `json:"run_attempt"`
 }
 
 type Job struct {
-	ID         int    `json:"id"`
-	Name       string `json:"name"`
-	Status     string `json:"status"`
-	Conclusion string `json:"conclusion"`
-	HTMLURL    string `json:"html_url"`
+	ID          int       `json:"id"`
+	Name        string    `json:"name"`
+	Status      string    `json:"status"`
+	Conclusion  string    `json:"conclusion"`
+	HTMLURL     string    `json:"html_url"`
+	StartedAt   time.Time `json:"started_at"`
+	CompletedAt time.Time `json:"completed_at"`
+}
+
+type JobSummary struct {
+	Name        string  `json:"name"`
+	Conclusion  string  `json:"conclusion"`
+	DurationSec float64 `json:"duration_sec"`
+	HTMLURL     string  `json:"html_url"`
 }
 
 type JobsResponse struct {
@@ -307,6 +318,26 @@ func (c *Client) fetchAndAnalyseLog(logURL string) (string, string, error) {
 	}
 
 	return renderSummary(summary), raw, nil
+}
+func (c *Client) fetchJobSummaries(run *Run) {
+	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/runs/%d/jobs", c.repo, run.ID)
+	var resp JobsResponse
+	if err := c.get(url, &resp); err != nil {
+		log.Printf("warn: could not fetch jobs for run %d: %v", run.ID, err)
+		return
+	}
+	for _, job := range resp.Jobs {
+		dur := job.CompletedAt.Sub(job.StartedAt).Seconds()
+		if dur < 0 {
+			dur = 0
+		}
+		run.Jobs = append(run.Jobs, JobSummary{
+			Name:        job.Name,
+			Conclusion:  job.Conclusion,
+			DurationSec: dur,
+			HTMLURL:     job.HTMLURL,
+		})
+	}
 }
 
 func (c *Client) enrichWithLogs(run *Run) {
@@ -522,6 +553,7 @@ func main() {
 
 		log.Printf("fetching logs for failed runs in %s…", w.Name)
 		for i := range recent {
+			client.fetchJobSummaries(&recent[i])
 			if recent[i].Conclusion == "failure" {
 				client.enrichWithLogs(&recent[i])
 			}
@@ -556,6 +588,6 @@ func main() {
 		log.Fatalf("cannot write stats.json: %v", err)
 	}
 	// debug
-	// log.Println("stats.json generated.")
-	// log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
+	log.Println("stats.json generated.")
+	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
 }

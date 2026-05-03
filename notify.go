@@ -72,7 +72,7 @@ func consecutiveFailures(history []string) int {
 		case "success":
 			return count
 		default:
-			continue
+			return count
 		}
 	}
 	return count
@@ -90,21 +90,25 @@ func (n *Notifier) Process(summary WorkflowSummary) {
 		return
 	}
 	consecutive := consecutiveFailures(summary.WeatherHistory)
+	log.Printf("notify: %q failing — %d consecutive failure(s)", summary.Name, consecutive)
 	existingIssue := n.findOpenIssue(summary.Name)
-	if existingIssue == nil && consecutive >= n.threshold {
+
+	if existingIssue != nil {
+		if shouldComment(existingIssue) {
+			log.Printf("notify: adding daily update to issue #%d for %q", existingIssue.Number, summary.Name)
+			n.addComment(existingIssue.Number, summary, consecutive)
+		} else {
+			log.Printf("notify: issue #%d for %q updated recently — skipping comment", existingIssue.Number, summary.Name)
+		}
+		return
+	}
+
+	if consecutive >= n.threshold {
 		log.Printf("notify: opening issue for %q (%d consecutive failures)", summary.Name, consecutive)
 		n.createIssue(summary, consecutive)
 		return
 	}
-	if existingIssue != nil {
-		if shouldComment(existingIssue) {
-			log.Printf("notify: daily update on issue #%d for %q", existingIssue.Number, summary.Name)
-			n.addComment(existingIssue.Number, summary, consecutive)
-		} else {
-			log.Printf("notify: recent update exists for %q, skipping comment", summary.Name)
-		}
-		return
-	}
+
 	log.Printf("notify: %q failing but threshold not reached (%d/%d)",
 		summary.Name, consecutive, n.threshold)
 }
@@ -136,27 +140,61 @@ func (n *Notifier) do(method, url string, body interface{}) (*http.Response, err
 }
 
 func (n *Notifier) findOpenIssue(workflowName string) *Issue {
-	url := n.apiURL(fmt.Sprintf("/issues?state=open&labels=%s&per_page=50", n.label))
-	resp, err := n.do("GET", url, nil)
-	if err != nil {
-		log.Printf("notify: warn: could not list issues: %v", err)
-		return nil
-	}
-	defer resp.Body.Close()
-
-	var issues IssuesResponse
-	if err := json.NewDecoder(resp.Body).Decode(&issues); err != nil {
-		log.Printf("notify: warn: could not decode issues: %v", err)
-		return nil
-	}
-
 	needle := issueTitle(workflowName)
-	for i := range issues {
-		if issues[i].Title == needle {
-			return &issues[i]
+	page := 1
+	for {
+		url := n.apiURL(fmt.Sprintf(
+			"/issues?state=open&labels=%s&per_page=100&page=%d",
+			urlEncode(n.label), page,
+		))
+		resp, err := n.do("GET", url, nil)
+		if err != nil {
+			log.Printf("notify: warn: could not list issues: %v", err)
+			return nil
 		}
+		if resp.StatusCode != http.StatusOK {
+			resp.Body.Close()
+			log.Printf("notify: warn: issues list returned HTTP %d", resp.StatusCode)
+			return nil
+		}
+
+		var issues IssuesResponse
+		if err := json.NewDecoder(resp.Body).Decode(&issues); err != nil {
+			resp.Body.Close()
+			log.Printf("notify: warn: could not decode issues: %v", err)
+			return nil
+		}
+		resp.Body.Close()
+
+		for i := range issues {
+			title := issues[i].Title
+			if strings.EqualFold(title, needle) || strings.Contains(title, workflowName) {
+				log.Printf("notify: found existing issue #%d for %q", issues[i].Number, workflowName)
+				return &issues[i]
+			}
+		}
+		if len(issues) < 100 {
+			break
+		}
+		page++
 	}
 	return nil
+}
+
+func urlEncode(s string) string {
+	var sb strings.Builder
+	for _, b := range []byte(s) {
+		switch {
+		case b >= 'A' && b <= 'Z',
+			b >= 'a' && b <= 'z',
+			b >= '0' && b <= '9',
+			b == '-', b == '_', b == '.', b == '~':
+			sb.WriteByte(b)
+		default:
+			fmt.Fprintf(&sb, "%%%02X", b)
+		}
+	}
+	return sb.String()
 }
 
 func (n *Notifier) ensureLabel() {
@@ -202,7 +240,7 @@ func (n *Notifier) addComment(issueNumber int, summary WorkflowSummary, consecut
 
 	resp, err := n.do("POST", url, map[string]string{"body": body})
 	if err != nil {
-		log.Printf("  notify: warn: could not add comment: %v", err)
+		log.Printf("notify: warn: could not add comment: %v", err)
 		return
 	}
 	resp.Body.Close()
@@ -212,14 +250,61 @@ func issueTitle(workflowName string) string {
 	return fmt.Sprintf("CI Failure: %s", workflowName)
 }
 
-func rawLogDetails(jobName, rawLog string) string {
+func weatherEmoji(c string) string {
+	switch c {
+	case "success":
+		return "✅"
+	case "failure":
+		return "❌"
+	case "skipped":
+		return "⏭️"
+	case "action_required":
+		return "⚠️"
+	default:
+		return "⬜"
+	}
+}
+
+// buildSparkline renders the weather history as an emoji row.
+func buildSparkline(history []string) string {
+	if len(history) == 0 {
+		return ""
+	}
 	var sb strings.Builder
-	sb.WriteString("<details>\n")
-	sb.WriteString(fmt.Sprintf("<summary>Full log — %s</summary>\n\n", jobName))
-	sb.WriteString("```\n")
-	sb.WriteString(rawLog)
-	sb.WriteString("\n```\n")
-	sb.WriteString("</details>\n\n")
+	for _, c := range history {
+		sb.WriteString(weatherEmoji(c))
+		sb.WriteString(" ")
+	}
+	return strings.TrimSpace(sb.String())
+}
+
+func buildFailedJobsSection(jobs []FailedJob) string {
+	if len(jobs) == 0 {
+		return "> _No individual job failure data captured — check the run link above._\n\n"
+	}
+	var sb strings.Builder
+	for _, job := range jobs {
+		sb.WriteString(fmt.Sprintf("#### ✗ [%s](%s)\n\n", job.Name, job.HTMLURL))
+		sb.WriteString(buildSnippetSection(job))
+	}
+	return sb.String()
+}
+
+func buildSnippetSection(job FailedJob) string {
+	var sb strings.Builder
+
+	switch job.LogSnippet {
+	case "", "(no actionable failure signal found in log)", "(log fetch failed)":
+		if job.LogSnippet != "" {
+			sb.WriteString(fmt.Sprintf("> _%s_\n\n", job.LogSnippet))
+		}
+	default:
+		sb.WriteString("**Signal summary:**\n\n")
+		sb.WriteString("```\n")
+		sb.WriteString(strings.TrimSpace(job.LogSnippet))
+		sb.WriteString("\n```\n\n")
+	}
+
 	return sb.String()
 }
 
@@ -227,34 +312,36 @@ func buildIssueBody(summary WorkflowSummary, consecutive int, sourceRepo string)
 	lr := summary.LastRun
 	var sb strings.Builder
 
-	sb.WriteString(fmt.Sprintf("## Critical workflow failing: `%s`\n\n", summary.Name))
+	// Header
+	sb.WriteString(fmt.Sprintf("## ❌ Critical workflow failing: `%s`\n\n", summary.Name))
+	if summary.Description != "" {
+		sb.WriteString(fmt.Sprintf("> %s\n\n", summary.Description))
+	}
 	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** detected by the CI dashboard.\n\n", consecutive))
 
+	// Run metadata
 	sb.WriteString("### Latest Run\n\n")
 	sb.WriteString("| Field | Value |\n|---|---|\n")
 	sb.WriteString(fmt.Sprintf("| Run | [#%d](%s) |\n", lr.RunNumber, lr.HTMLURL))
-	sb.WriteString(fmt.Sprintf("| Started | %s |\n", lr.CreatedAt.Format(time.RFC1123)))
+	sb.WriteString(fmt.Sprintf("| Started | `%s` |\n", lr.CreatedAt.Format(time.RFC1123)))
 	sb.WriteString(fmt.Sprintf("| Conclusion | `%s` |\n", lr.Conclusion))
+	sb.WriteString(fmt.Sprintf("| Attempt | `%d` |\n", lr.RunAttempt))
 	sb.WriteString(fmt.Sprintf("| Repo | [%s](https://github.com/%s) |\n\n", sourceRepo, sourceRepo))
 
-	if len(lr.FailedJobs) > 0 {
-		sb.WriteString("### Failed Jobs\n\n")
-		for _, job := range lr.FailedJobs {
-			sb.WriteString(fmt.Sprintf("#### ✗ [%s](%s)\n\n", job.Name, job.HTMLURL))
-			if job.LogSnippet != "" {
-				sb.WriteString("```\n")
-				sb.WriteString(job.LogSnippet)
-				sb.WriteString("\n```\n\n")
-			}
-			if job.RawLog != "" {
-				sb.WriteString(rawLogDetails(job.Name, job.RawLog))
-			}
-		}
+	// Sparkline
+	if spark := buildSparkline(summary.WeatherHistory); spark != "" {
+		sb.WriteString("### Recent History (oldest → newest)\n\n")
+		sb.WriteString(spark + "\n\n")
 	}
 
+	// Failed jobs
+	sb.WriteString("### Failed Jobs\n\n")
+	sb.WriteString(buildFailedJobsSection(lr.FailedJobs))
+
+	// Footer
 	sb.WriteString("---\n")
-	sb.WriteString("This issue was opened automatically by the CI dashboard.")
-	sb.WriteString("Please close it manually once the issue is resolved.\n")
+	sb.WriteString("_This issue was opened automatically by the CI dashboard. ")
+	sb.WriteString("Please close it manually once the issue is resolved._\n")
 
 	return sb.String()
 }
@@ -263,22 +350,18 @@ func buildCommentBody(summary WorkflowSummary, consecutive int, sourceRepo strin
 	lr := summary.LastRun
 	var sb strings.Builder
 
-	sb.WriteString(fmt.Sprintf("### Still failing — run [#%d](%s)\n\n", lr.RunNumber, lr.HTMLURL))
-	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** as of %s.\n\n",
+	// Header
+	sb.WriteString(fmt.Sprintf("### ❌ Still failing — run [#%d](%s)\n\n", lr.RunNumber, lr.HTMLURL))
+	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** as of `%s`.\n\n",
 		consecutive, lr.CreatedAt.Format(time.RFC1123)))
 
-	if len(lr.FailedJobs) > 0 {
-		for _, job := range lr.FailedJobs {
-			sb.WriteString(fmt.Sprintf("⚠️ **[%s](%s)**\n\n", job.Name, job.HTMLURL))
-			if job.LogSnippet != "" {
-				sb.WriteString("```\n")
-				sb.WriteString(job.LogSnippet)
-				sb.WriteString("\n```\n\n")
-			}
-			if job.RawLog != "" {
-				sb.WriteString(rawLogDetails(job.Name, job.RawLog))
-			}
-		}
+	// Sparkline
+	if spark := buildSparkline(summary.WeatherHistory); spark != "" {
+		sb.WriteString("**Recent history (oldest → newest):** " + spark + "\n\n")
 	}
+
+	// Failed jobs
+	sb.WriteString(buildFailedJobsSection(lr.FailedJobs))
+
 	return sb.String()
 }

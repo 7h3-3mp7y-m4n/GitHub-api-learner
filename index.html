@@ -25,45 +25,42 @@
 <main>
   <div class="stats-section-label">CI Activity · Last 24 Hours</div>
 
-<div class="stats-grid">
+  <div class="stats-grid">
 
-  <!-- Success Rate -->
-  <div class="stat-card health-card">
-    <div class="stat-label">Success Rate</div>
-    <div class="stat-value green" id="healthTodayVal">—</div>
-
-    <div class="health-bar-track">
-      <div
-        class="health-bar-fill"
-        id="healthTodayBarFill"
-        style="width:0%"
-      ></div>
+    <!-- Success Rate -->
+    <div class="stat-card health-card">
+      <div class="stat-label">Success Rate</div>
+      <div class="stat-value green" id="healthTodayVal">—</div>
+      <div class="health-bar-track">
+        <div class="health-bar-fill" id="healthTodayBarFill" style="width:0%"></div>
+      </div>
     </div>
-  </div>
 
-  <!-- Total Runs -->
-  <div class="stat-card total-card clickable" data-filter="recent-run">
-    <div class="stat-label">Runs Executed</div>
-    <div class="stat-value blue" id="runsTodayVal">—</div>
-  </div>
+    <!-- Total Runs -->
+    <div class="stat-card total-card clickable" data-filter="recent-run">
+      <div class="stat-label">Runs Executed</div>
+      <div class="stat-value blue" id="runsTodayVal">—</div>
+    </div>
 
-  <!-- Passed -->
-  <div class="stat-card pass-card clickable" data-filter="passing">
-    <div class="stat-label">Passed</div>
-    <div class="stat-value green" id="passTodayVal">—</div>
-  </div>
+    <!-- Passed -->
+    <div class="stat-card pass-card clickable" data-filter="passing">
+      <div class="stat-label">Passed</div>
+      <div class="stat-value green" id="passTodayVal">—</div>
+    </div>
 
-  <!-- Failed -->
-  <div class="stat-card fail-card clickable" data-filter="recent-failure">
-    <div class="stat-label">Failed</div>
-    <div class="stat-value red" id="failTodayVal">—</div>
-  </div>
+    <!-- Failed -->
+    <div class="stat-card fail-card clickable" data-filter="recent-failure">
+      <div class="stat-label">Failed</div>
+      <div class="stat-value red" id="failTodayVal">—</div>
+    </div>
 
-</div>
+  </div>
 
   <!-- ── Stat cards all time ── -->
   <div class="stats-section-label" style="margin-top: 20px;">All time</div>
   <div class="stats-grid">
+
+    <!-- Overall Health (not clickable) -->
     <div class="stat-card health-card">
       <div class="stat-label">Overall Health</div>
       <div class="stat-value green" id="healthVal">—</div>
@@ -71,18 +68,25 @@
         <div class="health-bar-fill" id="healthBarFill" style="width:0%"></div>
       </div>
     </div>
-    <div class="stat-card total-card">
+
+    <!-- Workflows -->
+    <div class="stat-card total-card clickable" data-filter="all">
       <div class="stat-label">Workflows</div>
       <div class="stat-value blue" id="totalVal">—</div>
     </div>
-    <div class="stat-card pass-card">
+
+    <!-- Passing -->
+    <div class="stat-card pass-card clickable" data-filter="passing">
       <div class="stat-label">Passing</div>
       <div class="stat-value green" id="passVal">—</div>
     </div>
-    <div class="stat-card fail-card">
+
+    <!-- Currently Failing -->
+    <div class="stat-card fail-card clickable" data-filter="failing">
       <div class="stat-label">Currently Failing</div>
       <div class="stat-value red" id="failVal">—</div>
     </div>
+
   </div>
 
   <!-- Filter bar -->
@@ -112,11 +116,11 @@
   <div class="charts-panel" id="chartsPanel">
     <div class="charts-overview-grid">
       <div class="chart-card">
-        <h3>Failure Rate by Workflow</h3>
+        <h3>Overall Passed vs Failed</h3>
         <canvas id="chartPie"></canvas>
       </div>
       <div class="chart-card">
-        <h3>Total Runs vs Failed Runs</h3>
+        <h3>Execution Time - Last 7 Runs</h3>
         <canvas id="chartBar"></canvas>
       </div>
       <div class="chart-card">
