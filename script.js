@@ -876,7 +876,7 @@ fetch('stats.json')
         if (t < windowStart) return;
         todayRuns++;
         if (run.conclusion === 'success') todayPass++;
-        else if (['failure', 'timed_out', 'action_required'].indexOf(run.conclusion) !== -1) todayFail++;
+        else if (['failure', 'timed_out'].indexOf(run.conclusion) !== -1) todayFail++;
       });
     });
 
