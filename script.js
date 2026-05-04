@@ -266,17 +266,17 @@ function buildCharts(workflows) {
           boxWidth: 12,
           fontSize: 11,
           fontColor: mutedColor(),
-          generateLabels: function (chart) {
-            return chart.data.labels.map(function (label, i) {
-              return {
-                text: label,
-                fillStyle: chart.data.datasets[0].backgroundColor[i],
-                strokeStyle: 'transparent',
-                lineWidth: 0,
-                index: i
-              };
-            });
-          }
+          // generateLabels: function (chart) {
+          //   return chart.data.labels.map(function (label, i) {
+          //     return {
+          //       text: label,
+          //       fillStyle: chart.data.datasets[0].backgroundColor[i],
+          //       strokeStyle: 'transparent',
+          //       lineWidth: 0,
+          //       index: i
+          //     };
+          //   });
+          // }
         }
       },
       tooltips: {
