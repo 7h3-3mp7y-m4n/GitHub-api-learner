@@ -588,6 +588,6 @@ func main() {
 		log.Fatalf("cannot write stats.json: %v", err)
 	}
 	// debug
-	log.Println("stats.json generated.")
-	log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
+	// log.Println("stats.json generated.")
+	// log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
 }
