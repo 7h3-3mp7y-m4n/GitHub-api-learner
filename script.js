@@ -426,6 +426,11 @@ function matchesFilter(wf) {
     default:               return true;
   }
 }
+function ranWithin24h(wf) {
+  if (!wf.last_run) return false;
+  var t = new Date(wf.last_run.run_started_at || wf.last_run.created_at).getTime();
+  return (Date.now() - t) < 24 * 60 * 60 * 1000;
+}
 
 function matchesSearch(wf) {
   if (!searchQuery) return true;
@@ -485,7 +490,11 @@ function renderTable(list) {
       '<td>'
         + '<div class="wf-name-wrap">'
         + '<svg class="chevron" viewBox="0 0 16 16" fill="currentColor"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06-1.06L10 8 6.22 4.22a.75.75 0 0 1 0-1Z"/></svg>'
-        + '<span class="wf-name">' + esc(wf.name) + (wf.critical ? '<span class="badge badge-critical">critical</span>' : '') + '</span>'
+        + '<span class="wf-name">' 
+          + esc(wf.name) 
+          + (wf.critical ? '<span class="badge badge-critical">critical</span>' : '') 
+          + (ranWithin24h(wf) ? '<span class="badge badge-recent">recent</span>' : '') 
+          + '</span>'
         + '</div>'
         + '<div class="wf-desc">' + esc(wf.description || '') + '</div>'
       + '</td>'
