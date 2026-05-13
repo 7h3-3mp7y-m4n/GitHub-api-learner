@@ -77,7 +77,6 @@ type FailedJob struct {
 	Conclusion string `json:"conclusion"`
 	HTMLURL    string `json:"html_url"`
 	LogSnippet string `json:"log_snippet"`
-	RawLog     string `json:"raw_log"`
 }
 
 type Run struct {
@@ -140,8 +139,8 @@ type DashboardData struct {
 type Client struct {
 	token       string
 	repo        string
-	http        *http.Client
-	logHTTP     *http.Client
+	httpClient  *http.Client
+	logClient   *http.Client
 	logAnalysis LogAnalysisConfig
 }
 
@@ -149,23 +148,31 @@ func NewClient(token, repo string, la LogAnalysisConfig) *Client {
 	return &Client{
 		token:       token,
 		repo:        repo,
-		http:        &http.Client{Timeout: 20 * time.Second},
-		logHTTP:     &http.Client{Timeout: 2 * time.Minute},
+		httpClient:  &http.Client{Timeout: 20 * time.Second},
+		logClient:   &http.Client{Timeout: 2 * time.Minute},
 		logAnalysis: la,
 	}
 }
 
 func (c *Client) get(url string, v interface{}) error {
-	req, _ := http.NewRequest("GET", url, nil)
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return err
+	}
 	if c.token != "" {
 		req.Header.Set("Authorization", "Bearer "+c.token)
 	}
 	req.Header.Set("Accept", "application/vnd.github+json")
-	resp, err := c.http.Do(req)
+
+	resp, err := c.httpClient.Do(req)
 	if err != nil {
 		return err
 	}
 	defer resp.Body.Close()
+
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return fmt.Errorf("GitHub API returned HTTP %d for %s", resp.StatusCode, url)
+	}
 	return json.NewDecoder(resp.Body).Decode(v)
 }
 
@@ -264,17 +271,18 @@ func matchesAny(lower string, patterns []string) bool {
 	return false
 }
 
-func (c *Client) fetchAndAnalyseLog(logURL string) (string, string, error) {
-	var resp *http.Response
-	var err error
-
+func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
+	var (
+		resp *http.Response
+		err  error
+	)
 	for attempt := 0; attempt < 2; attempt++ {
 		req, _ := http.NewRequest("GET", logURL, nil)
 		if c.token != "" {
 			req.Header.Set("Authorization", "Bearer "+c.token)
 		}
 		req.Header.Set("Accept", "application/vnd.github+json")
-		resp, err = c.logHTTP.Do(req)
+		resp, err = c.logClient.Do(req)
 		if err == nil {
 			break
 		}
@@ -284,41 +292,29 @@ func (c *Client) fetchAndAnalyseLog(logURL string) (string, string, error) {
 		}
 	}
 	if err != nil {
-		return "", "", err
+		return "", err
 	}
 	defer resp.Body.Close()
 
-	const maxRawBytes = 64 * 1024
-	var rawBuf strings.Builder
-	truncated := false
+	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		return "", fmt.Errorf("log fetch returned HTTP %d", resp.StatusCode)
+	}
+
+	var allLines []string
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Buffer(make([]byte, 256*1024), 256*1024)
-	summary := analyseLog(bufio.NewScanner(strings.NewReader("")), c.logAnalysis) // placeholder
-	var allLines []string
 	for scanner.Scan() {
 		allLines = append(allLines, scanner.Text())
 	}
 	if err := scanner.Err(); err != nil {
-		return "", "", err
-	}
-	lineReader := strings.NewReader(strings.Join(allLines, "\n"))
-	summary = analyseLog(bufio.NewScanner(lineReader), c.logAnalysis)
-	for _, line := range allLines {
-		clean := stripGHTimestamp(line)
-		if rawBuf.Len()+len(clean)+1 > maxRawBytes {
-			truncated = true
-			break
-		}
-		rawBuf.WriteString(clean)
-		rawBuf.WriteByte('\n')
-	}
-	raw := strings.TrimRight(rawBuf.String(), "\n")
-	if truncated {
-		raw += "\n\n[log truncated at 64KB]"
+		return "", err
 	}
 
-	return renderSummary(summary), raw, nil
+	lineReader := strings.NewReader(strings.Join(allLines, "\n"))
+	summary := analyseLog(bufio.NewScanner(lineReader), c.logAnalysis)
+	return renderSummary(summary), nil
 }
+
 func (c *Client) fetchJobSummaries(run *Run) {
 	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/runs/%d/jobs", c.repo, run.ID)
 	var resp JobsResponse
@@ -353,11 +349,10 @@ func (c *Client) enrichWithLogs(run *Run) {
 		}
 		logURL := fmt.Sprintf("https://api.github.com/repos/%s/actions/jobs/%d/logs", c.repo, job.ID)
 		log.Printf("fetching logs for failed job %d (%s)...", job.ID, job.Name)
-		snippet, raw, err := c.fetchAndAnalyseLog(logURL)
+		snippet, err := c.fetchAndAnalyseLog(logURL)
 		if err != nil {
 			log.Printf("warn: could not fetch logs for job %d: %v", job.ID, err)
 			snippet = "(log fetch failed)"
-			raw = ""
 		}
 		run.FailedJobs = append(run.FailedJobs, FailedJob{
 			ID:         job.ID,
@@ -365,26 +360,8 @@ func (c *Client) enrichWithLogs(run *Run) {
 			Conclusion: job.Conclusion,
 			HTMLURL:    job.HTMLURL,
 			LogSnippet: snippet,
-			RawLog:     raw,
 		})
 	}
-}
-
-func (c *Client) listWorkflows() ([]Workflow, error) {
-	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/workflows", c.repo)
-	var resp WorkflowsListResponse
-	err := c.get(url, &resp)
-	return resp.Workflows, err
-}
-
-func (c *Client) fetchRuns(workflowID int, limit int) ([]Run, error) {
-	url := fmt.Sprintf(
-		"https://api.github.com/repos/%s/actions/workflows/%d/runs?per_page=%d",
-		c.repo, workflowID, limit,
-	)
-	var resp WorkflowsResponse
-	err := c.get(url, &resp)
-	return resp.WorkflowRuns, err
 }
 
 func stripGHTimestamp(line string) string {
@@ -512,12 +489,28 @@ func main() {
 		recentLimit = cfg.Settings.MaxRunsPerWorkflow
 	}
 
-	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
-
-	workflows, err := client.listWorkflows()
+	// Read pre-fetched workflows from workflow step
+	workflowsBytes, err := os.ReadFile("workflows_raw.json")
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("cannot read workflows_raw.json: %v", err)
 	}
+	var workflowsResp WorkflowsListResponse
+	if err := json.Unmarshal(workflowsBytes, &workflowsResp); err != nil {
+		log.Fatalf("cannot parse workflows_raw.json: %v", err)
+	}
+
+	// Read pre-fetched runs from workflow step
+	runsBytes, err := os.ReadFile("runs_raw.json")
+	if err != nil {
+		log.Fatalf("cannot read runs_raw.json: %v", err)
+	}
+	var allRuns map[string]WorkflowsResponse
+	if err := json.Unmarshal(runsBytes, &allRuns); err != nil {
+		log.Fatalf("cannot parse runs_raw.json: %v", err)
+	}
+
+	// Client only used for log fetching and notifications
+	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
 
 	var notifier *Notifier
 	if cfg.Notify.Enabled {
@@ -534,14 +527,20 @@ func main() {
 	var totalHealth float64
 
 	for _, w := range cfg.Workflows {
-		wf := findWorkflow(workflows, w.Name)
+		wf := findWorkflow(workflowsResp.Workflows, w.Name)
 		if wf == nil {
 			log.Println("Not found:", w.Name)
 			continue
 		}
 		log.Printf("Matched: %s -> %s", w.Name, wf.Name)
 
-		runs, _ := client.fetchRuns(wf.ID, cfg.Settings.MaxRunsPerWorkflow)
+		runsData, ok := allRuns[fmt.Sprintf("%d", wf.ID)]
+		if !ok {
+			log.Printf("warn: no runs found for workflow %s", w.Name)
+			continue
+		}
+		runs := runsData.WorkflowRuns
+
 		sort.Slice(runs, func(i, j int) bool {
 			return runs[i].CreatedAt.After(runs[j].CreatedAt)
 		})
@@ -587,7 +586,4 @@ func main() {
 	if err := os.WriteFile("stats.json", out, 0644); err != nil {
 		log.Fatalf("cannot write stats.json: %v", err)
 	}
-	// debug
-	// log.Println("stats.json generated.")
-	// log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("."))))
 }
