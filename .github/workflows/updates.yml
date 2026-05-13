@@ -34,16 +34,30 @@ jobs:
           echo "{}" > runs_raw.json
 
           jq -r '.workflows[].id' workflows_raw.json | while read wf_id; do
-            gh api "repos/urunc-dev/urunc/actions/workflows/${wf_id}/runs?per_page=50" \
+            echo "Processing workflow ID: $wf_id"
+
+            gh api "repos/urunc-dev/urunc/actions/workflows/${wf_id}/runs?per_page=5" \
               > runs_tmp.json
+
+            echo "===== runs_tmp.json ====="
+            cat runs_tmp.json
 
             jq --arg id "$wf_id" \
               --slurpfile runs runs_tmp.json \
               '. + {($id): $runs[0]}' \
               runs_raw.json > tmp.json
 
+            echo "===== tmp.json ====="
+            cat tmp.json
+
             mv tmp.json runs_raw.json
           done
+
+          echo "===== FINAL workflows_raw.json ====="
+          cat workflows_raw.json
+
+          echo "===== FINAL runs_raw.json ====="
+          cat runs_raw.json
 
           rm -f runs_tmp.json
 
@@ -51,10 +65,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: go run .
-      - name: Value of Temp
-        run: |
-          cat tmp.json 
-          cat runs_raw.json
 
       - name: Cleanup temp files
         run: rm -f workflows_raw.json runs_raw.json tmp.json
