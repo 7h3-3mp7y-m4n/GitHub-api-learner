@@ -51,6 +51,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: go run .
+      - name: Value of Temp
+        run: |
+          cat tmp.json 
+          cat runs_raw.json
 
       - name: Cleanup temp files
         run: rm -f workflows_raw.json runs_raw.json tmp.json
