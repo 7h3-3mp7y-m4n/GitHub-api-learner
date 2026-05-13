@@ -36,7 +36,7 @@ jobs:
           jq -r '.workflows[].id' workflows_raw.json | while read wf_id; do
             echo "Processing workflow ID: $wf_id"
 
-            gh api "repos/urunc-dev/urunc/actions/workflows/${wf_id}/runs?per_page=5" \
+            gh api "repos/urunc-dev/urunc/actions/workflows/${wf_id}/runs?per_page=20" \
               > runs_tmp.json
 
             echo "===== runs_tmp.json ====="
