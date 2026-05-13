@@ -28,7 +28,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api repos/${{ github.repository }}/actions/workflows \
+          gh api repos/urunc-dev/urunc/actions/workflows \
             --paginate > workflows_raw.json
 
           echo "{}" > runs_raw.json
