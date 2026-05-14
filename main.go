@@ -68,7 +68,8 @@ type WorkflowsListResponse struct {
 }
 
 type WorkflowsResponse struct {
-	WorkflowRuns []Run `json:"workflow_runs"`
+	Name         string `json:"name"`
+	WorkflowRuns []Run  `json:"workflow_runs"`
 }
 
 type FailedJob struct {
@@ -542,6 +543,7 @@ func main() {
 			log.Printf("warn: no runs found for workflow %s", w.Name)
 			continue
 		}
+		log.Printf("Matched: %s -> %s (runs key name: %s)", w.Name, wf.Name, runsData.Name)
 		runs := runsData.WorkflowRuns
 
 		sort.Slice(runs, func(i, j int) bool {

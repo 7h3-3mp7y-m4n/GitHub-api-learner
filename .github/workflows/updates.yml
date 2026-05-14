@@ -33,26 +33,20 @@ jobs:
 
           echo "{}" > runs_raw.json
 
-          jq -r '.workflows[].id' workflows_raw.json | while read wf_id; do
-            echo "Processing workflow ID: $wf_id"
-
-            gh api "repos/urunc-dev/urunc/actions/workflows/${wf_id}/runs?per_page=20" \
-              > runs_tmp.json
-
-            # echo "===== runs_tmp.json ====="
-            # cat runs_tmp.json
-
-            jq --arg id "$wf_id" \
-              --slurpfile runs runs_tmp.json \
-              '. + {($id): $runs[0]}' \
-              runs_raw.json > tmp.json
-
-            # echo "===== tmp.json ====="
-            # cat tmp.json
-
-            mv tmp.json runs_raw.json
+          jq -r '.workflows[] | "\(.id) \(.name)"' workflows_raw.json | while read wf_id wf_name; do
+          echo "Processing workflow: $wf_name (ID: $wf_id)"
+        
+          gh api "repos/urunc-dev/urunc/actions/workflows/${wf_id}/runs?per_page=20" \
+            > runs_tmp.json
+        
+          jq --arg id "$wf_id" \
+             --arg name "$wf_name" \
+             --slurpfile runs runs_tmp.json \
+             '. + {($id): ($runs[0] + {name: $name})}' \
+             runs_raw.json > tmp.json
+        
+          mv tmp.json runs_raw.json
           done
-
           echo "===== FINAL workflows_raw.json ====="
           cat workflows_raw.json
 
