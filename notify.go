@@ -89,13 +89,14 @@ func (n *Notifier) Process(summary WorkflowSummary) {
 		n.createIssue(summary, repr)
 		return
 	}
-
-	if time.Since(existingIssue.UpdatedAt) >= 24*time.Hour {
-		log.Printf("notify: adding update to issue #%d for %q", existingIssue.Number, summary.Name)
-		n.addComment(existingIssue.Number, summary, repr)
-	} else {
-		log.Printf("notify: issue #%d for %q updated within 24h — skipping comment", existingIssue.Number, summary.Name)
-	}
+	log.Printf("notify: adding update to issue #%d for %q", existingIssue.Number, summary.Name)
+	n.addComment(existingIssue.Number, summary, repr)
+	// if time.Since(existingIssue.UpdatedAt) >= 24*time.Hour {
+	// 	log.Printf("notify: adding update to issue #%d for %q", existingIssue.Number, summary.Name)
+	// 	n.addComment(existingIssue.Number, summary, repr)
+	// } else {
+	// 	log.Printf("notify: issue #%d for %q updated within 24h — skipping comment", existingIssue.Number, summary.Name)
+	// }
 }
 
 func (n *Notifier) apiURL(path string) string {
@@ -297,7 +298,7 @@ func buildIssueBody(summary WorkflowSummary, repr *Run, sourceRepo string) strin
 	sb.WriteString(buildFailedJobsSection(repr.FailedJobs))
 
 	sb.WriteString("---\n")
-	sb.WriteString("_This issue was opened automatically by the CI dashboard. ")
+	sb.WriteString("This issue was opened automatically by the CI dashboard. ")
 	sb.WriteString("Please close it manually once the issue is resolved._\n")
 
 	return sb.String()
