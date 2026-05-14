@@ -211,18 +211,19 @@ func analyseLog(scanner *bufio.Scanner, cfg LogAnalysisConfig) LogSummary {
 	if len(signals) == 0 {
 		return LogSummary{Empty: true}
 	}
+
+	// Sort ascending by priority so signals[0] is the most important.
 	sort.SliceStable(signals, func(i, j int) bool {
 		return signals[i].Priority < signals[j].Priority
 	})
-	byCategory := make(map[string][]string)
-	topPriority := signals[0].Priority
+
+	// signals[0] is already the lowest priority number (highest importance)
+	// after the sort above, so TopCategory is simply the first entry.
 	topCategory := signals[0].Category
+
+	byCategory := make(map[string][]string)
 	for _, s := range signals {
 		byCategory[s.Category] = append(byCategory[s.Category], s.Line)
-		if s.Priority < topPriority {
-			topPriority = s.Priority
-			topCategory = s.Category
-		}
 	}
 
 	return LogSummary{
@@ -271,6 +272,8 @@ func matchesAny(lower string, patterns []string) bool {
 	return false
 }
 
+// fetchAndAnalyseLog streams the log response directly into the analyser
+// without buffering all lines into memory first.
 func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
 	var (
 		resp *http.Response
@@ -300,18 +303,12 @@ func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
 		return "", fmt.Errorf("log fetch returned HTTP %d", resp.StatusCode)
 	}
 
-	var allLines []string
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Buffer(make([]byte, 256*1024), 256*1024)
-	for scanner.Scan() {
-		allLines = append(allLines, scanner.Text())
-	}
+	summary := analyseLog(scanner, c.logAnalysis)
 	if err := scanner.Err(); err != nil {
 		return "", err
 	}
-
-	lineReader := strings.NewReader(strings.Join(allLines, "\n"))
-	summary := analyseLog(bufio.NewScanner(lineReader), c.logAnalysis)
 	return renderSummary(summary), nil
 }
 
@@ -409,6 +406,9 @@ func findWorkflow(workflows []Workflow, keyword string) *Workflow {
 	return nil
 }
 
+// buildWeatherHistory returns a fixed-width slice of run conclusions ordered
+// oldest → newest. The incoming runs slice is sorted newest-first, so we
+// reverse while filling to get the right display order.
 func buildWeatherHistory(runs []Run) []string {
 	const slots = 7
 	history := make([]string, slots)
@@ -419,7 +419,12 @@ func buildWeatherHistory(runs []Run) []string {
 	if len(take) > slots {
 		take = runs[:slots]
 	}
+
+	// take[0] is the newest run; we want history[slots-1] = newest,
+	// so fill right-to-left: offset positions the oldest entry.
+	offset := slots - len(take)
 	for i, r := range take {
+		// Reverse i so that take[0] (newest) lands at the rightmost slot.
 		idx := len(take) - 1 - i
 		c := r.Conclusion
 		if c == "" {
@@ -430,7 +435,7 @@ func buildWeatherHistory(runs []Run) []string {
 		default:
 			c = "unknown"
 		}
-		history[slots-len(take)+idx] = c
+		history[offset+idx] = c
 	}
 	return history
 }
@@ -489,7 +494,6 @@ func main() {
 		recentLimit = cfg.Settings.MaxRunsPerWorkflow
 	}
 
-	// Read pre-fetched workflows from workflow step
 	workflowsBytes, err := os.ReadFile("workflows_raw.json")
 	if err != nil {
 		log.Fatalf("cannot read workflows_raw.json: %v", err)
@@ -499,7 +503,6 @@ func main() {
 		log.Fatalf("cannot parse workflows_raw.json: %v", err)
 	}
 
-	// Read pre-fetched runs from workflow step
 	runsBytes, err := os.ReadFile("runs_raw.json")
 	if err != nil {
 		log.Fatalf("cannot read runs_raw.json: %v", err)
@@ -509,7 +512,7 @@ func main() {
 		log.Fatalf("cannot parse runs_raw.json: %v", err)
 	}
 
-	// Client only used for log fetching and notifications
+	// Client is only used for log fetching and notifications.
 	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
 
 	var notifier *Notifier
@@ -518,8 +521,8 @@ func main() {
 			log.Println("warn: notify.enabled=true but GITHUB_TOKEN not set — skipping notifications")
 		} else {
 			notifier = NewNotifier(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.Notify)
-			log.Printf("Notifier enabled -> target: %s, threshold: %d consecutive failures",
-				notifier.targetRepo, notifier.threshold)
+			log.Printf("Notifier enabled -> target: %s, threshold: %d consecutive failures, poll window: %s",
+				notifier.targetRepo, notifier.threshold, notifier.pollWindow)
 		}
 	}
 
