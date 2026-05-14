@@ -68,8 +68,7 @@ type WorkflowsListResponse struct {
 }
 
 type WorkflowsResponse struct {
-	Name         string `json:"name"`
-	WorkflowRuns []Run  `json:"workflow_runs"`
+	WorkflowRuns []Run `json:"workflow_runs"`
 }
 
 type FailedJob struct {
@@ -522,8 +521,8 @@ func main() {
 			log.Println("warn: notify.enabled=true but GITHUB_TOKEN not set — skipping notifications")
 		} else {
 			notifier = NewNotifier(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.Notify)
-			log.Printf("Notifier enabled -> target: %s, threshold: %d consecutive failures, poll window: %s",
-				notifier.targetRepo, notifier.threshold, notifier.pollWindow)
+			log.Printf("Notifier enabled -> target: %s, label: %s",
+				notifier.targetRepo, notifier.label)
 		}
 	}
 
@@ -543,7 +542,6 @@ func main() {
 			log.Printf("warn: no runs found for workflow %s", w.Name)
 			continue
 		}
-		log.Printf("Matched: %s -> %s (runs key name: %s)", w.Name, wf.Name, runsData.Name)
 		runs := runsData.WorkflowRuns
 
 		sort.Slice(runs, func(i, j int) bool {

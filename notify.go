@@ -12,14 +12,9 @@ import (
 )
 
 type NotifyConfig struct {
-	Enabled             bool   `yaml:"enabled"`
-	TargetRepo          string `yaml:"target_repo"`
-	Label               string `yaml:"label"`
-	ConsecutiveFailures int    `yaml:"consecutive_failures"`
-	// PollWindowMinutes is how far back (in minutes) to scan for failures.
-	// Should be slightly longer than your cron interval to tolerate clock drift.
-	// Defaults to 70 minutes (for an hourly cron).
-	PollWindowMinutes int `yaml:"poll_window_minutes"`
+	Enabled    bool   `yaml:"enabled"`
+	TargetRepo string `yaml:"target_repo"`
+	Label      string `yaml:"label"`
 }
 
 type Issue struct {
@@ -37,13 +32,7 @@ type Notifier struct {
 	sourceRepo string
 	targetRepo string
 	label      string
-	threshold  int
-	pollWindow time.Duration
 	http       *http.Client
-}
-
-func shouldComment(issue *Issue) bool {
-	return time.Since(issue.UpdatedAt) >= 24*time.Hour
 }
 
 func NewNotifier(token, sourceRepo string, cfg NotifyConfig) *Notifier {
@@ -55,99 +44,58 @@ func NewNotifier(token, sourceRepo string, cfg NotifyConfig) *Notifier {
 	if label == "" {
 		label = "ci-failure"
 	}
-	threshold := cfg.ConsecutiveFailures
-	if threshold <= 0 {
-		threshold = 1
-	}
-	pollWindow := time.Duration(cfg.PollWindowMinutes) * time.Minute
-	if pollWindow <= 0 {
-		pollWindow = 70 * time.Minute // default: slightly over 1h to tolerate cron drift
-	}
 	return &Notifier{
 		token:      token,
 		sourceRepo: sourceRepo,
 		targetRepo: targetRepo,
 		label:      label,
-		threshold:  threshold,
-		pollWindow: pollWindow,
 		http:       &http.Client{Timeout: 15 * time.Second},
 	}
 }
 
-// consecutiveFailures counts trailing failures in history (oldest → newest).
-// It walks from the newest end and stops at the first non-failure entry.
-func consecutiveFailures(history []string) int {
-	count := 0
-	for i := len(history) - 1; i >= 0; i-- {
-		switch history[i] {
-		case "failure":
-			count++
-		case "success":
-			return count
-		default:
-			return count
+// anyFailed returns the most recent failed run from the slice, or nil if none.
+// Runs are expected newest-first.
+func anyFailed(runs []Run) *Run {
+	for i := range runs {
+		if runs[i].Conclusion == "failure" {
+			return &runs[i]
 		}
 	}
-	return count
+	return nil
 }
 
-// recentFailedRuns returns all failed runs whose CreatedAt falls within the
-// given window looking back from now. Runs are expected newest-first so we
-// stop as soon as we pass the cutoff rather than scanning the whole slice.
-func recentFailedRuns(runs []Run, window time.Duration) []Run {
-	cutoff := time.Now().UTC().Add(-window)
-	var failed []Run
-	for _, r := range runs {
-		if r.CreatedAt.Before(cutoff) {
-			break
-		}
-		if r.Conclusion == "failure" {
-			failed = append(failed, r)
-		}
-	}
-	return failed
-}
-
+// Process implements the notification logic:
+//
+//	any failure in RecentRuns → open issue if none exists
+//	issue exists + failure in RecentRuns + 24h since last update → add comment
+//	issue exists + failure in RecentRuns + within 24h → skip (cooldown)
+//	no failure in RecentRuns → skip
 func (n *Notifier) Process(summary WorkflowSummary) {
 	if !summary.Critical {
 		return
 	}
 
-	// Scan the poll window for failures rather than checking only LastRun.
-	// This prevents a fast pass after a failure from suppressing the notification:
-	// e.g. fail → pass within one cron hour would have made LastRun look clean.
-	failed := recentFailedRuns(summary.RecentRuns, n.pollWindow)
-	if len(failed) == 0 {
-		log.Printf("notify: %q — no failures in poll window, skipping", summary.Name)
+	repr := anyFailed(summary.RecentRuns)
+	if repr == nil {
+		log.Printf("notify: %q — no failures in recent runs, skipping", summary.Name)
 		return
 	}
 
-	// Use the most recent failed run as the representative for the issue body
-	// so the link and job details point at an actual failure, not a passing run.
-	repr := failed[0]
-
-	consecutive := consecutiveFailures(summary.WeatherHistory)
-	log.Printf("notify: %q — %d failure(s) in window, %d consecutive", summary.Name, len(failed), consecutive)
+	log.Printf("notify: %q — failure found (run #%d)", summary.Name, repr.RunNumber)
 
 	existingIssue := n.findOpenIssue(summary.Name)
-	if existingIssue != nil {
-		if shouldComment(existingIssue) {
-			log.Printf("notify: adding daily update to issue #%d for %q", existingIssue.Number, summary.Name)
-			n.addComment(existingIssue.Number, summary, &repr, consecutive)
-		} else {
-			log.Printf("notify: issue #%d for %q updated recently — skipping comment", existingIssue.Number, summary.Name)
-		}
+	if existingIssue == nil {
+		log.Printf("notify: opening issue for %q", summary.Name)
+		n.createIssue(summary, repr)
 		return
 	}
 
-	if consecutive >= n.threshold {
-		log.Printf("notify: opening issue for %q (%d consecutive failures)", summary.Name, consecutive)
-		n.createIssue(summary, &repr, consecutive)
-		return
+	if time.Since(existingIssue.UpdatedAt) >= 24*time.Hour {
+		log.Printf("notify: adding update to issue #%d for %q", existingIssue.Number, summary.Name)
+		n.addComment(existingIssue.Number, summary, repr)
+	} else {
+		log.Printf("notify: issue #%d for %q updated within 24h — skipping comment", existingIssue.Number, summary.Name)
 	}
-
-	log.Printf("notify: %q failing but threshold not reached (%d/%d)",
-		summary.Name, consecutive, n.threshold)
 }
 
 func (n *Notifier) apiURL(path string) string {
@@ -231,15 +179,12 @@ func (n *Notifier) ensureLabel() {
 	resp.Body.Close()
 }
 
-func (n *Notifier) createIssue(summary WorkflowSummary, repr *Run, consecutive int) {
+func (n *Notifier) createIssue(summary WorkflowSummary, repr *Run) {
 	n.ensureLabel()
 
-	title := issueTitle(summary.Name)
-	body := buildIssueBody(summary, repr, consecutive, n.sourceRepo)
-
 	resp, err := n.do("POST", n.apiURL("/issues"), map[string]interface{}{
-		"title":  title,
-		"body":   body,
+		"title":  issueTitle(summary.Name),
+		"body":   buildIssueBody(summary, repr, n.sourceRepo),
 		"labels": []string{n.label},
 	})
 	if err != nil {
@@ -255,11 +200,11 @@ func (n *Notifier) createIssue(summary WorkflowSummary, repr *Run, consecutive i
 	}
 }
 
-func (n *Notifier) addComment(issueNumber int, summary WorkflowSummary, repr *Run, consecutive int) {
-	body := buildCommentBody(summary, repr, consecutive, n.sourceRepo)
+func (n *Notifier) addComment(issueNumber int, summary WorkflowSummary, repr *Run) {
 	rawURL := n.apiURL(fmt.Sprintf("/issues/%d/comments", issueNumber))
-
-	resp, err := n.do("POST", rawURL, map[string]string{"body": body})
+	resp, err := n.do("POST", rawURL, map[string]string{
+		"body": buildCommentBody(summary, repr, n.sourceRepo),
+	})
 	if err != nil {
 		log.Printf("notify: warn: could not add comment: %v", err)
 		return
@@ -313,7 +258,6 @@ func buildFailedJobsSection(jobs []FailedJob) string {
 
 func buildSnippetSection(job FailedJob) string {
 	var sb strings.Builder
-
 	switch job.LogSnippet {
 	case "", "(no actionable failure signal found in log)", "(log fetch failed)":
 		if job.LogSnippet != "" {
@@ -325,18 +269,16 @@ func buildSnippetSection(job FailedJob) string {
 		sb.WriteString(strings.TrimSpace(job.LogSnippet))
 		sb.WriteString("\n```\n\n")
 	}
-
 	return sb.String()
 }
 
-func buildIssueBody(summary WorkflowSummary, repr *Run, consecutive int, sourceRepo string) string {
+func buildIssueBody(summary WorkflowSummary, repr *Run, sourceRepo string) string {
 	var sb strings.Builder
 
 	sb.WriteString(fmt.Sprintf("## ❌ Critical workflow failing: `%s`\n\n", summary.Name))
 	if summary.Description != "" {
 		sb.WriteString(fmt.Sprintf("> %s\n\n", summary.Description))
 	}
-	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** detected by the CI dashboard.\n\n", consecutive))
 
 	sb.WriteString("### Failed Run\n\n")
 	sb.WriteString("| Field | Value |\n|---|---|\n")
@@ -361,12 +303,11 @@ func buildIssueBody(summary WorkflowSummary, repr *Run, consecutive int, sourceR
 	return sb.String()
 }
 
-func buildCommentBody(summary WorkflowSummary, repr *Run, consecutive int, sourceRepo string) string {
+func buildCommentBody(summary WorkflowSummary, repr *Run, sourceRepo string) string {
 	var sb strings.Builder
 
 	sb.WriteString(fmt.Sprintf("### ❌ Still failing — run [#%d](%s)\n\n", repr.RunNumber, repr.HTMLURL))
-	sb.WriteString(fmt.Sprintf("**%d consecutive failure(s)** as of `%s`.\n\n",
-		consecutive, repr.CreatedAt.Format(time.RFC1123)))
+	sb.WriteString(fmt.Sprintf("Failed at `%s`.\n\n", repr.CreatedAt.Format(time.RFC1123)))
 
 	if spark := buildSparkline(summary.WeatherHistory); spark != "" {
 		sb.WriteString("**Recent history (oldest → newest):** " + spark + "\n\n")
