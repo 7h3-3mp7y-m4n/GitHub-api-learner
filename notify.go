@@ -53,6 +53,8 @@ func NewNotifier(token, sourceRepo string, cfg NotifyConfig) *Notifier {
 	}
 }
 
+// anyFailed returns the most recent failed run from the slice, or nil if none.
+// Runs are expected newest-first.
 func anyFailed(runs []Run) *Run {
 	for i := range runs {
 		if runs[i].Conclusion == "failure" {
@@ -62,6 +64,12 @@ func anyFailed(runs []Run) *Run {
 	return nil
 }
 
+// Process implements the notification logic:
+//
+//	any failure in RecentRuns → open issue if none exists
+//	issue exists + failure in RecentRuns + 24h since last update → add comment
+//	issue exists + failure in RecentRuns + within 24h → skip (cooldown)
+//	no failure in RecentRuns → skip
 func (n *Notifier) Process(summary WorkflowSummary) {
 	if !summary.Critical {
 		return
@@ -82,14 +90,12 @@ func (n *Notifier) Process(summary WorkflowSummary) {
 		return
 	}
 
-	// if time.Since(existingIssue.UpdatedAt) >= 24*time.Hour {
-	// 	log.Printf("notify: adding update to issue #%d for %q", existingIssue.Number, summary.Name)
-	// 	n.addComment(existingIssue.Number, summary, repr)
-	// } else {
-	// 	log.Printf("notify: issue #%d for %q updated within 24h — skipping comment",
-	// 		existingIssue.Number, summary.Name)
-	// }
-	n.addComment(existingIssue.Number, summary, repr)
+	if time.Since(existingIssue.UpdatedAt) >= 24*time.Hour {
+		log.Printf("notify: adding update to issue #%d for %q", existingIssue.Number, summary.Name)
+		n.addComment(existingIssue.Number, summary, repr)
+	} else {
+		log.Printf("notify: issue #%d for %q updated within 24h — skipping comment", existingIssue.Number, summary.Name)
+	}
 }
 
 func (n *Notifier) apiURL(path string) string {
@@ -148,8 +154,7 @@ func (n *Notifier) findOpenIssue(workflowName string) *Issue {
 		for i := range issues {
 			title := issues[i].Title
 			if strings.EqualFold(title, needle) || strings.Contains(title, workflowName) {
-				log.Printf("notify: found existing issue #%d for %q",
-					issues[i].Number, workflowName)
+				log.Printf("notify: found existing issue #%d for %q", issues[i].Number, workflowName)
 				return &issues[i]
 			}
 		}
@@ -161,21 +166,21 @@ func (n *Notifier) findOpenIssue(workflowName string) *Issue {
 	return nil
 }
 
-// func (n *Notifier) ensureLabel() {
-// 	rawURL := n.apiURL("/labels")
-// 	resp, err := n.do("POST", rawURL, map[string]string{
-// 		"name":        n.label,
-// 		"color":       "d73a49",
-// 		"description": "Automated CI failure notification",
-// 	})
-// 	if err != nil || resp == nil {
-// 		return
-// 	}
-// 	resp.Body.Close()
-// }
+func (n *Notifier) ensureLabel() {
+	rawURL := n.apiURL("/labels")
+	resp, err := n.do("POST", rawURL, map[string]string{
+		"name":        n.label,
+		"color":       "d73a49",
+		"description": "Automated CI failure notification",
+	})
+	if err != nil || resp == nil {
+		return
+	}
+	resp.Body.Close()
+}
 
 func (n *Notifier) createIssue(summary WorkflowSummary, repr *Run) {
-	// n.ensureLabel()
+	n.ensureLabel()
 
 	resp, err := n.do("POST", n.apiURL("/issues"), map[string]interface{}{
 		"title":  issueTitle(summary.Name),
@@ -238,32 +243,15 @@ func buildSparkline(history []string) string {
 	return strings.TrimSpace(sb.String())
 }
 
-func buildRawLogBlock(job FailedJob) string {
-	raw := job.RawLog
-	if raw == "" ||
-		strings.HasPrefix(raw, "(log expired") ||
-		strings.HasPrefix(raw, "(log fetch") {
-		return ""
+func buildFailedJobsSection(jobs []FailedJob) string {
+	if len(jobs) == 0 {
+		return "> _No individual job failure data captured — check the run link above._\n\n"
 	}
-	const maxBytes = 30000
-	truncated := false
-	if len(raw) > maxBytes {
-		raw = raw[:maxBytes]
-		truncated = true
-	}
-
 	var sb strings.Builder
-	sb.WriteString("<details>\n")
-	sb.WriteString(fmt.Sprintf("<summary>Full step log — %s</summary>\n\n", job.Name))
-	sb.WriteString("```\n")
-	sb.WriteString(raw)
-	if truncated {
-		sb.WriteString("\n\n[truncated at 30KB — see full log at: ")
-		sb.WriteString(job.HTMLURL)
-		sb.WriteString("]")
+	for _, job := range jobs {
+		sb.WriteString(fmt.Sprintf("#### ✗ [%s](%s)\n\n", job.Name, job.HTMLURL))
+		sb.WriteString(buildSnippetSection(job))
 	}
-	sb.WriteString("\n```\n")
-	sb.WriteString("</details>\n\n")
 	return sb.String()
 }
 
@@ -279,19 +267,6 @@ func buildSnippetSection(job FailedJob) string {
 		sb.WriteString("```\n")
 		sb.WriteString(strings.TrimSpace(job.LogSnippet))
 		sb.WriteString("\n```\n\n")
-	}
-	sb.WriteString(buildRawLogBlock(job))
-	return sb.String()
-}
-
-func buildFailedJobsSection(jobs []FailedJob) string {
-	if len(jobs) == 0 {
-		return "> No individual job failure data captured — check the run link above.\n\n"
-	}
-	var sb strings.Builder
-	for _, job := range jobs {
-		sb.WriteString(fmt.Sprintf("#### ❌ [%s](%s)\n\n", job.Name, job.HTMLURL))
-		sb.WriteString(buildSnippetSection(job))
 	}
 	return sb.String()
 }
@@ -310,8 +285,7 @@ func buildIssueBody(summary WorkflowSummary, repr *Run, sourceRepo string) strin
 	sb.WriteString(fmt.Sprintf("| Started | `%s` |\n", repr.CreatedAt.Format(time.RFC1123)))
 	sb.WriteString(fmt.Sprintf("| Conclusion | `%s` |\n", repr.Conclusion))
 	sb.WriteString(fmt.Sprintf("| Attempt | `%d` |\n", repr.RunAttempt))
-	sb.WriteString(fmt.Sprintf("| Repo | [%s](https://github.com/%s) |\n\n",
-		sourceRepo, sourceRepo))
+	sb.WriteString(fmt.Sprintf("| Repo | [%s](https://github.com/%s) |\n\n", sourceRepo, sourceRepo))
 
 	if spark := buildSparkline(summary.WeatherHistory); spark != "" {
 		sb.WriteString("### Recent History (oldest → newest)\n\n")
@@ -322,7 +296,7 @@ func buildIssueBody(summary WorkflowSummary, repr *Run, sourceRepo string) strin
 	sb.WriteString(buildFailedJobsSection(repr.FailedJobs))
 
 	sb.WriteString("---\n")
-	sb.WriteString("This issue was opened automatically by the CI dashboard.")
+	sb.WriteString("This issue was opened automatically by the CI dashboard. ")
 	sb.WriteString("Please close it manually once the issue is resolved._\n")
 
 	return sb.String()
@@ -331,8 +305,7 @@ func buildIssueBody(summary WorkflowSummary, repr *Run, sourceRepo string) strin
 func buildCommentBody(summary WorkflowSummary, repr *Run, sourceRepo string) string {
 	var sb strings.Builder
 
-	sb.WriteString(fmt.Sprintf("### ❌ Still failing — run [#%d](%s)\n\n",
-		repr.RunNumber, repr.HTMLURL))
+	sb.WriteString(fmt.Sprintf("### ❌ Still failing — run [#%d](%s)\n\n", repr.RunNumber, repr.HTMLURL))
 	sb.WriteString(fmt.Sprintf("Failed at `%s`.\n\n", repr.CreatedAt.Format(time.RFC1123)))
 
 	if spark := buildSparkline(summary.WeatherHistory); spark != "" {
