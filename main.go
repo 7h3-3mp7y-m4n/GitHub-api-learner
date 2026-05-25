@@ -7,12 +7,18 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 
 	"go.yaml.in/yaml/v3"
 )
+
+// ansiEscape matches ANSI/VT100 escape sequences that GitHub logs sometimes
+// embed (e.g. colour codes, cursor moves).  Strip them before any analysis.
+var ansiEscape = regexp.MustCompile(`\x1b(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])`)
 
 type Config struct {
 	Settings struct {
@@ -71,12 +77,21 @@ type WorkflowsResponse struct {
 	WorkflowRuns []Run `json:"workflow_runs"`
 }
 
+type Step struct {
+	Name        string    `json:"name"`
+	Conclusion  string    `json:"conclusion"`
+	Number      int       `json:"number"`
+	StartedAt   time.Time `json:"started_at"`
+	CompletedAt time.Time `json:"completed_at"`
+}
+
 type FailedJob struct {
 	ID         int    `json:"id"`
 	Name       string `json:"name"`
 	Conclusion string `json:"conclusion"`
 	HTMLURL    string `json:"html_url"`
 	LogSnippet string `json:"log_snippet"`
+	RawLog     string `json:"raw_log"`
 }
 
 type Run struct {
@@ -102,6 +117,7 @@ type Job struct {
 	HTMLURL     string    `json:"html_url"`
 	StartedAt   time.Time `json:"started_at"`
 	CompletedAt time.Time `json:"completed_at"`
+	Steps       []Step    `json:"steps"`
 }
 
 type JobSummary struct {
@@ -154,26 +170,62 @@ func NewClient(token, repo string, la LogAnalysisConfig) *Client {
 	}
 }
 
-func (c *Client) get(url string, v interface{}) error {
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		return err
-	}
+// setAuthHeaders applies the standard GitHub API auth/accept headers to req.
+// Centralises the two places this was previously duplicated inline.
+func (c *Client) setAuthHeaders(req *http.Request) {
 	if c.token != "" {
 		req.Header.Set("Authorization", "Bearer "+c.token)
 	}
 	req.Header.Set("Accept", "application/vnd.github+json")
+}
 
-	resp, err := c.httpClient.Do(req)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
+func (c *Client) get(url string, v interface{}) error {
+	for attempt := 0; attempt < 3; attempt++ {
+		req, err := http.NewRequest("GET", url, nil)
+		if err != nil {
+			return err
+		}
+		c.setAuthHeaders(req)
+		resp, err := c.httpClient.Do(req)
+		if err != nil {
+			return err
+		}
+		defer resp.Body.Close()
 
-	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-		return fmt.Errorf("GitHub API returned HTTP %d for %s", resp.StatusCode, url)
+		if resp.StatusCode == http.StatusTooManyRequests {
+			wait := 60 * time.Second
+			if reset := resp.Header.Get("X-RateLimit-Reset"); reset != "" {
+				if ts, err := strconv.ParseInt(reset, 10, 64); err == nil {
+					wait = time.Until(time.Unix(ts, 0)) + 2*time.Second
+				}
+			}
+			log.Printf("rate limited, waiting %s (attempt %d)...", wait, attempt+1)
+			time.Sleep(wait)
+			continue
+		}
+		if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+			return fmt.Errorf("GitHub API returned HTTP %d for %s", resp.StatusCode, url)
+		}
+		return json.NewDecoder(resp.Body).Decode(v)
 	}
-	return json.NewDecoder(resp.Body).Decode(v)
+	return fmt.Errorf("still rate limited after retries: %s", url)
+}
+
+func parseGHTimestamp(line string) (time.Time, error) {
+	if len(line) < 28 {
+		return time.Time{}, fmt.Errorf("line too short")
+	}
+	return time.Parse("2006-01-02T15:04:05.9999999Z", line[:28])
+}
+
+// stripGHTimestamp removes the leading GitHub log timestamp (first 29 chars)
+// and then strips any ANSI escape sequences before trimming whitespace.
+func stripGHTimestamp(line string) string {
+	if len(line) > 29 && line[10] == 'T' {
+		line = line[29:]
+	}
+	line = ansiEscape.ReplaceAllString(line, "")
+	return strings.TrimSpace(line)
 }
 
 func analyseLog(scanner *bufio.Scanner, cfg LogAnalysisConfig) LogSummary {
@@ -268,52 +320,198 @@ func matchesAny(lower string, patterns []string) bool {
 	return false
 }
 
-// fetchAndAnalyseLog streams the log response directly into the analyser
-func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
-	var (
-		resp *http.Response
-		err  error
-	)
+func (c *Client) fetchAndAnalyseLog(logURL string, failedSteps []Step) (snippet, raw string, err error) {
+	var resp *http.Response
 	for attempt := 0; attempt < 2; attempt++ {
 		req, _ := http.NewRequest("GET", logURL, nil)
-		if c.token != "" {
-			req.Header.Set("Authorization", "Bearer "+c.token)
-		}
-		req.Header.Set("Accept", "application/vnd.github+json")
+		c.setAuthHeaders(req)
 		resp, err = c.logClient.Do(req)
 		if err == nil {
 			break
 		}
 		if attempt == 0 {
-			log.Printf("log fetch attempt 1 failed (%v), retrying...", err)
+			log.Printf("  log fetch attempt 1 failed (%v), retrying...", err)
 			time.Sleep(3 * time.Second)
 		}
 	}
 	if err != nil {
-		return "", err
+		return "", "", err
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-		return "", fmt.Errorf("log fetch returned HTTP %d", resp.StatusCode)
+	if resp.StatusCode == http.StatusNotFound ||
+		resp.StatusCode == http.StatusGone || // 410
+		resp.StatusCode == http.StatusForbidden { // 403
+		return "", "", fmt.Errorf("log expired (%d)", resp.StatusCode)
+	}
+
+	var windowStart, windowEnd time.Time
+	hasWindow := false
+	for _, step := range failedSteps {
+		if step.StartedAt.IsZero() {
+			continue
+		}
+		s := step.StartedAt.Add(-time.Second)
+		e := step.CompletedAt.Add(5 * time.Second)
+		if !hasWindow {
+			windowStart, windowEnd = s, e
+			hasWindow = true
+		} else {
+			if s.Before(windowStart) {
+				windowStart = s
+			}
+			if e.After(windowEnd) {
+				windowEnd = e
+			}
+		}
+	}
+
+	if hasWindow {
+		log.Printf("  window: %s → %s (%d failed step(s))",
+			windowStart.Format(time.RFC3339),
+			windowEnd.Format(time.RFC3339),
+			len(failedSteps))
+	} else {
+		log.Printf("  no step timestamps — capturing full job log")
 	}
 
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Buffer(make([]byte, 256*1024), 256*1024)
-	summary := analyseLog(scanner, c.logAnalysis)
-	if err := scanner.Err(); err != nil {
-		return "", err
+
+	var sliced []string
+	for scanner.Scan() {
+		line := scanner.Text()
+		if hasWindow {
+			ts, parseErr := parseGHTimestamp(line)
+			if parseErr != nil || ts.Before(windowStart) {
+				continue
+			}
+			if ts.After(windowEnd) {
+				break
+			}
+		}
+		sliced = append(sliced, line)
 	}
-	return renderSummary(summary), nil
+	if scanErr := scanner.Err(); scanErr != nil {
+		return "", "", scanErr
+	}
+
+	log.Printf("  sliced: %d lines", len(sliced))
+
+	if hasWindow && len(sliced) > 0 {
+		preciseSignals := []string{
+			"##[error]",
+			"--- fail:",
+			"fail!",
+			"[fail]",
+			"panic:",
+			"✖",
+			"timed out after",
+		}
+		var preciseEnd time.Time
+		for _, line := range sliced {
+			lower := strings.ToLower(stripGHTimestamp(line))
+			for _, sig := range preciseSignals {
+				if strings.Contains(lower, sig) {
+					if ts, parseErr := parseGHTimestamp(line); parseErr == nil {
+						preciseEnd = ts
+					}
+					break
+				}
+			}
+		}
+		if !preciseEnd.IsZero() {
+			log.Printf("  precise end: %s", preciseEnd.Format("2006-01-02T15:04:05.9999999Z"))
+			var precise []string
+			for _, line := range sliced {
+				ts, parseErr := parseGHTimestamp(line)
+				if parseErr != nil {
+					precise = append(precise, line)
+					continue
+				}
+				if ts.After(preciseEnd) {
+					break
+				}
+				precise = append(precise, line)
+			}
+			sliced = precise
+		}
+	}
+
+	var captured []string
+	for _, line := range sliced {
+		clean := stripGHTimestamp(line)
+		if clean == "" {
+			continue
+		}
+		if matchesAny(strings.ToLower(clean), c.logAnalysis.NoisePatterns) {
+			continue
+		}
+		captured = append(captured, clean)
+	}
+	log.Printf("  captured: %d lines after noise filter", len(captured))
+
+	lineReader := strings.NewReader(strings.Join(captured, "\n"))
+	summary := analyseLog(bufio.NewScanner(lineReader), c.logAnalysis)
+	snippet = renderSummary(summary)
+	raw = strings.Join(captured, "\n")
+	if len(raw) > 50000 {
+		raw = raw[:50000] + "\n\n[truncated at 50KB — see full log at: " + logURL + "]"
+	}
+	return snippet, raw, nil
 }
 
-func (c *Client) fetchJobSummaries(run *Run) {
-	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/runs/%d/jobs", c.repo, run.ID)
+func (c *Client) fetchAnnotationFallback(jobID int, htmlURL string) (snippet, raw string) {
+	url := fmt.Sprintf(
+		"https://api.github.com/repos/%s/check-runs/%d/annotations",
+		c.repo, jobID)
+
+	var annotations []struct {
+		Level   string `json:"annotation_level"`
+		Message string `json:"message"`
+		Title   string `json:"title"`
+	}
+
+	if err := c.get(url, &annotations); err != nil {
+		log.Printf("  annotation fallback failed for job %d: %v", jobID, err)
+		snippet = "(log expired — no annotations available)"
+		raw = fmt.Sprintf("(log expired — see: %s)", htmlURL)
+		return
+	}
+
+	var failures []string
+	for _, a := range annotations {
+		if strings.EqualFold(a.Level, "failure") {
+			msg := a.Message
+			if a.Title != "" {
+				msg = a.Title + ": " + msg
+			}
+			failures = append(failures, msg)
+		}
+	}
+
+	if len(failures) == 0 {
+		snippet = "(log expired — no failure annotations found)"
+		raw = fmt.Sprintf("(log expired — see: %s)", htmlURL)
+		return
+	}
+
+	snippet = strings.Join(failures, "\n")
+	raw = fmt.Sprintf("(log expired — annotations only)\n\n%s\n\nSee: %s",
+		snippet, htmlURL)
+	return
+}
+
+func (c *Client) fetchJobsAndEnrich(run *Run) {
+	url := fmt.Sprintf(
+		"https://api.github.com/repos/%s/actions/runs/%d/jobs",
+		c.repo, run.ID)
 	var resp JobsResponse
 	if err := c.get(url, &resp); err != nil {
 		log.Printf("warn: could not fetch jobs for run %d: %v", run.ID, err)
 		return
 	}
+
 	for _, job := range resp.Jobs {
 		dur := job.CompletedAt.Sub(job.StartedAt).Seconds()
 		if dur < 0 {
@@ -325,42 +523,47 @@ func (c *Client) fetchJobSummaries(run *Run) {
 			DurationSec: dur,
 			HTMLURL:     job.HTMLURL,
 		})
-	}
-}
 
-func (c *Client) enrichWithLogs(run *Run) {
-	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/runs/%d/jobs", c.repo, run.ID)
-	var resp JobsResponse
-	if err := c.get(url, &resp); err != nil {
-		log.Printf("warn: could not fetch jobs for run %d: %v", run.ID, err)
-		return
-	}
-	for _, job := range resp.Jobs {
 		if job.Conclusion != "failure" {
 			continue
 		}
-		logURL := fmt.Sprintf("https://api.github.com/repos/%s/actions/jobs/%d/logs", c.repo, job.ID)
-		log.Printf("fetching logs for failed job %d (%s)...", job.ID, job.Name)
-		snippet, err := c.fetchAndAnalyseLog(logURL)
-		if err != nil {
-			log.Printf("warn: could not fetch logs for job %d: %v", job.ID, err)
-			snippet = "(log fetch failed)"
+
+		var failedSteps []Step
+		for _, step := range job.Steps {
+			if step.Conclusion == "failure" {
+				failedSteps = append(failedSteps, step)
+				log.Printf("  failed step #%d %q | %s → %s",
+					step.Number, step.Name,
+					step.StartedAt.Format(time.RFC3339),
+					step.CompletedAt.Format(time.RFC3339))
+			}
 		}
+
+		if len(failedSteps) == 0 {
+			log.Printf("  job %d (%s): no step-level data — will capture full job log",
+				job.ID, job.Name)
+		}
+
+		logURL := fmt.Sprintf(
+			"https://api.github.com/repos/%s/actions/jobs/%d/logs",
+			c.repo, job.ID)
+		log.Printf("fetching logs for failed job %d (%s)...", job.ID, job.Name)
+
+		snippet, raw, fetchErr := c.fetchAndAnalyseLog(logURL, failedSteps)
+		if fetchErr != nil {
+			log.Printf("warn: log fetch failed for job %d: %v", job.ID, fetchErr)
+			snippet, raw = c.fetchAnnotationFallback(job.ID, job.HTMLURL)
+		}
+
 		run.FailedJobs = append(run.FailedJobs, FailedJob{
 			ID:         job.ID,
 			Name:       job.Name,
 			Conclusion: job.Conclusion,
 			HTMLURL:    job.HTMLURL,
 			LogSnippet: snippet,
+			RawLog:     raw,
 		})
 	}
-}
-
-func stripGHTimestamp(line string) string {
-	if len(line) > 29 && line[10] == 'T' {
-		line = line[29:]
-	}
-	return strings.TrimSpace(line)
 }
 
 func normalize(s string) string {
@@ -501,8 +704,7 @@ func main() {
 		log.Fatalf("cannot parse runs_raw.json: %v", err)
 	}
 
-	// Client is only used for log fetching and notifications.
-	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
+	client := NewClient(os.Getenv("GH_PAT"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
 
 	var notifier *Notifier
 	if cfg.Notify.Enabled {
@@ -542,16 +744,20 @@ func main() {
 			recent = runs[:recentLimit]
 		}
 
-		log.Printf("fetching logs for failed runs in %s…", w.Name)
+		log.Printf("fetching jobs and logs for %s...", w.Name)
 		for i := range recent {
-			client.fetchJobSummaries(&recent[i])
-			if recent[i].Conclusion == "failure" {
-				client.enrichWithLogs(&recent[i])
-			}
+			client.fetchJobsAndEnrich(&recent[i])
+			time.Sleep(300 * time.Millisecond)
 		}
 
 		summary := buildSummary(runs, w.Name, w.Description, w.Critical, w.Required)
 		summary.RecentRuns = recent
+
+		if len(recent) > 0 && summary.LastRun != nil && recent[0].ID == summary.LastRun.ID {
+			r := recent[0]
+			summary.LastRun = &r
+		}
+
 		summaries = append(summaries, summary)
 		totalHealth += (100 - summary.FailureRate)
 		if notifier != nil {
