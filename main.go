@@ -212,13 +212,9 @@ func analyseLog(scanner *bufio.Scanner, cfg LogAnalysisConfig) LogSummary {
 		return LogSummary{Empty: true}
 	}
 
-	// Sort ascending by priority so signals[0] is the most important.
 	sort.SliceStable(signals, func(i, j int) bool {
 		return signals[i].Priority < signals[j].Priority
 	})
-
-	// signals[0] is already the lowest priority number (highest importance)
-	// after the sort above, so TopCategory is simply the first entry.
 	topCategory := signals[0].Category
 
 	byCategory := make(map[string][]string)
@@ -273,7 +269,6 @@ func matchesAny(lower string, patterns []string) bool {
 }
 
 // fetchAndAnalyseLog streams the log response directly into the analyser
-// without buffering all lines into memory first.
 func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
 	var (
 		resp *http.Response
@@ -406,9 +401,6 @@ func findWorkflow(workflows []Workflow, keyword string) *Workflow {
 	return nil
 }
 
-// buildWeatherHistory returns a fixed-width slice of run conclusions ordered
-// oldest → newest. The incoming runs slice is sorted newest-first, so we
-// reverse while filling to get the right display order.
 func buildWeatherHistory(runs []Run) []string {
 	const slots = 7
 	history := make([]string, slots)
@@ -420,11 +412,8 @@ func buildWeatherHistory(runs []Run) []string {
 		take = runs[:slots]
 	}
 
-	// take[0] is the newest run; we want history[slots-1] = newest,
-	// so fill right-to-left: offset positions the oldest entry.
 	offset := slots - len(take)
 	for i, r := range take {
-		// Reverse i so that take[0] (newest) lands at the rightmost slot.
 		idx := len(take) - 1 - i
 		c := r.Conclusion
 		if c == "" {
