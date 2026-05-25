@@ -704,7 +704,7 @@ func main() {
 		log.Fatalf("cannot parse runs_raw.json: %v", err)
 	}
 
-	client := NewClient(os.Getenv("GH_PAT"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
+	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
 
 	var notifier *Notifier
 	if cfg.Notify.Enabled {
