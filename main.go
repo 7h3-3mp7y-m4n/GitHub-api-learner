@@ -1,581 +1,345 @@
 package main
 
 import (
-	"bufio"
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
-	"os"
-	"sort"
+	"net/url"
 	"strings"
 	"time"
-
-	"go.yaml.in/yaml/v3"
 )
 
-type Config struct {
-	Settings struct {
-		SourceRepo         string `yaml:"source_repo"`
-		MaxRunsPerWorkflow int    `yaml:"max_runs_per_workflow"`
-		RecentRunsInOutput int    `yaml:"recent_runs_in_output"`
-	} `yaml:"settings"`
-
-	Notify      NotifyConfig      `yaml:"notify"`
-	LogAnalysis LogAnalysisConfig `yaml:"log_analysis"`
-
-	Workflows []struct {
-		Name        string `yaml:"name"`
-		Description string `yaml:"description"`
-		Critical    bool   `yaml:"critical"`
-		Required    bool   `yaml:"required"`
-	} `yaml:"workflows"`
+type NotifyConfig struct {
+	Enabled    bool   `yaml:"enabled"`
+	TargetRepo string `yaml:"target_repo"`
+	Label      string `yaml:"label"`
 }
 
-type LogAnalysisConfig struct {
-	MaxSignalsPerJob int                     `yaml:"max_signals_per_job"`
-	NoisePatterns    []string                `yaml:"noise_patterns"`
-	Categories       []FailureCategoryConfig `yaml:"categories"`
+type Issue struct {
+	Number    int       `json:"number"`
+	Title     string    `json:"title"`
+	State     string    `json:"state"`
+	HTMLURL   string    `json:"html_url"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
-type FailureCategoryConfig struct {
-	Name     string   `yaml:"name"`
-	Priority int      `yaml:"priority"`
-	Patterns []string `yaml:"patterns"`
+type IssuesResponse []Issue
+
+type Notifier struct {
+	token      string
+	sourceRepo string
+	targetRepo string
+	label      string
+	http       *http.Client
 }
 
-type SignalLine struct {
-	Line     string
-	Category string
-	Priority int
-}
-
-type LogSummary struct {
-	Signals     []SignalLine
-	ByCategory  map[string][]string
-	TopCategory string
-	Empty       bool
-}
-
-type Workflow struct {
-	ID   int    `json:"id"`
-	Name string `json:"name"`
-	Path string `json:"path"`
-}
-
-type WorkflowsListResponse struct {
-	Workflows []Workflow `json:"workflows"`
-}
-
-type WorkflowsResponse struct {
-	WorkflowRuns []Run `json:"workflow_runs"`
-}
-
-type FailedJob struct {
-	ID         int    `json:"id"`
-	Name       string `json:"name"`
-	Conclusion string `json:"conclusion"`
-	HTMLURL    string `json:"html_url"`
-	LogSnippet string `json:"log_snippet"`
-}
-
-type Run struct {
-	ID           int          `json:"id"`
-	Name         string       `json:"name"`
-	Status       string       `json:"status"`
-	Conclusion   string       `json:"conclusion"`
-	RunNumber    int          `json:"run_number"`
-	CreatedAt    time.Time    `json:"created_at"`
-	UpdatedAt    time.Time    `json:"updated_at"`
-	RunStartedAt time.Time    `json:"run_started_at"`
-	HTMLURL      string       `json:"html_url"`
-	Jobs         []JobSummary `json:"jobs,omitempty"`
-	FailedJobs   []FailedJob  `json:"failed_jobs,omitempty"`
-	RunAttempt   int          `json:"run_attempt"`
-}
-
-type Job struct {
-	ID          int       `json:"id"`
-	Name        string    `json:"name"`
-	Status      string    `json:"status"`
-	Conclusion  string    `json:"conclusion"`
-	HTMLURL     string    `json:"html_url"`
-	StartedAt   time.Time `json:"started_at"`
-	CompletedAt time.Time `json:"completed_at"`
-}
-
-type JobSummary struct {
-	Name        string  `json:"name"`
-	Conclusion  string  `json:"conclusion"`
-	DurationSec float64 `json:"duration_sec"`
-	HTMLURL     string  `json:"html_url"`
-}
-
-type JobsResponse struct {
-	Jobs []Job `json:"jobs"`
-}
-
-type WorkflowSummary struct {
-	Name            string   `json:"name"`
-	Description     string   `json:"description"`
-	Critical        bool     `json:"critical"`
-	Required        bool     `json:"required"`
-	TotalRuns       int      `json:"total_runs"`
-	FailedRuns      int      `json:"failed_runs"`
-	FailureRate     float64  `json:"failure_rate"`
-	AvgDurationSecs float64  `json:"avg_duration_secs"`
-	WeatherHistory  []string `json:"weather_history"`
-	LastRun         *Run     `json:"last_run"`
-	RecentRuns      []Run    `json:"recent_runs"`
-}
-
-type DashboardData struct {
-	GeneratedAt   time.Time         `json:"generated_at"`
-	Repo          string            `json:"repo"`
-	OverallHealth float64           `json:"overall_health"`
-	Workflows     []WorkflowSummary `json:"workflows"`
-}
-
-type Client struct {
-	token       string
-	repo        string
-	httpClient  *http.Client
-	logClient   *http.Client
-	logAnalysis LogAnalysisConfig
-}
-
-func NewClient(token, repo string, la LogAnalysisConfig) *Client {
-	return &Client{
-		token:       token,
-		repo:        repo,
-		httpClient:  &http.Client{Timeout: 20 * time.Second},
-		logClient:   &http.Client{Timeout: 2 * time.Minute},
-		logAnalysis: la,
+func NewNotifier(token, sourceRepo string, cfg NotifyConfig) *Notifier {
+	targetRepo := cfg.TargetRepo
+	if targetRepo == "" {
+		targetRepo = sourceRepo
+	}
+	label := cfg.Label
+	if label == "" {
+		label = "ci-failure"
+	}
+	return &Notifier{
+		token:      token,
+		sourceRepo: sourceRepo,
+		targetRepo: targetRepo,
+		label:      label,
+		http:       &http.Client{Timeout: 15 * time.Second},
 	}
 }
 
-func (c *Client) get(url string, v interface{}) error {
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		return err
-	}
-	if c.token != "" {
-		req.Header.Set("Authorization", "Bearer "+c.token)
-	}
-	req.Header.Set("Accept", "application/vnd.github+json")
-
-	resp, err := c.httpClient.Do(req)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-		return fmt.Errorf("GitHub API returned HTTP %d for %s", resp.StatusCode, url)
-	}
-	return json.NewDecoder(resp.Body).Decode(v)
-}
-
-func analyseLog(scanner *bufio.Scanner, cfg LogAnalysisConfig) LogSummary {
-	maxSignals := cfg.MaxSignalsPerJob
-	if maxSignals <= 0 {
-		maxSignals = 20
-	}
-	var signals []SignalLine
-	seen := make(map[string]bool)
-	for scanner.Scan() {
-		if len(signals) >= maxSignals {
-			break
-		}
-		clean := stripGHTimestamp(scanner.Text())
-		if clean == "" {
-			continue
-		}
-		lower := strings.ToLower(clean)
-		if matchesAny(lower, cfg.NoisePatterns) {
-			continue
-		}
-		for _, cat := range cfg.Categories {
-			if matchesAny(lower, cat.Patterns) && !seen[clean] {
-				seen[clean] = true
-				signals = append(signals, SignalLine{
-					Line:     clean,
-					Category: cat.Name,
-					Priority: cat.Priority,
-				})
-				break
-			}
-		}
-	}
-
-	if len(signals) == 0 {
-		return LogSummary{Empty: true}
-	}
-
-	sort.SliceStable(signals, func(i, j int) bool {
-		return signals[i].Priority < signals[j].Priority
-	})
-	topCategory := signals[0].Category
-
-	byCategory := make(map[string][]string)
-	for _, s := range signals {
-		byCategory[s.Category] = append(byCategory[s.Category], s.Line)
-	}
-
-	return LogSummary{
-		Signals:     signals,
-		ByCategory:  byCategory,
-		TopCategory: topCategory,
-	}
-}
-
-func renderSummary(s LogSummary) string {
-	if s.Empty {
-		return "(no actionable failure signal found in log)"
-	}
-
-	total := len(s.Signals)
-	var sb strings.Builder
-
-	fmt.Fprintf(&sb, "[%s] — %d signal(s) found\n", s.TopCategory, total)
-	sb.WriteString(strings.Repeat("─", 48) + "\n")
-
-	seen := make(map[string]bool)
-	var orderedCats []string
-	for _, sig := range s.Signals {
-		if !seen[sig.Category] {
-			seen[sig.Category] = true
-			orderedCats = append(orderedCats, sig.Category)
-		}
-	}
-
-	for _, cat := range orderedCats {
-		fmt.Fprintf(&sb, "-> %s\n", cat)
-		for _, line := range s.ByCategory[cat] {
-			fmt.Fprintf(&sb, "  %s\n", line)
-		}
-	}
-
-	return strings.TrimRight(sb.String(), "\n")
-}
-
-func matchesAny(lower string, patterns []string) bool {
-	for _, p := range patterns {
-		if strings.Contains(lower, strings.ToLower(p)) {
-			return true
-		}
-	}
-	return false
-}
-
-// fetchAndAnalyseLog streams the log response directly into the analyser
-func (c *Client) fetchAndAnalyseLog(logURL string) (string, error) {
-	var (
-		resp *http.Response
-		err  error
-	)
-	for attempt := 0; attempt < 2; attempt++ {
-		req, _ := http.NewRequest("GET", logURL, nil)
-		if c.token != "" {
-			req.Header.Set("Authorization", "Bearer "+c.token)
-		}
-		req.Header.Set("Accept", "application/vnd.github+json")
-		resp, err = c.logClient.Do(req)
-		if err == nil {
-			break
-		}
-		if attempt == 0 {
-			log.Printf("log fetch attempt 1 failed (%v), retrying...", err)
-			time.Sleep(3 * time.Second)
-		}
-	}
-	if err != nil {
-		return "", err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-		return "", fmt.Errorf("log fetch returned HTTP %d", resp.StatusCode)
-	}
-
-	scanner := bufio.NewScanner(resp.Body)
-	scanner.Buffer(make([]byte, 256*1024), 256*1024)
-	summary := analyseLog(scanner, c.logAnalysis)
-	if err := scanner.Err(); err != nil {
-		return "", err
-	}
-	return renderSummary(summary), nil
-}
-
-func (c *Client) fetchJobSummaries(run *Run) {
-	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/runs/%d/jobs", c.repo, run.ID)
-	var resp JobsResponse
-	if err := c.get(url, &resp); err != nil {
-		log.Printf("warn: could not fetch jobs for run %d: %v", run.ID, err)
-		return
-	}
-	for _, job := range resp.Jobs {
-		dur := job.CompletedAt.Sub(job.StartedAt).Seconds()
-		if dur < 0 {
-			dur = 0
-		}
-		run.Jobs = append(run.Jobs, JobSummary{
-			Name:        job.Name,
-			Conclusion:  job.Conclusion,
-			DurationSec: dur,
-			HTMLURL:     job.HTMLURL,
-		})
-	}
-}
-
-func (c *Client) enrichWithLogs(run *Run) {
-	url := fmt.Sprintf("https://api.github.com/repos/%s/actions/runs/%d/jobs", c.repo, run.ID)
-	var resp JobsResponse
-	if err := c.get(url, &resp); err != nil {
-		log.Printf("warn: could not fetch jobs for run %d: %v", run.ID, err)
-		return
-	}
-	for _, job := range resp.Jobs {
-		if job.Conclusion != "failure" {
-			continue
-		}
-		logURL := fmt.Sprintf("https://api.github.com/repos/%s/actions/jobs/%d/logs", c.repo, job.ID)
-		log.Printf("fetching logs for failed job %d (%s)...", job.ID, job.Name)
-		snippet, err := c.fetchAndAnalyseLog(logURL)
-		if err != nil {
-			log.Printf("warn: could not fetch logs for job %d: %v", job.ID, err)
-			snippet = "(log fetch failed)"
-		}
-		run.FailedJobs = append(run.FailedJobs, FailedJob{
-			ID:         job.ID,
-			Name:       job.Name,
-			Conclusion: job.Conclusion,
-			HTMLURL:    job.HTMLURL,
-			LogSnippet: snippet,
-		})
-	}
-}
-
-func stripGHTimestamp(line string) string {
-	if len(line) > 29 && line[10] == 'T' {
-		line = line[29:]
-	}
-	return strings.TrimSpace(line)
-}
-
-func normalize(s string) string {
-	s = strings.ToLower(s)
-	s = strings.ReplaceAll(s, "-", "")
-	s = strings.ReplaceAll(s, "_", "")
-	s = strings.ReplaceAll(s, " ", "")
-	return s
-}
-
-func stemPath(path string) string {
-	parts := strings.Split(path, "/")
-	file := parts[len(parts)-1]
-	file = strings.TrimSuffix(file, ".yml")
-	file = strings.TrimSuffix(file, ".yaml")
-	return normalize(file)
-}
-
-func findWorkflow(workflows []Workflow, keyword string) *Workflow {
-	key := normalize(keyword)
-	for i, wf := range workflows {
-		if stemPath(wf.Path) == key {
-			return &workflows[i]
-		}
-	}
-	for i, wf := range workflows {
-		stem := stemPath(wf.Path)
-		if strings.Contains(stem, key) || strings.Contains(key, stem) {
-			return &workflows[i]
-		}
-	}
-	for i, wf := range workflows {
-		name := normalize(wf.Name)
-		if strings.Contains(name, key) || strings.Contains(key, name) {
-			return &workflows[i]
+func anyFailed(runs []Run) *Run {
+	for i := range runs {
+		if runs[i].Conclusion == "failure" {
+			return &runs[i]
 		}
 	}
 	return nil
 }
 
-func buildWeatherHistory(runs []Run) []string {
-	const slots = 7
-	history := make([]string, slots)
-	for i := range history {
-		history[i] = "unknown"
-	}
-	take := runs
-	if len(take) > slots {
-		take = runs[:slots]
+func (n *Notifier) Process(summary WorkflowSummary) {
+	if !summary.Critical {
+		return
 	}
 
-	offset := slots - len(take)
-	for i, r := range take {
-		idx := len(take) - 1 - i
-		c := r.Conclusion
-		if c == "" {
-			c = "unknown"
-		}
-		switch c {
-		case "success", "failure", "skipped", "action_required":
-		default:
-			c = "unknown"
-		}
-		history[offset+idx] = c
+	repr := anyFailed(summary.RecentRuns)
+	if repr == nil {
+		log.Printf("notify: %q — no failures in recent runs, skipping", summary.Name)
+		return
 	}
-	return history
+
+	log.Printf("notify: %q — failure found (run #%d)", summary.Name, repr.RunNumber)
+
+	existingIssue := n.findOpenIssue(summary.Name)
+	if existingIssue == nil {
+		log.Printf("notify: opening issue for %q", summary.Name)
+		n.createIssue(summary, repr)
+		return
+	}
+
+	// if time.Since(existingIssue.UpdatedAt) >= 24*time.Hour {
+	// 	log.Printf("notify: adding update to issue #%d for %q", existingIssue.Number, summary.Name)
+	// 	n.addComment(existingIssue.Number, summary, repr)
+	// } else {
+	// 	log.Printf("notify: issue #%d for %q updated within 24h — skipping comment",
+	// 		existingIssue.Number, summary.Name)
+	// }
+	n.addComment(existingIssue.Number, summary, repr)
 }
 
-func buildSummary(runs []Run, name, desc string, critical, required bool) WorkflowSummary {
-	var failed int
-	var totalDuration float64
-	for _, r := range runs {
-		if r.Conclusion == "failure" {
-			failed++
-		}
-		start := r.RunStartedAt
-		if start.IsZero() {
-			start = r.CreatedAt
-		}
-		totalDuration += r.UpdatedAt.Sub(start).Seconds()
-	}
-	total := len(runs)
-	var failureRate, avg float64
-	if total > 0 {
-		failureRate = float64(failed) / float64(total) * 100
-		avg = totalDuration / float64(total)
-	}
-	var lastRun *Run
-	if len(runs) > 0 {
-		r := runs[0]
-		lastRun = &r
-	}
-	return WorkflowSummary{
-		Name:            name,
-		Description:     desc,
-		Critical:        critical,
-		Required:        required,
-		TotalRuns:       total,
-		FailedRuns:      failed,
-		FailureRate:     failureRate,
-		AvgDurationSecs: avg,
-		WeatherHistory:  buildWeatherHistory(runs),
-		LastRun:         lastRun,
-		RecentRuns:      runs,
-	}
+func (n *Notifier) apiURL(path string) string {
+	return "https://api.github.com/repos/" + n.targetRepo + path
 }
 
-func main() {
-	cfgBytes, err := os.ReadFile("config.yaml")
+func (n *Notifier) do(method, rawURL string, body interface{}) (*http.Response, error) {
+	var buf *bytes.Buffer
+	if body != nil {
+		b, err := json.Marshal(body)
+		if err != nil {
+			return nil, err
+		}
+		buf = bytes.NewBuffer(b)
+	} else {
+		buf = bytes.NewBuffer(nil)
+	}
+
+	req, err := http.NewRequest(method, rawURL, buf)
 	if err != nil {
-		log.Fatalf("cannot read config.yaml: %v", err)
+		return nil, err
 	}
-	var cfg Config
-	if err := yaml.Unmarshal(cfgBytes, &cfg); err != nil {
-		log.Fatalf("cannot parse config.yaml: %v", err)
-	}
+	req.Header.Set("Authorization", "Bearer "+n.token)
+	req.Header.Set("Accept", "application/vnd.github+json")
+	req.Header.Set("Content-Type", "application/json")
+	return n.http.Do(req)
+}
 
-	recentLimit := cfg.Settings.RecentRunsInOutput
-	if recentLimit <= 0 {
-		recentLimit = cfg.Settings.MaxRunsPerWorkflow
-	}
-
-	workflowsBytes, err := os.ReadFile("workflows_raw.json")
-	if err != nil {
-		log.Fatalf("cannot read workflows_raw.json: %v", err)
-	}
-	var workflowsResp WorkflowsListResponse
-	if err := json.Unmarshal(workflowsBytes, &workflowsResp); err != nil {
-		log.Fatalf("cannot parse workflows_raw.json: %v", err)
-	}
-
-	runsBytes, err := os.ReadFile("runs_raw.json")
-	if err != nil {
-		log.Fatalf("cannot read runs_raw.json: %v", err)
-	}
-	var allRuns map[string]WorkflowsResponse
-	if err := json.Unmarshal(runsBytes, &allRuns); err != nil {
-		log.Fatalf("cannot parse runs_raw.json: %v", err)
-	}
-
-	// Client is only used for log fetching and notifications.
-	client := NewClient(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.LogAnalysis)
-
-	var notifier *Notifier
-	if cfg.Notify.Enabled {
-		if os.Getenv("GITHUB_TOKEN") == "" {
-			log.Println("warn: notify.enabled=true but GITHUB_TOKEN not set — skipping notifications")
-		} else {
-			notifier = NewNotifier(os.Getenv("GITHUB_TOKEN"), cfg.Settings.SourceRepo, cfg.Notify)
-			log.Printf("Notifier enabled -> target: %s, label: %s",
-				notifier.targetRepo, notifier.label)
+func (n *Notifier) findOpenIssue(workflowName string) *Issue {
+	needle := issueTitle(workflowName)
+	page := 1
+	for {
+		rawURL := n.apiURL(fmt.Sprintf(
+			"/issues?state=open&labels=%s&per_page=100&page=%d",
+			url.QueryEscape(n.label), page,
+		))
+		resp, err := n.do("GET", rawURL, nil)
+		if err != nil {
+			log.Printf("notify: warn: could not list issues: %v", err)
+			return nil
 		}
-	}
-
-	var summaries []WorkflowSummary
-	var totalHealth float64
-
-	for _, w := range cfg.Workflows {
-		wf := findWorkflow(workflowsResp.Workflows, w.Name)
-		if wf == nil {
-			log.Println("Not found:", w.Name)
-			continue
-		}
-		log.Printf("Matched: %s -> %s", w.Name, wf.Name)
-
-		runsData, ok := allRuns[fmt.Sprintf("%d", wf.ID)]
-		if !ok {
-			log.Printf("warn: no runs found for workflow %s", w.Name)
-			continue
-		}
-		runs := runsData.WorkflowRuns
-
-		sort.Slice(runs, func(i, j int) bool {
-			return runs[i].CreatedAt.After(runs[j].CreatedAt)
-		})
-
-		recent := runs
-		if len(recent) > recentLimit {
-			recent = runs[:recentLimit]
+		if resp.StatusCode != http.StatusOK {
+			resp.Body.Close()
+			log.Printf("notify: warn: issues list returned HTTP %d", resp.StatusCode)
+			return nil
 		}
 
-		log.Printf("fetching logs for failed runs in %s…", w.Name)
-		for i := range recent {
-			client.fetchJobSummaries(&recent[i])
-			if recent[i].Conclusion == "failure" {
-				client.enrichWithLogs(&recent[i])
+		var issues IssuesResponse
+		if err := json.NewDecoder(resp.Body).Decode(&issues); err != nil {
+			resp.Body.Close()
+			log.Printf("notify: warn: could not decode issues: %v", err)
+			return nil
+		}
+		resp.Body.Close()
+
+		for i := range issues {
+			title := issues[i].Title
+			if strings.EqualFold(title, needle) || strings.Contains(title, workflowName) {
+				log.Printf("notify: found existing issue #%d for %q",
+					issues[i].Number, workflowName)
+				return &issues[i]
 			}
 		}
-
-		summary := buildSummary(runs, w.Name, w.Description, w.Critical, w.Required)
-		summary.RecentRuns = recent
-		summaries = append(summaries, summary)
-		totalHealth += (100 - summary.FailureRate)
-		if notifier != nil {
-			notifier.Process(summary)
+		if len(issues) < 100 {
+			break
 		}
+		page++
 	}
+	return nil
+}
 
-	health := 0.0
-	if len(summaries) > 0 {
-		health = totalHealth / float64(len(summaries))
-	}
+// func (n *Notifier) ensureLabel() {
+// 	rawURL := n.apiURL("/labels")
+// 	resp, err := n.do("POST", rawURL, map[string]string{
+// 		"name":        n.label,
+// 		"color":       "d73a49",
+// 		"description": "Automated CI failure notification",
+// 	})
+// 	if err != nil || resp == nil {
+// 		return
+// 	}
+// 	resp.Body.Close()
+// }
 
-	data := DashboardData{
-		GeneratedAt:   time.Now().UTC(),
-		Repo:          cfg.Settings.SourceRepo,
-		OverallHealth: health,
-		Workflows:     summaries,
-	}
+func (n *Notifier) createIssue(summary WorkflowSummary, repr *Run) {
+	// n.ensureLabel()
 
-	out, err := json.MarshalIndent(data, "", "  ")
+	resp, err := n.do("POST", n.apiURL("/issues"), map[string]interface{}{
+		"title":  issueTitle(summary.Name),
+		"body":   buildIssueBody(summary, repr, n.sourceRepo),
+		"labels": []string{n.label},
+	})
 	if err != nil {
-		log.Fatalf("cannot marshal stats: %v", err)
+		log.Printf("notify: warn: could not create issue: %v", err)
+		return
 	}
-	if err := os.WriteFile("stats.json", out, 0644); err != nil {
-		log.Fatalf("cannot write stats.json: %v", err)
+	defer resp.Body.Close()
+
+	var created Issue
+	json.NewDecoder(resp.Body).Decode(&created)
+	if created.Number > 0 {
+		log.Printf("notify: issue #%d created → %s", created.Number, created.HTMLURL)
 	}
+}
+
+func (n *Notifier) addComment(issueNumber int, summary WorkflowSummary, repr *Run) {
+	rawURL := n.apiURL(fmt.Sprintf("/issues/%d/comments", issueNumber))
+	resp, err := n.do("POST", rawURL, map[string]string{
+		"body": buildCommentBody(summary, repr, n.sourceRepo),
+	})
+	if err != nil {
+		log.Printf("notify: warn: could not add comment: %v", err)
+		return
+	}
+	resp.Body.Close()
+}
+
+func issueTitle(workflowName string) string {
+	return fmt.Sprintf("CI Failure: %s", workflowName)
+}
+
+func weatherEmoji(c string) string {
+	switch c {
+	case "success":
+		return "✅"
+	case "failure":
+		return "❌"
+	case "skipped":
+		return "⏭️"
+	case "action_required":
+		return "⚠️"
+	default:
+		return "⬜"
+	}
+}
+
+func buildSparkline(history []string) string {
+	if len(history) == 0 {
+		return ""
+	}
+	var sb strings.Builder
+	for _, c := range history {
+		sb.WriteString(weatherEmoji(c))
+		sb.WriteString(" ")
+	}
+	return strings.TrimSpace(sb.String())
+}
+
+func buildRawLogBlock(job FailedJob) string {
+	raw := job.RawLog
+	if raw == "" ||
+		strings.HasPrefix(raw, "(log expired") ||
+		strings.HasPrefix(raw, "(log fetch") {
+		return ""
+	}
+	const maxBytes = 30000
+	truncated := false
+	if len(raw) > maxBytes {
+		raw = raw[:maxBytes]
+		truncated = true
+	}
+
+	var sb strings.Builder
+	sb.WriteString("<details>\n")
+	sb.WriteString(fmt.Sprintf("<summary>Full step log — %s</summary>\n\n", job.Name))
+	sb.WriteString("```\n")
+	sb.WriteString(raw)
+	if truncated {
+		sb.WriteString("\n\n[truncated at 30KB — see full log at: ")
+		sb.WriteString(job.HTMLURL)
+		sb.WriteString("]")
+	}
+	sb.WriteString("\n```\n")
+	sb.WriteString("</details>\n\n")
+	return sb.String()
+}
+
+func buildSnippetSection(job FailedJob) string {
+	var sb strings.Builder
+	switch job.LogSnippet {
+	case "", "(no actionable failure signal found in log)", "(log fetch failed)":
+		if job.LogSnippet != "" {
+			sb.WriteString(fmt.Sprintf("> _%s_\n\n", job.LogSnippet))
+		}
+	default:
+		sb.WriteString("**Signal summary:**\n\n")
+		sb.WriteString("```\n")
+		sb.WriteString(strings.TrimSpace(job.LogSnippet))
+		sb.WriteString("\n```\n\n")
+	}
+	sb.WriteString(buildRawLogBlock(job))
+	return sb.String()
+}
+
+func buildFailedJobsSection(jobs []FailedJob) string {
+	if len(jobs) == 0 {
+		return "> No individual job failure data captured — check the run link above.\n\n"
+	}
+	var sb strings.Builder
+	for _, job := range jobs {
+		sb.WriteString(fmt.Sprintf("#### ❌ [%s](%s)\n\n", job.Name, job.HTMLURL))
+		sb.WriteString(buildSnippetSection(job))
+	}
+	return sb.String()
+}
+
+func buildIssueBody(summary WorkflowSummary, repr *Run, sourceRepo string) string {
+	var sb strings.Builder
+
+	sb.WriteString(fmt.Sprintf("## ❌ Critical workflow failing: `%s`\n\n", summary.Name))
+	if summary.Description != "" {
+		sb.WriteString(fmt.Sprintf("> %s\n\n", summary.Description))
+	}
+
+	sb.WriteString("### Failed Run\n\n")
+	sb.WriteString("| Field | Value |\n|---|---|\n")
+	sb.WriteString(fmt.Sprintf("| Run | [#%d](%s) |\n", repr.RunNumber, repr.HTMLURL))
+	sb.WriteString(fmt.Sprintf("| Started | `%s` |\n", repr.CreatedAt.Format(time.RFC1123)))
+	sb.WriteString(fmt.Sprintf("| Conclusion | `%s` |\n", repr.Conclusion))
+	sb.WriteString(fmt.Sprintf("| Attempt | `%d` |\n", repr.RunAttempt))
+	sb.WriteString(fmt.Sprintf("| Repo | [%s](https://github.com/%s) |\n\n",
+		sourceRepo, sourceRepo))
+
+	if spark := buildSparkline(summary.WeatherHistory); spark != "" {
+		sb.WriteString("### Recent History (oldest → newest)\n\n")
+		sb.WriteString(spark + "\n\n")
+	}
+
+	sb.WriteString("### Failed Jobs\n\n")
+	sb.WriteString(buildFailedJobsSection(repr.FailedJobs))
+
+	sb.WriteString("---\n")
+	sb.WriteString("This issue was opened automatically by the CI dashboard.")
+	sb.WriteString("Please close it manually once the issue is resolved._\n")
+
+	return sb.String()
+}
+
+func buildCommentBody(summary WorkflowSummary, repr *Run, sourceRepo string) string {
+	var sb strings.Builder
+
+	sb.WriteString(fmt.Sprintf("### ❌ Still failing — run [#%d](%s)\n\n",
+		repr.RunNumber, repr.HTMLURL))
+	sb.WriteString(fmt.Sprintf("Failed at `%s`.\n\n", repr.CreatedAt.Format(time.RFC1123)))
+
+	if spark := buildSparkline(summary.WeatherHistory); spark != "" {
+		sb.WriteString("**Recent history (oldest → newest):** " + spark + "\n\n")
+	}
+
+	sb.WriteString(buildFailedJobsSection(repr.FailedJobs))
+
+	return sb.String()
 }
