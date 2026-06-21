@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T17:45:09.744983304Z",
+  "generated_at": "2026-06-21T19:49:26.524716675Z",
   "repo": "urunc-dev/urunc",
   "overall_health": 88.57142857142857,
   "workflows": [
@@ -5540,145 +5540,41 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 219.35,
+      "avg_duration_secs": 219.25,
       "weather_history": [
-        "unknown",
         "unknown",
         "unknown",
         "success",
         "action_required",
         "success",
-        "success"
+        "success",
+        "action_required"
       ],
       "last_run": {
-        "id": 27814931201,
+        "id": 27915332916,
         "name": "urunc CI",
         "status": "completed",
-        "conclusion": "success",
-        "run_number": 2088,
-        "created_at": "2026-06-19T08:34:11Z",
-        "updated_at": "2026-06-19T08:55:56Z",
-        "run_started_at": "2026-06-19T08:34:11Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201",
-        "jobs": [
-          {
-            "name": "check-labels",
-            "conclusion": "success",
-            "duration_sec": 10,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313664872"
-          },
-          {
-            "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "success",
-            "duration_sec": 28,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313692724"
-          },
-          {
-            "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 26,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313692729"
-          },
-          {
-            "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 66,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313692734"
-          },
-          {
-            "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
-            "conclusion": "success",
-            "duration_sec": 50,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313692738"
-          },
-          {
-            "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 39,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313692739"
-          },
-          {
-            "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 59,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313692741"
-          },
-          {
-            "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 50,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313692744"
-          },
-          {
-            "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 21,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313692779"
-          },
-          {
-            "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "success",
-            "duration_sec": 311,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847691"
-          },
-          {
-            "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 308,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847695"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
-            "conclusion": "success",
-            "duration_sec": 392,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847783"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
-            "conclusion": "success",
-            "duration_sec": 1229,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847786"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
-            "conclusion": "success",
-            "duration_sec": 579,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847787"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
-            "conclusion": "success",
-            "duration_sec": 422,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847790"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
-            "conclusion": "success",
-            "duration_sec": 949,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847799"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
-            "conclusion": "success",
-            "duration_sec": 953,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847800"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
-            "conclusion": "success",
-            "duration_sec": 1082,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847815"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
-            "conclusion": "success",
-            "duration_sec": 463,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814931201/job/82313847847"
-          }
-        ],
+        "conclusion": "action_required",
+        "run_number": 2090,
+        "created_at": "2026-06-21T19:40:22Z",
+        "updated_at": "2026-06-21T19:40:22Z",
+        "run_started_at": "2026-06-21T19:40:22Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27915332916",
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 27915332916,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "action_required",
+          "run_number": 2090,
+          "created_at": "2026-06-21T19:40:22Z",
+          "updated_at": "2026-06-21T19:40:22Z",
+          "run_started_at": "2026-06-21T19:40:22Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27915332916",
+          "run_attempt": 1
+        },
         {
           "id": 27814931201,
           "name": "urunc CI",
@@ -6412,32 +6308,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 27259468446,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "cancelled",
-          "run_number": 2068,
-          "created_at": "2026-06-10T07:08:02Z",
-          "updated_at": "2026-06-10T07:08:04Z",
-          "run_started_at": "2026-06-10T07:08:02Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27259468446",
-          "jobs": [
-            {
-              "name": "check-labels",
-              "conclusion": "cancelled",
-              "duration_sec": 1,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27259468446/job/80501403165"
-            },
-            {
-              "name": "ci-on-push",
-              "conclusion": "skipped",
-              "duration_sec": 0,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27259468446/job/80501405762"
-            }
-          ],
-          "run_attempt": 1
         }
       ]
     },
@@ -6449,43 +6319,41 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 83.6,
+      "avg_duration_secs": 77.25,
       "weather_history": [
-        "action_required",
         "success",
         "action_required",
         "success",
         "action_required",
         "success",
-        "success"
+        "success",
+        "action_required"
       ],
       "last_run": {
-        "id": 27815974833,
+        "id": 27915332823,
         "name": "CodeQL",
         "status": "completed",
-        "conclusion": "success",
-        "run_number": 1386,
-        "created_at": "2026-06-19T08:56:47Z",
-        "updated_at": "2026-06-19T08:59:02Z",
-        "run_started_at": "2026-06-19T08:56:47Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27815974833",
-        "jobs": [
-          {
-            "name": "Analyze (go)",
-            "conclusion": "success",
-            "duration_sec": 130,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27815974833/job/82317133818"
-          },
-          {
-            "name": "Analyze (python)",
-            "conclusion": "success",
-            "duration_sec": 60,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27815974833/job/82317133825"
-          }
-        ],
+        "conclusion": "action_required",
+        "run_number": 1387,
+        "created_at": "2026-06-21T19:40:22Z",
+        "updated_at": "2026-06-21T19:40:22Z",
+        "run_started_at": "2026-06-21T19:40:22Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27915332823",
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 27915332823,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "action_required",
+          "run_number": 1387,
+          "created_at": "2026-06-21T19:40:22Z",
+          "updated_at": "2026-06-21T19:40:22Z",
+          "run_started_at": "2026-06-21T19:40:22Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27915332823",
+          "run_attempt": 1
+        },
         {
           "id": 27815974833,
           "name": "CodeQL",
@@ -6853,32 +6721,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 27202847139,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 1365,
-          "created_at": "2026-06-09T11:24:16Z",
-          "updated_at": "2026-06-09T11:26:23Z",
-          "run_started_at": "2026-06-09T11:24:16Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27202847139",
-          "jobs": [
-            {
-              "name": "Analyze (go)",
-              "conclusion": "success",
-              "duration_sec": 123,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27202847139/job/80310920113"
-            },
-            {
-              "name": "Analyze (python)",
-              "conclusion": "success",
-              "duration_sec": 65,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27202847139/job/80310920119"
-            }
-          ],
-          "run_attempt": 1
         }
       ]
     },
@@ -6895,32 +6737,36 @@
         "action_required",
         "action_required",
         "action_required",
-        "action_required",
         "success",
         "action_required",
-        "success"
+        "success",
+        "action_required"
       ],
       "last_run": {
-        "id": 27814392946,
+        "id": 27915332820,
         "name": "Dependency Review",
         "status": "completed",
-        "conclusion": "success",
-        "run_number": 1165,
-        "created_at": "2026-06-19T08:22:27Z",
-        "updated_at": "2026-06-19T08:22:42Z",
-        "run_started_at": "2026-06-19T08:22:27Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814392946",
-        "jobs": [
-          {
-            "name": "dependency-review",
-            "conclusion": "success",
-            "duration_sec": 12,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27814392946/job/82311904213"
-          }
-        ],
+        "conclusion": "action_required",
+        "run_number": 1167,
+        "created_at": "2026-06-21T19:40:22Z",
+        "updated_at": "2026-06-21T19:40:22Z",
+        "run_started_at": "2026-06-21T19:40:22Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27915332820",
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 27915332820,
+          "name": "Dependency Review",
+          "status": "completed",
+          "conclusion": "action_required",
+          "run_number": 1167,
+          "created_at": "2026-06-21T19:40:22Z",
+          "updated_at": "2026-06-21T19:40:22Z",
+          "run_started_at": "2026-06-21T19:40:22Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27915332820",
+          "run_attempt": 1
+        },
         {
           "id": 27814392946,
           "name": "Dependency Review",
@@ -7203,18 +7049,6 @@
           "updated_at": "2026-06-08T06:34:54Z",
           "run_started_at": "2026-06-08T06:34:54Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27120290582",
-          "run_attempt": 1
-        },
-        {
-          "id": 27033784414,
-          "name": "Dependency Review",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1145,
-          "created_at": "2026-06-05T18:48:58Z",
-          "updated_at": "2026-06-05T18:48:58Z",
-          "run_started_at": "2026-06-05T18:48:58Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27033784414",
           "run_attempt": 1
         }
       ]
