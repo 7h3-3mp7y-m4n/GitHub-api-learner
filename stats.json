@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T08:27:17.618616999Z",
+  "generated_at": "2026-06-24T11:50:59.504011329Z",
   "repo": "urunc-dev/urunc",
   "overall_health": 87.61904761904762,
   "workflows": [
@@ -5578,39 +5578,609 @@
       "total_runs": 20,
       "failed_runs": 1,
       "failure_rate": 5,
-      "avg_duration_secs": 313.05,
+      "avg_duration_secs": 465.6,
       "weather_history": [
-        "action_required",
-        "action_required",
-        "success",
         "success",
         "success",
         "action_required",
-        "action_required"
+        "success",
+        "unknown",
+        "unknown",
+        "unknown"
       ],
       "last_run": {
-        "id": 28083498418,
+        "id": 28087441501,
         "name": "urunc CI",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 2116,
-        "created_at": "2026-06-24T07:47:59Z",
-        "updated_at": "2026-06-24T07:47:59Z",
-        "run_started_at": "2026-06-24T07:47:59Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28083498418",
-        "run_attempt": 1
+        "conclusion": "cancelled",
+        "run_number": 2120,
+        "created_at": "2026-06-24T09:02:33Z",
+        "updated_at": "2026-06-24T11:45:12Z",
+        "run_started_at": "2026-06-24T11:22:00Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501",
+        "jobs": [
+          {
+            "name": "check-labels",
+            "conclusion": "success",
+            "duration_sec": 16,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181830934"
+          },
+          {
+            "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 30,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831282"
+          },
+          {
+            "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 50,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831309"
+          },
+          {
+            "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 72,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831370"
+          },
+          {
+            "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+            "conclusion": "success",
+            "duration_sec": 31,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831546"
+          },
+          {
+            "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 68,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831581"
+          },
+          {
+            "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 60,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831595"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
+            "conclusion": "failure",
+            "duration_sec": 1384,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831797"
+          },
+          {
+            "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
+            "conclusion": "success",
+            "duration_sec": 59,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831840"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
+            "conclusion": "success",
+            "duration_sec": 861,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831935"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+            "conclusion": "cancelled",
+            "duration_sec": 1322,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831964"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
+            "conclusion": "cancelled",
+            "duration_sec": 1322,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831971"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
+            "conclusion": "cancelled",
+            "duration_sec": 1315,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832103"
+          },
+          {
+            "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 328,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832122"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
+            "conclusion": "success",
+            "duration_sec": 788,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832202"
+          },
+          {
+            "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
+            "conclusion": "success",
+            "duration_sec": 292,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832207"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
+            "conclusion": "success",
+            "duration_sec": 833,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832209"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
+            "conclusion": "success",
+            "duration_sec": 682,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832722"
+          },
+          {
+            "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 27,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181855283"
+          }
+        ],
+        "failed_jobs": [
+          {
+            "id": 83181831797,
+            "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
+            "conclusion": "failure",
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831797",
+            "log_snippet": "[Crash / Timeout] — 4 signal(s) found\n────────────────────────────────────────────────\n-\u003e Crash / Timeout\n  panic: test timed out after 20m0s\n-\u003e Test Failure\n  FAIL\tgithub.com/urunc-dev/urunc/tests/e2e\t1200.015s\n-\u003e Build Failure\n  make: *** [Makefile:311: test_ctr_Spt] Error 1\n  ##[error]Process completed with exit code 2.",
+            "raw_log": "go mod verify\nall modules verified\n##[group]Run # Set up Go environment properly\n# Set up Go environment properly\nexport GOROOT=$(go env GOROOT)\nexport PATH=\"$GOROOT/bin:$PATH\"\ngo version\ngo env GOROOT\nif [ \"arm64\" = \"arm64\" ]; then\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_ctr_Spt\nelse\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_ctr\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo version go1.26.4 linux/arm64\nTesting ctr\n=== RUN   TestE2E\nRunning Suite: E2E Suite - /home/runner/work/urunc/urunc/tests/e2e\n==================================================================\nRandom Seed: 1782300308\n2026-06-24T11:25:08.1546964Z\nWill run 3 of 72 specs\nSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\n------------------------------\nCtr unikernel containers Spt-rumprun-hello\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56\n2026/06/24 11:25:08 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-hvt-rumprun-nonet:latest\n2026/06/24 11:27:16 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-hvt-mirage:latest\n2026/06/24 11:27:33 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-qemu-unikraft:latest\n2026/06/24 11:27:38 Pulling image: harbor.nbfc.io/nubificus/urunc/block-test-hvt-mirage:latest\n2026/06/24 11:27:57 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-spt-rumprun-nonet:latest\n2026/06/24 11:29:41 Pulling image: harbor.nbfc.io/nubificus/urunc/block-test-spt-mirage:latest\n2026/06/24 11:30:00 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-env-qemu-unikraft-initrd:latest\n2026/06/24 11:30:19 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-exec-env-qemu-linux-raw:latest\n2026/06/24 11:31:31 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-env-firecracker-unikraft-initrd:latest\n2026/06/24 11:31:45 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-spt-mirage:latest\n2026/06/24 11:32:05 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-firecracker-unikraft:latest\n2026/06/24 11:32:10 Pulling image: harbor.nbfc.io/nubificus/urunc/readfile-qemu-unikraft-raw:latest\n2026/06/24 11:32:19 Pulling image: harbor.nbfc.io/nubificus/urunc/readfile-qemu-linux-raw:latest\npanic: test timed out after 20m0s\nrunning tests:\nTestE2E (20m0s)\n2026-06-24T11:45:08.1599644Z\ngoroutine 12 [running]:\ntesting.(*M).startAlarm.func1()\ncreated by time.goFunc\n2026-06-24T11:45:08.1602146Z\ngoroutine 1 [chan receive, 20 minutes]:\ntesting.(*T).Run(0x5d2d129786c8, {0x8ed390?, 0x911d8b900154660?}, 0x93a378)\ntesting.runTests.func1(0x5d2d129786c8)\ntesting.tRunner(0x5d2d129786c8, 0x5d2d12a1fc48)\ntesting.runTests({0x900f3a, 0x1a}, {0x90c9ab, 0x24}, 0x5d2d126dee40, {0x1092a60, 0x1, 0x1}, {0x808080757745564a?, 0x8f5559?, ...})\ntesting.(*M).Run(0x5d2d12a8a0a0)\nmain.main()\n_testmain.go:46 +0x80\n2026-06-24T11:45:08.1609686Z\ngoroutine 8 [select, 20 minutes]:\ngithub.com/onsi/ginkgo/v2/internal.(*Suite).runNode(_, {0x16, 0x80, {0x0, 0x0}, 0x5d2d12aa2560, {{0xac1929, 0x33}, 0x19, {0x0, ...}, ...}, ...}, ...)\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:969 +0xc18\ngithub.com/onsi/ginkgo/v2/internal.(*group).attemptSpec(0x5d2d12ad5710, 0x1, {{0x5d2d1286f808?, 0x5d2d1288b180?, 0x2?}, 0x0?})\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/group.go:234 +0xa9c\ngithub.com/onsi/ginkgo/v2/internal.(*group).run(0x5d2d12ad5710, {0x5d2d12978b48?, 0x5d2d129b9b00?, 0x1?})\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/group.go:384 +0x900\ngithub.com/onsi/ginkgo/v2/internal.(*Suite).runSpecs(0x5d2d12a78008, {0x8efce4, 0x9}, {0x10f8a60, 0x0, 0x0}, {0x10f8a60, 0x0, 0x0}, 0x5d2d12a86450, ...)\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:519 +0x904\ngithub.com/onsi/ginkgo/v2/internal.(*Suite).Run(_, {_, _}, {_, _, _}, {_, _, _}, _, ...)\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:136 +0x30c\ngithub.com/onsi/ginkgo/v2.RunSpecs({0x945980, 0x5d2d12978908}, {0x8efce4, 0x9}, {0x0, 0x0, 0x0})\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/core_dsl.go:315 +0x758\ngithub.com/urunc-dev/urunc/tests/e2e.TestE2E(0x5d2d12978908)\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:37 +0x58\ntesting.tRunner(0x5d2d12978908, 0x93a378)\ncreated by testing.(*T).Run in goroutine 1\n2026-06-24T11:45:08.1621713Z\ngoroutine 18 [syscall, 20 minutes]:\nos/signal.signal_recv()\nos/signal.loop()\ncreated by os/signal.Notify.func1.1 in goroutine 8\n2026-06-24T11:45:08.1624277Z\ngoroutine 34 [select, 20 minutes]:\ngithub.com/onsi/ginkgo/v2/internal/interrupt_handler.(*InterruptHandler).registerForInterrupts.func2(0x0?)\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/interrupt_handler/interrupt_handler.go:131 +0x74\ncreated by github.com/onsi/ginkgo/v2/internal/interrupt_handler.(*InterruptHandler).registerForInterrupts in goroutine 8\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/interrupt_handler/interrupt_handler.go:128 +0x154\n2026-06-24T11:45:08.1627818Z\ngoroutine 50 [select, 20 minutes]:\ngithub.com/onsi/ginkgo/v2/internal.RegisterForProgressSignal.func1()\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/progress_report.go:32 +0x88\ncreated by github.com/onsi/ginkgo/v2/internal.RegisterForProgressSignal in goroutine 8\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/progress_report.go:30 +0xc8\n2026-06-24T11:45:08.1630739Z\ngoroutine 109 [syscall, 13 minutes]:\nsyscall.Syscall6(0x5f, 0x3, 0xd, 0x5d2d12ca5698, 0x4, 0x5d2d12cd02d0, 0x0)\ninternal/syscall/unix.Waitid(0x5d2d12ca57f8?, 0x18afc0?, 0x5d2d12cbe4c8?, 0x1?, 0x5d2d12aaa440?)\nos.(*Process).pidfdWait.func1(...)\nos.ignoringEINTR(...)\nos.(*Process).pidfdWait(0x5d2d12aaa4c0)\nos.(*Process).wait(0xfffefa260a00?)\nos.(*Process).Wait(...)\nos/exec.(*Cmd).Wait(0x5d2d128676c0)\nos/exec.(*Cmd).Run(0x5d2d128676c0)\nos/exec.(*Cmd).Output(0x5d2d128676c0)\ngithub.com/urunc-dev/urunc/tests/e2e.commonCmdExec({0x5d2d12b441e0, 0x4c})\n/home/runner/work/urunc/urunc/tests/e2e/common.go:115 +0xa4\ngithub.com/urunc-dev/urunc/tests/e2e.commonPull({0x8ea0f4?, 0x0?}, {0x9214b8?, 0x0?})\n/home/runner/work/urunc/urunc/tests/e2e/common.go:128 +0x48\ngithub.com/urunc-dev/urunc/tests/e2e.pullImageForTest({0x8ed400?, 0x32978?}, {0x9214b8?, 0xfffefa260a30?})\n/home/runner/work/urunc/urunc/tests/e2e/utils.go:95 +0x1d4\ngithub.com/urunc-dev/urunc/tests/e2e.pullImageWithRetry({0x8ed400, 0x7}, {0x9214b8, 0x3d})\n/home/runner/work/urunc/urunc/tests/e2e/utils.go:70 +0xbc\ngithub.com/urunc-dev/urunc/tests/e2e.pullAllImages({0x8ed400, 0x7}, {0x5d2d127dc000?, 0x11, 0x0?})\n/home/runner/work/urunc/urunc/tests/e2e/utils.go:51 +0xd8\ngithub.com/urunc-dev/urunc/tests/e2e.init.func2.1()\n/home/runner/work/urunc/urunc/tests/e2e/ctr_test.go:28 +0x208\ngithub.com/onsi/ginkgo/v2/internal.extractBodyFunction.func3({0x82ba80?, 0x5d2d1291bda0?})\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/node.go:585 +0x24\ngithub.com/onsi/ginkgo/v2/internal.(*Suite).runNode.func3()\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:946 +0x26c\ncreated by github.com/onsi/ginkgo/v2/internal.(*Suite).runNode in goroutine 8\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:911 +0xa90\n2026-06-24T11:45:08.1648622Z\ngoroutine 124 [IO wait]:\ninternal/poll.runtime_pollWait(0xfffeb37ca000, 0x72)\ninternal/poll.(*pollDesc).wait(0x5d2d12cc08a0?, 0x5d2d12a1620b?, 0x1)\ninternal/poll.(*pollDesc).waitRead(...)\ninternal/poll.(*FD).Read(0x5d2d12cc08a0, {0x5d2d12a1620b, 0x9df5, 0x9df5})\nos.(*File).read(...)\nos.(*File).Read(0x5d2d12b02128, {0x5d2d12a1620b?, 0x0?, 0x10000?})\nbytes.(*Buffer).ReadFrom(0x5d2d12b255c0, {0x9457b8, 0x5d2d12b02128})\nio.copyBuffer({0x9459a0, 0x5d2d12b255c0}, {0x9457b8, 0x5d2d12b02128}, {0x0, 0x0, 0x0})\nio.Copy(...)\nos.genericWriteTo(0x5d2d12b02128?, {0x9459a0?, 0x5d2d12b255c0?})\nos.(*File).WriteTo(0x5d2d12b02128, {0x9459a0, 0x5d2d12b255c0})\nio.copyBuffer({0x9459a0, 0x5d2d12b255c0}, {0x945838, 0x5d2d12b02128}, {0x0, 0x0, 0x0})\nio.Copy(...)\nos/exec.(*Cmd).writerDescriptor.func1()\nos/exec.(*Cmd).Start.func2(0x0?)\ncreated by os/exec.(*Cmd).Start in goroutine 109\n2026-06-24T11:45:08.1662563Z\ngoroutine 125 [IO wait, 13 minutes]:\ninternal/poll.runtime_pollWait(0xfffeb37c9c00, 0x72)\ninternal/poll.(*pollDesc).wait(0x5d2d12cc0960?, 0x5d2d128b0c00?, 0x1)\ninternal/poll.(*pollDesc).waitRead(...)\ninternal/poll.(*FD).Read(0x5d2d12cc0960, {0x5d2d128b0c00, 0x200, 0x200})\nos.(*File).read(...)\nos.(*File).Read(0x5d2d12b02140, {0x5d2d128b0c00?, 0x0?, 0x0?})\nbytes.(*Buffer).ReadFrom(0x5d2d12b25260, {0x9457b8, 0x5d2d12b02140})\nio.copyBuffer({0x9459a0, 0x5d2d12b25260}, {0x9457b8, 0x5d2d12b02140}, {0x0, 0x0, 0x0})\nio.Copy(...)\nos.genericWriteTo(0x5d2d12b02140?, {0x9459a0?, 0x5d2d12b25260?})\nos.(*File).WriteTo(0x5d2d12b02140, {0x9459a0, 0x5d2d12b25260})\nio.copyBuffer({0x9459a0, 0x5d2d12b25260}, {0x945838, 0x5d2d12b02140}, {0x0, 0x0, 0x0})\nio.Copy(...)\nos/exec.(*Cmd).writerDescriptor.func1()\nos/exec.(*Cmd).Start.func2(0x0?)\ncreated by os/exec.(*Cmd).Start in goroutine 109\nFAIL\tgithub.com/urunc-dev/urunc/tests/e2e\t1200.015s\nFAIL\nmake: *** [Makefile:311: test_ctr_Spt] Error 1\n##[error]Process completed with exit code 2."
+          }
+        ],
+        "run_attempt": 5
       },
       "recent_runs": [
         {
-          "id": 28083498418,
+          "id": 28087441501,
           "name": "urunc CI",
           "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 2116,
-          "created_at": "2026-06-24T07:47:59Z",
-          "updated_at": "2026-06-24T07:47:59Z",
-          "run_started_at": "2026-06-24T07:47:59Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28083498418",
+          "conclusion": "cancelled",
+          "run_number": 2120,
+          "created_at": "2026-06-24T09:02:33Z",
+          "updated_at": "2026-06-24T11:45:12Z",
+          "run_started_at": "2026-06-24T11:22:00Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501",
+          "jobs": [
+            {
+              "name": "check-labels",
+              "conclusion": "success",
+              "duration_sec": 16,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181830934"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 30,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831282"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 50,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831309"
+            },
+            {
+              "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 72,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831370"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 31,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831546"
+            },
+            {
+              "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 68,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831581"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 60,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831595"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
+              "conclusion": "failure",
+              "duration_sec": 1384,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831797"
+            },
+            {
+              "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 59,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831840"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
+              "conclusion": "success",
+              "duration_sec": 861,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831935"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+              "conclusion": "cancelled",
+              "duration_sec": 1322,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831964"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
+              "conclusion": "cancelled",
+              "duration_sec": 1322,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831971"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
+              "conclusion": "cancelled",
+              "duration_sec": 1315,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832103"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 328,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832122"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
+              "conclusion": "success",
+              "duration_sec": 788,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832202"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 292,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832207"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
+              "conclusion": "success",
+              "duration_sec": 833,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832209"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
+              "conclusion": "success",
+              "duration_sec": 682,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181832722"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 27,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181855283"
+            }
+          ],
+          "failed_jobs": [
+            {
+              "id": 83181831797,
+              "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087441501/job/83181831797",
+              "log_snippet": "[Crash / Timeout] — 4 signal(s) found\n────────────────────────────────────────────────\n-\u003e Crash / Timeout\n  panic: test timed out after 20m0s\n-\u003e Test Failure\n  FAIL\tgithub.com/urunc-dev/urunc/tests/e2e\t1200.015s\n-\u003e Build Failure\n  make: *** [Makefile:311: test_ctr_Spt] Error 1\n  ##[error]Process completed with exit code 2.",
+              "raw_log": "go mod verify\nall modules verified\n##[group]Run # Set up Go environment properly\n# Set up Go environment properly\nexport GOROOT=$(go env GOROOT)\nexport PATH=\"$GOROOT/bin:$PATH\"\ngo version\ngo env GOROOT\nif [ \"arm64\" = \"arm64\" ]; then\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_ctr_Spt\nelse\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_ctr\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo version go1.26.4 linux/arm64\nTesting ctr\n=== RUN   TestE2E\nRunning Suite: E2E Suite - /home/runner/work/urunc/urunc/tests/e2e\n==================================================================\nRandom Seed: 1782300308\n2026-06-24T11:25:08.1546964Z\nWill run 3 of 72 specs\nSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\n------------------------------\nCtr unikernel containers Spt-rumprun-hello\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56\n2026/06/24 11:25:08 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-hvt-rumprun-nonet:latest\n2026/06/24 11:27:16 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-hvt-mirage:latest\n2026/06/24 11:27:33 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-qemu-unikraft:latest\n2026/06/24 11:27:38 Pulling image: harbor.nbfc.io/nubificus/urunc/block-test-hvt-mirage:latest\n2026/06/24 11:27:57 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-spt-rumprun-nonet:latest\n2026/06/24 11:29:41 Pulling image: harbor.nbfc.io/nubificus/urunc/block-test-spt-mirage:latest\n2026/06/24 11:30:00 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-env-qemu-unikraft-initrd:latest\n2026/06/24 11:30:19 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-exec-env-qemu-linux-raw:latest\n2026/06/24 11:31:31 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-env-firecracker-unikraft-initrd:latest\n2026/06/24 11:31:45 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-spt-mirage:latest\n2026/06/24 11:32:05 Pulling image: harbor.nbfc.io/nubificus/urunc/hello-firecracker-unikraft:latest\n2026/06/24 11:32:10 Pulling image: harbor.nbfc.io/nubificus/urunc/readfile-qemu-unikraft-raw:latest\n2026/06/24 11:32:19 Pulling image: harbor.nbfc.io/nubificus/urunc/readfile-qemu-linux-raw:latest\npanic: test timed out after 20m0s\nrunning tests:\nTestE2E (20m0s)\n2026-06-24T11:45:08.1599644Z\ngoroutine 12 [running]:\ntesting.(*M).startAlarm.func1()\ncreated by time.goFunc\n2026-06-24T11:45:08.1602146Z\ngoroutine 1 [chan receive, 20 minutes]:\ntesting.(*T).Run(0x5d2d129786c8, {0x8ed390?, 0x911d8b900154660?}, 0x93a378)\ntesting.runTests.func1(0x5d2d129786c8)\ntesting.tRunner(0x5d2d129786c8, 0x5d2d12a1fc48)\ntesting.runTests({0x900f3a, 0x1a}, {0x90c9ab, 0x24}, 0x5d2d126dee40, {0x1092a60, 0x1, 0x1}, {0x808080757745564a?, 0x8f5559?, ...})\ntesting.(*M).Run(0x5d2d12a8a0a0)\nmain.main()\n_testmain.go:46 +0x80\n2026-06-24T11:45:08.1609686Z\ngoroutine 8 [select, 20 minutes]:\ngithub.com/onsi/ginkgo/v2/internal.(*Suite).runNode(_, {0x16, 0x80, {0x0, 0x0}, 0x5d2d12aa2560, {{0xac1929, 0x33}, 0x19, {0x0, ...}, ...}, ...}, ...)\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:969 +0xc18\ngithub.com/onsi/ginkgo/v2/internal.(*group).attemptSpec(0x5d2d12ad5710, 0x1, {{0x5d2d1286f808?, 0x5d2d1288b180?, 0x2?}, 0x0?})\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/group.go:234 +0xa9c\ngithub.com/onsi/ginkgo/v2/internal.(*group).run(0x5d2d12ad5710, {0x5d2d12978b48?, 0x5d2d129b9b00?, 0x1?})\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/group.go:384 +0x900\ngithub.com/onsi/ginkgo/v2/internal.(*Suite).runSpecs(0x5d2d12a78008, {0x8efce4, 0x9}, {0x10f8a60, 0x0, 0x0}, {0x10f8a60, 0x0, 0x0}, 0x5d2d12a86450, ...)\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:519 +0x904\ngithub.com/onsi/ginkgo/v2/internal.(*Suite).Run(_, {_, _}, {_, _, _}, {_, _, _}, _, ...)\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:136 +0x30c\ngithub.com/onsi/ginkgo/v2.RunSpecs({0x945980, 0x5d2d12978908}, {0x8efce4, 0x9}, {0x0, 0x0, 0x0})\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/core_dsl.go:315 +0x758\ngithub.com/urunc-dev/urunc/tests/e2e.TestE2E(0x5d2d12978908)\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:37 +0x58\ntesting.tRunner(0x5d2d12978908, 0x93a378)\ncreated by testing.(*T).Run in goroutine 1\n2026-06-24T11:45:08.1621713Z\ngoroutine 18 [syscall, 20 minutes]:\nos/signal.signal_recv()\nos/signal.loop()\ncreated by os/signal.Notify.func1.1 in goroutine 8\n2026-06-24T11:45:08.1624277Z\ngoroutine 34 [select, 20 minutes]:\ngithub.com/onsi/ginkgo/v2/internal/interrupt_handler.(*InterruptHandler).registerForInterrupts.func2(0x0?)\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/interrupt_handler/interrupt_handler.go:131 +0x74\ncreated by github.com/onsi/ginkgo/v2/internal/interrupt_handler.(*InterruptHandler).registerForInterrupts in goroutine 8\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/interrupt_handler/interrupt_handler.go:128 +0x154\n2026-06-24T11:45:08.1627818Z\ngoroutine 50 [select, 20 minutes]:\ngithub.com/onsi/ginkgo/v2/internal.RegisterForProgressSignal.func1()\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/progress_report.go:32 +0x88\ncreated by github.com/onsi/ginkgo/v2/internal.RegisterForProgressSignal in goroutine 8\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/progress_report.go:30 +0xc8\n2026-06-24T11:45:08.1630739Z\ngoroutine 109 [syscall, 13 minutes]:\nsyscall.Syscall6(0x5f, 0x3, 0xd, 0x5d2d12ca5698, 0x4, 0x5d2d12cd02d0, 0x0)\ninternal/syscall/unix.Waitid(0x5d2d12ca57f8?, 0x18afc0?, 0x5d2d12cbe4c8?, 0x1?, 0x5d2d12aaa440?)\nos.(*Process).pidfdWait.func1(...)\nos.ignoringEINTR(...)\nos.(*Process).pidfdWait(0x5d2d12aaa4c0)\nos.(*Process).wait(0xfffefa260a00?)\nos.(*Process).Wait(...)\nos/exec.(*Cmd).Wait(0x5d2d128676c0)\nos/exec.(*Cmd).Run(0x5d2d128676c0)\nos/exec.(*Cmd).Output(0x5d2d128676c0)\ngithub.com/urunc-dev/urunc/tests/e2e.commonCmdExec({0x5d2d12b441e0, 0x4c})\n/home/runner/work/urunc/urunc/tests/e2e/common.go:115 +0xa4\ngithub.com/urunc-dev/urunc/tests/e2e.commonPull({0x8ea0f4?, 0x0?}, {0x9214b8?, 0x0?})\n/home/runner/work/urunc/urunc/tests/e2e/common.go:128 +0x48\ngithub.com/urunc-dev/urunc/tests/e2e.pullImageForTest({0x8ed400?, 0x32978?}, {0x9214b8?, 0xfffefa260a30?})\n/home/runner/work/urunc/urunc/tests/e2e/utils.go:95 +0x1d4\ngithub.com/urunc-dev/urunc/tests/e2e.pullImageWithRetry({0x8ed400, 0x7}, {0x9214b8, 0x3d})\n/home/runner/work/urunc/urunc/tests/e2e/utils.go:70 +0xbc\ngithub.com/urunc-dev/urunc/tests/e2e.pullAllImages({0x8ed400, 0x7}, {0x5d2d127dc000?, 0x11, 0x0?})\n/home/runner/work/urunc/urunc/tests/e2e/utils.go:51 +0xd8\ngithub.com/urunc-dev/urunc/tests/e2e.init.func2.1()\n/home/runner/work/urunc/urunc/tests/e2e/ctr_test.go:28 +0x208\ngithub.com/onsi/ginkgo/v2/internal.extractBodyFunction.func3({0x82ba80?, 0x5d2d1291bda0?})\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/node.go:585 +0x24\ngithub.com/onsi/ginkgo/v2/internal.(*Suite).runNode.func3()\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:946 +0x26c\ncreated by github.com/onsi/ginkgo/v2/internal.(*Suite).runNode in goroutine 8\n/home/runner/work/urunc/urunc/vendor/github.com/onsi/ginkgo/v2/internal/suite.go:911 +0xa90\n2026-06-24T11:45:08.1648622Z\ngoroutine 124 [IO wait]:\ninternal/poll.runtime_pollWait(0xfffeb37ca000, 0x72)\ninternal/poll.(*pollDesc).wait(0x5d2d12cc08a0?, 0x5d2d12a1620b?, 0x1)\ninternal/poll.(*pollDesc).waitRead(...)\ninternal/poll.(*FD).Read(0x5d2d12cc08a0, {0x5d2d12a1620b, 0x9df5, 0x9df5})\nos.(*File).read(...)\nos.(*File).Read(0x5d2d12b02128, {0x5d2d12a1620b?, 0x0?, 0x10000?})\nbytes.(*Buffer).ReadFrom(0x5d2d12b255c0, {0x9457b8, 0x5d2d12b02128})\nio.copyBuffer({0x9459a0, 0x5d2d12b255c0}, {0x9457b8, 0x5d2d12b02128}, {0x0, 0x0, 0x0})\nio.Copy(...)\nos.genericWriteTo(0x5d2d12b02128?, {0x9459a0?, 0x5d2d12b255c0?})\nos.(*File).WriteTo(0x5d2d12b02128, {0x9459a0, 0x5d2d12b255c0})\nio.copyBuffer({0x9459a0, 0x5d2d12b255c0}, {0x945838, 0x5d2d12b02128}, {0x0, 0x0, 0x0})\nio.Copy(...)\nos/exec.(*Cmd).writerDescriptor.func1()\nos/exec.(*Cmd).Start.func2(0x0?)\ncreated by os/exec.(*Cmd).Start in goroutine 109\n2026-06-24T11:45:08.1662563Z\ngoroutine 125 [IO wait, 13 minutes]:\ninternal/poll.runtime_pollWait(0xfffeb37c9c00, 0x72)\ninternal/poll.(*pollDesc).wait(0x5d2d12cc0960?, 0x5d2d128b0c00?, 0x1)\ninternal/poll.(*pollDesc).waitRead(...)\ninternal/poll.(*FD).Read(0x5d2d12cc0960, {0x5d2d128b0c00, 0x200, 0x200})\nos.(*File).read(...)\nos.(*File).Read(0x5d2d12b02140, {0x5d2d128b0c00?, 0x0?, 0x0?})\nbytes.(*Buffer).ReadFrom(0x5d2d12b25260, {0x9457b8, 0x5d2d12b02140})\nio.copyBuffer({0x9459a0, 0x5d2d12b25260}, {0x9457b8, 0x5d2d12b02140}, {0x0, 0x0, 0x0})\nio.Copy(...)\nos.genericWriteTo(0x5d2d12b02140?, {0x9459a0?, 0x5d2d12b25260?})\nos.(*File).WriteTo(0x5d2d12b02140, {0x9459a0, 0x5d2d12b25260})\nio.copyBuffer({0x9459a0, 0x5d2d12b25260}, {0x945838, 0x5d2d12b02140}, {0x0, 0x0, 0x0})\nio.Copy(...)\nos/exec.(*Cmd).writerDescriptor.func1()\nos/exec.(*Cmd).Start.func2(0x0?)\ncreated by os/exec.(*Cmd).Start in goroutine 109\nFAIL\tgithub.com/urunc-dev/urunc/tests/e2e\t1200.015s\nFAIL\nmake: *** [Makefile:311: test_ctr_Spt] Error 1\n##[error]Process completed with exit code 2."
+            }
+          ],
+          "run_attempt": 5
+        },
+        {
+          "id": 28087024656,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "run_number": 2119,
+          "created_at": "2026-06-24T08:55:02Z",
+          "updated_at": "2026-06-24T09:02:52Z",
+          "run_started_at": "2026-06-24T08:55:02Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656",
+          "jobs": [
+            {
+              "name": "check-labels",
+              "conclusion": "success",
+              "duration_sec": 12,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155435337"
+            },
+            {
+              "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "duration_sec": 4,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480335"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 48,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480342"
+            },
+            {
+              "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 36,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480344"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 23,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480349"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 26,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480350"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 25,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480369"
+            },
+            {
+              "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 56,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480378"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 45,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480431"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 295,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656063"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 304,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656111"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
+              "conclusion": "cancelled",
+              "duration_sec": 366,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656131"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
+              "conclusion": "cancelled",
+              "duration_sec": 373,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656136"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
+              "conclusion": "cancelled",
+              "duration_sec": 374,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656137"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
+              "conclusion": "cancelled",
+              "duration_sec": 366,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656144"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
+              "conclusion": "cancelled",
+              "duration_sec": 365,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656149"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
+              "conclusion": "cancelled",
+              "duration_sec": 374,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656162"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+              "conclusion": "cancelled",
+              "duration_sec": 373,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656166"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
+              "conclusion": "cancelled",
+              "duration_sec": 365,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155656169"
+            }
+          ],
+          "failed_jobs": [
+            {
+              "id": 83155480335,
+              "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024656/job/83155480335",
+              "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]Unable to resolve action `golangci/golangci-lint-action@72798d34b1eb36745915b0d4eea5c2b3b31bdfe3`, unable to find version `72798d34b1eb36745915b0d4eea5c2b3b31bdfe3`",
+              "raw_log": "##[group]Runner Image Provisioner\nHosted Compute Agent\nVersion: 20260611.554\nCommit: 5e0782fdc9014723d3be820dd114dd31555c2bd1\nBuild Date: 2026-06-11T21:40:46Z\nWorker ID: {2d058ea6-8150-443c-9f46-bd6732140f43}\nAzure Region: westus\n##[endgroup]\n##[group]Operating System\nUbuntu\n22.04.5\nLTS\n##[endgroup]\n##[group]Runner Image\nImage: ubuntu-22.04\nVersion: 20260617.186.1\nIncluded Software: https://github.com/actions/runner-images/blob/ubuntu22/20260617.186/images/ubuntu/Ubuntu2204-Readme.md\nImage Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20260617.186\n##[endgroup]\n##[group]GITHUB_TOKEN Permissions\nContents: read\nMetadata: read\nPullRequests: read\n##[endgroup]\nSecret source: Actions\nPrepare workflow directory\nPrepare all required actions\nGetting action download info\n##[error]Unable to resolve action `golangci/golangci-lint-action@72798d34b1eb36745915b0d4eea5c2b3b31bdfe3`, unable to find version `72798d34b1eb36745915b0d4eea5c2b3b31bdfe3`"
+            }
+          ],
+          "run_attempt": 1
+        },
+        {
+          "id": 28085990925,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "run_number": 2118,
+          "created_at": "2026-06-24T08:35:46Z",
+          "updated_at": "2026-06-24T08:55:21Z",
+          "run_started_at": "2026-06-24T08:35:46Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925",
+          "jobs": [
+            {
+              "name": "check-labels",
+              "conclusion": "success",
+              "duration_sec": 13,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83151985097"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "failure",
+              "duration_sec": 23,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030439"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "duration_sec": 40,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030457"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 23,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030478"
+            },
+            {
+              "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "duration_sec": 25,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030482"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 25,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030506"
+            },
+            {
+              "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 39,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030507"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 52,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030524"
+            },
+            {
+              "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 64,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030594"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 309,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225292"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 312,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225305"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
+              "conclusion": "success",
+              "duration_sec": 993,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225318"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
+              "conclusion": "success",
+              "duration_sec": 937,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225329"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+              "conclusion": "cancelled",
+              "duration_sec": 1089,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225368"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
+              "conclusion": "success",
+              "duration_sec": 514,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225372"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
+              "conclusion": "success",
+              "duration_sec": 422,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225374"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
+              "conclusion": "cancelled",
+              "duration_sec": 1082,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225391"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
+              "conclusion": "success",
+              "duration_sec": 418,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225440"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
+              "conclusion": "success",
+              "duration_sec": 443,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152225454"
+            }
+          ],
+          "failed_jobs": [
+            {
+              "id": 83152030439,
+              "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030439",
+              "log_snippet": "[Test Failure] — 8 signal(s) found\n────────────────────────────────────────────────\n-\u003e Test Failure\n  default_config_produces_expected_map\n  custom_config_produces_expected_map\n  default_config_produces_expected_map (0.00s)\n  custom_config_produces_expected_map (0.00s)\n  FAIL\tgithub.com/urunc-dev/urunc/pkg/network [build failed]\n-\u003e Build Failure\n  ##[error]pkg/network/network.go:131:64: fmt.Errorf format %q has arg ief of wrong type *net.Interface\n  make: *** [Makefile:257: test_network] Error 1\n  ##[error]Process completed with exit code 2.",
+              "raw_log": "From https://github.com/urunc-dev/urunc\n* branch            fa4ae881fe9ffb59d906d2bb25226bd43f8a725a -\u003e FETCH_HEAD\n[command]/usr/bin/git rev-parse --verify --quiet fa4ae881fe9ffb59d906d2bb25226bd43f8a725a^{object}\nfa4ae881fe9ffb59d906d2bb25226bd43f8a725a\n##[endgroup]\n##[group]Determining the checkout info\n##[endgroup]\n[command]/usr/bin/git sparse-checkout disable\n[command]/usr/bin/git config --local --unset-all extensions.worktreeConfig\n##[group]Checking out the ref\n[command]/usr/bin/git checkout --progress --force fa4ae881fe9ffb59d906d2bb25226bd43f8a725a\nNote: switching to 'fa4ae881fe9ffb59d906d2bb25226bd43f8a725a'.\n2026-06-24T08:36:13.1441560Z\nYou are in 'detached HEAD' state. You can look around, make experimental\nchanges and commit them, and you can discard any commits you make in this\nstate without impacting any branches by switching back to a branch.\n2026-06-24T08:36:13.1445188Z\nIf you want to create a new branch to retain commits you create, you may\ndo so (now or later) by using -c with the switch command. Example:\n2026-06-24T08:36:13.1446923Z\ngit switch -c \u003cnew-branch-name\u003e\n2026-06-24T08:36:13.1448042Z\nOr undo this operation with:\n2026-06-24T08:36:13.1448794Z\ngit switch -\n2026-06-24T08:36:13.1449598Z\nTurn off this advice by setting config variable advice.detachedHead to false\n2026-06-24T08:36:13.1450655Z\nHEAD is now at fa4ae88 chore(go): Update Go version and dependencies\n##[endgroup]\n[command]/usr/bin/git log -1 --format=%H\nfa4ae881fe9ffb59d906d2bb25226bd43f8a725a\n##[group]Run actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c\nwith:\ngo-version: 1.26.4\ncache: false\ncheck-latest: false\ntoken: ***\n##[endgroup]\nSetup go version spec 1.26.4\nAdded go to the path\nSuccessfully set up Go version 1.26.4\ngo version go1.26.4 linux/arm64\n2026-06-24T08:36:13.7449965Z\n##[group]go env\nAR='ar'\nCC='gcc'\nCGO_CFLAGS='-O2 -g'\nCGO_CPPFLAGS=''\nCGO_CXXFLAGS='-O2 -g'\nCGO_ENABLED='1'\nCGO_FFLAGS='-O2 -g'\nCGO_LDFLAGS='-O2 -g'\nCXX='g++'\nGCCGO='gccgo'\nGO111MODULE=''\nGOARCH='arm64'\nGOARM64='v8.0'\nGOAUTH='netrc'\nGOBIN=''\nGOCACHE='/home/runner/.cache/go-build'\nGOCACHEPROG=''\nGODEBUG=''\nGOENV='/home/runner/.config/go/env'\nGOEXE=''\nGOEXPERIMENT=''\nGOFIPS140='off'\nGOFLAGS=''\nGOGCCFLAGS='-fPIC -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build3926866092=/tmp/go-build -gno-record-gcc-switches'\nGOHOSTARCH='arm64'\nGOHOSTOS='linux'\nGOINSECURE=''\nGOMOD='/home/runner/work/urunc/urunc/go.mod'\nGOMODCACHE='/home/runner/go/pkg/mod'\nGONOPROXY=''\nGONOSUMDB=''\nGOOS='linux'\nGOPATH='/home/runner/go'\nGOPRIVATE=''\nGOPROXY='https://proxy.golang.org,direct'\nGOSUMDB='sum.golang.org'\nGOTELEMETRY='local'\nGOTELEMETRYDIR='/home/runner/.config/go/telemetry'\nGOTMPDIR=''\nGOTOOLCHAIN='local'\nGOVCS=''\nGOVERSION='go1.26.4'\nGOWORK=''\nPKG_CONFIG='pkg-config'\n2026-06-24T08:36:14.3074874Z\n##[endgroup]\n##[group]Run make unittest\nmake unittest\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\nUnit testing in unikontainers\ngo: downloading github.com/BurntSushi/toml v1.6.0\ngo: downloading github.com/moby/sys/mount v0.3.5\ngo: downloading github.com/moby/sys/userns v0.1.0\ngo: downloading github.com/opencontainers/runtime-spec v1.2.1\ngo: downloading github.com/sirupsen/logrus v1.9.4\ngo: downloading github.com/vishvananda/netlink v1.3.1\ngo: downloading golang.org/x/sys v0.46.0\ngo: downloading github.com/stretchr/testify v1.11.1\ngo: downloading github.com/moby/sys/mountinfo v0.7.2\ngo: downloading github.com/rs/zerolog v1.35.1\ngo: downloading github.com/jackpal/gateway v1.2.0\ngo: downloading github.com/elastic/go-seccomp-bpf v1.6.0\ngo: downloading github.com/nubificus/hedge_cli v0.0.3\ngo: downloading github.com/cavaliergopher/cpio v1.0.1\ngo: downloading github.com/hashicorp/go-version v1.9.0\ngo: downloading github.com/vishvananda/netns v0.0.5\ngo: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc\ngo: downloading github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2\ngo: downloading github.com/mattn/go-colorable v0.1.15\ngo: downloading golang.org/x/net v0.56.0\ngo: downloading gopkg.in/yaml.v3 v3.0.1\ngo: downloading github.com/mattn/go-isatty v0.0.22\n=== RUN   TestGetBlockDevice\n--- PASS: TestGetBlockDevice (0.00s)\n=== RUN   TestGetConfigFromSpec\n=== RUN   TestGetConfigFromSpec/get_config_from_spec_success\n=== PAUSE TestGetConfigFromSpec/get_config_from_spec_success\n=== RUN   TestGetConfigFromSpec/get_config_from_spec_with_empty_annotations\n=== PAUSE TestGetConfigFromSpec/get_config_from_spec_with_empty_annotations\n=== RUN   TestGetConfigFromSpec/get_config_from_spec_with_partial_(invalid)_annotations\n=== PAUSE TestGetConfigFromSpec/get_config_from_spec_with_partial_(invalid)_annotations\n=== CONT  TestGetConfigFromSpec/get_config_from_spec_success\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: type1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: binary1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: hypervisor1\" error=\"illegal base64 data at input byte 8\" subsystem=unikontainers\n=== CONT  TestGetConfigFromSpec/get_config_from_spec_with_partial_(invalid)_annotations\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: initrd1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: block1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: point1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: type1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\n=== CONT  TestGetConfigFromSpec/get_config_from_spec_with_empty_annotations\n--- PASS: TestGetConfigFromSpec (0.00s)\n--- PASS: TestGetConfigFromSpec/get_config_from_spec_success (0.00s)\n--- PASS: TestGetConfigFromSpec/get_config_from_spec_with_partial_(invalid)_annotations (0.00s)\n--- PASS: TestGetConfigFromSpec/get_config_from_spec_with_empty_annotations (0.00s)\n=== RUN   TestGetConfigFromJSON\n=== RUN   TestGetConfigFromJSON/get_config_from_json_success\n=== PAUSE TestGetConfigFromJSON/get_config_from_json_success\n=== RUN   TestGetConfigFromJSON/get_config_from_json_file_not_found\n=== PAUSE TestGetConfigFromJSON/get_config_from_json_file_not_found\n=== RUN   TestGetConfigFromJSON/get_config_from_json_is_directory\n=== PAUSE TestGetConfigFromJSON/get_config_from_json_is_directory\n=== RUN   TestGetConfigFromJSON/get_config_from_invalid_JSON\n=== PAUSE TestGetConfigFromJSON/get_config_from_invalid_JSON\n=== CONT  TestGetConfigFromJSON/get_config_from_json_success\n=== CONT  TestGetConfigFromJSON/get_config_from_json_is_directory\n=== CONT  TestGetConfigFromJSON/get_config_from_invalid_JSON\n=== CONT  TestGetConfigFromJSON/get_config_from_json_file_not_found\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: type1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: binary1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: hypervisor1\" error=\"illegal base64 data at input byte 8\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: initrd1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: block1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:29Z\" level=error msg=\"Failed to decode string: point1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\n--- PASS: TestGetConfigFromJSON (0.00s)\n--- PASS: TestGetConfigFromJSON/get_config_from_json_file_not_found (0.00s)\n--- PASS: TestGetConfigFromJSON/get_config_from_invalid_JSON (0.00s)\n--- PASS: TestGetConfigFromJSON/get_config_from_json_success (0.00s)\n--- PASS: TestGetConfigFromJSON/get_config_from_json_is_directory (0.00s)\n=== RUN   TestDecode\n=== RUN   TestDecode/decode_success\n=== PAUSE TestDecode/decode_success\n=== RUN   TestDecode/decode_invalid_base64\n=== PAUSE TestDecode/decode_invalid_base64\n=== CONT  TestDecode/decode_success\n=== CONT  TestDecode/decode_invalid_base64\n--- PASS: TestDecode (0.00s)\n--- PASS: TestDecode/decode_success (0.00s)\n--- PASS: TestDecode/decode_invalid_base64 (0.00s)\n=== RUN   TestMap\n=== RUN   TestMap/unikernelConfig_map_success\n=== PAUSE TestMap/unikernelConfig_map_success\n=== RUN   TestMap/unikernelConfig_map_empty_fields\n=== PAUSE TestMap/unikernelConfig_map_empty_fields\n=== RUN   TestMap/unikernelConfig_map_partial_fields\n=== PAUSE TestMap/unikernelConfig_map_partial_fields\n=== RUN   TestMap/unikernelConfig_map_no_fields\n=== PAUSE TestMap/unikernelConfig_map_no_fields\n=== CONT  TestMap/unikernelConfig_map_success\n=== CONT  TestMap/unikernelConfig_map_no_fields\n=== CONT  TestMap/unikernelConfig_map_partial_fields\n=== CONT  TestMap/unikernelConfig_map_empty_fields\n--- PASS: TestMap (0.00s)\n--- PASS: TestMap/unikernelConfig_map_success (0.00s)\n--- PASS: TestMap/unikernelConfig_map_no_fields (0.00s)\n--- PASS: TestMap/unikernelConfig_map_partial_fields (0.00s)\n--- PASS: TestMap/unikernelConfig_map_empty_fields (0.00s)\n=== RUN   TestGetSockAddr\n--- PASS: TestGetSockAddr (0.00s)\n=== RUN   TestGetUruncSockAddr\n--- PASS: TestGetUruncSockAddr (0.00s)\n=== RUN   TestEnsureValidSockAddr\n--- PASS: TestEnsureValidSockAddr (0.00s)\n=== RUN   TestSockAddrExists\n--- PASS: TestSockAddrExists (0.00s)\n=== RUN   TestSendIPCMessage\n--- PASS: TestSendIPCMessage (0.00s)\n=== RUN   TestSendIPCMessageWithRetry\n--- PASS: TestSendIPCMessageWithRetry (0.00s)\n=== RUN   TestCreateListener\n--- PASS: TestCreateListener (0.00s)\n=== RUN   TestAwaitMessage\n--- PASS: TestAwaitMessage (0.00s)\n=== RUN   TestNewRootfsResult\n--- PASS: TestNewRootfsResult (0.00s)\n=== RUN   TestRootfsSelector_TryInitrd\n=== RUN   TestRootfsSelector_TryInitrd/initrd_present\n=== PAUSE TestRootfsSelector_TryInitrd/initrd_present\n=== RUN   TestRootfsSelector_TryInitrd/initrd_missing\n=== PAUSE TestRootfsSelector_TryInitrd/initrd_missing\n=== RUN   TestRootfsSelector_TryInitrd/initrd_empty\n=== PAUSE TestRootfsSelector_TryInitrd/initrd_empty\n=== CONT  TestRootfsSelector_TryInitrd/initrd_present\n=== CONT  TestRootfsSelector_TryInitrd/initrd_empty\n=== CONT  TestRootfsSelector_TryInitrd/initrd_missing\n--- PASS: TestRootfsSelector_TryInitrd (0.00s)\n--- PASS: TestRootfsSelector_TryInitrd/initrd_present (0.00s)\n--- PASS: TestRootfsSelector_TryInitrd/initrd_empty (0.00s)\n--- PASS: TestRootfsSelector_TryInitrd/initrd_missing (0.00s)\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_true\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_true\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_1\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_1\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_false\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_false\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_0\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_0\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_missing\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_missing\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_empty\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_empty\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_invalid\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_invalid\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_true\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_invalid\ntime=\"2026-06-24T08:36:29Z\" level=warning msg=\"Invalid value in MountRootfs annotation: invalid. Urunc will not mount any rootfs to the guest.\" subsystem=unikontainers\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_empty\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_missing\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_0\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_false\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_1\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_true (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_invalid (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_empty (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_missing (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_0 (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_false (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_1 (0.00s)\n=== RUN   TestUruncConfigFromMap\n=== RUN   TestUruncConfigFromMap/empty_map_returns_default_config\n=== PAUSE TestUruncConfigFromMap/empty_map_returns_default_config\n=== RUN   TestUruncConfigFromMap/single_monitor_with_all_fields\n=== PAUSE TestUruncConfigFromMap/single_monitor_with_all_fields\n=== RUN   TestUruncConfigFromMap/multiple_monitors\n=== PAUSE TestUruncConfigFromMap/multiple_monitors\n=== RUN   TestUruncConfigFromMap/partial_monitor_config\n=== PAUSE TestUruncConfigFromMap/partial_monitor_config\n=== RUN   TestUruncConfigFromMap/invalid_or_negative_numeric_values_are_ignored\n=== PAUSE TestUruncConfigFromMap/invalid_or_negative_numeric_values_are_ignored\n=== RUN   TestUruncConfigFromMap/unknown_monitor_field_is_ignored\n=== PAUSE TestUruncConfigFromMap/unknown_monitor_field_is_ignored\n=== RUN   TestUruncConfigFromMap/new_monitor_not_in_default_config\n=== PAUSE TestUruncConfigFromMap/new_monitor_not_in_default_config\n=== RUN   TestUruncConfigFromMap/mixed_valid_and_invalid_entries\n=== PAUSE TestUruncConfigFromMap/mixed_valid_and_invalid_entries\n=== RUN   TestUruncConfigFromMap/preserves_default_monitors_not_in_map\n=== PAUSE TestUruncConfigFromMap/preserves_default_monitors_not_in_map\n=== RUN   TestUruncConfigFromMap/single_extra_binary_with_all_fields\n=== PAUSE TestUruncConfigFromMap/single_extra_binary_with_all_fields\n=== RUN   TestUruncConfigFromMap/multiple_extra_binaries\n=== PAUSE TestUruncConfigFromMap/multiple_extra_binaries\n=== RUN   TestUruncConfigFromMap/partial_extra_binary_config\n=== PAUSE TestUruncConfigFromMap/partial_extra_binary_config\n=== RUN   TestUruncConfigFromMap/unknown_extra_binary_config_field_is_ignored\n=== PAUSE TestUruncConfigFromMap/unknown_extra_binary_config_field_is_ignored\n=== RUN   TestUruncConfigFromMap/new_unknown_extra_binary_config\n=== PAUSE TestUruncConfigFromMap/new_unknown_extra_binary_config\n=== RUN   TestUruncConfigFromMap/preserves_default_extra_binaries_not_in_map\n=== PAUSE TestUruncConfigFromMap/preserves_default_extra_binaries_not_in_map\n=== RUN   TestUruncConfigFromMap/vhost_false_is_parsed_correctly\n=== PAUSE TestUruncConfigFromMap/vhost_false_is_parsed_correctly\n=== RUN   TestUruncConfigFromMap/invalid_vhost_value_defaults_to_false\n=== PAUSE TestUruncConfigFromMap/invalid_vhost_value_defaults_to_false\n=== CONT  TestUruncConfigFromMap/empty_map_returns_default_config\n=== CONT  TestUruncConfigFromMap/invalid_vhost_value_defaults_to_false\ntime=\"2026-06-24T08:36:29Z\" level=warning msg=\"Invalid vhost value 'invalid' for monitor 'qemu': strconv.ParseBool: parsing \\\"invalid\\\": invalid syntax. Using default (false).\" subsystem=unikontainers\n=== CONT  TestUruncConfigFromMap/vhost_false_is_parsed_correctly\n=== CONT  TestUruncConfigFromMap/preserves_default_extra_binaries_not_in_map\n=== CONT  TestUruncConfigFromMap/new_unknown_extra_binary_config\n=== CONT  TestUruncConfigFromMap/unknown_extra_binary_config_field_is_ignored\n=== CONT  TestUruncConfigFromMap/partial_extra_binary_config\n=== CONT  TestUruncConfigFromMap/multiple_extra_binaries\n=== CONT  TestUruncConfigFromMap/single_extra_binary_with_all_fields\n=== CONT  TestUruncConfigFromMap/preserves_default_monitors_not_in_map\n=== CONT  TestUruncConfigFromMap/mixed_valid_and_invalid_entries\n=== CONT  TestUruncConfigFromMap/new_monitor_not_in_default_config\n=== CONT  TestUruncConfigFromMap/unknown_monitor_field_is_ignored\n=== CONT  TestUruncConfigFromMap/invalid_or_negative_numeric_values_are_ignored\n=== CONT  TestUruncConfigFromMap/partial_monitor_config\n=== CONT  TestUruncConfigFromMap/multiple_monitors\n=== CONT  TestUruncConfigFromMap/single_monitor_with_all_fields\n--- PASS: TestUruncConfigFromMap (0.00s)\n--- PASS: TestUruncConfigFromMap/empty_map_returns_default_config (0.00s)\n--- PASS: TestUruncConfigFromMap/invalid_vhost_value_defaults_to_false (0.00s)\n--- PASS: TestUruncConfigFromMap/vhost_false_is_parsed_correctly (0.00s)\n--- PASS: TestUruncConfigFromMap/preserves_default_extra_binaries_not_in_map (0.00s)\n--- PASS: TestUruncConfigFromMap/new_unknown_extra_binary_config (0.00s)\n--- PASS: TestUruncConfigFromMap/unknown_extra_binary_config_field_is_ignored (0.00s)\n--- PASS: TestUruncConfigFromMap/partial_extra_binary_config (0.00s)\n--- PASS: TestUruncConfigFromMap/multiple_extra_binaries (0.00s)\n--- PASS: TestUruncConfigFromMap/single_extra_binary_with_all_fields (0.00s)\n--- PASS: TestUruncConfigFromMap/preserves_default_monitors_not_in_map (0.00s)\n--- PASS: TestUruncConfigFromMap/mixed_valid_and_invalid_entries (0.00s)\n--- PASS: TestUruncConfigFromMap/new_monitor_not_in_default_config (0.00s)\n--- PASS: TestUruncConfigFromMap/unknown_monitor_field_is_ignored (0.00s)\n--- PASS: TestUruncConfigFromMap/invalid_or_negative_numeric_values_are_ignored (0.00s)\n--- PASS: TestUruncConfigFromMap/partial_monitor_config (0.00s)\n--- PASS: TestUruncConfigFromMap/multiple_monitors (0.00s)\n--- PASS: TestUruncConfigFromMap/single_monitor_with_all_fields (0.00s)\n=== RUN   TestUruncConfigMap\n=== RUN   TestUruncConfigMap/default_config_produces_expected_map\n=== PAUSE TestUruncConfigMap/default_config_produces_expected_map\n=== RUN   TestUruncConfigMap/custom_config_produces_expected_map\n=== PAUSE TestUruncConfigMap/custom_config_produces_expected_map\n=== RUN   TestUruncConfigMap/empty_monitors_map_produces_empty_result\n=== PAUSE TestUruncConfigMap/empty_monitors_map_produces_empty_result\n=== RUN   TestUruncConfigMap/empty_extra_binaries_map_produces_empty_result\n=== PAUSE TestUruncConfigMap/empty_extra_binaries_map_produces_empty_result\n=== RUN   TestUruncConfigMap/vhost_true_is_serialized_correctly\n=== PAUSE TestUruncConfigMap/vhost_true_is_serialized_correctly\n=== CONT  TestUruncConfigMap/default_config_produces_expected_map\n=== CONT  TestUruncConfigMap/vhost_true_is_serialized_correctly\n=== CONT  TestUruncConfigMap/empty_extra_binaries_map_produces_empty_result\n=== CONT  TestUruncConfigMap/empty_monitors_map_produces_empty_result\n=== CONT  TestUruncConfigMap/custom_config_produces_expected_map\n--- PASS: TestUruncConfigMap (0.00s)\n--- PASS: TestUruncConfigMap/default_config_produces_expected_map (0.00s)\n--- PASS: TestUruncConfigMap/vhost_true_is_serialized_correctly (0.00s)\n--- PASS: TestUruncConfigMap/empty_extra_binaries_map_produces_empty_result (0.00s)\n--- PASS: TestUruncConfigMap/empty_monitors_map_produces_empty_result (0.00s)\n--- PASS: TestUruncConfigMap/custom_config_produces_expected_map (0.00s)\n=== RUN   TestDefaultConfigs\n=== RUN   TestDefaultConfigs/defaultLogConfig\n=== PAUSE TestDefaultConfigs/defaultLogConfig\n=== RUN   TestDefaultConfigs/defaultTimestampsConfig\n=== PAUSE TestDefaultConfigs/defaultTimestampsConfig\n=== RUN   TestDefaultConfigs/defaultMonitorsConfig\n=== PAUSE TestDefaultConfigs/defaultMonitorsConfig\n=== RUN   TestDefaultConfigs/defaultExtraBinConfig\n=== PAUSE TestDefaultConfigs/defaultExtraBinConfig\n=== RUN   TestDefaultConfigs/defaultUruncConfig\n=== PAUSE TestDefaultConfigs/defaultUruncConfig\n=== RUN   TestDefaultConfigs/defaultLogMetricsConfig\n=== PAUSE TestDefaultConfigs/defaultLogMetricsConfig\n=== CONT  TestDefaultConfigs/defaultLogConfig\n=== CONT  TestDefaultConfigs/defaultLogMetricsConfig\n=== CONT  TestDefaultConfigs/defaultUruncConfig\n=== CONT  TestDefaultConfigs/defaultExtraBinConfig\n=== CONT  TestDefaultConfigs/defaultMonitorsConfig\n=== CONT  TestDefaultConfigs/defaultTimestampsConfig\n--- PASS: TestDefaultConfigs (0.00s)\n--- PASS: TestDefaultConfigs/defaultLogConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultLogMetricsConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultUruncConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultExtraBinConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultMonitorsConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultTimestampsConfig (0.00s)\n=== RUN   TestWritePidFile\n--- PASS: TestWritePidFile (0.01s)\n=== RUN   TestCopyFile\n=== RUN   TestCopyFile/copy_file_success\n=== PAUSE TestCopyFile/copy_file_success\n=== RUN   TestCopyFile/copy_file_no_source_found\n=== PAUSE TestCopyFile/copy_file_no_source_found\n=== RUN   TestCopyFile/copy_file_target_dir_creation_failed\n=== PAUSE TestCopyFile/copy_file_target_dir_creation_failed\n=== RUN   TestCopyFile/copy_file_target_file_creation_failed\n=== PAUSE TestCopyFile/copy_file_target_file_creation_failed\n=== CONT  TestCopyFile/copy_file_success\n=== CONT  TestCopyFile/copy_file_target_dir_creation_failed\n=== CONT  TestCopyFile/copy_file_target_file_creation_failed\n=== CONT  TestCopyFile/copy_file_no_source_found\n--- PASS: TestCopyFile (0.00s)\n--- PASS: TestCopyFile/copy_file_target_dir_creation_failed (0.00s)\n--- PASS: TestCopyFile/copy_file_success (0.00s)\n--- PASS: TestCopyFile/copy_file_no_source_found (0.00s)\n--- PASS: TestCopyFile/copy_file_target_file_creation_failed (0.00s)\n=== RUN   TestMoveFile\n=== RUN   TestMoveFile/move_file_success\n=== PAUSE TestMoveFile/move_file_success\n=== RUN   TestMoveFile/move_file_source_not_found\n=== PAUSE TestMoveFile/move_file_source_not_found\n=== RUN   TestMoveFile/move_file_target_dir_creation_failed\n=== PAUSE TestMoveFile/move_file_target_dir_creation_failed\n=== RUN   TestMoveFile/move_file_target_file_creation_failed\n=== PAUSE TestMoveFile/move_file_target_file_creation_failed\n=== CONT  TestMoveFile/move_file_success\n=== CONT  TestMoveFile/move_file_target_file_creation_failed\n=== CONT  TestMoveFile/move_file_target_dir_creation_failed\n=== CONT  TestMoveFile/move_file_source_not_found\n--- PASS: TestMoveFile (0.00s)\n--- PASS: TestMoveFile/move_file_success (0.00s)\n--- PASS: TestMoveFile/move_file_target_file_creation_failed (0.00s)\n--- PASS: TestMoveFile/move_file_target_dir_creation_failed (0.00s)\n--- PASS: TestMoveFile/move_file_source_not_found (0.00s)\n=== RUN   TestRemovePreservesOrder\n=== PAUSE TestRemovePreservesOrder\n=== RUN   TestLoadSpec\n=== RUN   TestLoadSpec/load_spec_success\n=== PAUSE TestLoadSpec/load_spec_success\n=== RUN   TestLoadSpec/load_spec_invalid_bundle_path\n=== PAUSE TestLoadSpec/load_spec_invalid_bundle_path\n=== RUN   TestLoadSpec/load_spec_config_file_not_found\n=== PAUSE TestLoadSpec/load_spec_config_file_not_found\n=== RUN   TestLoadSpec/load_spec_invalid_config_file\n=== PAUSE TestLoadSpec/load_spec_invalid_config_file\n=== CONT  TestLoadSpec/load_spec_success\n=== CONT  TestLoadSpec/load_spec_invalid_config_file\n=== CONT  TestLoadSpec/load_spec_config_file_not_found\n=== CONT  TestLoadSpec/load_spec_invalid_bundle_path\n--- PASS: TestLoadSpec (0.00s)\n--- PASS: TestLoadSpec/load_spec_success (0.00s)\n--- PASS: TestLoadSpec/load_spec_invalid_config_file (0.00s)\n--- PASS: TestLoadSpec/load_spec_invalid_bundle_path (0.00s)\n--- PASS: TestLoadSpec/load_spec_config_file_not_found (0.00s)\n=== RUN   TestIdToGuestCID\n=== RUN   TestIdToGuestCID/empty_string\n=== PAUSE TestIdToGuestCID/empty_string\n=== RUN   TestIdToGuestCID/simple_id\n=== PAUSE TestIdToGuestCID/simple_id\n=== CONT  TestIdToGuestCID/empty_string\n=== CONT  TestIdToGuestCID/simple_id\n--- PASS: TestIdToGuestCID (0.00s)\n--- PASS: TestIdToGuestCID/empty_string (0.00s)\n--- PASS: TestIdToGuestCID/simple_id (0.00s)\n=== RUN   TestIsValidVSockAddress\n=== RUN   TestIsValidVSockAddress/valid_qemu_vsock_address\n=== PAUSE TestIsValidVSockAddress/valid_qemu_vsock_address\n=== RUN   TestIsValidVSockAddress/invalid_qemu_vsock_-_wrong_CID\n=== PAUSE TestIsValidVSockAddress/invalid_qemu_vsock_-_wrong_CID\n=== RUN   TestIsValidVSockAddress/invalid_qemu_vsock_-_no_port\n=== PAUSE TestIsValidVSockAddress/invalid_qemu_vsock_-_no_port\n=== RUN   TestIsValidVSockAddress/invalid_qemu_vsock_-_malformed\n=== PAUSE TestIsValidVSockAddress/invalid_qemu_vsock_-_malformed\n=== RUN   TestIsValidVSockAddress/not_a_vsock_address\n=== PAUSE TestIsValidVSockAddress/not_a_vsock_address\n=== RUN   TestIsValidVSockAddress/empty_address\n=== PAUSE TestIsValidVSockAddress/empty_address\n=== RUN   TestIsValidVSockAddress/valid_firecracker_unix_socket\n=== PAUSE TestIsValidVSockAddress/valid_firecracker_unix_socket\n=== RUN   TestIsValidVSockAddress/valid_firecracker_nested_path\n=== PAUSE TestIsValidVSockAddress/valid_firecracker_nested_path\n=== RUN   TestIsValidVSockAddress/firecracker_invalid_-_wrong_socket_name\n=== PAUSE TestIsValidVSockAddress/firecracker_invalid_-_wrong_socket_name\n=== RUN   TestIsValidVSockAddress/firecracker_invalid_-_no_unix_prefix\n=== PAUSE TestIsValidVSockAddress/firecracker_invalid_-_no_unix_prefix\n=== RUN   TestIsValidVSockAddress/unsupported_monitor\n=== PAUSE TestIsValidVSockAddress/unsupported_monitor\n=== CONT  TestIsValidVSockAddress/valid_qemu_vsock_address\n=== CONT  TestIsValidVSockAddress/unsupported_monitor\n=== CONT  TestIsValidVSockAddress/firecracker_invalid_-_no_unix_prefix\n=== CONT  TestIsValidVSockAddress/firecracker_invalid_-_wrong_socket_name\n=== CONT  TestIsValidVSockAddress/valid_firecracker_nested_path\n=== CONT  TestIsValidVSockAddress/valid_firecracker_unix_socket\n=== CONT  TestIsValidVSockAddress/empty_address\n=== CONT  TestIsValidVSockAddress/not_a_vsock_address\n=== CONT  TestIsValidVSockAddress/invalid_qemu_vsock_-_malformed\n=== CONT  TestIsValidVSockAddress/invalid_qemu_vsock_-_no_port\n=== CONT  TestIsValidVSockAddress/invalid_qemu_vsock_-_wrong_CID\n--- PASS: TestIsValidVSockAddress (0.00s)\n--- PASS: TestIsValidVSockAddress/valid_qemu_vsock_address (0.00s)\n--- PASS: TestIsValidVSockAddress/unsupported_monitor (0.00s)\n--- PASS: TestIsValidVSockAddress/firecracker_invalid_-_no_unix_prefix (0.00s)\n--- PASS: TestIsValidVSockAddress/firecracker_invalid_-_wrong_socket_name (0.00s)\n--- PASS: TestIsValidVSockAddress/valid_firecracker_nested_path (0.00s)\n--- PASS: TestIsValidVSockAddress/valid_firecracker_unix_socket (0.00s)\n--- PASS: TestIsValidVSockAddress/empty_address (0.00s)\n--- PASS: TestIsValidVSockAddress/not_a_vsock_address (0.00s)\n--- PASS: TestIsValidVSockAddress/invalid_qemu_vsock_-_malformed (0.00s)\n--- PASS: TestIsValidVSockAddress/invalid_qemu_vsock_-_no_port (0.00s)\n--- PASS: TestIsValidVSockAddress/invalid_qemu_vsock_-_wrong_CID (0.00s)\n=== RUN   TestResolveVAccelConfig\n=== RUN   TestResolveVAccelConfig/vaccel_disabled_returns_ErrVAccelDisabled\n=== PAUSE TestResolveVAccelConfig/vaccel_disabled_returns_ErrVAccelDisabled\n=== RUN   TestResolveVAccelConfig/vaccel_enabled_but_rpc_address_missing_returns_error\n=== PAUSE TestResolveVAccelConfig/vaccel_enabled_but_rpc_address_missing_returns_error\n=== RUN   TestResolveVAccelConfig/vaccel_enabled_with_malformed_rpc_address_returns_error\n=== PAUSE TestResolveVAccelConfig/vaccel_enabled_with_malformed_rpc_address_returns_error\n=== RUN   TestResolveVAccelConfig/vaccel_enabled_with_valid_qemu_vsock_address_succeeds\n=== PAUSE TestResolveVAccelConfig/vaccel_enabled_with_valid_qemu_vsock_address_succeeds\n=== CONT  TestResolveVAccelConfig/vaccel_disabled_returns_ErrVAccelDisabled\n=== CONT  TestResolveVAccelConfig/vaccel_enabled_with_valid_qemu_vsock_address_succeeds\n=== CONT  TestResolveVAccelConfig/vaccel_enabled_with_malformed_rpc_address_returns_error\n=== CONT  TestResolveVAccelConfig/vaccel_enabled_but_rpc_address_missing_returns_error\n--- PASS: TestResolveVAccelConfig (0.00s)\n--- PASS: TestResolveVAccelConfig/vaccel_disabled_returns_ErrVAccelDisabled (0.00s)\n--- PASS: TestResolveVAccelConfig/vaccel_enabled_with_valid_qemu_vsock_address_succeeds (0.00s)\n--- PASS: TestResolveVAccelConfig/vaccel_enabled_with_malformed_rpc_address_returns_error (0.00s)\n--- PASS: TestResolveVAccelConfig/vaccel_enabled_but_rpc_address_missing_returns_error (0.00s)\n=== CONT  TestRemovePreservesOrder\n--- PASS: TestRemovePreservesOrder (0.00s)\nPASS\nok  \tgithub.com/urunc-dev/urunc/pkg/unikontainers\t0.021s\nUnit testing in internal/metrics\n=== RUN   TestZerologMetricsMetadata\n--- PASS: TestZerologMetricsMetadata (0.00s)\n=== RUN   TestZerologMetricsInvalidFileDoesNotPanic\n--- PASS: TestZerologMetricsInvalidFileDoesNotPanic (0.00s)\n=== RUN   TestTimestampSchemaConsistency\n--- PASS: TestTimestampSchemaConsistency (0.00s)\nPASS\nok  \tgithub.com/urunc-dev/urunc/internal/metrics\t0.003s\nUnit testing in pkg/network\n# github.com/urunc-dev/urunc/pkg/network\n# [github.com/urunc-dev/urunc/pkg/network]\n##[error]pkg/network/network.go:131:64: fmt.Errorf format %q has arg ief of wrong type *net.Interface\nFAIL\tgithub.com/urunc-dev/urunc/pkg/network [build failed]\nFAIL\nmake: *** [Makefile:257: test_network] Error 1\n##[error]Process completed with exit code 2."
+            },
+            {
+              "id": 83152030457,
+              "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030457",
+              "log_snippet": "[Test Failure] — 8 signal(s) found\n────────────────────────────────────────────────\n-\u003e Test Failure\n  default_config_produces_expected_map\n  custom_config_produces_expected_map\n  custom_config_produces_expected_map (0.00s)\n  default_config_produces_expected_map (0.00s)\n  FAIL\tgithub.com/urunc-dev/urunc/pkg/network [build failed]\n-\u003e Build Failure\n  ##[error]pkg/network/network.go:131:64: fmt.Errorf format %q has arg ief of wrong type *net.Interface\n  make: *** [Makefile:257: test_network] Error 1\n  ##[error]Process completed with exit code 2.",
+              "raw_log": "Added go to the path\nSuccessfully set up Go version 1.26.4\ngo version go1.26.4 linux/amd64\n2026-06-24T08:36:24.1286666Z\n##[group]go env\nAR='ar'\nCC='gcc'\nCGO_CFLAGS='-O2 -g'\nCGO_CPPFLAGS=''\nCGO_CXXFLAGS='-O2 -g'\nCGO_ENABLED='1'\nCGO_FFLAGS='-O2 -g'\nCGO_LDFLAGS='-O2 -g'\nCXX='g++'\nGCCGO='gccgo'\nGO111MODULE=''\nGOAMD64='v1'\nGOARCH='amd64'\nGOAUTH='netrc'\nGOBIN=''\nGOCACHE='/home/runner/.cache/go-build'\nGOCACHEPROG=''\nGODEBUG=''\nGOENV='/home/runner/.config/go/env'\nGOEXE=''\nGOEXPERIMENT=''\nGOFIPS140='off'\nGOFLAGS=''\nGOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2682303139=/tmp/go-build -gno-record-gcc-switches'\nGOHOSTARCH='amd64'\nGOHOSTOS='linux'\nGOINSECURE=''\nGOMOD='/home/runner/work/urunc/urunc/go.mod'\nGOMODCACHE='/home/runner/go/pkg/mod'\nGONOPROXY=''\nGONOSUMDB=''\nGOOS='linux'\nGOPATH='/home/runner/go'\nGOPRIVATE=''\nGOPROXY='https://proxy.golang.org,direct'\nGOSUMDB='sum.golang.org'\nGOTELEMETRY='local'\nGOTELEMETRYDIR='/home/runner/.config/go/telemetry'\nGOTMPDIR=''\nGOTOOLCHAIN='local'\nGOVCS=''\nGOVERSION='go1.26.4'\nGOWORK=''\nPKG_CONFIG='pkg-config'\n2026-06-24T08:36:24.7244851Z\n##[endgroup]\n##[group]Run make unittest\nmake unittest\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\nUnit testing in unikontainers\ngo: downloading github.com/BurntSushi/toml v1.6.0\ngo: downloading github.com/moby/sys/mount v0.3.5\ngo: downloading github.com/moby/sys/userns v0.1.0\ngo: downloading github.com/opencontainers/runtime-spec v1.2.1\ngo: downloading github.com/sirupsen/logrus v1.9.4\ngo: downloading github.com/vishvananda/netlink v1.3.1\ngo: downloading golang.org/x/sys v0.46.0\ngo: downloading github.com/stretchr/testify v1.11.1\ngo: downloading github.com/moby/sys/mountinfo v0.7.2\ngo: downloading github.com/rs/zerolog v1.35.1\ngo: downloading github.com/jackpal/gateway v1.2.0\ngo: downloading github.com/elastic/go-seccomp-bpf v1.6.0\ngo: downloading github.com/nubificus/hedge_cli v0.0.3\ngo: downloading github.com/cavaliergopher/cpio v1.0.1\ngo: downloading github.com/hashicorp/go-version v1.9.0\ngo: downloading github.com/vishvananda/netns v0.0.5\ngo: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc\ngo: downloading github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2\ngo: downloading github.com/mattn/go-colorable v0.1.15\ngo: downloading golang.org/x/net v0.56.0\ngo: downloading gopkg.in/yaml.v3 v3.0.1\ngo: downloading github.com/mattn/go-isatty v0.0.22\n=== RUN   TestGetBlockDevice\n--- PASS: TestGetBlockDevice (0.00s)\n=== RUN   TestGetConfigFromSpec\n=== RUN   TestGetConfigFromSpec/get_config_from_spec_success\n=== PAUSE TestGetConfigFromSpec/get_config_from_spec_success\n=== RUN   TestGetConfigFromSpec/get_config_from_spec_with_empty_annotations\n=== PAUSE TestGetConfigFromSpec/get_config_from_spec_with_empty_annotations\n=== RUN   TestGetConfigFromSpec/get_config_from_spec_with_partial_(invalid)_annotations\n=== PAUSE TestGetConfigFromSpec/get_config_from_spec_with_partial_(invalid)_annotations\n=== CONT  TestGetConfigFromSpec/get_config_from_spec_success\n=== CONT  TestGetConfigFromSpec/get_config_from_spec_with_partial_(invalid)_annotations\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: type1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: binary1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: hypervisor1\" error=\"illegal base64 data at input byte 8\" subsystem=unikontainers\n=== CONT  TestGetConfigFromSpec/get_config_from_spec_with_empty_annotations\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: type1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: initrd1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: block1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: point1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\n--- PASS: TestGetConfigFromSpec (0.00s)\n--- PASS: TestGetConfigFromSpec/get_config_from_spec_with_empty_annotations (0.00s)\n--- PASS: TestGetConfigFromSpec/get_config_from_spec_with_partial_(invalid)_annotations (0.00s)\n--- PASS: TestGetConfigFromSpec/get_config_from_spec_success (0.00s)\n=== RUN   TestGetConfigFromJSON\n=== RUN   TestGetConfigFromJSON/get_config_from_json_success\n=== PAUSE TestGetConfigFromJSON/get_config_from_json_success\n=== RUN   TestGetConfigFromJSON/get_config_from_json_file_not_found\n=== PAUSE TestGetConfigFromJSON/get_config_from_json_file_not_found\n=== RUN   TestGetConfigFromJSON/get_config_from_json_is_directory\n=== PAUSE TestGetConfigFromJSON/get_config_from_json_is_directory\n=== RUN   TestGetConfigFromJSON/get_config_from_invalid_JSON\n=== PAUSE TestGetConfigFromJSON/get_config_from_invalid_JSON\n=== CONT  TestGetConfigFromJSON/get_config_from_json_success\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: type1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: binary1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: hypervisor1\" error=\"illegal base64 data at input byte 8\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: initrd1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: block1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\ntime=\"2026-06-24T08:36:41Z\" level=error msg=\"Failed to decode string: point1\" error=\"illegal base64 data at input byte 4\" subsystem=unikontainers\n=== CONT  TestGetConfigFromJSON/get_config_from_json_file_not_found\n=== CONT  TestGetConfigFromJSON/get_config_from_invalid_JSON\n=== CONT  TestGetConfigFromJSON/get_config_from_json_is_directory\n--- PASS: TestGetConfigFromJSON (0.00s)\n--- PASS: TestGetConfigFromJSON/get_config_from_json_success (0.00s)\n--- PASS: TestGetConfigFromJSON/get_config_from_json_file_not_found (0.00s)\n--- PASS: TestGetConfigFromJSON/get_config_from_invalid_JSON (0.00s)\n--- PASS: TestGetConfigFromJSON/get_config_from_json_is_directory (0.00s)\n=== RUN   TestDecode\n=== RUN   TestDecode/decode_success\n=== PAUSE TestDecode/decode_success\n=== RUN   TestDecode/decode_invalid_base64\n=== PAUSE TestDecode/decode_invalid_base64\n=== CONT  TestDecode/decode_success\n=== CONT  TestDecode/decode_invalid_base64\n--- PASS: TestDecode (0.00s)\n--- PASS: TestDecode/decode_success (0.00s)\n--- PASS: TestDecode/decode_invalid_base64 (0.00s)\n=== RUN   TestMap\n=== RUN   TestMap/unikernelConfig_map_success\n=== PAUSE TestMap/unikernelConfig_map_success\n=== RUN   TestMap/unikernelConfig_map_empty_fields\n=== PAUSE TestMap/unikernelConfig_map_empty_fields\n=== RUN   TestMap/unikernelConfig_map_partial_fields\n=== PAUSE TestMap/unikernelConfig_map_partial_fields\n=== RUN   TestMap/unikernelConfig_map_no_fields\n=== PAUSE TestMap/unikernelConfig_map_no_fields\n=== CONT  TestMap/unikernelConfig_map_success\n=== CONT  TestMap/unikernelConfig_map_no_fields\n=== CONT  TestMap/unikernelConfig_map_partial_fields\n=== CONT  TestMap/unikernelConfig_map_empty_fields\n--- PASS: TestMap (0.00s)\n--- PASS: TestMap/unikernelConfig_map_success (0.00s)\n--- PASS: TestMap/unikernelConfig_map_no_fields (0.00s)\n--- PASS: TestMap/unikernelConfig_map_partial_fields (0.00s)\n--- PASS: TestMap/unikernelConfig_map_empty_fields (0.00s)\n=== RUN   TestGetSockAddr\n--- PASS: TestGetSockAddr (0.00s)\n=== RUN   TestGetUruncSockAddr\n--- PASS: TestGetUruncSockAddr (0.00s)\n=== RUN   TestEnsureValidSockAddr\n--- PASS: TestEnsureValidSockAddr (0.00s)\n=== RUN   TestSockAddrExists\n--- PASS: TestSockAddrExists (0.00s)\n=== RUN   TestSendIPCMessage\n--- PASS: TestSendIPCMessage (0.00s)\n=== RUN   TestSendIPCMessageWithRetry\n--- PASS: TestSendIPCMessageWithRetry (0.00s)\n=== RUN   TestCreateListener\n--- PASS: TestCreateListener (0.00s)\n=== RUN   TestAwaitMessage\n--- PASS: TestAwaitMessage (0.00s)\n=== RUN   TestNewRootfsResult\n--- PASS: TestNewRootfsResult (0.00s)\n=== RUN   TestRootfsSelector_TryInitrd\n=== RUN   TestRootfsSelector_TryInitrd/initrd_present\n=== PAUSE TestRootfsSelector_TryInitrd/initrd_present\n=== RUN   TestRootfsSelector_TryInitrd/initrd_missing\n=== PAUSE TestRootfsSelector_TryInitrd/initrd_missing\n=== RUN   TestRootfsSelector_TryInitrd/initrd_empty\n=== PAUSE TestRootfsSelector_TryInitrd/initrd_empty\n=== CONT  TestRootfsSelector_TryInitrd/initrd_present\n=== CONT  TestRootfsSelector_TryInitrd/initrd_empty\n=== CONT  TestRootfsSelector_TryInitrd/initrd_missing\n--- PASS: TestRootfsSelector_TryInitrd (0.00s)\n--- PASS: TestRootfsSelector_TryInitrd/initrd_present (0.00s)\n--- PASS: TestRootfsSelector_TryInitrd/initrd_empty (0.00s)\n--- PASS: TestRootfsSelector_TryInitrd/initrd_missing (0.00s)\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_true\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_true\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_1\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_1\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_false\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_false\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_0\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_0\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_missing\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_missing\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_empty\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_empty\n=== RUN   TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_invalid\n=== PAUSE TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_invalid\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_true\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_invalid\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_0\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_empty\ntime=\"2026-06-24T08:36:41Z\" level=warning msg=\"Invalid value in MountRootfs annotation: invalid. Urunc will not mount any rootfs to the guest.\" subsystem=unikontainers\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_missing\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_false\n=== CONT  TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_1\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_true (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_0 (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_invalid (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_empty (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_missing (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_false (0.00s)\n--- PASS: TestRootfsSelector_ShouldMountContainerRootfs/mount_rootfs_1 (0.00s)\n=== RUN   TestUruncConfigFromMap\n=== RUN   TestUruncConfigFromMap/empty_map_returns_default_config\n=== PAUSE TestUruncConfigFromMap/empty_map_returns_default_config\n=== RUN   TestUruncConfigFromMap/single_monitor_with_all_fields\n=== PAUSE TestUruncConfigFromMap/single_monitor_with_all_fields\n=== RUN   TestUruncConfigFromMap/multiple_monitors\n=== PAUSE TestUruncConfigFromMap/multiple_monitors\n=== RUN   TestUruncConfigFromMap/partial_monitor_config\n=== PAUSE TestUruncConfigFromMap/partial_monitor_config\n=== RUN   TestUruncConfigFromMap/invalid_or_negative_numeric_values_are_ignored\n=== PAUSE TestUruncConfigFromMap/invalid_or_negative_numeric_values_are_ignored\n=== RUN   TestUruncConfigFromMap/unknown_monitor_field_is_ignored\n=== PAUSE TestUruncConfigFromMap/unknown_monitor_field_is_ignored\n=== RUN   TestUruncConfigFromMap/new_monitor_not_in_default_config\n=== PAUSE TestUruncConfigFromMap/new_monitor_not_in_default_config\n=== RUN   TestUruncConfigFromMap/mixed_valid_and_invalid_entries\n=== PAUSE TestUruncConfigFromMap/mixed_valid_and_invalid_entries\n=== RUN   TestUruncConfigFromMap/preserves_default_monitors_not_in_map\n=== PAUSE TestUruncConfigFromMap/preserves_default_monitors_not_in_map\n=== RUN   TestUruncConfigFromMap/single_extra_binary_with_all_fields\n=== PAUSE TestUruncConfigFromMap/single_extra_binary_with_all_fields\n=== RUN   TestUruncConfigFromMap/multiple_extra_binaries\n=== PAUSE TestUruncConfigFromMap/multiple_extra_binaries\n=== RUN   TestUruncConfigFromMap/partial_extra_binary_config\n=== PAUSE TestUruncConfigFromMap/partial_extra_binary_config\n=== RUN   TestUruncConfigFromMap/unknown_extra_binary_config_field_is_ignored\n=== PAUSE TestUruncConfigFromMap/unknown_extra_binary_config_field_is_ignored\n=== RUN   TestUruncConfigFromMap/new_unknown_extra_binary_config\n=== PAUSE TestUruncConfigFromMap/new_unknown_extra_binary_config\n=== RUN   TestUruncConfigFromMap/preserves_default_extra_binaries_not_in_map\n=== PAUSE TestUruncConfigFromMap/preserves_default_extra_binaries_not_in_map\n=== RUN   TestUruncConfigFromMap/vhost_false_is_parsed_correctly\n=== PAUSE TestUruncConfigFromMap/vhost_false_is_parsed_correctly\n=== RUN   TestUruncConfigFromMap/invalid_vhost_value_defaults_to_false\n=== PAUSE TestUruncConfigFromMap/invalid_vhost_value_defaults_to_false\n=== CONT  TestUruncConfigFromMap/empty_map_returns_default_config\n=== CONT  TestUruncConfigFromMap/preserves_default_monitors_not_in_map\n=== CONT  TestUruncConfigFromMap/single_extra_binary_with_all_fields\n=== CONT  TestUruncConfigFromMap/invalid_or_negative_numeric_values_are_ignored\n=== CONT  TestUruncConfigFromMap/partial_monitor_config\n=== CONT  TestUruncConfigFromMap/invalid_vhost_value_defaults_to_false\n=== CONT  TestUruncConfigFromMap/multiple_monitors\n=== CONT  TestUruncConfigFromMap/mixed_valid_and_invalid_entries\n=== CONT  TestUruncConfigFromMap/single_monitor_with_all_fields\n=== CONT  TestUruncConfigFromMap/new_monitor_not_in_default_config\n=== CONT  TestUruncConfigFromMap/unknown_monitor_field_is_ignored\ntime=\"2026-06-24T08:36:41Z\" level=warning msg=\"Invalid vhost value 'invalid' for monitor 'qemu': strconv.ParseBool: parsing \\\"invalid\\\": invalid syntax. Using default (false).\" subsystem=unikontainers\n=== CONT  TestUruncConfigFromMap/new_unknown_extra_binary_config\n=== CONT  TestUruncConfigFromMap/multiple_extra_binaries\n=== CONT  TestUruncConfigFromMap/vhost_false_is_parsed_correctly\n=== CONT  TestUruncConfigFromMap/preserves_default_extra_binaries_not_in_map\n=== CONT  TestUruncConfigFromMap/unknown_extra_binary_config_field_is_ignored\n=== CONT  TestUruncConfigFromMap/partial_extra_binary_config\n--- PASS: TestUruncConfigFromMap (0.00s)\n--- PASS: TestUruncConfigFromMap/empty_map_returns_default_config (0.00s)\n--- PASS: TestUruncConfigFromMap/preserves_default_monitors_not_in_map (0.00s)\n--- PASS: TestUruncConfigFromMap/partial_monitor_config (0.00s)\n--- PASS: TestUruncConfigFromMap/single_extra_binary_with_all_fields (0.00s)\n--- PASS: TestUruncConfigFromMap/invalid_or_negative_numeric_values_are_ignored (0.00s)\n--- PASS: TestUruncConfigFromMap/multiple_monitors (0.00s)\n--- PASS: TestUruncConfigFromMap/mixed_valid_and_invalid_entries (0.00s)\n--- PASS: TestUruncConfigFromMap/single_monitor_with_all_fields (0.00s)\n--- PASS: TestUruncConfigFromMap/new_monitor_not_in_default_config (0.00s)\n--- PASS: TestUruncConfigFromMap/invalid_vhost_value_defaults_to_false (0.00s)\n--- PASS: TestUruncConfigFromMap/unknown_monitor_field_is_ignored (0.00s)\n--- PASS: TestUruncConfigFromMap/new_unknown_extra_binary_config (0.00s)\n--- PASS: TestUruncConfigFromMap/vhost_false_is_parsed_correctly (0.00s)\n--- PASS: TestUruncConfigFromMap/multiple_extra_binaries (0.00s)\n--- PASS: TestUruncConfigFromMap/preserves_default_extra_binaries_not_in_map (0.00s)\n--- PASS: TestUruncConfigFromMap/unknown_extra_binary_config_field_is_ignored (0.00s)\n--- PASS: TestUruncConfigFromMap/partial_extra_binary_config (0.00s)\n=== RUN   TestUruncConfigMap\n=== RUN   TestUruncConfigMap/default_config_produces_expected_map\n=== PAUSE TestUruncConfigMap/default_config_produces_expected_map\n=== RUN   TestUruncConfigMap/custom_config_produces_expected_map\n=== PAUSE TestUruncConfigMap/custom_config_produces_expected_map\n=== RUN   TestUruncConfigMap/empty_monitors_map_produces_empty_result\n=== PAUSE TestUruncConfigMap/empty_monitors_map_produces_empty_result\n=== RUN   TestUruncConfigMap/empty_extra_binaries_map_produces_empty_result\n=== PAUSE TestUruncConfigMap/empty_extra_binaries_map_produces_empty_result\n=== RUN   TestUruncConfigMap/vhost_true_is_serialized_correctly\n=== PAUSE TestUruncConfigMap/vhost_true_is_serialized_correctly\n=== CONT  TestUruncConfigMap/default_config_produces_expected_map\n=== CONT  TestUruncConfigMap/empty_extra_binaries_map_produces_empty_result\n=== CONT  TestUruncConfigMap/vhost_true_is_serialized_correctly\n=== CONT  TestUruncConfigMap/empty_monitors_map_produces_empty_result\n=== CONT  TestUruncConfigMap/custom_config_produces_expected_map\n--- PASS: TestUruncConfigMap (0.00s)\n--- PASS: TestUruncConfigMap/empty_extra_binaries_map_produces_empty_result (0.00s)\n--- PASS: TestUruncConfigMap/empty_monitors_map_produces_empty_result (0.00s)\n--- PASS: TestUruncConfigMap/vhost_true_is_serialized_correctly (0.00s)\n--- PASS: TestUruncConfigMap/custom_config_produces_expected_map (0.00s)\n--- PASS: TestUruncConfigMap/default_config_produces_expected_map (0.00s)\n=== RUN   TestDefaultConfigs\n=== RUN   TestDefaultConfigs/defaultLogConfig\n=== PAUSE TestDefaultConfigs/defaultLogConfig\n=== RUN   TestDefaultConfigs/defaultTimestampsConfig\n=== PAUSE TestDefaultConfigs/defaultTimestampsConfig\n=== RUN   TestDefaultConfigs/defaultMonitorsConfig\n=== PAUSE TestDefaultConfigs/defaultMonitorsConfig\n=== RUN   TestDefaultConfigs/defaultExtraBinConfig\n=== PAUSE TestDefaultConfigs/defaultExtraBinConfig\n=== RUN   TestDefaultConfigs/defaultUruncConfig\n=== PAUSE TestDefaultConfigs/defaultUruncConfig\n=== RUN   TestDefaultConfigs/defaultLogMetricsConfig\n=== PAUSE TestDefaultConfigs/defaultLogMetricsConfig\n=== CONT  TestDefaultConfigs/defaultLogConfig\n=== CONT  TestDefaultConfigs/defaultLogMetricsConfig\n=== CONT  TestDefaultConfigs/defaultExtraBinConfig\n=== CONT  TestDefaultConfigs/defaultMonitorsConfig\n=== CONT  TestDefaultConfigs/defaultUruncConfig\n=== CONT  TestDefaultConfigs/defaultTimestampsConfig\n--- PASS: TestDefaultConfigs (0.00s)\n--- PASS: TestDefaultConfigs/defaultLogConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultLogMetricsConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultExtraBinConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultUruncConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultMonitorsConfig (0.00s)\n--- PASS: TestDefaultConfigs/defaultTimestampsConfig (0.00s)\n=== RUN   TestWritePidFile\n--- PASS: TestWritePidFile (0.00s)\n=== RUN   TestCopyFile\n=== RUN   TestCopyFile/copy_file_success\n=== PAUSE TestCopyFile/copy_file_success\n=== RUN   TestCopyFile/copy_file_no_source_found\n=== PAUSE TestCopyFile/copy_file_no_source_found\n=== RUN   TestCopyFile/copy_file_target_dir_creation_failed\n=== PAUSE TestCopyFile/copy_file_target_dir_creation_failed\n=== RUN   TestCopyFile/copy_file_target_file_creation_failed\n=== PAUSE TestCopyFile/copy_file_target_file_creation_failed\n=== CONT  TestCopyFile/copy_file_success\n=== CONT  TestCopyFile/copy_file_target_file_creation_failed\n=== CONT  TestCopyFile/copy_file_target_dir_creation_failed\n=== CONT  TestCopyFile/copy_file_no_source_found\n--- PASS: TestCopyFile (0.00s)\n--- PASS: TestCopyFile/copy_file_success (0.00s)\n--- PASS: TestCopyFile/copy_file_target_file_creation_failed (0.00s)\n--- PASS: TestCopyFile/copy_file_no_source_found (0.00s)\n--- PASS: TestCopyFile/copy_file_target_dir_creation_failed (0.00s)\n=== RUN   TestMoveFile\n=== RUN   TestMoveFile/move_file_success\n=== PAUSE TestMoveFile/move_file_success\n=== RUN   TestMoveFile/move_file_source_not_found\n=== PAUSE TestMoveFile/move_file_source_not_found\n=== RUN   TestMoveFile/move_file_target_dir_creation_failed\n=== PAUSE TestMoveFile/move_file_target_dir_creation_failed\n=== RUN   TestMoveFile/move_file_target_file_creation_failed\n=== PAUSE TestMoveFile/move_file_target_file_creation_failed\n=== CONT  TestMoveFile/move_file_success\n=== CONT  TestMoveFile/move_file_target_file_creation_failed\n=== CONT  TestMoveFile/move_file_target_dir_creation_failed\n=== CONT  TestMoveFile/move_file_source_not_found\n--- PASS: TestMoveFile (0.00s)\n--- PASS: TestMoveFile/move_file_target_dir_creation_failed (0.00s)\n--- PASS: TestMoveFile/move_file_target_file_creation_failed (0.00s)\n--- PASS: TestMoveFile/move_file_success (0.00s)\n--- PASS: TestMoveFile/move_file_source_not_found (0.00s)\n=== RUN   TestRemovePreservesOrder\n=== PAUSE TestRemovePreservesOrder\n=== RUN   TestLoadSpec\n=== RUN   TestLoadSpec/load_spec_success\n=== PAUSE TestLoadSpec/load_spec_success\n=== RUN   TestLoadSpec/load_spec_invalid_bundle_path\n=== PAUSE TestLoadSpec/load_spec_invalid_bundle_path\n=== RUN   TestLoadSpec/load_spec_config_file_not_found\n=== PAUSE TestLoadSpec/load_spec_config_file_not_found\n=== RUN   TestLoadSpec/load_spec_invalid_config_file\n=== PAUSE TestLoadSpec/load_spec_invalid_config_file\n=== CONT  TestLoadSpec/load_spec_success\n=== CONT  TestLoadSpec/load_spec_invalid_config_file\n=== CONT  TestLoadSpec/load_spec_config_file_not_found\n=== CONT  TestLoadSpec/load_spec_invalid_bundle_path\n--- PASS: TestLoadSpec (0.00s)\n--- PASS: TestLoadSpec/load_spec_success (0.00s)\n--- PASS: TestLoadSpec/load_spec_invalid_config_file (0.00s)\n--- PASS: TestLoadSpec/load_spec_invalid_bundle_path (0.00s)\n--- PASS: TestLoadSpec/load_spec_config_file_not_found (0.00s)\n=== RUN   TestIdToGuestCID\n=== RUN   TestIdToGuestCID/empty_string\n=== PAUSE TestIdToGuestCID/empty_string\n=== RUN   TestIdToGuestCID/simple_id\n=== PAUSE TestIdToGuestCID/simple_id\n=== CONT  TestIdToGuestCID/empty_string\n=== CONT  TestIdToGuestCID/simple_id\n--- PASS: TestIdToGuestCID (0.00s)\n--- PASS: TestIdToGuestCID/empty_string (0.00s)\n--- PASS: TestIdToGuestCID/simple_id (0.00s)\n=== RUN   TestIsValidVSockAddress\n=== RUN   TestIsValidVSockAddress/valid_qemu_vsock_address\n=== PAUSE TestIsValidVSockAddress/valid_qemu_vsock_address\n=== RUN   TestIsValidVSockAddress/invalid_qemu_vsock_-_wrong_CID\n=== PAUSE TestIsValidVSockAddress/invalid_qemu_vsock_-_wrong_CID\n=== RUN   TestIsValidVSockAddress/invalid_qemu_vsock_-_no_port\n=== PAUSE TestIsValidVSockAddress/invalid_qemu_vsock_-_no_port\n=== RUN   TestIsValidVSockAddress/invalid_qemu_vsock_-_malformed\n=== PAUSE TestIsValidVSockAddress/invalid_qemu_vsock_-_malformed\n=== RUN   TestIsValidVSockAddress/not_a_vsock_address\n=== PAUSE TestIsValidVSockAddress/not_a_vsock_address\n=== RUN   TestIsValidVSockAddress/empty_address\n=== PAUSE TestIsValidVSockAddress/empty_address\n=== RUN   TestIsValidVSockAddress/valid_firecracker_unix_socket\n=== PAUSE TestIsValidVSockAddress/valid_firecracker_unix_socket\n=== RUN   TestIsValidVSockAddress/valid_firecracker_nested_path\n=== PAUSE TestIsValidVSockAddress/valid_firecracker_nested_path\n=== RUN   TestIsValidVSockAddress/firecracker_invalid_-_wrong_socket_name\n=== PAUSE TestIsValidVSockAddress/firecracker_invalid_-_wrong_socket_name\n=== RUN   TestIsValidVSockAddress/firecracker_invalid_-_no_unix_prefix\n=== PAUSE TestIsValidVSockAddress/firecracker_invalid_-_no_unix_prefix\n=== RUN   TestIsValidVSockAddress/unsupported_monitor\n=== PAUSE TestIsValidVSockAddress/unsupported_monitor\n=== CONT  TestIsValidVSockAddress/valid_qemu_vsock_address\n=== CONT  TestIsValidVSockAddress/unsupported_monitor\n=== CONT  TestIsValidVSockAddress/firecracker_invalid_-_no_unix_prefix\n=== CONT  TestIsValidVSockAddress/firecracker_invalid_-_wrong_socket_name\n=== CONT  TestIsValidVSockAddress/invalid_qemu_vsock_-_malformed\n=== CONT  TestIsValidVSockAddress/empty_address\n=== CONT  TestIsValidVSockAddress/invalid_qemu_vsock_-_no_port\n=== CONT  TestIsValidVSockAddress/invalid_qemu_vsock_-_wrong_CID\n=== CONT  TestIsValidVSockAddress/not_a_vsock_address\n=== CONT  TestIsValidVSockAddress/valid_firecracker_nested_path\n=== CONT  TestIsValidVSockAddress/valid_firecracker_unix_socket\n--- PASS: TestIsValidVSockAddress (0.00s)\n--- PASS: TestIsValidVSockAddress/valid_qemu_vsock_address (0.00s)\n--- PASS: TestIsValidVSockAddress/unsupported_monitor (0.00s)\n--- PASS: TestIsValidVSockAddress/firecracker_invalid_-_no_unix_prefix (0.00s)\n--- PASS: TestIsValidVSockAddress/firecracker_invalid_-_wrong_socket_name (0.00s)\n--- PASS: TestIsValidVSockAddress/invalid_qemu_vsock_-_malformed (0.00s)\n--- PASS: TestIsValidVSockAddress/empty_address (0.00s)\n--- PASS: TestIsValidVSockAddress/invalid_qemu_vsock_-_no_port (0.00s)\n--- PASS: TestIsValidVSockAddress/invalid_qemu_vsock_-_wrong_CID (0.00s)\n--- PASS: TestIsValidVSockAddress/not_a_vsock_address (0.00s)\n--- PASS: TestIsValidVSockAddress/valid_firecracker_nested_path (0.00s)\n--- PASS: TestIsValidVSockAddress/valid_firecracker_unix_socket (0.00s)\n=== RUN   TestResolveVAccelConfig\n=== RUN   TestResolveVAccelConfig/vaccel_disabled_returns_ErrVAccelDisabled\n=== PAUSE TestResolveVAccelConfig/vaccel_disabled_returns_ErrVAccelDisabled\n=== RUN   TestResolveVAccelConfig/vaccel_enabled_but_rpc_address_missing_returns_error\n=== PAUSE TestResolveVAccelConfig/vaccel_enabled_but_rpc_address_missing_returns_error\n=== RUN   TestResolveVAccelConfig/vaccel_enabled_with_malformed_rpc_address_returns_error\n=== PAUSE TestResolveVAccelConfig/vaccel_enabled_with_malformed_rpc_address_returns_error\n=== RUN   TestResolveVAccelConfig/vaccel_enabled_with_valid_qemu_vsock_address_succeeds\n=== PAUSE TestResolveVAccelConfig/vaccel_enabled_with_valid_qemu_vsock_address_succeeds\n=== CONT  TestResolveVAccelConfig/vaccel_disabled_returns_ErrVAccelDisabled\n=== CONT  TestResolveVAccelConfig/vaccel_enabled_with_valid_qemu_vsock_address_succeeds\n=== CONT  TestResolveVAccelConfig/vaccel_enabled_with_malformed_rpc_address_returns_error\n=== CONT  TestResolveVAccelConfig/vaccel_enabled_but_rpc_address_missing_returns_error\n--- PASS: TestResolveVAccelConfig (0.00s)\n--- PASS: TestResolveVAccelConfig/vaccel_disabled_returns_ErrVAccelDisabled (0.00s)\n--- PASS: TestResolveVAccelConfig/vaccel_enabled_with_valid_qemu_vsock_address_succeeds (0.00s)\n--- PASS: TestResolveVAccelConfig/vaccel_enabled_with_malformed_rpc_address_returns_error (0.00s)\n--- PASS: TestResolveVAccelConfig/vaccel_enabled_but_rpc_address_missing_returns_error (0.00s)\n=== CONT  TestRemovePreservesOrder\n--- PASS: TestRemovePreservesOrder (0.00s)\nPASS\nok  \tgithub.com/urunc-dev/urunc/pkg/unikontainers\t0.011s\nUnit testing in internal/metrics\n=== RUN   TestZerologMetricsMetadata\n--- PASS: TestZerologMetricsMetadata (0.00s)\n=== RUN   TestZerologMetricsInvalidFileDoesNotPanic\n--- PASS: TestZerologMetricsInvalidFileDoesNotPanic (0.00s)\n=== RUN   TestTimestampSchemaConsistency\n--- PASS: TestTimestampSchemaConsistency (0.00s)\nPASS\nok  \tgithub.com/urunc-dev/urunc/internal/metrics\t0.003s\nUnit testing in pkg/network\n# github.com/urunc-dev/urunc/pkg/network\n# [github.com/urunc-dev/urunc/pkg/network]\n##[error]pkg/network/network.go:131:64: fmt.Errorf format %q has arg ief of wrong type *net.Interface\nFAIL\tgithub.com/urunc-dev/urunc/pkg/network [build failed]\nFAIL\nmake: *** [Makefile:257: test_network] Error 1\n##[error]Process completed with exit code 2."
+            },
+            {
+              "id": 83152030482,
+              "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990925/job/83152030482",
+              "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]golangci-lint exit with code 3",
+              "raw_log": "Added go to the path\nSuccessfully set up Go version 1.26.4\ngo version go1.26.4 linux/amd64\n2026-06-24T08:36:23.6104671Z\n##[group]go env\nAR='ar'\nCC='gcc'\nCGO_CFLAGS='-O2 -g'\nCGO_CPPFLAGS=''\nCGO_CXXFLAGS='-O2 -g'\nCGO_ENABLED='1'\nCGO_FFLAGS='-O2 -g'\nCGO_LDFLAGS='-O2 -g'\nCXX='g++'\nGCCGO='gccgo'\nGO111MODULE=''\nGOAMD64='v1'\nGOARCH='amd64'\nGOAUTH='netrc'\nGOBIN=''\nGOCACHE='/home/runner/.cache/go-build'\nGOCACHEPROG=''\nGODEBUG=''\nGOENV='/home/runner/.config/go/env'\nGOEXE=''\nGOEXPERIMENT=''\nGOFIPS140='off'\nGOFLAGS=''\nGOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build3768866254=/tmp/go-build -gno-record-gcc-switches'\nGOHOSTARCH='amd64'\nGOHOSTOS='linux'\nGOINSECURE=''\nGOMOD='/home/runner/work/urunc/urunc/go.mod'\nGOMODCACHE='/home/runner/go/pkg/mod'\nGONOPROXY=''\nGONOSUMDB=''\nGOOS='linux'\nGOPATH='/home/runner/go'\nGOPRIVATE=''\nGOPROXY='https://proxy.golang.org,direct'\nGOSUMDB='sum.golang.org'\nGOTELEMETRY='local'\nGOTELEMETRYDIR='/home/runner/.config/go/telemetry'\nGOTMPDIR=''\nGOTOOLCHAIN='local'\nGOVCS=''\nGOVERSION='go1.26.4'\nGOWORK=''\nPKG_CONFIG='pkg-config'\n2026-06-24T08:36:23.9152231Z\n##[endgroup]\nNode 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n##[group]Run golangci/golangci-lint-action@4afd733a84b1f43292c63897423277bb7f4313a9\nwith:\nversion: v2.7\nonly-new-issues: true\ninstall-mode: binary\ngithub-token: ***\nverify: true\nskip-cache: false\nskip-save-cache: false\nproblem-matchers: false\ncache-invalidation-interval: 7\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\n##[group]prepare environment\nChecking for go.mod: go.mod\n(node:2415) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\nCache not found for input keys: golangci-lint.cache-Linux-2946-3d696b03cfe568069e0654d362d47683a079bbb6, golangci-lint.cache-Linux-2946-\nFinding needed golangci-lint version...\nRequested golangci-lint 'v2.7', using 'v2.7.2', calculation took 71ms\nInstallation mode: binary\nInstalling golangci-lint binary v2.7.2...\nDownloading binary https://github.com/golangci/golangci-lint/releases/download/v2.7.2/golangci-lint-2.7.2-linux-amd64.tar.gz ...\n[command]/usr/bin/tar xz --overwrite --warning=no-unknown-keyword --overwrite -C /home/runner -f /home/runner/work/_temp/45a41108-98ee-4916-8eb4-9210ad7c332e\nInstalled golangci-lint into /home/runner/golangci-lint-2.7.2-linux-amd64/golangci-lint in 685ms\nWriting patch to /tmp/tmp-2415-Ej96et4C5JGo/pull.patch\nPrepared env in 1716ms\n##[endgroup]\n##[group]run golangci-lint\nonly new issues on pull_request: /tmp/tmp-2415-Ej96et4C5JGo/pull.patch\nRunning [/home/runner/golangci-lint-2.7.2-linux-amd64/golangci-lint config path] in [/home/runner/work/urunc/urunc] ...\nRunning [/home/runner/golangci-lint-2.7.2-linux-amd64/golangci-lint run --new-from-patch=/tmp/tmp-2415-Ej96et4C5JGo/pull.patch --new=false --new-from-rev= --new-from-merge-base=] in [/home/runner/work/urunc/urunc] ...\nError: can't load config: the Go language version (go1.25) used to build golangci-lint is lower than the targeted Go version (1.26.4)\nThe command is terminated due to an error: can't load config: the Go language version (go1.25) used to build golangci-lint is lower than the targeted Go version (1.26.4)\n2026-06-24T08:36:25.9453230Z\n##[error]golangci-lint exit with code 3"
+            }
+          ],
+          "run_attempt": 1
+        },
+        {
+          "id": 28085915220,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 2117,
+          "created_at": "2026-06-24T08:34:24Z",
+          "updated_at": "2026-06-24T08:34:38Z",
+          "run_started_at": "2026-06-24T08:34:24Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085915220",
+          "jobs": [
+            {
+              "name": "check-labels",
+              "conclusion": "success",
+              "duration_sec": 10,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085915220/job/83151737076"
+            },
+            {
+              "name": "ci-on-push",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085915220/job/83151774501"
+            }
+          ],
           "run_attempt": 1
         },
         {
@@ -5804,18 +6374,6 @@
             }
           ],
           "run_attempt": 3
-        },
-        {
-          "id": 28015266215,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 2111,
-          "created_at": "2026-06-23T09:09:22Z",
-          "updated_at": "2026-06-23T09:09:22Z",
-          "run_started_at": "2026-06-23T09:09:22Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28015266215",
-          "run_attempt": 1
         },
         {
           "id": 28014623225,
@@ -6584,30 +7142,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 27946892646,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 2094,
-          "created_at": "2026-06-22T10:40:45Z",
-          "updated_at": "2026-06-22T10:40:45Z",
-          "run_started_at": "2026-06-22T10:40:45Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27946892646",
-          "run_attempt": 1
-        },
-        {
-          "id": 27935661074,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 2091,
-          "created_at": "2026-06-22T07:07:32Z",
-          "updated_at": "2026-06-22T07:07:32Z",
-          "run_started_at": "2026-06-22T07:07:32Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27935661074",
-          "run_attempt": 1
         }
       ]
     },
@@ -6619,29 +7153,121 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 76.2,
+      "avg_duration_secs": 87.45,
       "weather_history": [
         "success",
+        "success",
+        "success",
         "action_required",
-        "action_required",
         "success",
         "success",
-        "success",
-        "action_required"
+        "success"
       ],
       "last_run": {
-        "id": 28054018335,
+        "id": 28087440961,
         "name": "CodeQL",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 1408,
-        "created_at": "2026-06-23T20:13:31Z",
-        "updated_at": "2026-06-23T20:13:31Z",
-        "run_started_at": "2026-06-23T20:13:31Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28054018335",
+        "conclusion": "success",
+        "run_number": 1411,
+        "created_at": "2026-06-24T09:02:33Z",
+        "updated_at": "2026-06-24T09:04:37Z",
+        "run_started_at": "2026-06-24T09:02:33Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440961",
+        "jobs": [
+          {
+            "name": "Analyze (go)",
+            "conclusion": "success",
+            "duration_sec": 120,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440961/job/83156776856"
+          },
+          {
+            "name": "Analyze (python)",
+            "conclusion": "success",
+            "duration_sec": 61,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440961/job/83156776870"
+          }
+        ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28087440961,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1411,
+          "created_at": "2026-06-24T09:02:33Z",
+          "updated_at": "2026-06-24T09:04:37Z",
+          "run_started_at": "2026-06-24T09:02:33Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440961",
+          "jobs": [
+            {
+              "name": "Analyze (go)",
+              "conclusion": "success",
+              "duration_sec": 120,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440961/job/83156776856"
+            },
+            {
+              "name": "Analyze (python)",
+              "conclusion": "success",
+              "duration_sec": 61,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440961/job/83156776870"
+            }
+          ],
+          "run_attempt": 1
+        },
+        {
+          "id": 28087024231,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1410,
+          "created_at": "2026-06-24T08:55:02Z",
+          "updated_at": "2026-06-24T08:56:59Z",
+          "run_started_at": "2026-06-24T08:55:02Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024231",
+          "jobs": [
+            {
+              "name": "Analyze (go)",
+              "conclusion": "success",
+              "duration_sec": 114,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024231/job/83155380453"
+            },
+            {
+              "name": "Analyze (python)",
+              "conclusion": "success",
+              "duration_sec": 59,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024231/job/83155380629"
+            }
+          ],
+          "run_attempt": 1
+        },
+        {
+          "id": 28085914941,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1409,
+          "created_at": "2026-06-24T08:34:23Z",
+          "updated_at": "2026-06-24T08:36:22Z",
+          "run_started_at": "2026-06-24T08:34:23Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085914941",
+          "jobs": [
+            {
+              "name": "Analyze (python)",
+              "conclusion": "success",
+              "duration_sec": 61,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085914941/job/83151734598"
+            },
+            {
+              "name": "Analyze (go)",
+              "conclusion": "success",
+              "duration_sec": 115,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085914941/job/83151734615"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28054018335,
           "name": "CodeQL",
@@ -6731,18 +7357,6 @@
             }
           ],
           "run_attempt": 2
-        },
-        {
-          "id": 28015264679,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1404,
-          "created_at": "2026-06-23T09:09:20Z",
-          "updated_at": "2026-06-23T09:09:20Z",
-          "run_started_at": "2026-06-23T09:09:20Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28015264679",
-          "run_attempt": 1
         },
         {
           "id": 28014622464,
@@ -7011,44 +7625,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 27915332823,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1387,
-          "created_at": "2026-06-21T19:40:22Z",
-          "updated_at": "2026-06-21T19:40:22Z",
-          "run_started_at": "2026-06-21T19:40:22Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27915332823",
-          "run_attempt": 1
-        },
-        {
-          "id": 27815974833,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 1386,
-          "created_at": "2026-06-19T08:56:47Z",
-          "updated_at": "2026-06-19T08:59:02Z",
-          "run_started_at": "2026-06-19T08:56:47Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27815974833",
-          "jobs": [
-            {
-              "name": "Analyze (go)",
-              "conclusion": "success",
-              "duration_sec": 130,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27815974833/job/82317133818"
-            },
-            {
-              "name": "Analyze (python)",
-              "conclusion": "success",
-              "duration_sec": 60,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27815974833/job/82317133825"
-            }
-          ],
-          "run_attempt": 1
         }
       ]
     },
@@ -7060,29 +7636,97 @@
       "total_runs": 20,
       "failed_runs": 1,
       "failure_rate": 5,
-      "avg_duration_secs": 12.05,
+      "avg_duration_secs": 15.05,
       "weather_history": [
         "action_required",
         "success",
-        "action_required",
+        "success",
         "action_required",
         "success",
         "success",
-        "action_required"
+        "success"
       ],
       "last_run": {
-        "id": 28054017815,
+        "id": 28087440942,
         "name": "Dependency Review",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 1184,
-        "created_at": "2026-06-23T20:13:30Z",
-        "updated_at": "2026-06-23T20:13:30Z",
-        "run_started_at": "2026-06-23T20:13:30Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28054017815",
+        "conclusion": "success",
+        "run_number": 1187,
+        "created_at": "2026-06-24T09:02:33Z",
+        "updated_at": "2026-06-24T09:02:55Z",
+        "run_started_at": "2026-06-24T09:02:33Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440942",
+        "jobs": [
+          {
+            "name": "dependency-review",
+            "conclusion": "success",
+            "duration_sec": 16,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440942/job/83156776843"
+          }
+        ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28087440942,
+          "name": "Dependency Review",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1187,
+          "created_at": "2026-06-24T09:02:33Z",
+          "updated_at": "2026-06-24T09:02:55Z",
+          "run_started_at": "2026-06-24T09:02:33Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440942",
+          "jobs": [
+            {
+              "name": "dependency-review",
+              "conclusion": "success",
+              "duration_sec": 16,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087440942/job/83156776843"
+            }
+          ],
+          "run_attempt": 1
+        },
+        {
+          "id": 28087024319,
+          "name": "Dependency Review",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1186,
+          "created_at": "2026-06-24T08:55:02Z",
+          "updated_at": "2026-06-24T08:55:23Z",
+          "run_started_at": "2026-06-24T08:55:02Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024319",
+          "jobs": [
+            {
+              "name": "dependency-review",
+              "conclusion": "success",
+              "duration_sec": 18,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28087024319/job/83155380821"
+            }
+          ],
+          "run_attempt": 1
+        },
+        {
+          "id": 28085914972,
+          "name": "Dependency Review",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1185,
+          "created_at": "2026-06-24T08:34:23Z",
+          "updated_at": "2026-06-24T08:34:40Z",
+          "run_started_at": "2026-06-24T08:34:23Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085914972",
+          "jobs": [
+            {
+              "name": "dependency-review",
+              "conclusion": "success",
+              "duration_sec": 14,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085914972/job/83151734678"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28054017815,
           "name": "Dependency Review",
@@ -7134,18 +7778,6 @@
             }
           ],
           "run_attempt": 2
-        },
-        {
-          "id": 28015264101,
-          "name": "Dependency Review",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1181,
-          "created_at": "2026-06-23T09:09:20Z",
-          "updated_at": "2026-06-23T09:09:20Z",
-          "run_started_at": "2026-06-23T09:09:20Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28015264101",
-          "run_attempt": 1
         },
         {
           "id": 28014622184,
@@ -7379,30 +8011,6 @@
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27580888158/job/81540589626"
             }
           ],
-          "run_attempt": 1
-        },
-        {
-          "id": 27566113555,
-          "name": "Dependency Review",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1162,
-          "created_at": "2026-06-15T18:03:50Z",
-          "updated_at": "2026-06-15T18:03:50Z",
-          "run_started_at": "2026-06-15T18:03:50Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27566113555",
-          "run_attempt": 1
-        },
-        {
-          "id": 27508374100,
-          "name": "Dependency Review",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1160,
-          "created_at": "2026-06-14T18:41:00Z",
-          "updated_at": "2026-06-14T18:41:00Z",
-          "run_started_at": "2026-06-14T18:41:00Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27508374100",
           "run_attempt": 1
         }
       ]
@@ -7872,31 +8480,51 @@
         "skipped",
         "skipped",
         "skipped",
-        "skipped",
         "success",
+        "skipped",
         "skipped"
       ],
       "last_run": {
-        "id": 28083498230,
+        "id": 28085990886,
         "name": "PR Takeover on Label",
         "status": "completed",
         "conclusion": "skipped",
-        "run_number": 669,
-        "created_at": "2026-06-24T07:47:59Z",
-        "updated_at": "2026-06-24T07:48:00Z",
-        "run_started_at": "2026-06-24T07:47:59Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28083498230",
+        "run_number": 670,
+        "created_at": "2026-06-24T08:35:46Z",
+        "updated_at": "2026-06-24T08:35:48Z",
+        "run_started_at": "2026-06-24T08:35:46Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990886",
         "jobs": [
           {
             "name": "pr-takeover",
             "conclusion": "skipped",
             "duration_sec": 0,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28083498230/job/83143738410"
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990886/job/83152000889"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28085990886,
+          "name": "PR Takeover on Label",
+          "status": "completed",
+          "conclusion": "skipped",
+          "run_number": 670,
+          "created_at": "2026-06-24T08:35:46Z",
+          "updated_at": "2026-06-24T08:35:48Z",
+          "run_started_at": "2026-06-24T08:35:46Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990886",
+          "jobs": [
+            {
+              "name": "pr-takeover",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28085990886/job/83152000889"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28083498230,
           "name": "PR Takeover on Label",
@@ -8273,26 +8901,6 @@
               "conclusion": "skipped",
               "duration_sec": 0,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27204074352/job/80315169221"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 27138093780,
-          "name": "PR Takeover on Label",
-          "status": "completed",
-          "conclusion": "skipped",
-          "run_number": 650,
-          "created_at": "2026-06-08T12:37:05Z",
-          "updated_at": "2026-06-08T12:37:07Z",
-          "run_started_at": "2026-06-08T12:37:05Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27138093780",
-          "jobs": [
-            {
-              "name": "pr-takeover",
-              "conclusion": "skipped",
-              "duration_sec": 0,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27138093780/job/80095622988"
             }
           ],
           "run_attempt": 1
