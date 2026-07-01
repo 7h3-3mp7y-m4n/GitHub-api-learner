@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T00:10:35.239153932Z",
+  "generated_at": "2026-07-01T05:26:17.247588595Z",
   "repo": "urunc-dev/urunc",
   "overall_health": 87.14285714285714,
   "workflows": [
@@ -3173,153 +3173,237 @@
       "total_runs": 20,
       "failed_runs": 11,
       "failure_rate": 55.00000000000001,
-      "avg_duration_secs": 1290.45,
+      "avg_duration_secs": 1293.9,
       "weather_history": [
         "failure",
         "failure",
         "failure",
         "failure",
-        "failure",
         "success",
-        "failure"
+        "failure",
+        "success"
       ],
       "last_run": {
-        "id": 28413270431,
+        "id": 28486591125,
         "name": "urunc CI (nightly)",
         "status": "completed",
-        "conclusion": "failure",
-        "run_number": 255,
-        "created_at": "2026-06-30T01:07:32Z",
-        "updated_at": "2026-06-30T01:13:45Z",
-        "run_started_at": "2026-06-30T01:07:32Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431",
+        "conclusion": "success",
+        "run_number": 256,
+        "created_at": "2026-07-01T01:12:42Z",
+        "updated_at": "2026-07-01T01:34:12Z",
+        "run_started_at": "2026-07-01T01:12:42Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125",
         "jobs": [
           {
             "name": "Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
             "conclusion": "success",
-            "duration_sec": 26,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190646684"
+            "duration_sec": 28,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434277827"
           },
           {
             "name": "Build / build (arm64, ubuntu-22.04-arm)",
             "conclusion": "success",
-            "duration_sec": 41,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190646688"
+            "duration_sec": 39,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434277840"
           },
           {
             "name": "Unit tests / unit-test (amd64, ubuntu-22.04)",
             "conclusion": "success",
-            "duration_sec": 37,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190646693"
+            "duration_sec": 35,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434277849"
           },
           {
             "name": "Build / build (amd64, ubuntu-22.04)",
             "conclusion": "success",
             "duration_sec": 53,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190646700"
-          },
-          {
-            "name": "urunc-deploy test / urunc-deploy (arm64, ubuntu-22.04-arm)",
-            "conclusion": "success",
-            "duration_sec": 260,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746821"
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434277860"
           },
           {
             "name": "urunc-deploy test / urunc-deploy (amd64, ubuntu-22.04)",
             "conclusion": "success",
-            "duration_sec": 252,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746823"
+            "duration_sec": 78,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379630"
           },
           {
             "name": "Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "failure",
-            "duration_sec": 285,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746838"
-          },
-          {
-            "name": "E2E test / VM test (arm64, test_ctr)",
-            "conclusion": "cancelled",
-            "duration_sec": 155,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746887"
-          },
-          {
-            "name": "E2E test / VM test (amd64, test_docker)",
-            "conclusion": "cancelled",
-            "duration_sec": 167,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746899"
-          },
-          {
-            "name": "E2E test / VM test (arm64, test_docker)",
-            "conclusion": "cancelled",
-            "duration_sec": 165,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746902"
-          },
-          {
-            "name": "E2E test / VM test (amd64, test_ctr)",
-            "conclusion": "cancelled",
-            "duration_sec": 168,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746905"
-          },
-          {
-            "name": "E2E test / VM test (arm64, test_nerdctl)",
-            "conclusion": "cancelled",
-            "duration_sec": 165,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746910"
-          },
-          {
-            "name": "E2E test / VM test (arm64, test_crictl)",
-            "conclusion": "failure",
-            "duration_sec": 149,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746918"
+            "conclusion": "success",
+            "duration_sec": 308,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379638"
           },
           {
             "name": "Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
-            "conclusion": "failure",
-            "duration_sec": 314,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746950"
+            "conclusion": "success",
+            "duration_sec": 336,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379645"
           },
           {
-            "name": "E2E test / VM test (amd64, test_crictl)",
-            "conclusion": "cancelled",
-            "duration_sec": 168,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746954"
+            "name": "urunc-deploy test / urunc-deploy (arm64, ubuntu-22.04-arm)",
+            "conclusion": "success",
+            "duration_sec": 192,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379656"
           },
           {
             "name": "E2E test / VM test (amd64, test_nerdctl)",
-            "conclusion": "cancelled",
-            "duration_sec": 167,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746962"
-          }
-        ],
-        "failed_jobs": [
-          {
-            "id": 84190746838,
-            "name": "Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746838",
-            "log_snippet": "[Test Failure] — 2 signal(s) found\n────────────────────────────────────────────────\n-\u003e Test Failure\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n-\u003e Build Failure\n  ##[error]Process completed with exit code 1.",
-            "raw_log": "% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\nDload  Upload   Total   Spent    Left  Speed\n2026-06-30T01:10:13.0531484Z\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n32 53.0M   32 17.0M    0     0  20.7M      0  0:00:02 --:--:--  0:00:02 20.7M\n100 53.0M  100 53.0M    0     0  50.3M      0  0:00:01  0:00:01 --:--:-- 50.3M\n##[group]Run mkdir -p ~/.kube\nmkdir -p ~/.kube\nkind get kubeconfig --name urunc-test \u003e ~/.kube/config\nchmod 600 ~/.kube/config\nexport KUBECONFIG=~/.kube/config\nkubectl config use-context kind-urunc-test\nkubectl wait --for=condition=Ready nodes --all --timeout=200s\nkubectl cluster-info\nshell: /usr/bin/bash -e {0}\n##[endgroup]\nSwitched to context \"kind-urunc-test\".\nnode/urunc-test-control-plane condition met\nKubernetes control plane is running at https://127.0.0.1:6443\nCoreDNS is running at https://127.0.0.1:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy\n2026-06-30T01:10:14.5152291Z\nTo further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.\n##[group]Run cat \u003c\u003cEOF | kubectl apply -f -\ncat \u003c\u003cEOF | kubectl apply -f -\nkind: RuntimeClass\napiVersion: node.k8s.io/v1\nmetadata:\nname: urunc\nhandler: urunc\nEOF\nshell: /usr/bin/bash -e {0}\n##[endgroup]\nruntimeclass.node.k8s.io/urunc created\n##[group]Run cat \u003c\u003cEOF | kubectl apply -f -\ncat \u003c\u003cEOF | kubectl apply -f -\napiVersion: v1\nkind: Pod\nmetadata:\nname: hello-spt-rumprun-block\nlabels:\nrun: hello-spt-rumprun-block\nspec:\nruntimeClassName: urunc\nrestartPolicy: Never\ncontainers:\n- name: hello-spt-rumprun-block\nimage: harbor.nbfc.io/nubificus/urunc/hello-spt-rumprun-block:latest\nimagePullPolicy: Always\nports:\n- containerPort: 80\nprotocol: TCP\nresources:\nrequests:\ncpu: 10m\nEOF\nshell: /usr/bin/bash -e {0}\n##[endgroup]\npod/hello-spt-rumprun-block created\n##[group]Run kubectl wait --for=condition=Succeeded pod/hello-spt-rumprun-block --timeout=180s  || true\nkubectl wait --for=condition=Succeeded pod/hello-spt-rumprun-block --timeout=180s  || true\nkubectl logs hello-spt-rumprun-block | tee /tmp/logs.txt\ngrep \"Hello world\" /tmp/logs.txt\nkubectl describe pod hello-spt-rumprun-block || true\nshell: /usr/bin/bash -e {0}\n##[endgroup]\nerror: timed out waiting for the condition on pods/hello-spt-rumprun-block\nError from server (BadRequest): container \"hello-spt-rumprun-block\" in pod \"hello-spt-rumprun-block\" is waiting to start: trying and failing to pull image\n##[error]Process completed with exit code 1."
+            "conclusion": "success",
+            "duration_sec": 1231,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379662"
           },
           {
-            "id": 84190746918,
+            "name": "E2E test / VM test (arm64, test_nerdctl)",
+            "conclusion": "success",
+            "duration_sec": 1036,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379663"
+          },
+          {
             "name": "E2E test / VM test (arm64, test_crictl)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746918",
-            "log_snippet": "[Test Failure] — 20 signal(s) found\n────────────────────────────────────────────────\n-\u003e Test Failure\n  Attempt 1/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:09.450963   11496 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\n  time=\"2026-06-30T01:10:09Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\n  Attempt 2/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:15.462482   11502 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\n  time=\"2026-06-30T01:10:15Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\n  Attempt 3/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:19.275769   11510 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\n  time=\"2026-06-30T01:10:19Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\n  Attempt 4/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:25.113162   11517 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\n  time=\"2026-06-30T01:10:25Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\n  Attempt 5/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:57.889742   11523 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\n  time=\"2026-06-30T01:10:57Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\n  Unexpected error:\n  failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest after 5 attempts: E0630 01:10:57.889742   11523 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\n  time=\"2026-06-30T01:10:57Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1\n  msg: \"failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest after 5 attempts: E0630 01:10:57.889742   11523 remote_image.go:180] \\\"PullImage from image service failed\\\" err=\\\"rpc error: code = Unknown desc = failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" image=\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\"\\ntime=\\\"2026-06-30T01:10:57Z\\\" level=fatal msg=\\\"pulling image: failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" -- exit status 1\",\n  msg: \"failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest after 5 attempts: E0630 01:10:57.889742   11523 remote_image.go:180] \\\"PullImage from image service failed\\\" err=\\\"rpc error: code = Unknown desc = failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" image=\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\"\\ntime=\\\"2026-06-30T01:10:57Z\\\" level=fatal msg=\\\"pulling image: failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" -- exit status 1\",\n  s: \"E0630 01:10:57.889742   11523 remote_image.go:180] \\\"PullImage from image service failed\\\" err=\\\"rpc error: code = Unknown desc = failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" image=\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\"\\ntime=\\\"2026-06-30T01:10:57Z\\\" level=fatal msg=\\\"pulling image: failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" -- exit status 1\",\n  --- FAIL: TestE2E (54.35s)\n  FAIL\tgithub.com/urunc-dev/urunc/tests/e2e\t54.361s\n-\u003e Build Failure\n  make: *** [Makefile:318: test_crictl_Spt] Error 1\n  ##[error]Process completed with exit code 2.",
-            "raw_log": "go mod verify\nall modules verified\n##[group]Run # Set up Go environment properly\n# Set up Go environment properly\nexport GOROOT=$(go env GOROOT)\nexport PATH=\"$GOROOT/bin:$PATH\"\ngo version\ngo env GOROOT\nif [ \"arm64\" = \"arm64\" ]; then\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_crictl_Spt\nelse\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_crictl\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo version go1.26.4 linux/arm64\nTesting crictl\n=== RUN   TestE2E\nRunning Suite: E2E Suite - /home/runner/work/urunc/urunc/tests/e2e\n==================================================================\nRandom Seed: 1782781805\n2026-06-30T01:10:05.5447402Z\nWill run 3 of 73 specs\nSS\n------------------------------\nCrictl unikernel containers Spt-rumprun-redis\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56\n2026/06/30 01:10:05 Pulling image: harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\nAttempt 1/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:09.450963   11496 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\ntime=\"2026-06-30T01:10:09Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\nAttempt 2/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:15.462482   11502 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\ntime=\"2026-06-30T01:10:15Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\nAttempt 3/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:19.275769   11510 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\ntime=\"2026-06-30T01:10:19Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\nAttempt 4/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:25.113162   11517 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\ntime=\"2026-06-30T01:10:25Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\nAttempt 5/5 failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: E0630 01:10:57.889742   11523 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\ntime=\"2026-06-30T01:10:57Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1. Retrying in 2s...\n[FAILED] in [BeforeAll] - /home/runner/work/urunc/urunc/tests/e2e/crictl_test.go:29 @ 06/30/26 01:10:59.893\n• [FAILED] [54.350 seconds]\nCrictl [BeforeAll] unikernel containers Spt-rumprun-redis\n[BeforeAll] /home/runner/work/urunc/urunc/tests/e2e/crictl_test.go:25\n[It] /home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56\n2026-06-30T01:10:59.8948441Z\n[FAILED] Failed to pull crictl images\nUnexpected error:\n\u003c*fmt.wrapError | 0x125c07e1c320\u003e:\nfailed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest after 5 attempts: E0630 01:10:57.889742   11523 remote_image.go:180] \"PullImage from image service failed\" err=\"rpc error: code = Unknown desc = failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" image=\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\"\ntime=\"2026-06-30T01:10:57Z\" level=fatal msg=\"pulling image: failed to pull and unpack image \\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\" -- exit status 1\n{\nmsg: \"failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest: failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest after 5 attempts: E0630 01:10:57.889742   11523 remote_image.go:180] \\\"PullImage from image service failed\\\" err=\\\"rpc error: code = Unknown desc = failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" image=\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\"\\ntime=\\\"2026-06-30T01:10:57Z\\\" level=fatal msg=\\\"pulling image: failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" -- exit status 1\",\nerr: \u003c*fmt.wrapError | 0x125c07e1c300\u003e{\nmsg: \"failed to pull harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest after 5 attempts: E0630 01:10:57.889742   11523 remote_image.go:180] \\\"PullImage from image service failed\\\" err=\\\"rpc error: code = Unknown desc = failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" image=\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\"\\ntime=\\\"2026-06-30T01:10:57Z\\\" level=fatal msg=\\\"pulling image: failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" -- exit status 1\",\nerr: \u003c*errors.errorString | 0x125c07ce82e0\u003e{\ns: \"E0630 01:10:57.889742   11523 remote_image.go:180] \\\"PullImage from image service failed\\\" err=\\\"rpc error: code = Unknown desc = failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" image=\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\"\\ntime=\\\"2026-06-30T01:10:57Z\\\" level=fatal msg=\\\"pulling image: failed to pull and unpack image \\\\\\\"harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\\\\\\\": failed to resolve image: unexpected status from HEAD request to https://harbor.nbfc.io/v2/nubificus/urunc/redis-hvt-rumprun-raw/manifests/latest: 502 Bad Gateway\\\" -- exit status 1\",\n},\n},\n}\noccurred\nIn [BeforeAll] at: /home/runner/work/urunc/urunc/tests/e2e/crictl_test.go:29 @ 06/30/26 01:10:59.893\n------------------------------\nS [SKIPPED] [0.000 seconds]\nCrictl unikernel containers [It] Spt-mirage-net\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56\n2026-06-30T01:10:59.8989870Z\n[SKIPPED] Spec skipped because a BeforeAll node failed\nIn [It] at: /home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56 @ 06/30/26 01:10:59.894\n------------------------------\nS [SKIPPED] [0.000 seconds]\nCrictl unikernel containers [It] Spt-mirage-UserGroup\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56\n2026-06-30T01:10:59.8993292Z\n[SKIPPED] Spec skipped because a BeforeAll node failed\nIn [It] at: /home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56 @ 06/30/26 01:10:59.894\n------------------------------\nSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\n2026-06-30T01:10:59.9000250Z\nSummarizing 1 Failure:\n[FAIL] Crictl [BeforeAll] unikernel containers Spt-rumprun-redis\n/home/runner/work/urunc/urunc/tests/e2e/crictl_test.go:29\n2026-06-30T01:10:59.9001830Z\nRan 1 of 73 Specs in 54.351 seconds\nFAIL! -- 0 Passed | 1 Failed | 0 Pending | 72 Skipped\n--- FAIL: TestE2E (54.35s)\nFAIL\nFAIL\tgithub.com/urunc-dev/urunc/tests/e2e\t54.361s\nFAIL\nmake: *** [Makefile:318: test_crictl_Spt] Error 1\n##[error]Process completed with exit code 2."
+            "conclusion": "success",
+            "duration_sec": 488,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379665"
           },
           {
-            "id": 84190746950,
-            "name": "Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28413270431/job/84190746950",
-            "log_snippet": "[Test Failure] — 2 signal(s) found\n────────────────────────────────────────────────\n-\u003e Test Failure\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n-\u003e Build Failure\n  ##[error]Process completed with exit code 1.",
-            "raw_log": "shell: /usr/bin/bash -e {0}\n##[endgroup]\n-rwxr-xr-x 1 1001 1001 7920120 Jun 30 01:09 /usr/local/bin/urunc\n-rwxr-xr-x 1 1001 1001 15184034 Jun 30 01:09 /usr/local/bin/containerd-shim-urunc-v2\ncontainerd github.com/containerd/containerd/v2 v2.1.1 cb1076646aa3740577fafbf3d914198b7fe8e3f7\n##[group]Run ARCH=$(uname -m)\nARCH=$(uname -m)\nif [ \"$ARCH\" = \"x86_64\" ]; then\nKUBECTL_ARCH=\"amd64\"\nelif [ \"$ARCH\" = \"aarch64\" ]; then\nKUBECTL_ARCH=\"arm64\"\nelse\necho \"Unsupported architecture: $ARCH\"\nexit 1\nfi\ncurl -LO \"https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${KUBECTL_ARCH}/kubectl\"\nchmod +x kubectl\nsudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\nDload  Upload   Total   Spent    Left  Speed\n2026-06-30T01:10:39.1990191Z\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n100 56.7M  100 56.7M    0     0   127M      0 --:--:-- --:--:-- --:--:--  127M\n##[group]Run mkdir -p ~/.kube\nmkdir -p ~/.kube\nkind get kubeconfig --name urunc-test \u003e ~/.kube/config\nchmod 600 ~/.kube/config\nexport KUBECONFIG=~/.kube/config\nkubectl config use-context kind-urunc-test\nkubectl wait --for=condition=Ready nodes --all --timeout=200s\nkubectl cluster-info\nshell: /usr/bin/bash -e {0}\n##[endgroup]\nSwitched to context \"kind-urunc-test\".\nnode/urunc-test-control-plane condition met\nKubernetes control plane is running at https://127.0.0.1:6443\nCoreDNS is running at https://127.0.0.1:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy\n2026-06-30T01:10:40.2679174Z\nTo further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.\n##[group]Run cat \u003c\u003cEOF | kubectl apply -f -\ncat \u003c\u003cEOF | kubectl apply -f -\nkind: RuntimeClass\napiVersion: node.k8s.io/v1\nmetadata:\nname: urunc\nhandler: urunc\nEOF\nshell: /usr/bin/bash -e {0}\n##[endgroup]\nruntimeclass.node.k8s.io/urunc created\n##[group]Run cat \u003c\u003cEOF | kubectl apply -f -\ncat \u003c\u003cEOF | kubectl apply -f -\napiVersion: v1\nkind: Pod\nmetadata:\nname: hello-spt-rumprun-block\nlabels:\nrun: hello-spt-rumprun-block\nspec:\nruntimeClassName: urunc\nrestartPolicy: Never\ncontainers:\n- name: hello-spt-rumprun-block\nimage: harbor.nbfc.io/nubificus/urunc/hello-spt-rumprun-block:latest\nimagePullPolicy: Always\nports:\n- containerPort: 80\nprotocol: TCP\nresources:\nrequests:\ncpu: 10m\nEOF\nshell: /usr/bin/bash -e {0}\n##[endgroup]\npod/hello-spt-rumprun-block created\n##[group]Run kubectl wait --for=condition=Succeeded pod/hello-spt-rumprun-block --timeout=180s || true\nkubectl wait --for=condition=Succeeded pod/hello-spt-rumprun-block --timeout=180s || true\nkubectl logs hello-spt-rumprun-block | tee /tmp/logs.txt\nif ! grep \"Hello world\" /tmp/logs.txt; then\necho \"=== LOGS ===\"\ncat /tmp/logs.txt\nexit 1\nfi\nkubectl describe pod hello-spt-rumprun-block || true\nshell: /usr/bin/bash -e {0}\n##[endgroup]\nerror: timed out waiting for the condition on pods/hello-spt-rumprun-block\nError from server (BadRequest): container \"hello-spt-rumprun-block\" in pod \"hello-spt-rumprun-block\" is waiting to start: trying and failing to pull image\n=== LOGS ===\n##[error]Process completed with exit code 1."
+            "name": "E2E test / VM test (amd64, test_docker)",
+            "conclusion": "success",
+            "duration_sec": 513,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379666"
+          },
+          {
+            "name": "E2E test / VM test (amd64, test_ctr)",
+            "conclusion": "success",
+            "duration_sec": 1053,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379669"
+          },
+          {
+            "name": "E2E test / VM test (arm64, test_ctr)",
+            "conclusion": "success",
+            "duration_sec": 937,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379670"
+          },
+          {
+            "name": "E2E test / VM test (amd64, test_crictl)",
+            "conclusion": "success",
+            "duration_sec": 516,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379673"
+          },
+          {
+            "name": "E2E test / VM test (arm64, test_docker)",
+            "conclusion": "success",
+            "duration_sec": 455,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379683"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28486591125,
+          "name": "urunc CI (nightly)",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 256,
+          "created_at": "2026-07-01T01:12:42Z",
+          "updated_at": "2026-07-01T01:34:12Z",
+          "run_started_at": "2026-07-01T01:12:42Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125",
+          "jobs": [
+            {
+              "name": "Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 28,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434277827"
+            },
+            {
+              "name": "Build / build (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 39,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434277840"
+            },
+            {
+              "name": "Unit tests / unit-test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 35,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434277849"
+            },
+            {
+              "name": "Build / build (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 53,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434277860"
+            },
+            {
+              "name": "urunc-deploy test / urunc-deploy (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 78,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379630"
+            },
+            {
+              "name": "Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 308,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379638"
+            },
+            {
+              "name": "Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 336,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379645"
+            },
+            {
+              "name": "urunc-deploy test / urunc-deploy (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 192,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379656"
+            },
+            {
+              "name": "E2E test / VM test (amd64, test_nerdctl)",
+              "conclusion": "success",
+              "duration_sec": 1231,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379662"
+            },
+            {
+              "name": "E2E test / VM test (arm64, test_nerdctl)",
+              "conclusion": "success",
+              "duration_sec": 1036,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379663"
+            },
+            {
+              "name": "E2E test / VM test (arm64, test_crictl)",
+              "conclusion": "success",
+              "duration_sec": 488,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379665"
+            },
+            {
+              "name": "E2E test / VM test (amd64, test_docker)",
+              "conclusion": "success",
+              "duration_sec": 513,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379666"
+            },
+            {
+              "name": "E2E test / VM test (amd64, test_ctr)",
+              "conclusion": "success",
+              "duration_sec": 1053,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379669"
+            },
+            {
+              "name": "E2E test / VM test (arm64, test_ctr)",
+              "conclusion": "success",
+              "duration_sec": 937,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379670"
+            },
+            {
+              "name": "E2E test / VM test (amd64, test_crictl)",
+              "conclusion": "success",
+              "duration_sec": 516,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379673"
+            },
+            {
+              "name": "E2E test / VM test (arm64, test_docker)",
+              "conclusion": "success",
+              "duration_sec": 455,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28486591125/job/84434379683"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28413270431,
           "name": "urunc CI (nightly)",
@@ -5532,116 +5616,6 @@
               "conclusion": "success",
               "duration_sec": 931,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27388107467/job/80939663408"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 27317118432,
-          "name": "urunc CI (nightly)",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 236,
-          "created_at": "2026-06-11T01:13:47Z",
-          "updated_at": "2026-06-11T01:34:08Z",
-          "run_started_at": "2026-06-11T01:13:47Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432",
-          "jobs": [
-            {
-              "name": "Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
-              "conclusion": "success",
-              "duration_sec": 28,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700041853"
-            },
-            {
-              "name": "Build / build (arm64, ubuntu-22.04-arm)",
-              "conclusion": "success",
-              "duration_sec": 53,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700041854"
-            },
-            {
-              "name": "Build / build (amd64, ubuntu-22.04)",
-              "conclusion": "success",
-              "duration_sec": 65,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700041876"
-            },
-            {
-              "name": "Unit tests / unit-test (amd64, ubuntu-22.04)",
-              "conclusion": "success",
-              "duration_sec": 41,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700041894"
-            },
-            {
-              "name": "urunc-deploy test / urunc-deploy (arm64, ubuntu-22.04-arm)",
-              "conclusion": "success",
-              "duration_sec": 105,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164469"
-            },
-            {
-              "name": "Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
-              "conclusion": "success",
-              "duration_sec": 306,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164470"
-            },
-            {
-              "name": "Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
-              "conclusion": "success",
-              "duration_sec": 304,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164479"
-            },
-            {
-              "name": "urunc-deploy test / urunc-deploy (amd64, ubuntu-22.04)",
-              "conclusion": "success",
-              "duration_sec": 79,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164491"
-            },
-            {
-              "name": "E2E test / VM test (arm64, test_nerdctl)",
-              "conclusion": "success",
-              "duration_sec": 1079,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164513"
-            },
-            {
-              "name": "E2E test / VM test (amd64, test_docker)",
-              "conclusion": "success",
-              "duration_sec": 502,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164522"
-            },
-            {
-              "name": "E2E test / VM test (arm64, test_crictl)",
-              "conclusion": "success",
-              "duration_sec": 434,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164526"
-            },
-            {
-              "name": "E2E test / VM test (amd64, test_ctr)",
-              "conclusion": "success",
-              "duration_sec": 978,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164535"
-            },
-            {
-              "name": "E2E test / VM test (amd64, test_nerdctl)",
-              "conclusion": "success",
-              "duration_sec": 1151,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164537"
-            },
-            {
-              "name": "E2E test / VM test (arm64, test_docker)",
-              "conclusion": "success",
-              "duration_sec": 407,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164538"
-            },
-            {
-              "name": "E2E test / VM test (arm64, test_ctr)",
-              "conclusion": "success",
-              "duration_sec": 879,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164539"
-            },
-            {
-              "name": "E2E test / VM test (amd64, test_crictl)",
-              "conclusion": "success",
-              "duration_sec": 495,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27317118432/job/80700164553"
             }
           ],
           "run_attempt": 1
@@ -9726,7 +9700,7 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 18.65,
+      "avg_duration_secs": 32.6,
       "weather_history": [
         "success",
         "success",
@@ -9737,26 +9711,46 @@
         "success"
       ],
       "last_run": {
-        "id": 28411784595,
+        "id": 28484902862,
         "name": "Automatically close stale PRs",
         "status": "completed",
         "conclusion": "success",
-        "run_number": 478,
-        "created_at": "2026-06-30T00:26:49Z",
-        "updated_at": "2026-06-30T00:27:07Z",
-        "run_started_at": "2026-06-30T00:26:49Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28411784595",
+        "run_number": 479,
+        "created_at": "2026-07-01T00:27:33Z",
+        "updated_at": "2026-07-01T00:32:29Z",
+        "run_started_at": "2026-07-01T00:27:33Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28484902862",
         "jobs": [
           {
             "name": "stale",
             "conclusion": "success",
-            "duration_sec": 16,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28411784595/job/84186082969"
+            "duration_sec": 292,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28484902862/job/84429102632"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28484902862,
+          "name": "Automatically close stale PRs",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 479,
+          "created_at": "2026-07-01T00:27:33Z",
+          "updated_at": "2026-07-01T00:32:29Z",
+          "run_started_at": "2026-07-01T00:27:33Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28484902862",
+          "jobs": [
+            {
+              "name": "stale",
+              "conclusion": "success",
+              "duration_sec": 292,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28484902862/job/84429102632"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28411784595,
           "name": "Automatically close stale PRs",
@@ -10133,26 +10127,6 @@
               "conclusion": "success",
               "duration_sec": 14,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27386471084/job/80934457867"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 27315562084,
-          "name": "Automatically close stale PRs",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 459,
-          "created_at": "2026-06-11T00:31:44Z",
-          "updated_at": "2026-06-11T00:32:01Z",
-          "run_started_at": "2026-06-11T00:31:44Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27315562084",
-          "jobs": [
-            {
-              "name": "stale",
-              "conclusion": "success",
-              "duration_sec": 13,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27315562084/job/80695221425"
             }
           ],
           "run_attempt": 1
