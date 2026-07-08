@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-08T11:10:25.952439736Z",
+  "generated_at": "2026-07-08T14:18:55.865771486Z",
   "repo": "urunc-dev/urunc",
-  "overall_health": 87.38095238095238,
+  "overall_health": 87.14285714285714,
   "workflows": [
     {
       "name": "add-git-trailers",
@@ -11,37 +11,57 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 17.7,
+      "avg_duration_secs": 17.9,
       "weather_history": [
         "action_required",
-        "action_required",
         "success",
         "success",
         "action_required",
         "success",
-        "success"
+        "success",
+        "skipped"
       ],
       "last_run": {
-        "id": 28864746207,
+        "id": 28941763612,
         "name": "Add Git Trailers to PR commits",
         "status": "completed",
-        "conclusion": "success",
-        "run_number": 105,
-        "created_at": "2026-07-07T12:04:58Z",
-        "updated_at": "2026-07-07T12:05:27Z",
-        "run_started_at": "2026-07-07T12:04:58Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864746207",
+        "conclusion": "skipped",
+        "run_number": 106,
+        "created_at": "2026-07-08T12:14:30Z",
+        "updated_at": "2026-07-08T12:14:39Z",
+        "run_started_at": "2026-07-08T12:14:35Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941763612",
         "jobs": [
           {
             "name": "Add Git Trailers",
-            "conclusion": "success",
-            "duration_sec": 25,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864746207/job/85611860123"
+            "conclusion": "skipped",
+            "duration_sec": 0,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941763612/job/85865414572"
           }
         ],
-        "run_attempt": 1
+        "run_attempt": 2
       },
       "recent_runs": [
+        {
+          "id": 28941763612,
+          "name": "Add Git Trailers to PR commits",
+          "status": "completed",
+          "conclusion": "skipped",
+          "run_number": 106,
+          "created_at": "2026-07-08T12:14:30Z",
+          "updated_at": "2026-07-08T12:14:39Z",
+          "run_started_at": "2026-07-08T12:14:35Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941763612",
+          "jobs": [
+            {
+              "name": "Add Git Trailers",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941763612/job/85865414572"
+            }
+          ],
+          "run_attempt": 2
+        },
         {
           "id": 28864746207,
           "name": "Add Git Trailers to PR commits",
@@ -303,18 +323,6 @@
           "run_attempt": 1
         },
         {
-          "id": 27137777442,
-          "name": "Add Git Trailers to PR commits",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 86,
-          "created_at": "2026-06-08T12:31:13Z",
-          "updated_at": "2026-06-08T12:31:13Z",
-          "run_started_at": "2026-06-08T12:31:13Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/27137777442",
-          "run_attempt": 1
-        },
-        {
           "id": 26817260107,
           "name": "Add Git Trailers to PR commits",
           "status": "completed",
@@ -480,9 +488,9 @@
       "critical": false,
       "required": false,
       "total_runs": 20,
-      "failed_runs": 0,
-      "failure_rate": 0,
-      "avg_duration_secs": 176.85,
+      "failed_runs": 1,
+      "failure_rate": 5,
+      "avg_duration_secs": 175.8,
       "weather_history": [
         "success",
         "success",
@@ -490,47 +498,121 @@
         "success",
         "success",
         "success",
-        "success"
+        "failure"
       ],
       "last_run": {
-        "id": 28246713844,
+        "id": 28941833305,
         "name": "🍜 Build/publish urunc-deploy",
         "status": "completed",
-        "conclusion": "success",
-        "run_number": 238,
-        "created_at": "2026-06-26T15:07:22Z",
-        "updated_at": "2026-06-26T15:09:57Z",
-        "run_started_at": "2026-06-26T15:07:22Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28246713844",
+        "conclusion": "failure",
+        "run_number": 239,
+        "created_at": "2026-07-08T12:15:42Z",
+        "updated_at": "2026-07-08T12:18:08Z",
+        "run_started_at": "2026-07-08T12:15:42Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305",
         "jobs": [
           {
             "name": "get-changed-files",
             "conclusion": "success",
-            "duration_sec": 14,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28246713844/job/83687506213"
-          },
-          {
-            "name": "Build urunc-deploy container image / build-all (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 111,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28246713844/job/83687558900"
+            "duration_sec": 12,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85865623145"
           },
           {
             "name": "Build urunc-deploy container image / build-all (arm64, ubuntu-22.04-arm)",
             "conclusion": "success",
-            "duration_sec": 105,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28246713844/job/83687558916"
+            "duration_sec": 110,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85865672146"
+          },
+          {
+            "name": "Build urunc-deploy container image / build-all (amd64, ubuntu-22.04)",
+            "conclusion": "failure",
+            "duration_sec": 33,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85865672187"
           },
           {
             "name": "Build urunc-deploy container image / manifest",
-            "conclusion": "success",
-            "duration_sec": 22,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28246713844/job/83687927654"
+            "conclusion": "failure",
+            "duration_sec": 11,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85866040745"
+          }
+        ],
+        "failed_jobs": [
+          {
+            "id": 85865672187,
+            "name": "Build urunc-deploy container image / build-all (amd64, ubuntu-22.04)",
+            "conclusion": "failure",
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85865672187",
+            "log_snippet": "[Network Failure] — 7 signal(s) found\n────────────────────────────────────────────────\n-\u003e Network Failure\n  #22 3.493   Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n  #22 3.553 E: Failed to fetch http://deb.debian.org/debian-security/pool/updates/main/g/git/git-man_2.30.2-1%2bdeb11u5_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n  3.493   Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n  3.553 E: Failed to fetch http://deb.debian.org/debian-security/pool/updates/main/g/git/git-man_2.30.2-1%2bdeb11u5_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n-\u003e Test Failure\n  #14 0.093   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n  #18 0.101   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n-\u003e Build Failure\n  ##[error]buildx failed with: ERROR: failed to build: failed to solve: process \"/bin/sh -c rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100",
+            "raw_log": "#1 creating container buildx_buildkit_builder-e6590977-4906-485b-aa44-d70f50f442110 0.4s done\n#1 DONE 3.6s\nName:          builder-e6590977-4906-485b-aa44-d70f50f44211\nDriver:        docker-container\nLast Activity: 2026-07-08 12:16:12 +0000 UTC\n2026-07-08T12:16:16.0702672Z\nNodes:\nName:                  builder-e6590977-4906-485b-aa44-d70f50f442110\nEndpoint:              unix:///var/run/docker.sock\nStatus:                running\nBuildKit daemon flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host\nBuildKit version:      v0.30.0\nPlatforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386\nLabels:\norg.mobyproject.buildkit.worker.executor:         oci\norg.mobyproject.buildkit.worker.hostname:         d2fc5a91ca92\norg.mobyproject.buildkit.worker.network:          host\norg.mobyproject.buildkit.worker.oci.process-mode: sandbox\norg.mobyproject.buildkit.worker.selinux.enabled:  false\norg.mobyproject.buildkit.worker.snapshotter:      overlayfs\nGC Policy rule#0:\nAll:            false\nFilters:        type==source.local,type==exec.cachemount,type==source.git.checkout\nKeep Duration:  48h0m0s\nMax Used Space: 488.3MiB\nGC Policy rule#1:\nAll:            false\nKeep Duration:  1440h0m0s\nReserved Space: 9.313GiB\nMax Used Space: 93.13GiB\nMin Free Space: 27.94GiB\nGC Policy rule#2:\nAll:            false\nReserved Space: 9.313GiB\nMax Used Space: 93.13GiB\nMin Free Space: 27.94GiB\nGC Policy rule#3:\nAll:            true\nReserved Space: 9.313GiB\nMax Used Space: 93.13GiB\nMin Free Space: 27.94GiB\n##[endgroup]\n##[group]Inspect builder\n{\n\"nodes\": [\n{\n\"name\": \"builder-e6590977-4906-485b-aa44-d70f50f442110\",\n\"endpoint\": \"unix:///var/run/docker.sock\",\n\"status\": \"running\",\n\"buildkitd-flags\": \"--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host\",\n\"buildkit\": \"v0.30.0\",\n\"platforms\": \"linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386\",\n\"features\": {\n\"Automatically load images to the Docker Engine image store\": true,\n\"Cache export\": true,\n\"Direct push\": true,\n\"Docker exporter\": true,\n\"Multi-platform build\": true,\n\"OCI exporter\": true\n},\n\"labels\": {\n\"org.mobyproject.buildkit.worker.executor\": \"oci\",\n\"org.mobyproject.buildkit.worker.hostname\": \"d2fc5a91ca92\",\n\"org.mobyproject.buildkit.worker.network\": \"host\",\n\"org.mobyproject.buildkit.worker.oci.process-mode\": \"sandbox\",\n\"org.mobyproject.buildkit.worker.selinux.enabled\": \"false\",\n\"org.mobyproject.buildkit.worker.snapshotter\": \"overlayfs\"\n},\n\"gcPolicy\": [\n{\n\"all\": false,\n\"filter\": [\n\"type==source.local\",\n\"type==exec.cachemount\",\n\"type==source.git.checkout\"\n],\n\"keepDuration\": \"48h0m0s\",\n\"maxUsedSpace\": \"488.3MiB\"\n},\n{\n\"all\": false,\n\"keepDuration\": \"1440h0m0s\",\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n},\n{\n\"all\": false,\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n},\n{\n\"all\": true,\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n}\n]\n}\n],\n\"name\": \"builder-e6590977-4906-485b-aa44-d70f50f44211\",\n\"driver\": \"docker-container\",\n\"lastActivity\": \"2026-07-08T12:16:12.000Z\"\n}\n##[endgroup]\n##[group]BuildKit version\nbuilder-e6590977-4906-485b-aa44-d70f50f442110: v0.30.0\n##[endgroup]\n##[group]Run docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121\nwith:\nregistry: ghcr.io\nusername: urunc-bot[bot]\npassword: ***\nlogout: true\nenv:\nREGISTRY: ghcr.io\nIMAGE_NAME: ghcr.io/urunc-dev/urunc/urunc-deploy\nARCH: amd64\nSHA_SHORT: 1dba69d\n##[endgroup]\nLogging into ghcr.io...\nLogin Succeeded!\n##[group]Run docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf\nwith:\nimages: ghcr.io/urunc-dev/urunc/urunc-deploy\ntags: type=sha,prefix=amd64-\ncontext: workflow\ngithub-token: ***\nenv:\nREGISTRY: ghcr.io\nIMAGE_NAME: ghcr.io/urunc-dev/urunc/urunc-deploy\nARCH: amd64\nSHA_SHORT: 1dba69d\n##[endgroup]\n##[group]Context info\neventName: push\nsha: 1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\nref: refs/heads/main\nworkflow: 🍜 Build/publish urunc-deploy\naction: meta\nactor: urunc-bot[bot]\nrunNumber: 239\nrunId: 28941833305\ncommitDate: Wed Jul 08 2026 12:15:37 GMT+0000 (Coordinated Universal Time)\n##[endgroup]\n##[group]Processing images input\nname=ghcr.io/urunc-dev/urunc/urunc-deploy,enable=true\n##[endgroup]\n##[group]Processing tags input\ntype=sha,prefix=amd64-,format=short,enable=true,priority=100\n##[endgroup]\n##[group]Processing flavor input\nlatest=auto\nprefix=\nprefixLatest=false\nsuffix=\nsuffixLatest=false\n##[endgroup]\n##[group]Docker image version\namd64-1dba69d\n##[endgroup]\n##[group]Docker tags\nghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\n##[endgroup]\n##[group]Docker labels\norg.opencontainers.image.created=2026-07-08T12:16:17.597Z\norg.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\norg.opencontainers.image.licenses=Apache-2.0\norg.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\norg.opencontainers.image.source=https://github.com/urunc-dev/urunc\norg.opencontainers.image.title=urunc\norg.opencontainers.image.url=https://github.com/urunc-dev/urunc\norg.opencontainers.image.version=amd64-1dba69d\n##[endgroup]\n##[group]Annotations\nmanifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nmanifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\nmanifest:org.opencontainers.image.licenses=Apache-2.0\nmanifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\nmanifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\nmanifest:org.opencontainers.image.title=urunc\nmanifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\nmanifest:org.opencontainers.image.version=amd64-1dba69d\n##[endgroup]\n##[group]JSON output\n{\n\"tags\": [\n\"ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\"\n],\n\"tag-names\": [\n\"amd64-1dba69d\"\n],\n\"labels\": {\n\"org.opencontainers.image.created\": \"2026-07-08T12:16:17.597Z\",\n\"org.opencontainers.image.description\": \"a simple container runtime that aspires to become `runc` for unikernels\",\n\"org.opencontainers.image.licenses\": \"Apache-2.0\",\n\"org.opencontainers.image.revision\": \"1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\n\"org.opencontainers.image.source\": \"https://github.com/urunc-dev/urunc\",\n\"org.opencontainers.image.title\": \"urunc\",\n\"org.opencontainers.image.url\": \"https://github.com/urunc-dev/urunc\",\n\"org.opencontainers.image.version\": \"amd64-1dba69d\"\n},\n\"annotations\": [\n\"manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\",\n\"manifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\",\n\"manifest:org.opencontainers.image.licenses=Apache-2.0\",\n\"manifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\n\"manifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\",\n\"manifest:org.opencontainers.image.title=urunc\",\n\"manifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\",\n\"manifest:org.opencontainers.image.version=amd64-1dba69d\"\n]\n}\n##[endgroup]\n##[group]Bake file definition (tags)\n{\n\"target\": {\n\"docker-metadata-action\": {\n\"tags\": [\n\"ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\"\n],\n\"args\": {\n\"DOCKER_META_IMAGES\": \"ghcr.io/urunc-dev/urunc/urunc-deploy\",\n\"DOCKER_META_VERSION\": \"amd64-1dba69d\"\n}\n}\n}\n}\n##[endgroup]\n##[group]Bake file definition (labels)\n{\n\"target\": {\n\"docker-metadata-action\": {\n\"labels\": {\n\"org.opencontainers.image.created\": \"2026-07-08T12:16:17.597Z\",\n\"org.opencontainers.image.description\": \"a simple container runtime that aspires to become `runc` for unikernels\",\n\"org.opencontainers.image.licenses\": \"Apache-2.0\",\n\"org.opencontainers.image.revision\": \"1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\n\"org.opencontainers.image.source\": \"https://github.com/urunc-dev/urunc\",\n\"org.opencontainers.image.title\": \"urunc\",\n\"org.opencontainers.image.url\": \"https://github.com/urunc-dev/urunc\",\n\"org.opencontainers.image.version\": \"amd64-1dba69d\"\n}\n}\n}\n}\n##[endgroup]\n##[group]Bake file definition (annotations)\n{\n\"target\": {\n\"docker-metadata-action\": {\n\"annotations\": [\n\"manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\",\n\"manifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\",\n\"manifest:org.opencontainers.image.licenses=Apache-2.0\",\n\"manifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\n\"manifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\",\n\"manifest:org.opencontainers.image.title=urunc\",\n\"manifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\",\n\"manifest:org.opencontainers.image.version=amd64-1dba69d\"\n]\n}\n}\n}\n##[endgroup]\n##[group]Run if [ \"$EVENT_NAME\" == \"pull_request\" ]; then\nif [ \"$EVENT_NAME\" == \"pull_request\" ]; then\nif [ \"$IS_MERGED\" == \"true\" ]; then\nsha=\"$GITHUB_SHA\"\nbranch=\"$PR_BASE_REF\"\necho \"PR merged. SHA: ${sha}, Branch: ${branch}\"\nelse\nsha=\"$PR_HEAD_SHA\"\nbranch=\"$PR_HEAD_REF\"\necho \"PR not yet merged. SHA: ${sha}, Branch: ${branch}\"\nfi\nelse\nsha=\"$GITHUB_SHA\"\nbranch=\"$REF_NAME\"\necho \"$EVENT_NAME event. SHA: ${sha}, Branch: ${branch}\"\nfi\necho \"sha=${sha}\" \u003e\u003e \"$GITHUB_OUTPUT\"\necho \"branch=${branch}\" \u003e\u003e \"$GITHUB_OUTPUT\"\nshell: /usr/bin/bash -e {0}\nenv:\nREGISTRY: ghcr.io\nIMAGE_NAME: ghcr.io/urunc-dev/urunc/urunc-deploy\nARCH: amd64\nSHA_SHORT: 1dba69d\nDOCKER_METADATA_OUTPUT_VERSION: amd64-1dba69d\nDOCKER_METADATA_OUTPUT_TAGS: ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\nDOCKER_METADATA_OUTPUT_TAG_NAMES: amd64-1dba69d\nDOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nDOCKER_METADATA_OUTPUT_ANNOTATIONS: manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nDOCKER_METADATA_OUTPUT_JSON: {\"tags\":[\"ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\"],\"tag-names\":[\"amd64-1dba69d\"],\"labels\":{\"org.opencontainers.image.created\":\"2026-07-08T12:16:17.597Z\",\"org.opencontainers.image.description\":\"a simple container runtime that aspires to become `runc` for unikernels\",\"org.opencontainers.image.licenses\":\"Apache-2.0\",\"org.opencontainers.image.revision\":\"1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\"org.opencontainers.image.source\":\"https://github.com/urunc-dev/urunc\",\"org.opencontainers.image.title\":\"urunc\",\"org.opencontainers.image.url\":\"https://github.com/urunc-dev/urunc\",\"org.opencontainers.image.version\":\"amd64-1dba69d\"},\"annotations\":[\"manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\",\"manifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\",\"manifest:org.opencontainers.image.licenses=Apache-2.0\",\"manifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\"manifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\",\"manifest:org.opencontainers.image.title=urunc\",\"manifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\",\"manifest:org.opencontainers.image.version=amd64-1dba69d\"]}\nDOCKER_METADATA_OUTPUT_BAKE_FILE_TAGS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-tags.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE_LABELS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-labels.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE_ANNOTATIONS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-annotations.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake.json\nEVENT_NAME: push\nIS_MERGED:\nGITHUB_SHA: 1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\nPR_HEAD_SHA:\nPR_HEAD_REF:\nPR_BASE_REF:\nREF_NAME: main\n##[endgroup]\npush event. SHA: 1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b, Branch: main\n##[group]Run docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a\nwith:\ncontext: ./deployment/urunc-deploy\ntags: ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\nlabels: org.opencontainers.image.created=2026-07-08T12:16:17.597Z\npush: true\nfile: deployment/urunc-deploy/Dockerfile\nbuild-args: BRANCH=main\nprovenance: false\nload: false\nno-cache: false\npull: false\ngithub-token: ***\nenv:\nREGISTRY: ghcr.io\nIMAGE_NAME: ghcr.io/urunc-dev/urunc/urunc-deploy\nARCH: amd64\nSHA_SHORT: 1dba69d\nDOCKER_METADATA_OUTPUT_VERSION: amd64-1dba69d\nDOCKER_METADATA_OUTPUT_TAGS: ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\nDOCKER_METADATA_OUTPUT_TAG_NAMES: amd64-1dba69d\nDOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nDOCKER_METADATA_OUTPUT_ANNOTATIONS: manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nDOCKER_METADATA_OUTPUT_JSON: {\"tags\":[\"ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\"],\"tag-names\":[\"amd64-1dba69d\"],\"labels\":{\"org.opencontainers.image.created\":\"2026-07-08T12:16:17.597Z\",\"org.opencontainers.image.description\":\"a simple container runtime that aspires to become `runc` for unikernels\",\"org.opencontainers.image.licenses\":\"Apache-2.0\",\"org.opencontainers.image.revision\":\"1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\"org.opencontainers.image.source\":\"https://github.com/urunc-dev/urunc\",\"org.opencontainers.image.title\":\"urunc\",\"org.opencontainers.image.url\":\"https://github.com/urunc-dev/urunc\",\"org.opencontainers.image.version\":\"amd64-1dba69d\"},\"annotations\":[\"manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\",\"manifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\",\"manifest:org.opencontainers.image.licenses=Apache-2.0\",\"manifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\"manifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\",\"manifest:org.opencontainers.image.title=urunc\",\"manifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\",\"manifest:org.opencontainers.image.version=amd64-1dba69d\"]}\nDOCKER_METADATA_OUTPUT_BAKE_FILE_TAGS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-tags.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE_LABELS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-labels.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE_ANNOTATIONS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-annotations.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake.json\n##[endgroup]\n##[group]GitHub Actions runtime token ACs\nrefs/heads/main: read/write\n##[endgroup]\n##[group]Docker info\n[command]/usr/bin/docker version\nClient: Docker Engine - Community\nVersion:           28.0.4\nAPI version:       1.48\nGo version:        go1.23.7\nGit commit:        b8034c0\nBuilt:             Tue Mar 25 15:07:11 2025\nOS/Arch:           linux/amd64\nContext:           default\n2026-07-08T12:16:17.9704952Z\nServer: Docker Engine - Community\nEngine:\nVersion:          28.0.4\nAPI version:      1.48 (minimum version 1.24)\nGo version:       go1.23.7\nGit commit:       6430e49\nBuilt:            Tue Mar 25 15:07:11 2025\nOS/Arch:          linux/amd64\nExperimental:     false\ncontainerd:\nVersion:          v2.2.5\nGitCommit:        e53c7c1516c3b2bff98eb76f1f4117477e6f4e66\nrunc:\nVersion:          1.3.6\nGitCommit:        v1.3.6-0-g491b69ba\ndocker-init:\nVersion:          0.19.0\nGitCommit:        de40ad0\n[command]/usr/bin/docker info\nClient: Docker Engine - Community\nVersion:    28.0.4\nContext:    default\nDebug Mode: false\nPlugins:\nbuildx: Docker Buildx (Docker Inc.)\nVersion:  v0.35.0\nPath:     /usr/libexec/docker/cli-plugins/docker-buildx\ncompose: Docker Compose (Docker Inc.)\nVersion:  v2.38.2\nPath:     /usr/libexec/docker/cli-plugins/docker-compose\n2026-07-08T12:16:18.0292743Z\nServer:\nContainers: 1\nRunning: 1\nPaused: 0\nStopped: 0\nImages: 1\nServer Version: 28.0.4\nStorage Driver: overlay2\nBacking Filesystem: extfs\nSupports d_type: true\nUsing metacopy: false\nNative Overlay Diff: false\nuserxattr: false\nLogging Driver: json-file\nCgroup Driver: systemd\nCgroup Version: 2\nPlugins:\nVolume: local\nNetwork: bridge host ipvlan macvlan null overlay\nLog: awslogs fluentd gcplogs gelf journald json-file local splunk syslog\nSwarm: inactive\nRuntimes: io.containerd.runc.v2 runc\nDefault Runtime: runc\nInit Binary: docker-init\ncontainerd version: e53c7c1516c3b2bff98eb76f1f4117477e6f4e66\nrunc version: v1.3.6-0-g491b69ba\ninit version: de40ad0\nSecurity Options:\napparmor\nseccomp\nProfile: builtin\ncgroupns\nKernel Version: 6.8.0-1059-azure\nOperating System: Ubuntu 22.04.5 LTS\nOSType: linux\nArchitecture: x86_64\nCPUs: 4\nTotal Memory: 15.62GiB\nName: runnervmos4r4\nID: 0a400a3c-5380-42e6-bc3f-0a6e5b2cd0fd\nDocker Root Dir: /var/lib/docker\nDebug Mode: false\nUsername: githubactions\nExperimental: false\nInsecure Registries:\n::1/128\n127.0.0.0/8\nLive Restore Enabled: true\n2026-07-08T12:16:18.0312757Z\n##[endgroup]\n##[group]Proxy configuration\nNo proxy configuration found\n##[endgroup]\n##[group]Buildx version\n[command]/usr/bin/docker buildx version\ngithub.com/docker/buildx v0.35.0 a319e5b15052cf6557ceb666eb8ff6e32380b782\n##[endgroup]\n##[group]Builder info\n{\n\"nodes\": [\n{\n\"name\": \"builder-e6590977-4906-485b-aa44-d70f50f442110\",\n\"endpoint\": \"unix:///var/run/docker.sock\",\n\"status\": \"running\",\n\"buildkitd-flags\": \"--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host\",\n\"buildkit\": \"v0.30.0\",\n\"platforms\": \"linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386\",\n\"features\": {\n\"Automatically load images to the Docker Engine image store\": true,\n\"Cache export\": true,\n\"Direct push\": true,\n\"Docker exporter\": true,\n\"Multi-platform build\": true,\n\"OCI exporter\": true\n},\n\"labels\": {\n\"org.mobyproject.buildkit.worker.executor\": \"oci\",\n\"org.mobyproject.buildkit.worker.hostname\": \"d2fc5a91ca92\",\n\"org.mobyproject.buildkit.worker.network\": \"host\",\n\"org.mobyproject.buildkit.worker.oci.process-mode\": \"sandbox\",\n\"org.mobyproject.buildkit.worker.selinux.enabled\": \"false\",\n\"org.mobyproject.buildkit.worker.snapshotter\": \"overlayfs\"\n},\n\"gcPolicy\": [\n{\n\"all\": false,\n\"filter\": [\n\"type==source.local\",\n\"type==exec.cachemount\",\n\"type==source.git.checkout\"\n],\n\"keepDuration\": \"48h0m0s\",\n\"maxUsedSpace\": \"488.3MiB\"\n},\n{\n\"all\": false,\n\"keepDuration\": \"1440h0m0s\",\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n},\n{\n\"all\": false,\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n},\n{\n\"all\": true,\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n}\n]\n}\n],\n\"name\": \"builder-e6590977-4906-485b-aa44-d70f50f44211\",\n\"driver\": \"docker-container\",\n\"lastActivity\": \"2026-07-08T12:16:12.000Z\"\n}\n##[endgroup]\n[command]/usr/bin/docker buildx build --build-arg BRANCH=main --build-arg REPO=urunc-dev/urunc --file deployment/urunc-deploy/Dockerfile --iidfile /home/runner/work/_temp/docker-actions-toolkit-QhRMwR/build-iidfile-fc02296c64.txt --label org.opencontainers.image.created=2026-07-08T12:16:17.597Z --label org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels --label org.opencontainers.image.licenses=Apache-2.0 --label org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b --label org.opencontainers.image.source=https://github.com/urunc-dev/urunc --label org.opencontainers.image.title=urunc --label org.opencontainers.image.url=https://github.com/urunc-dev/urunc --label org.opencontainers.image.version=amd64-1dba69d --attest type=provenance,disabled=true --tag ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d --metadata-file /home/runner/work/_temp/docker-actions-toolkit-QhRMwR/build-metadata-df835fa5d8.json --push ./deployment/urunc-deploy\n#0 building with \"builder-e6590977-4906-485b-aa44-d70f50f44211\" instance using docker-container driver\n2026-07-08T12:16:18.6268268Z\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 5.59kB done\n#1 DONE 0.0s\n2026-07-08T12:16:18.6269656Z\n#2 [internal] load metadata for docker.io/library/golang:1.26.4-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648\n#2 ...\n2026-07-08T12:16:18.8464822Z\n#3 [auth] library/golang:pull token for registry-1.docker.io\n#3 DONE 0.0s\n2026-07-08T12:16:18.8466947Z\n#4 [auth] library/debian:pull token for registry-1.docker.io\n#4 DONE 0.0s\n2026-07-08T12:16:18.8468832Z\n#5 [auth] library/alpine:pull token for registry-1.docker.io\n#5 DONE 0.0s\n2026-07-08T12:16:18.9967559Z\n#6 [internal] load metadata for quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#6 ...\n2026-07-08T12:16:19.2445200Z\n#7 [internal] load metadata for docker.io/library/debian:bullseye@sha256:25c0cab214b810db1b3c8adef5a12a92596979abddf86bb364e8d9c9d111df9f\n#7 DONE 0.8s\n2026-07-08T12:16:19.4423191Z\n#2 [internal] load metadata for docker.io/library/golang:1.26.4-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648\n#2 DONE 0.8s\n2026-07-08T12:16:19.4426059Z\n#8 [internal] load metadata for docker.io/library/alpine:3.21@sha256:b6a6be0ff92ab6db8acd94f5d1b7a6c2f0f5d10ce3c24af348d333ac6da80685\n#8 DONE 0.8s\n2026-07-08T12:16:19.4428383Z\n#6 [internal] load metadata for quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#6 DONE 1.0s\n2026-07-08T12:16:19.5968113Z\n#9 [internal] load .dockerignore\n#9 transferring context: 2B done\n#9 DONE 0.0s\n2026-07-08T12:16:19.5974814Z\n#10 [internal] load build context\n#10 transferring context: 15.54kB done\n#10 DONE 0.0s\n2026-07-08T12:16:19.5976288Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 resolve quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10 done\n#11 sha256:e3d24c89a849b39cc0495b9fb94fa5f31810f53b0f015fbd29b527e7081f8c05 0B / 974B 0.2s\n#11 ...\n2026-07-08T12:16:19.8522988Z\n#12 [cloud-hypervisor-builder 1/5] FROM docker.io/library/alpine:3.21@sha256:b6a6be0ff92ab6db8acd94f5d1b7a6c2f0f5d10ce3c24af348d333ac6da80685\n#12 resolve docker.io/library/alpine:3.21@sha256:b6a6be0ff92ab6db8acd94f5d1b7a6c2f0f5d10ce3c24af348d333ac6da80685 0.0s done\n#12 sha256:0368fd46e3c6d237d81390ff086f93aee216df5cfa814041a491453fb0932a12 3.64MB / 3.64MB 0.1s done\n#12 extracting sha256:0368fd46e3c6d237d81390ff086f93aee216df5cfa814041a491453fb0932a12 0.1s done\n#12 DONE 0.3s\n2026-07-08T12:16:19.8561192Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 sha256:ffc9775fb59d714ffc2feb2d81f41bdb0c68d2db472081d254ba244ae4e9d4d4 0B / 8.45kB 0.2s\n#11 sha256:a8b7984efc6598291be6c3a51c9e8432f55972d5e456fb535a9b51c88c385f0e 0B / 778.37MB 0.2s\n#11 sha256:153f1c43af0fb9cbcabb3664e9740c361a1a1e0f1a03538583cc0cc798926d1b 0B / 604.47MB 0.2s\n#11 sha256:e3d24c89a849b39cc0495b9fb94fa5f31810f53b0f015fbd29b527e7081f8c05 974B / 974B 0.4s done\n#11 sha256:44cf07d57ee4424189f012074a59110ee2065adfdde9c7d9826bebdffce0a885 0B / 3.42MB 0.2s\n#11 sha256:ffc9775fb59d714ffc2feb2d81f41bdb0c68d2db472081d254ba244ae4e9d4d4 8.45kB / 8.45kB 0.5s done\n#11 sha256:44cf07d57ee4424189f012074a59110ee2065adfdde9c7d9826bebdffce0a885 3.42MB / 3.42MB 0.2s done\n#11 extracting sha256:44cf07d57ee4424189f012074a59110ee2065adfdde9c7d9826bebdffce0a885\n#11 extracting sha256:44cf07d57ee4424189f012074a59110ee2065adfdde9c7d9826bebdffce0a885 0.2s done\n#11 ...\n2026-07-08T12:16:21.8092285Z\n#13 [cloud-hypervisor-builder 2/5] RUN apk update \u0026\u0026 apk add --no-cache curl tar\n#13 0.120 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/x86_64/APKINDEX.tar.gz\n#13 0.252 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/x86_64/APKINDEX.tar.gz\n#13 0.706 v3.21.7-155-g3a9e1c4016b [https://dl-cdn.alpinelinux.org/alpine/v3.21/main]\n#13 0.706 v3.21.7-156-g0fe62280967 [https://dl-cdn.alpinelinux.org/alpine/v3.21/community]\n#13 0.706 OK: 25407 distinct packages available\n#13 0.821 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/x86_64/APKINDEX.tar.gz\n#13 0.931 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/x86_64/APKINDEX.tar.gz\n#13 1.346 (1/11) Installing brotli-libs (1.1.0-r2)\n#13 1.363 (2/11) Installing c-ares (1.34.6-r0)\n#13 1.367 (3/11) Installing libunistring (1.2-r0)\n#13 1.383 (4/11) Installing libidn2 (2.3.7-r0)\n#13 1.387 (5/11) Installing nghttp2-libs (1.69.0-r0)\n#13 1.390 (6/11) Installing libpsl (0.21.5-r3)\n#13 1.392 (7/11) Installing zstd-libs (1.5.6-r2)\n#13 1.401 (8/11) Installing libcurl (8.14.1-r2)\n#13 1.411 (9/11) Installing curl (8.14.1-r2)\n#13 1.419 (10/11) Installing acl-libs (2.3.2-r1)\n#13 1.421 (11/11) Installing tar (1.35-r2)\n#13 1.429 Executing busybox-1.37.0-r12.trigger\n#13 1.439 OK: 12 MiB in 26 packages\n#13 DONE 2.0s\n2026-07-08T12:16:21.8117095Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 ...\n2026-07-08T12:16:22.4024132Z\n#14 [cloud-hypervisor-builder 3/5] RUN ARCH=$(uname -m) \u0026\u0026     VERSION=\"v50.0\" \u0026\u0026     RELEASE_URL=\"https://github.com/cloud-hypervisor/cloud-hypervisor/releases\" \u0026\u0026     if [ \"${ARCH}\" = \"x86_64\" ]; then BIN=cloud-hypervisor-static; fi \u0026\u0026     if [ \"${ARCH}\" = \"aarch64\" ]; then BIN=cloud-hypervisor-static-aarch64; fi \u0026\u0026     curl -L -o cloud-hypervisor ${RELEASE_URL}/download/${VERSION}/${BIN} \u0026\u0026     chmod +x cloud-hypervisor\n#14 0.093   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n#14 0.093                                  Dload  Upload   Total   Spent    Left  Speed\n#14 0.093\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n#14 0.371\n100 4820k  100 4820k    0     0  16.8M      0 --:--:-- --:--:-- --:--:-- 16.8M\n#14 DONE 0.5s\n2026-07-08T12:16:22.4033848Z\n#15 [cloud-hypervisor-builder 4/5] WORKDIR /artifacts\n#15 DONE 0.0s\n2026-07-08T12:16:22.4034786Z\n#16 [solo5-builder 1/7] FROM docker.io/library/debian:bullseye@sha256:25c0cab214b810db1b3c8adef5a12a92596979abddf86bb364e8d9c9d111df9f\n#16 resolve docker.io/library/debian:bullseye@sha256:25c0cab214b810db1b3c8adef5a12a92596979abddf86bb364e8d9c9d111df9f 0.0s done\n#16 sha256:632ef5283d0fcf0e3a19d6c5dbcc294922d142b506d2ab494fb73004518cdc31 53.75MB / 53.75MB 0.3s done\n#16 extracting sha256:632ef5283d0fcf0e3a19d6c5dbcc294922d142b506d2ab494fb73004518cdc31 2.6s done\n#16 DONE 2.9s\n2026-07-08T12:16:22.4048733Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 ...\n2026-07-08T12:16:22.5300644Z\n#17 [cloud-hypervisor-builder 5/5] RUN cp /cloud-hypervisor .\n#17 DONE 0.2s\n2026-07-08T12:16:22.5304346Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 ...\n2026-07-08T12:16:22.8600403Z\n#18 [firecracker-builder 3/5] RUN ARCH=$(uname -m) \u0026\u0026     VERSION=\"v1.7.0\" \u0026\u0026     RELEASE_URL=\"https://github.com/firecracker-microvm/firecracker/releases\" \u0026\u0026     curl -L -o firecracker.tgz ${RELEASE_URL}/download/${VERSION}/firecracker-${VERSION}-${ARCH}.tgz \u0026\u0026     tar xzf firecracker.tgz \u0026\u0026     mv release-${VERSION}-${ARCH}/firecracker-${VERSION}-${ARCH} firecracker\n#18 0.101   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n#18 0.104                                  Dload  Upload   Total   Spent    Left  Speed\n#18 0.104\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n#18 0.517\n2 8826k    2  252k    0     0   607k      0  0:00:14 --:--:--  0:00:14  607k\n100 8826k  100 8826k    0     0  18.0M      0 --:--:-- --:--:-- --:--:--  139M\n#18 DONE 1.0s\n2026-07-08T12:16:22.8620023Z\n#19 [firecracker-builder 4/5] WORKDIR /artifacts\n#19 DONE 0.0s\n2026-07-08T12:16:22.8621178Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 ...\n2026-07-08T12:16:23.0092983Z\n#20 [firecracker-builder 5/5] RUN cp /firecracker .\n#20 DONE 0.1s\n2026-07-08T12:16:23.0095190Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 sha256:a8b7984efc6598291be6c3a51c9e8432f55972d5e456fb535a9b51c88c385f0e 39.85MB / 778.37MB 4.2s\n#11 sha256:153f1c43af0fb9cbcabb3664e9740c361a1a1e0f1a03538583cc0cc798926d1b 31.46MB / 604.47MB 4.1s\n#11 ...\n2026-07-08T12:16:25.2593253Z\n#21 [urunc-builder 1/6] FROM docker.io/library/golang:1.26.4-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648\n#21 resolve docker.io/library/golang:1.26.4-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648 0.0s done\n#21 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 0.1s done\n#21 sha256:f124a1a8b0465fbfdae5d4e915020961a3eacb88f68a3332fdecb9080f42f9fc 125B / 125B 0.1s done\n#21 sha256:6caf62d108d4ee5f44aa70f4c7bdcc49d52ef1e370151004797e4192269e7924 245.06kB / 245.06kB 0.1s done\n#21 sha256:67aaa626ba3010d60ab55d9cdc69c0b12ebff5d1b5ece83ff220fb46a7709b3b 67.28MB / 67.28MB 0.4s done\n#21 sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4 3.85MB / 3.85MB 0.1s done\n#21 extracting sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4 0.2s done\n#21 extracting sha256:6caf62d108d4ee5f44aa70f4c7bdcc49d52ef1e370151004797e4192269e7924 0.1s done\n#21 extracting sha256:67aaa626ba3010d60ab55d9cdc69c0b12ebff5d1b5ece83ff220fb46a7709b3b 5.1s done\n#21 extracting sha256:f124a1a8b0465fbfdae5d4e915020961a3eacb88f68a3332fdecb9080f42f9fc done\n#21 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done\n#21 DONE 5.7s\n2026-07-08T12:16:25.2615844Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 sha256:153f1c43af0fb9cbcabb3664e9740c361a1a1e0f1a03538583cc0cc798926d1b 62.91MB / 604.47MB 6.2s\n#11 sha256:a8b7984efc6598291be6c3a51c9e8432f55972d5e456fb535a9b51c88c385f0e 81.79MB / 778.37MB 6.3s\n#11 DONE 6.8s\n2026-07-08T12:16:26.3969515Z\n#22 [solo5-builder 2/7] RUN rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\n#22 0.145 Get:1 http://deb.debian.org/debian bullseye InRelease [75.1 kB]\n#22 0.170 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [27.2 kB]\n#22 0.170 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.0 kB]\n#22 0.350 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8066 kB]\n#22 0.541 Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [461 kB]\n#22 0.716 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]\n#22 1.501 Fetched 8692 kB in 1s (6332 kB/s)\n#22 1.501 Reading package lists...\n#22 2.040 Reading package lists...\n#22 2.522 Building dependency tree...\n#22 2.612 Reading state information...\n#22 2.723 The following additional packages will be installed:\n#22 2.723   binutils binutils-common binutils-x86-64-linux-gnu bzip2 cpp cpp-10 dpkg-dev\n#22 2.724   g++ g++-10 gcc gcc-10 git-man libasan6 libatomic1 libbinutils libbrotli1\n#22 2.724   libc-dev-bin libc6 libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0 libctf0\n#22 2.724   libcurl3-gnutls libdpkg-perl liberror-perl libexpat1 libgcc-10-dev\n#22 2.724   libgdbm-compat4 libgdbm6 libglib2.0-0 libgomp1 libisl23 libitm1\n#22 2.724   libldap-2.4-2 liblsan0 libmpc3 libmpfr6 libnghttp2-14 libnsl-dev libperl5.32\n#22 2.724   libpsl5 libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1\n#22 2.724   libstdc++-10-dev libtirpc-dev libtsan0 libubsan1 linux-libc-dev make patch\n#22 2.724   perl perl-base perl-modules-5.32 xz-utils\n#22 2.725 Suggested packages:\n#22 2.725   binutils-doc bzip2-doc cpp-doc gcc-10-locales debian-keyring g++-multilib\n#22 2.725   g++-10-multilib gcc-10-doc gcc-multilib manpages-dev autoconf automake\n#22 2.725   libtool flex bison gdb gcc-doc gcc-10-multilib gettext-base git-daemon-run\n#22 2.725   | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-cvs\n#22 2.725   git-mediawiki git-svn glibc-doc libc-l10n locales gnupg sensible-utils bzr\n#22 2.725   gdbm-l10n seccomp libstdc++-10-doc make-doc ed diffutils-doc perl-doc\n#22 2.725   libterm-readline-gnu-perl | libterm-readline-perl-perl\n#22 2.725   libtap-harness-archive-perl\n#22 2.725 Recommended packages:\n#22 2.725   fakeroot gnupg libalgorithm-merge-perl ca-certificates less ssh-client\n#22 2.725   manpages manpages-dev libc-devtools libnss-nis libnss-nisplus\n#22 2.725   libfile-fcntllock-perl liblocale-gettext-perl libglib2.0-data\n#22 2.725   shared-mime-info xdg-user-dirs libldap-common publicsuffix libsasl2-modules\n#22 2.725   netbase\n#22 2.964 The following NEW packages will be installed:\n#22 2.964   binutils binutils-common binutils-x86-64-linux-gnu build-essential bzip2 cpp\n#22 2.964   cpp-10 dpkg-dev g++ g++-10 gcc gcc-10 git git-man libasan6 libatomic1\n#22 2.964   libbinutils libbrotli1 libc-dev-bin libc6-dev libcc1-0 libcrypt-dev\n#22 2.964   libctf-nobfd0 libctf0 libcurl3-gnutls libdpkg-perl liberror-perl libexpat1\n#22 2.964   libgcc-10-dev libgdbm-compat4 libgdbm6 libglib2.0-0 libgomp1 libisl23\n#22 2.964   libitm1 libldap-2.4-2 liblsan0 libmpc3 libmpfr6 libnghttp2-14 libnsl-dev\n#22 2.964   libperl5.32 libpsl5 libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db\n#22 2.964   libseccomp-dev libssh2-1 libstdc++-10-dev libtirpc-dev libtsan0 libubsan1\n#22 2.965   linux-libc-dev make patch perl perl-modules-5.32 pkg-config xz-utils\n#22 2.965 The following packages will be upgraded:\n#22 2.966   libc-bin libc6 perl-base\n#22 2.989 3 upgraded, 60 newly installed, 0 to remove and 15 not upgraded.\n#22 2.989 Need to get 85.2 MB of archives.\n#22 2.989 After this operation, 322 MB of additional disk space will be used.\n#22 2.989 Get:1 http://deb.debian.org/debian-security bullseye-security/main amd64 perl-base amd64 5.32.1-4+deb11u5 [1629 kB]\n#22 3.007 Get:2 http://deb.debian.org/debian-security bullseye-security/main amd64 libc6 amd64 2.31-13+deb11u14 [2820 kB]\n#22 3.029 Get:3 http://deb.debian.org/debian-security bullseye-security/main amd64 libc-bin amd64 2.31-13+deb11u14 [829 kB]\n#22 3.034 Get:4 http://deb.debian.org/debian-security bullseye-security/main amd64 perl-modules-5.32 all 5.32.1-4+deb11u5 [2823 kB]\n#22 3.054 Get:5 http://deb.debian.org/debian bullseye/main amd64 libgdbm6 amd64 1.19-2 [64.9 kB]\n#22 3.056 Get:6 http://deb.debian.org/debian bullseye/main amd64 libgdbm-compat4 amd64 1.19-2 [44.7 kB]\n#22 3.056 Get:7 http://deb.debian.org/debian-security bullseye-security/main amd64 libperl5.32 amd64 5.32.1-4+deb11u5 [4102 kB]\n#22 3.084 Get:8 http://deb.debian.org/debian-security bullseye-security/main amd64 perl amd64 5.32.1-4+deb11u5 [294 kB]\n#22 3.086 Get:9 http://deb.debian.org/debian bullseye/main amd64 bzip2 amd64 1.0.8-4 [49.3 kB]\n#22 3.087 Get:10 http://deb.debian.org/debian bullseye/main amd64 xz-utils amd64 5.2.5-2.1~deb11u1 [220 kB]\n#22 3.089 Get:11 http://deb.debian.org/debian bullseye/main amd64 binutils-common amd64 2.35.2-2 [2220 kB]\n#22 3.103 Get:12 http://deb.debian.org/debian bullseye/main amd64 libbinutils amd64 2.35.2-2 [570 kB]\n#22 3.107 Get:13 http://deb.debian.org/debian bullseye/main amd64 libctf-nobfd0 amd64 2.35.2-2 [110 kB]\n#22 3.109 Get:14 http://deb.debian.org/debian bullseye/main amd64 libctf0 amd64 2.35.2-2 [53.2 kB]\n#22 3.109 Get:15 http://deb.debian.org/debian bullseye/main amd64 binutils-x86-64-linux-gnu amd64 2.35.2-2 [1809 kB]\n#22 3.121 Get:16 http://deb.debian.org/debian bullseye/main amd64 binutils amd64 2.35.2-2 [61.2 kB]\n#22 3.123 Get:17 http://deb.debian.org/debian-security bullseye-security/main amd64 libc-dev-bin amd64 2.31-13+deb11u14 [277 kB]\n#22 3.124 Get:18 http://deb.debian.org/debian-security bullseye-security/main amd64 linux-libc-dev amd64 5.10.259-1 [1917 kB]\n#22 3.132 Get:19 http://deb.debian.org/debian bullseye/main amd64 libcrypt-dev amd64 1:4.4.18-4 [104 kB]\n#22 3.133 Get:20 http://deb.debian.org/debian bullseye/main amd64 libtirpc-dev amd64 1.3.1-1+deb11u1 [191 kB]\n#22 3.134 Get:21 http://deb.debian.org/debian bullseye/main amd64 libnsl-dev amd64 1.3.0-2 [66.4 kB]\n#22 3.135 Get:22 http://deb.debian.org/debian-security bullseye-security/main amd64 libc6-dev amd64 2.31-13+deb11u14 [2360 kB]\n#22 3.145 Get:23 http://deb.debian.org/debian bullseye/main amd64 libisl23 amd64 0.23-1 [676 kB]\n#22 3.149 Get:24 http://deb.debian.org/debian bullseye/main amd64 libmpfr6 amd64 4.1.0-3 [2012 kB]\n#22 3.162 Get:25 http://deb.debian.org/debian bullseye/main amd64 libmpc3 amd64 1.2.0-1 [45.0 kB]\n#22 3.163 Get:26 http://deb.debian.org/debian bullseye/main amd64 cpp-10 amd64 10.2.1-6 [8528 kB]\n#22 3.212 Get:27 http://deb.debian.org/debian bullseye/main amd64 cpp amd64 4:10.2.1-1 [19.7 kB]\n#22 3.212 Get:28 http://deb.debian.org/debian bullseye/main amd64 libcc1-0 amd64 10.2.1-6 [47.0 kB]\n#22 3.215 Get:29 http://deb.debian.org/debian bullseye/main amd64 libgomp1 amd64 10.2.1-6 [99.9 kB]\n#22 3.215 Get:30 http://deb.debian.org/debian bullseye/main amd64 libitm1 amd64 10.2.1-6 [25.8 kB]\n#22 3.215 Get:31 http://deb.debian.org/debian bullseye/main amd64 libatomic1 amd64 10.2.1-6 [9008 B]\n#22 3.215 Get:32 http://deb.debian.org/debian bullseye/main amd64 libasan6 amd64 10.2.1-6 [2065 kB]\n#22 3.229 Get:33 http://deb.debian.org/debian bullseye/main amd64 liblsan0 amd64 10.2.1-6 [828 kB]\n#22 3.237 Get:34 http://deb.debian.org/debian bullseye/main amd64 libtsan0 amd64 10.2.1-6 [2000 kB]\n#22 3.248 Get:35 http://deb.debian.org/debian bullseye/main amd64 libubsan1 amd64 10.2.1-6 [777 kB]\n#22 3.254 Get:36 http://deb.debian.org/debian bullseye/main amd64 libquadmath0 amd64 10.2.1-6 [145 kB]\n#22 3.255 Get:37 http://deb.debian.org/debian bullseye/main amd64 libgcc-10-dev amd64 10.2.1-6 [2328 kB]\n#22 3.268 Get:38 http://deb.debian.org/debian bullseye/main amd64 gcc-10 amd64 10.2.1-6 [17.0 MB]\n#22 3.369 Get:39 http://deb.debian.org/debian bullseye/main amd64 gcc amd64 4:10.2.1-1 [5192 B]\n#22 3.371 Get:40 http://deb.debian.org/debian bullseye/main amd64 libstdc++-10-dev amd64 10.2.1-6 [1741 kB]\n#22 3.381 Get:41 http://deb.debian.org/debian bullseye/main amd64 g++-10 amd64 10.2.1-6 [9380 kB]\n#22 3.447 Get:42 http://deb.debian.org/debian bullseye/main amd64 g++ amd64 4:10.2.1-1 [1644 B]\n#22 3.450 Get:43 http://deb.debian.org/debian bullseye/main amd64 make amd64 4.3-4.1 [396 kB]\n#22 3.451 Get:44 http://deb.debian.org/debian-security bullseye-security/main amd64 libdpkg-perl all 1.20.14 [1555 kB]\n#22 3.459 Get:45 http://deb.debian.org/debian bullseye/main amd64 patch amd64 2.7.6-7 [128 kB]\n#22 3.460 Get:46 http://deb.debian.org/debian-security bullseye-security/main amd64 dpkg-dev all 1.20.14 [2317 kB]\n#22 3.470 Get:47 http://deb.debian.org/debian bullseye/main amd64 build-essential amd64 12.9 [7704 B]\n#22 3.470 Get:48 http://deb.debian.org/debian bullseye/main amd64 libbrotli1 amd64 1.0.9-2+b2 [279 kB]\n#22 3.473 Get:49 http://deb.debian.org/debian bullseye/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-2.1+deb11u1 [69.1 kB]\n#22 3.473 Get:50 http://deb.debian.org/debian bullseye/main amd64 libsasl2-2 amd64 2.1.27+dfsg-2.1+deb11u1 [106 kB]\n#22 3.474 Get:51 http://deb.debian.org/debian bullseye/main amd64 libldap-2.4-2 amd64 2.4.57+dfsg-3+deb11u1 [232 kB]\n#22 3.478 Get:52 http://deb.debian.org/debian-security bullseye-security/main amd64 libnghttp2-14 amd64 1.43.0-1+deb11u3 [77.6 kB]\n#22 3.478 Get:53 http://deb.debian.org/debian bullseye/main amd64 libpsl5 amd64 0.21.0-1.2 [57.3 kB]\n#22 3.479 Get:54 http://deb.debian.org/debian bullseye/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]\n#22 3.479 Get:55 http://deb.debian.org/debian bullseye/main amd64 libssh2-1 amd64 1.9.0-2+deb11u1 [156 kB]\n#22 3.480 Get:56 http://deb.debian.org/debian-security bullseye-security/main amd64 libcurl3-gnutls amd64 7.74.0-1.3+deb11u16 [344 kB]\n#22 3.483 Get:57 http://deb.debian.org/debian-security bullseye-security/main amd64 libexpat1 amd64 2.2.10-2+deb11u7 [99.2 kB]\n#22 3.484 Get:58 http://deb.debian.org/debian bullseye/main amd64 liberror-perl all 0.17029-1 [31.0 kB]\n#22 3.485 Get:59 http://deb.debian.org/debian-security bullseye-security/main amd64 git-man all 1:2.30.2-1+deb11u5 [1831 kB]\n#22 3.493 Err:59 http://deb.debian.org/debian-security bullseye-security/main amd64 git-man all 1:2.30.2-1+deb11u5\n#22 3.493   Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n#22 3.498 Get:60 http://deb.debian.org/debian-security bullseye-security/main amd64 git amd64 1:2.30.2-1+deb11u5 [5568 kB]\n#22 3.540 Get:61 http://deb.debian.org/debian-security bullseye-security/main amd64 libglib2.0-0 amd64 2.66.8-1+deb11u8 [1377 kB]\n#22 3.547 Get:62 http://deb.debian.org/debian bullseye/main amd64 libseccomp-dev amd64 2.5.1-1+deb11u1 [92.4 kB]\n#22 3.549 Get:63 http://deb.debian.org/debian bullseye/main amd64 pkg-config amd64 0.29.2-1 [65.1 kB]\n#22 3.553 Fetched 83.4 MB in 1s (145 MB/s)\n#22 3.553 E: Failed to fetch http://deb.debian.org/debian-security/pool/updates/main/g/git/git-man_2.30.2-1%2bdeb11u5_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n#22 3.553 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\n#22 ERROR: process \"/bin/sh -c rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n2026-07-08T12:16:26.4075566Z\n#23 [qemu-builder 2/3] WORKDIR /artifacts\n#23 CANCELED\n2026-07-08T12:16:26.4076455Z\n#24 [urunc-builder 2/6] RUN apk update \u0026\u0026     apk add --no-cache git make build-base linux-headers\n#24 0.520 v3.24.1-147-g2d8b64ef1ee [https://dl-cdn.alpinelinux.org/alpine/v3.24/main]\n#24 0.520 v3.24.1-151-g84eefe18e0a [https://dl-cdn.alpinelinux.org/alpine/v3.24/community]\n#24 0.520 OK: 28637 distinct packages available\n#24 0.963 ( 1/34) Installing libgcc (15.2.0-r5)\n#24 0.972 ( 2/34) Installing jansson (2.15.0-r0)\n#24 0.975 ( 3/34) Installing libstdc++ (15.2.0-r5)\n#24 0.992 ( 4/34) Installing zstd-libs (1.5.7-r2)\n#24 0.999 ( 5/34) Installing binutils (2.45.1-r1)\n#24 1.079 ( 6/34) Installing libmagic (5.47-r2)\n#24 1.111 ( 7/34) Installing file (5.47-r2)\n#24 1.114 ( 8/34) Installing libgcc-static (15.2.0-r5)\n#24 1.133 ( 9/34) Installing libgomp (15.2.0-r5)\n#24 1.139 (10/34) Installing libatomic (15.2.0-r5)\n#24 1.141 (11/34) Installing gmp (6.3.0-r4)\n#24 1.146 (12/34) Installing isl26 (0.26-r2)\n#24 CANCELED\n------\n\u003e [solo5-builder 2/7] RUN rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*:\n3.485 Get:59 http://deb.debian.org/debian-security bullseye-security/main amd64 git-man all 1:2.30.2-1+deb11u5 [1831 kB]\n3.493 Err:59 http://deb.debian.org/debian-security bullseye-security/main amd64 git-man all 1:2.30.2-1+deb11u5\n3.493   Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n3.498 Get:60 http://deb.debian.org/debian-security bullseye-security/main amd64 git amd64 1:2.30.2-1+deb11u5 [5568 kB]\n3.540 Get:61 http://deb.debian.org/debian-security bullseye-security/main amd64 libglib2.0-0 amd64 2.66.8-1+deb11u8 [1377 kB]\n3.547 Get:62 http://deb.debian.org/debian bullseye/main amd64 libseccomp-dev amd64 2.5.1-1+deb11u1 [92.4 kB]\n3.549 Get:63 http://deb.debian.org/debian bullseye/main amd64 pkg-config amd64 0.29.2-1 [65.1 kB]\n3.553 Fetched 83.4 MB in 1s (145 MB/s)\n3.553 E: Failed to fetch http://deb.debian.org/debian-security/pool/updates/main/g/git/git-man_2.30.2-1%2bdeb11u5_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n3.553 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\n------\nDockerfile:19\n--------------------\n18 |     # See more: https://stackoverflow.com/questions/78105004/docker-build-fails-because-unable-to-install-libc-bins\n19 | \u003e\u003e\u003e RUN rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026 \\\n20 | \u003e\u003e\u003e     apt-get clean \u0026\u0026 \\\n21 | \u003e\u003e\u003e     apt-get update \u0026\u0026 \\\n22 | \u003e\u003e\u003e     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \\\n23 | \u003e\u003e\u003e     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026 \\\n24 | \u003e\u003e\u003e     rm -rf /var/lib/apt/lists/*\n25 |\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n##[group]Reference\nbuilder-e6590977-4906-485b-aa44-d70f50f44211/builder-e6590977-4906-485b-aa44-d70f50f442110/ym9iaq0egy3o2e55eb31pxci1\n##[endgroup]\n##[group]Check build summary support\nBuild summary supported!\n##[endgroup]\n##[error]buildx failed with: ERROR: failed to build: failed to solve: process \"/bin/sh -c rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100"
+          },
+          {
+            "id": 85866040745,
+            "name": "Build urunc-deploy container image / manifest",
+            "conclusion": "failure",
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85866040745",
+            "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]Process completed with exit code 1.",
+            "raw_log": "[command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-51ac9f72-af34-441f-8077-fdf812bc314e.config\n[command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-51ac9f72-af34-441f-8077-fdf812bc314e.config\n##[endgroup]\n##[group]Fetching the repository\n[command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b:refs/remotes/origin/main\nFrom https://github.com/urunc-dev/urunc\n* [new ref]         1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b -\u003e origin/main\n[command]/usr/bin/git branch --list --remote origin/main\norigin/main\n[command]/usr/bin/git rev-parse refs/remotes/origin/main\n1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\n##[endgroup]\n##[group]Determining the checkout info\n##[endgroup]\n[command]/usr/bin/git sparse-checkout disable\n[command]/usr/bin/git config --local --unset-all extensions.worktreeConfig\n##[group]Checking out the ref\n[command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main\nSwitched to a new branch 'main'\nbranch 'main' set up to track 'origin/main'.\n##[endgroup]\n[command]/usr/bin/git log -1 --format=%H\n1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\n##[group]Run # Set SHA_SHORT to be used for the manifest\n# Set SHA_SHORT to be used for the manifest\nSHORT_SHA=$(echo \"${GITHUB_SHA}\" | cut -c1-7)\necho \"SHA_SHORT=${SHORT_SHA}\" \u003e\u003e $GITHUB_ENV\n# Determine the manifests' TAG\nif [[ false == true ]]; then\necho \"Version change detected. Using version: $( cat VERSION ).\"\necho \"TAG=$( cat VERSION ) \" \u003e\u003e $GITHUB_ENV\nelif [[ \"${GITHUB_REF##*/}\" == \"main\" ]]; then\necho \"Change in main branch detected. Using latest tag.\"\necho \"TAG=latest\" \u003e\u003e $GITHUB_ENV\nelse\nSHORT_SHA=$(echo \"${GITHUB_SHA}\" | cut -c1-7)\necho \"Using tag: ${SHORT_SHA}.\"\necho \"TAG=${SHORT_SHA}\" \u003e\u003e $GITHUB_ENV\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nREGISTRY: ghcr.io\n##[endgroup]\nChange in main branch detected. Using latest tag.\n##[group]Run docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121\nwith:\nregistry: ghcr.io\nusername: urunc-bot[bot]\npassword: ***\nlogout: true\nenv:\nREGISTRY: ghcr.io\nSHA_SHORT: 1dba69d\nTAG: latest\n##[endgroup]\nLogging into ghcr.io...\nLogin Succeeded!\n##[group]Run #FIXME: find a way to match runner_archs with the strategy matrix input\n#FIXME: find a way to match runner_archs with the strategy matrix input\nrunner_archs='[\"amd64\", \"arm64\"]'  # Using the input string array\namend_command=\"\"\n# Loop over the architectures and build the amend command\nfor arch in $(echo $runner_archs | jq -r '.[]'); do\namend_command+=\" --amend ghcr.io/urunc-dev/urunc/urunc-deploy:$arch-1dba69d\"\ndone\necho \"-------------------- Amend command constructed -------------------\"\necho \"$amend_command\"\n# Create the docker manifest with the amend command\ndocker manifest create ghcr.io/urunc-dev/urunc/urunc-deploy:latest $amend_command\nVAR=`docker manifest push ghcr.io/urunc-dev/urunc/urunc-deploy:latest | tail -1`\necho \"manifest_sha=$VAR\" \u003e\u003e \"$GITHUB_OUTPUT\"\n# Also tag with commit hash on main branch\nif [[ \"refs/heads/main\" == \"refs/heads/main\" \u0026\u0026 \"false\" != \"true\" ]]; then\ndocker buildx imagetools create -t ghcr.io/urunc-dev/urunc/urunc-deploy:1dba69d \\\nghcr.io/urunc-dev/urunc/urunc-deploy:latest\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nREGISTRY: ghcr.io\nSHA_SHORT: 1dba69d\nTAG: latest\n##[endgroup]\n-------------------- Amend command constructed -------------------\n--amend ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d --amend ghcr.io/urunc-dev/urunc/urunc-deploy:arm64-1dba69d\nmanifest unknown\n##[error]Process completed with exit code 1."
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28941833305,
+          "name": "🍜 Build/publish urunc-deploy",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 239,
+          "created_at": "2026-07-08T12:15:42Z",
+          "updated_at": "2026-07-08T12:18:08Z",
+          "run_started_at": "2026-07-08T12:15:42Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305",
+          "jobs": [
+            {
+              "name": "get-changed-files",
+              "conclusion": "success",
+              "duration_sec": 12,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85865623145"
+            },
+            {
+              "name": "Build urunc-deploy container image / build-all (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 110,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85865672146"
+            },
+            {
+              "name": "Build urunc-deploy container image / build-all (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "duration_sec": 33,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85865672187"
+            },
+            {
+              "name": "Build urunc-deploy container image / manifest",
+              "conclusion": "failure",
+              "duration_sec": 11,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85866040745"
+            }
+          ],
+          "failed_jobs": [
+            {
+              "id": 85865672187,
+              "name": "Build urunc-deploy container image / build-all (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85865672187",
+              "log_snippet": "[Network Failure] — 7 signal(s) found\n────────────────────────────────────────────────\n-\u003e Network Failure\n  #22 3.493   Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n  #22 3.553 E: Failed to fetch http://deb.debian.org/debian-security/pool/updates/main/g/git/git-man_2.30.2-1%2bdeb11u5_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n  3.493   Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n  3.553 E: Failed to fetch http://deb.debian.org/debian-security/pool/updates/main/g/git/git-man_2.30.2-1%2bdeb11u5_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n-\u003e Test Failure\n  #14 0.093   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n  #18 0.101   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n-\u003e Build Failure\n  ##[error]buildx failed with: ERROR: failed to build: failed to solve: process \"/bin/sh -c rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100",
+              "raw_log": "#1 creating container buildx_buildkit_builder-e6590977-4906-485b-aa44-d70f50f442110 0.4s done\n#1 DONE 3.6s\nName:          builder-e6590977-4906-485b-aa44-d70f50f44211\nDriver:        docker-container\nLast Activity: 2026-07-08 12:16:12 +0000 UTC\n2026-07-08T12:16:16.0702672Z\nNodes:\nName:                  builder-e6590977-4906-485b-aa44-d70f50f442110\nEndpoint:              unix:///var/run/docker.sock\nStatus:                running\nBuildKit daemon flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host\nBuildKit version:      v0.30.0\nPlatforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/386\nLabels:\norg.mobyproject.buildkit.worker.executor:         oci\norg.mobyproject.buildkit.worker.hostname:         d2fc5a91ca92\norg.mobyproject.buildkit.worker.network:          host\norg.mobyproject.buildkit.worker.oci.process-mode: sandbox\norg.mobyproject.buildkit.worker.selinux.enabled:  false\norg.mobyproject.buildkit.worker.snapshotter:      overlayfs\nGC Policy rule#0:\nAll:            false\nFilters:        type==source.local,type==exec.cachemount,type==source.git.checkout\nKeep Duration:  48h0m0s\nMax Used Space: 488.3MiB\nGC Policy rule#1:\nAll:            false\nKeep Duration:  1440h0m0s\nReserved Space: 9.313GiB\nMax Used Space: 93.13GiB\nMin Free Space: 27.94GiB\nGC Policy rule#2:\nAll:            false\nReserved Space: 9.313GiB\nMax Used Space: 93.13GiB\nMin Free Space: 27.94GiB\nGC Policy rule#3:\nAll:            true\nReserved Space: 9.313GiB\nMax Used Space: 93.13GiB\nMin Free Space: 27.94GiB\n##[endgroup]\n##[group]Inspect builder\n{\n\"nodes\": [\n{\n\"name\": \"builder-e6590977-4906-485b-aa44-d70f50f442110\",\n\"endpoint\": \"unix:///var/run/docker.sock\",\n\"status\": \"running\",\n\"buildkitd-flags\": \"--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host\",\n\"buildkit\": \"v0.30.0\",\n\"platforms\": \"linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386\",\n\"features\": {\n\"Automatically load images to the Docker Engine image store\": true,\n\"Cache export\": true,\n\"Direct push\": true,\n\"Docker exporter\": true,\n\"Multi-platform build\": true,\n\"OCI exporter\": true\n},\n\"labels\": {\n\"org.mobyproject.buildkit.worker.executor\": \"oci\",\n\"org.mobyproject.buildkit.worker.hostname\": \"d2fc5a91ca92\",\n\"org.mobyproject.buildkit.worker.network\": \"host\",\n\"org.mobyproject.buildkit.worker.oci.process-mode\": \"sandbox\",\n\"org.mobyproject.buildkit.worker.selinux.enabled\": \"false\",\n\"org.mobyproject.buildkit.worker.snapshotter\": \"overlayfs\"\n},\n\"gcPolicy\": [\n{\n\"all\": false,\n\"filter\": [\n\"type==source.local\",\n\"type==exec.cachemount\",\n\"type==source.git.checkout\"\n],\n\"keepDuration\": \"48h0m0s\",\n\"maxUsedSpace\": \"488.3MiB\"\n},\n{\n\"all\": false,\n\"keepDuration\": \"1440h0m0s\",\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n},\n{\n\"all\": false,\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n},\n{\n\"all\": true,\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n}\n]\n}\n],\n\"name\": \"builder-e6590977-4906-485b-aa44-d70f50f44211\",\n\"driver\": \"docker-container\",\n\"lastActivity\": \"2026-07-08T12:16:12.000Z\"\n}\n##[endgroup]\n##[group]BuildKit version\nbuilder-e6590977-4906-485b-aa44-d70f50f442110: v0.30.0\n##[endgroup]\n##[group]Run docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121\nwith:\nregistry: ghcr.io\nusername: urunc-bot[bot]\npassword: ***\nlogout: true\nenv:\nREGISTRY: ghcr.io\nIMAGE_NAME: ghcr.io/urunc-dev/urunc/urunc-deploy\nARCH: amd64\nSHA_SHORT: 1dba69d\n##[endgroup]\nLogging into ghcr.io...\nLogin Succeeded!\n##[group]Run docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf\nwith:\nimages: ghcr.io/urunc-dev/urunc/urunc-deploy\ntags: type=sha,prefix=amd64-\ncontext: workflow\ngithub-token: ***\nenv:\nREGISTRY: ghcr.io\nIMAGE_NAME: ghcr.io/urunc-dev/urunc/urunc-deploy\nARCH: amd64\nSHA_SHORT: 1dba69d\n##[endgroup]\n##[group]Context info\neventName: push\nsha: 1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\nref: refs/heads/main\nworkflow: 🍜 Build/publish urunc-deploy\naction: meta\nactor: urunc-bot[bot]\nrunNumber: 239\nrunId: 28941833305\ncommitDate: Wed Jul 08 2026 12:15:37 GMT+0000 (Coordinated Universal Time)\n##[endgroup]\n##[group]Processing images input\nname=ghcr.io/urunc-dev/urunc/urunc-deploy,enable=true\n##[endgroup]\n##[group]Processing tags input\ntype=sha,prefix=amd64-,format=short,enable=true,priority=100\n##[endgroup]\n##[group]Processing flavor input\nlatest=auto\nprefix=\nprefixLatest=false\nsuffix=\nsuffixLatest=false\n##[endgroup]\n##[group]Docker image version\namd64-1dba69d\n##[endgroup]\n##[group]Docker tags\nghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\n##[endgroup]\n##[group]Docker labels\norg.opencontainers.image.created=2026-07-08T12:16:17.597Z\norg.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\norg.opencontainers.image.licenses=Apache-2.0\norg.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\norg.opencontainers.image.source=https://github.com/urunc-dev/urunc\norg.opencontainers.image.title=urunc\norg.opencontainers.image.url=https://github.com/urunc-dev/urunc\norg.opencontainers.image.version=amd64-1dba69d\n##[endgroup]\n##[group]Annotations\nmanifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nmanifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\nmanifest:org.opencontainers.image.licenses=Apache-2.0\nmanifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\nmanifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\nmanifest:org.opencontainers.image.title=urunc\nmanifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\nmanifest:org.opencontainers.image.version=amd64-1dba69d\n##[endgroup]\n##[group]JSON output\n{\n\"tags\": [\n\"ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\"\n],\n\"tag-names\": [\n\"amd64-1dba69d\"\n],\n\"labels\": {\n\"org.opencontainers.image.created\": \"2026-07-08T12:16:17.597Z\",\n\"org.opencontainers.image.description\": \"a simple container runtime that aspires to become `runc` for unikernels\",\n\"org.opencontainers.image.licenses\": \"Apache-2.0\",\n\"org.opencontainers.image.revision\": \"1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\n\"org.opencontainers.image.source\": \"https://github.com/urunc-dev/urunc\",\n\"org.opencontainers.image.title\": \"urunc\",\n\"org.opencontainers.image.url\": \"https://github.com/urunc-dev/urunc\",\n\"org.opencontainers.image.version\": \"amd64-1dba69d\"\n},\n\"annotations\": [\n\"manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\",\n\"manifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\",\n\"manifest:org.opencontainers.image.licenses=Apache-2.0\",\n\"manifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\n\"manifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\",\n\"manifest:org.opencontainers.image.title=urunc\",\n\"manifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\",\n\"manifest:org.opencontainers.image.version=amd64-1dba69d\"\n]\n}\n##[endgroup]\n##[group]Bake file definition (tags)\n{\n\"target\": {\n\"docker-metadata-action\": {\n\"tags\": [\n\"ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\"\n],\n\"args\": {\n\"DOCKER_META_IMAGES\": \"ghcr.io/urunc-dev/urunc/urunc-deploy\",\n\"DOCKER_META_VERSION\": \"amd64-1dba69d\"\n}\n}\n}\n}\n##[endgroup]\n##[group]Bake file definition (labels)\n{\n\"target\": {\n\"docker-metadata-action\": {\n\"labels\": {\n\"org.opencontainers.image.created\": \"2026-07-08T12:16:17.597Z\",\n\"org.opencontainers.image.description\": \"a simple container runtime that aspires to become `runc` for unikernels\",\n\"org.opencontainers.image.licenses\": \"Apache-2.0\",\n\"org.opencontainers.image.revision\": \"1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\n\"org.opencontainers.image.source\": \"https://github.com/urunc-dev/urunc\",\n\"org.opencontainers.image.title\": \"urunc\",\n\"org.opencontainers.image.url\": \"https://github.com/urunc-dev/urunc\",\n\"org.opencontainers.image.version\": \"amd64-1dba69d\"\n}\n}\n}\n}\n##[endgroup]\n##[group]Bake file definition (annotations)\n{\n\"target\": {\n\"docker-metadata-action\": {\n\"annotations\": [\n\"manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\",\n\"manifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\",\n\"manifest:org.opencontainers.image.licenses=Apache-2.0\",\n\"manifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\n\"manifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\",\n\"manifest:org.opencontainers.image.title=urunc\",\n\"manifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\",\n\"manifest:org.opencontainers.image.version=amd64-1dba69d\"\n]\n}\n}\n}\n##[endgroup]\n##[group]Run if [ \"$EVENT_NAME\" == \"pull_request\" ]; then\nif [ \"$EVENT_NAME\" == \"pull_request\" ]; then\nif [ \"$IS_MERGED\" == \"true\" ]; then\nsha=\"$GITHUB_SHA\"\nbranch=\"$PR_BASE_REF\"\necho \"PR merged. SHA: ${sha}, Branch: ${branch}\"\nelse\nsha=\"$PR_HEAD_SHA\"\nbranch=\"$PR_HEAD_REF\"\necho \"PR not yet merged. SHA: ${sha}, Branch: ${branch}\"\nfi\nelse\nsha=\"$GITHUB_SHA\"\nbranch=\"$REF_NAME\"\necho \"$EVENT_NAME event. SHA: ${sha}, Branch: ${branch}\"\nfi\necho \"sha=${sha}\" \u003e\u003e \"$GITHUB_OUTPUT\"\necho \"branch=${branch}\" \u003e\u003e \"$GITHUB_OUTPUT\"\nshell: /usr/bin/bash -e {0}\nenv:\nREGISTRY: ghcr.io\nIMAGE_NAME: ghcr.io/urunc-dev/urunc/urunc-deploy\nARCH: amd64\nSHA_SHORT: 1dba69d\nDOCKER_METADATA_OUTPUT_VERSION: amd64-1dba69d\nDOCKER_METADATA_OUTPUT_TAGS: ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\nDOCKER_METADATA_OUTPUT_TAG_NAMES: amd64-1dba69d\nDOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nDOCKER_METADATA_OUTPUT_ANNOTATIONS: manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nDOCKER_METADATA_OUTPUT_JSON: {\"tags\":[\"ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\"],\"tag-names\":[\"amd64-1dba69d\"],\"labels\":{\"org.opencontainers.image.created\":\"2026-07-08T12:16:17.597Z\",\"org.opencontainers.image.description\":\"a simple container runtime that aspires to become `runc` for unikernels\",\"org.opencontainers.image.licenses\":\"Apache-2.0\",\"org.opencontainers.image.revision\":\"1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\"org.opencontainers.image.source\":\"https://github.com/urunc-dev/urunc\",\"org.opencontainers.image.title\":\"urunc\",\"org.opencontainers.image.url\":\"https://github.com/urunc-dev/urunc\",\"org.opencontainers.image.version\":\"amd64-1dba69d\"},\"annotations\":[\"manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\",\"manifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\",\"manifest:org.opencontainers.image.licenses=Apache-2.0\",\"manifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\"manifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\",\"manifest:org.opencontainers.image.title=urunc\",\"manifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\",\"manifest:org.opencontainers.image.version=amd64-1dba69d\"]}\nDOCKER_METADATA_OUTPUT_BAKE_FILE_TAGS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-tags.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE_LABELS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-labels.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE_ANNOTATIONS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-annotations.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake.json\nEVENT_NAME: push\nIS_MERGED:\nGITHUB_SHA: 1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\nPR_HEAD_SHA:\nPR_HEAD_REF:\nPR_BASE_REF:\nREF_NAME: main\n##[endgroup]\npush event. SHA: 1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b, Branch: main\n##[group]Run docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a\nwith:\ncontext: ./deployment/urunc-deploy\ntags: ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\nlabels: org.opencontainers.image.created=2026-07-08T12:16:17.597Z\npush: true\nfile: deployment/urunc-deploy/Dockerfile\nbuild-args: BRANCH=main\nprovenance: false\nload: false\nno-cache: false\npull: false\ngithub-token: ***\nenv:\nREGISTRY: ghcr.io\nIMAGE_NAME: ghcr.io/urunc-dev/urunc/urunc-deploy\nARCH: amd64\nSHA_SHORT: 1dba69d\nDOCKER_METADATA_OUTPUT_VERSION: amd64-1dba69d\nDOCKER_METADATA_OUTPUT_TAGS: ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\nDOCKER_METADATA_OUTPUT_TAG_NAMES: amd64-1dba69d\nDOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nDOCKER_METADATA_OUTPUT_ANNOTATIONS: manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\nDOCKER_METADATA_OUTPUT_JSON: {\"tags\":[\"ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d\"],\"tag-names\":[\"amd64-1dba69d\"],\"labels\":{\"org.opencontainers.image.created\":\"2026-07-08T12:16:17.597Z\",\"org.opencontainers.image.description\":\"a simple container runtime that aspires to become `runc` for unikernels\",\"org.opencontainers.image.licenses\":\"Apache-2.0\",\"org.opencontainers.image.revision\":\"1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\"org.opencontainers.image.source\":\"https://github.com/urunc-dev/urunc\",\"org.opencontainers.image.title\":\"urunc\",\"org.opencontainers.image.url\":\"https://github.com/urunc-dev/urunc\",\"org.opencontainers.image.version\":\"amd64-1dba69d\"},\"annotations\":[\"manifest:org.opencontainers.image.created=2026-07-08T12:16:17.597Z\",\"manifest:org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels\",\"manifest:org.opencontainers.image.licenses=Apache-2.0\",\"manifest:org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\",\"manifest:org.opencontainers.image.source=https://github.com/urunc-dev/urunc\",\"manifest:org.opencontainers.image.title=urunc\",\"manifest:org.opencontainers.image.url=https://github.com/urunc-dev/urunc\",\"manifest:org.opencontainers.image.version=amd64-1dba69d\"]}\nDOCKER_METADATA_OUTPUT_BAKE_FILE_TAGS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-tags.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE_LABELS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-labels.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE_ANNOTATIONS: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake-annotations.json\nDOCKER_METADATA_OUTPUT_BAKE_FILE: /home/runner/work/_temp/docker-actions-toolkit-wGDRHU/docker-metadata-action-bake.json\n##[endgroup]\n##[group]GitHub Actions runtime token ACs\nrefs/heads/main: read/write\n##[endgroup]\n##[group]Docker info\n[command]/usr/bin/docker version\nClient: Docker Engine - Community\nVersion:           28.0.4\nAPI version:       1.48\nGo version:        go1.23.7\nGit commit:        b8034c0\nBuilt:             Tue Mar 25 15:07:11 2025\nOS/Arch:           linux/amd64\nContext:           default\n2026-07-08T12:16:17.9704952Z\nServer: Docker Engine - Community\nEngine:\nVersion:          28.0.4\nAPI version:      1.48 (minimum version 1.24)\nGo version:       go1.23.7\nGit commit:       6430e49\nBuilt:            Tue Mar 25 15:07:11 2025\nOS/Arch:          linux/amd64\nExperimental:     false\ncontainerd:\nVersion:          v2.2.5\nGitCommit:        e53c7c1516c3b2bff98eb76f1f4117477e6f4e66\nrunc:\nVersion:          1.3.6\nGitCommit:        v1.3.6-0-g491b69ba\ndocker-init:\nVersion:          0.19.0\nGitCommit:        de40ad0\n[command]/usr/bin/docker info\nClient: Docker Engine - Community\nVersion:    28.0.4\nContext:    default\nDebug Mode: false\nPlugins:\nbuildx: Docker Buildx (Docker Inc.)\nVersion:  v0.35.0\nPath:     /usr/libexec/docker/cli-plugins/docker-buildx\ncompose: Docker Compose (Docker Inc.)\nVersion:  v2.38.2\nPath:     /usr/libexec/docker/cli-plugins/docker-compose\n2026-07-08T12:16:18.0292743Z\nServer:\nContainers: 1\nRunning: 1\nPaused: 0\nStopped: 0\nImages: 1\nServer Version: 28.0.4\nStorage Driver: overlay2\nBacking Filesystem: extfs\nSupports d_type: true\nUsing metacopy: false\nNative Overlay Diff: false\nuserxattr: false\nLogging Driver: json-file\nCgroup Driver: systemd\nCgroup Version: 2\nPlugins:\nVolume: local\nNetwork: bridge host ipvlan macvlan null overlay\nLog: awslogs fluentd gcplogs gelf journald json-file local splunk syslog\nSwarm: inactive\nRuntimes: io.containerd.runc.v2 runc\nDefault Runtime: runc\nInit Binary: docker-init\ncontainerd version: e53c7c1516c3b2bff98eb76f1f4117477e6f4e66\nrunc version: v1.3.6-0-g491b69ba\ninit version: de40ad0\nSecurity Options:\napparmor\nseccomp\nProfile: builtin\ncgroupns\nKernel Version: 6.8.0-1059-azure\nOperating System: Ubuntu 22.04.5 LTS\nOSType: linux\nArchitecture: x86_64\nCPUs: 4\nTotal Memory: 15.62GiB\nName: runnervmos4r4\nID: 0a400a3c-5380-42e6-bc3f-0a6e5b2cd0fd\nDocker Root Dir: /var/lib/docker\nDebug Mode: false\nUsername: githubactions\nExperimental: false\nInsecure Registries:\n::1/128\n127.0.0.0/8\nLive Restore Enabled: true\n2026-07-08T12:16:18.0312757Z\n##[endgroup]\n##[group]Proxy configuration\nNo proxy configuration found\n##[endgroup]\n##[group]Buildx version\n[command]/usr/bin/docker buildx version\ngithub.com/docker/buildx v0.35.0 a319e5b15052cf6557ceb666eb8ff6e32380b782\n##[endgroup]\n##[group]Builder info\n{\n\"nodes\": [\n{\n\"name\": \"builder-e6590977-4906-485b-aa44-d70f50f442110\",\n\"endpoint\": \"unix:///var/run/docker.sock\",\n\"status\": \"running\",\n\"buildkitd-flags\": \"--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host\",\n\"buildkit\": \"v0.30.0\",\n\"platforms\": \"linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386\",\n\"features\": {\n\"Automatically load images to the Docker Engine image store\": true,\n\"Cache export\": true,\n\"Direct push\": true,\n\"Docker exporter\": true,\n\"Multi-platform build\": true,\n\"OCI exporter\": true\n},\n\"labels\": {\n\"org.mobyproject.buildkit.worker.executor\": \"oci\",\n\"org.mobyproject.buildkit.worker.hostname\": \"d2fc5a91ca92\",\n\"org.mobyproject.buildkit.worker.network\": \"host\",\n\"org.mobyproject.buildkit.worker.oci.process-mode\": \"sandbox\",\n\"org.mobyproject.buildkit.worker.selinux.enabled\": \"false\",\n\"org.mobyproject.buildkit.worker.snapshotter\": \"overlayfs\"\n},\n\"gcPolicy\": [\n{\n\"all\": false,\n\"filter\": [\n\"type==source.local\",\n\"type==exec.cachemount\",\n\"type==source.git.checkout\"\n],\n\"keepDuration\": \"48h0m0s\",\n\"maxUsedSpace\": \"488.3MiB\"\n},\n{\n\"all\": false,\n\"keepDuration\": \"1440h0m0s\",\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n},\n{\n\"all\": false,\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n},\n{\n\"all\": true,\n\"reservedSpace\": \"9.313GiB\",\n\"maxUsedSpace\": \"93.13GiB\",\n\"minFreeSpace\": \"27.94GiB\"\n}\n]\n}\n],\n\"name\": \"builder-e6590977-4906-485b-aa44-d70f50f44211\",\n\"driver\": \"docker-container\",\n\"lastActivity\": \"2026-07-08T12:16:12.000Z\"\n}\n##[endgroup]\n[command]/usr/bin/docker buildx build --build-arg BRANCH=main --build-arg REPO=urunc-dev/urunc --file deployment/urunc-deploy/Dockerfile --iidfile /home/runner/work/_temp/docker-actions-toolkit-QhRMwR/build-iidfile-fc02296c64.txt --label org.opencontainers.image.created=2026-07-08T12:16:17.597Z --label org.opencontainers.image.description=a simple container runtime that aspires to become `runc` for unikernels --label org.opencontainers.image.licenses=Apache-2.0 --label org.opencontainers.image.revision=1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b --label org.opencontainers.image.source=https://github.com/urunc-dev/urunc --label org.opencontainers.image.title=urunc --label org.opencontainers.image.url=https://github.com/urunc-dev/urunc --label org.opencontainers.image.version=amd64-1dba69d --attest type=provenance,disabled=true --tag ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d --metadata-file /home/runner/work/_temp/docker-actions-toolkit-QhRMwR/build-metadata-df835fa5d8.json --push ./deployment/urunc-deploy\n#0 building with \"builder-e6590977-4906-485b-aa44-d70f50f44211\" instance using docker-container driver\n2026-07-08T12:16:18.6268268Z\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 5.59kB done\n#1 DONE 0.0s\n2026-07-08T12:16:18.6269656Z\n#2 [internal] load metadata for docker.io/library/golang:1.26.4-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648\n#2 ...\n2026-07-08T12:16:18.8464822Z\n#3 [auth] library/golang:pull token for registry-1.docker.io\n#3 DONE 0.0s\n2026-07-08T12:16:18.8466947Z\n#4 [auth] library/debian:pull token for registry-1.docker.io\n#4 DONE 0.0s\n2026-07-08T12:16:18.8468832Z\n#5 [auth] library/alpine:pull token for registry-1.docker.io\n#5 DONE 0.0s\n2026-07-08T12:16:18.9967559Z\n#6 [internal] load metadata for quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#6 ...\n2026-07-08T12:16:19.2445200Z\n#7 [internal] load metadata for docker.io/library/debian:bullseye@sha256:25c0cab214b810db1b3c8adef5a12a92596979abddf86bb364e8d9c9d111df9f\n#7 DONE 0.8s\n2026-07-08T12:16:19.4423191Z\n#2 [internal] load metadata for docker.io/library/golang:1.26.4-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648\n#2 DONE 0.8s\n2026-07-08T12:16:19.4426059Z\n#8 [internal] load metadata for docker.io/library/alpine:3.21@sha256:b6a6be0ff92ab6db8acd94f5d1b7a6c2f0f5d10ce3c24af348d333ac6da80685\n#8 DONE 0.8s\n2026-07-08T12:16:19.4428383Z\n#6 [internal] load metadata for quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#6 DONE 1.0s\n2026-07-08T12:16:19.5968113Z\n#9 [internal] load .dockerignore\n#9 transferring context: 2B done\n#9 DONE 0.0s\n2026-07-08T12:16:19.5974814Z\n#10 [internal] load build context\n#10 transferring context: 15.54kB done\n#10 DONE 0.0s\n2026-07-08T12:16:19.5976288Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 resolve quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10 done\n#11 sha256:e3d24c89a849b39cc0495b9fb94fa5f31810f53b0f015fbd29b527e7081f8c05 0B / 974B 0.2s\n#11 ...\n2026-07-08T12:16:19.8522988Z\n#12 [cloud-hypervisor-builder 1/5] FROM docker.io/library/alpine:3.21@sha256:b6a6be0ff92ab6db8acd94f5d1b7a6c2f0f5d10ce3c24af348d333ac6da80685\n#12 resolve docker.io/library/alpine:3.21@sha256:b6a6be0ff92ab6db8acd94f5d1b7a6c2f0f5d10ce3c24af348d333ac6da80685 0.0s done\n#12 sha256:0368fd46e3c6d237d81390ff086f93aee216df5cfa814041a491453fb0932a12 3.64MB / 3.64MB 0.1s done\n#12 extracting sha256:0368fd46e3c6d237d81390ff086f93aee216df5cfa814041a491453fb0932a12 0.1s done\n#12 DONE 0.3s\n2026-07-08T12:16:19.8561192Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 sha256:ffc9775fb59d714ffc2feb2d81f41bdb0c68d2db472081d254ba244ae4e9d4d4 0B / 8.45kB 0.2s\n#11 sha256:a8b7984efc6598291be6c3a51c9e8432f55972d5e456fb535a9b51c88c385f0e 0B / 778.37MB 0.2s\n#11 sha256:153f1c43af0fb9cbcabb3664e9740c361a1a1e0f1a03538583cc0cc798926d1b 0B / 604.47MB 0.2s\n#11 sha256:e3d24c89a849b39cc0495b9fb94fa5f31810f53b0f015fbd29b527e7081f8c05 974B / 974B 0.4s done\n#11 sha256:44cf07d57ee4424189f012074a59110ee2065adfdde9c7d9826bebdffce0a885 0B / 3.42MB 0.2s\n#11 sha256:ffc9775fb59d714ffc2feb2d81f41bdb0c68d2db472081d254ba244ae4e9d4d4 8.45kB / 8.45kB 0.5s done\n#11 sha256:44cf07d57ee4424189f012074a59110ee2065adfdde9c7d9826bebdffce0a885 3.42MB / 3.42MB 0.2s done\n#11 extracting sha256:44cf07d57ee4424189f012074a59110ee2065adfdde9c7d9826bebdffce0a885\n#11 extracting sha256:44cf07d57ee4424189f012074a59110ee2065adfdde9c7d9826bebdffce0a885 0.2s done\n#11 ...\n2026-07-08T12:16:21.8092285Z\n#13 [cloud-hypervisor-builder 2/5] RUN apk update \u0026\u0026 apk add --no-cache curl tar\n#13 0.120 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/x86_64/APKINDEX.tar.gz\n#13 0.252 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/x86_64/APKINDEX.tar.gz\n#13 0.706 v3.21.7-155-g3a9e1c4016b [https://dl-cdn.alpinelinux.org/alpine/v3.21/main]\n#13 0.706 v3.21.7-156-g0fe62280967 [https://dl-cdn.alpinelinux.org/alpine/v3.21/community]\n#13 0.706 OK: 25407 distinct packages available\n#13 0.821 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/main/x86_64/APKINDEX.tar.gz\n#13 0.931 fetch https://dl-cdn.alpinelinux.org/alpine/v3.21/community/x86_64/APKINDEX.tar.gz\n#13 1.346 (1/11) Installing brotli-libs (1.1.0-r2)\n#13 1.363 (2/11) Installing c-ares (1.34.6-r0)\n#13 1.367 (3/11) Installing libunistring (1.2-r0)\n#13 1.383 (4/11) Installing libidn2 (2.3.7-r0)\n#13 1.387 (5/11) Installing nghttp2-libs (1.69.0-r0)\n#13 1.390 (6/11) Installing libpsl (0.21.5-r3)\n#13 1.392 (7/11) Installing zstd-libs (1.5.6-r2)\n#13 1.401 (8/11) Installing libcurl (8.14.1-r2)\n#13 1.411 (9/11) Installing curl (8.14.1-r2)\n#13 1.419 (10/11) Installing acl-libs (2.3.2-r1)\n#13 1.421 (11/11) Installing tar (1.35-r2)\n#13 1.429 Executing busybox-1.37.0-r12.trigger\n#13 1.439 OK: 12 MiB in 26 packages\n#13 DONE 2.0s\n2026-07-08T12:16:21.8117095Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 ...\n2026-07-08T12:16:22.4024132Z\n#14 [cloud-hypervisor-builder 3/5] RUN ARCH=$(uname -m) \u0026\u0026     VERSION=\"v50.0\" \u0026\u0026     RELEASE_URL=\"https://github.com/cloud-hypervisor/cloud-hypervisor/releases\" \u0026\u0026     if [ \"${ARCH}\" = \"x86_64\" ]; then BIN=cloud-hypervisor-static; fi \u0026\u0026     if [ \"${ARCH}\" = \"aarch64\" ]; then BIN=cloud-hypervisor-static-aarch64; fi \u0026\u0026     curl -L -o cloud-hypervisor ${RELEASE_URL}/download/${VERSION}/${BIN} \u0026\u0026     chmod +x cloud-hypervisor\n#14 0.093   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n#14 0.093                                  Dload  Upload   Total   Spent    Left  Speed\n#14 0.093\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n#14 0.371\n100 4820k  100 4820k    0     0  16.8M      0 --:--:-- --:--:-- --:--:-- 16.8M\n#14 DONE 0.5s\n2026-07-08T12:16:22.4033848Z\n#15 [cloud-hypervisor-builder 4/5] WORKDIR /artifacts\n#15 DONE 0.0s\n2026-07-08T12:16:22.4034786Z\n#16 [solo5-builder 1/7] FROM docker.io/library/debian:bullseye@sha256:25c0cab214b810db1b3c8adef5a12a92596979abddf86bb364e8d9c9d111df9f\n#16 resolve docker.io/library/debian:bullseye@sha256:25c0cab214b810db1b3c8adef5a12a92596979abddf86bb364e8d9c9d111df9f 0.0s done\n#16 sha256:632ef5283d0fcf0e3a19d6c5dbcc294922d142b506d2ab494fb73004518cdc31 53.75MB / 53.75MB 0.3s done\n#16 extracting sha256:632ef5283d0fcf0e3a19d6c5dbcc294922d142b506d2ab494fb73004518cdc31 2.6s done\n#16 DONE 2.9s\n2026-07-08T12:16:22.4048733Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 ...\n2026-07-08T12:16:22.5300644Z\n#17 [cloud-hypervisor-builder 5/5] RUN cp /cloud-hypervisor .\n#17 DONE 0.2s\n2026-07-08T12:16:22.5304346Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 ...\n2026-07-08T12:16:22.8600403Z\n#18 [firecracker-builder 3/5] RUN ARCH=$(uname -m) \u0026\u0026     VERSION=\"v1.7.0\" \u0026\u0026     RELEASE_URL=\"https://github.com/firecracker-microvm/firecracker/releases\" \u0026\u0026     curl -L -o firecracker.tgz ${RELEASE_URL}/download/${VERSION}/firecracker-${VERSION}-${ARCH}.tgz \u0026\u0026     tar xzf firecracker.tgz \u0026\u0026     mv release-${VERSION}-${ARCH}/firecracker-${VERSION}-${ARCH} firecracker\n#18 0.101   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n#18 0.104                                  Dload  Upload   Total   Spent    Left  Speed\n#18 0.104\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n#18 0.517\n2 8826k    2  252k    0     0   607k      0  0:00:14 --:--:--  0:00:14  607k\n100 8826k  100 8826k    0     0  18.0M      0 --:--:-- --:--:-- --:--:--  139M\n#18 DONE 1.0s\n2026-07-08T12:16:22.8620023Z\n#19 [firecracker-builder 4/5] WORKDIR /artifacts\n#19 DONE 0.0s\n2026-07-08T12:16:22.8621178Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 ...\n2026-07-08T12:16:23.0092983Z\n#20 [firecracker-builder 5/5] RUN cp /firecracker .\n#20 DONE 0.1s\n2026-07-08T12:16:23.0095190Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 sha256:a8b7984efc6598291be6c3a51c9e8432f55972d5e456fb535a9b51c88c385f0e 39.85MB / 778.37MB 4.2s\n#11 sha256:153f1c43af0fb9cbcabb3664e9740c361a1a1e0f1a03538583cc0cc798926d1b 31.46MB / 604.47MB 4.1s\n#11 ...\n2026-07-08T12:16:25.2593253Z\n#21 [urunc-builder 1/6] FROM docker.io/library/golang:1.26.4-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648\n#21 resolve docker.io/library/golang:1.26.4-alpine3.24@sha256:3ad57304ad93bbec8548a0437ad9e06a455660655d9af011d58b993f6f615648 0.0s done\n#21 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 0.1s done\n#21 sha256:f124a1a8b0465fbfdae5d4e915020961a3eacb88f68a3332fdecb9080f42f9fc 125B / 125B 0.1s done\n#21 sha256:6caf62d108d4ee5f44aa70f4c7bdcc49d52ef1e370151004797e4192269e7924 245.06kB / 245.06kB 0.1s done\n#21 sha256:67aaa626ba3010d60ab55d9cdc69c0b12ebff5d1b5ece83ff220fb46a7709b3b 67.28MB / 67.28MB 0.4s done\n#21 sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4 3.85MB / 3.85MB 0.1s done\n#21 extracting sha256:55afa1ecc21d2bb5e5045f32dafee56272ffd89860bac26f6c32123439af26a4 0.2s done\n#21 extracting sha256:6caf62d108d4ee5f44aa70f4c7bdcc49d52ef1e370151004797e4192269e7924 0.1s done\n#21 extracting sha256:67aaa626ba3010d60ab55d9cdc69c0b12ebff5d1b5ece83ff220fb46a7709b3b 5.1s done\n#21 extracting sha256:f124a1a8b0465fbfdae5d4e915020961a3eacb88f68a3332fdecb9080f42f9fc done\n#21 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done\n#21 DONE 5.7s\n2026-07-08T12:16:25.2615844Z\n#11 [qemu-builder 1/3] FROM quay.io/kata-containers/kata-deploy:3.15.0@sha256:fbab8bdbe910b52cf9396261f887f894cd3e71f86abe68ec11595ab7628b4a10\n#11 sha256:153f1c43af0fb9cbcabb3664e9740c361a1a1e0f1a03538583cc0cc798926d1b 62.91MB / 604.47MB 6.2s\n#11 sha256:a8b7984efc6598291be6c3a51c9e8432f55972d5e456fb535a9b51c88c385f0e 81.79MB / 778.37MB 6.3s\n#11 DONE 6.8s\n2026-07-08T12:16:26.3969515Z\n#22 [solo5-builder 2/7] RUN rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\n#22 0.145 Get:1 http://deb.debian.org/debian bullseye InRelease [75.1 kB]\n#22 0.170 Get:2 http://deb.debian.org/debian-security bullseye-security InRelease [27.2 kB]\n#22 0.170 Get:3 http://deb.debian.org/debian bullseye-updates InRelease [44.0 kB]\n#22 0.350 Get:4 http://deb.debian.org/debian bullseye/main amd64 Packages [8066 kB]\n#22 0.541 Get:5 http://deb.debian.org/debian-security bullseye-security/main amd64 Packages [461 kB]\n#22 0.716 Get:6 http://deb.debian.org/debian bullseye-updates/main amd64 Packages [18.8 kB]\n#22 1.501 Fetched 8692 kB in 1s (6332 kB/s)\n#22 1.501 Reading package lists...\n#22 2.040 Reading package lists...\n#22 2.522 Building dependency tree...\n#22 2.612 Reading state information...\n#22 2.723 The following additional packages will be installed:\n#22 2.723   binutils binutils-common binutils-x86-64-linux-gnu bzip2 cpp cpp-10 dpkg-dev\n#22 2.724   g++ g++-10 gcc gcc-10 git-man libasan6 libatomic1 libbinutils libbrotli1\n#22 2.724   libc-dev-bin libc6 libc6-dev libcc1-0 libcrypt-dev libctf-nobfd0 libctf0\n#22 2.724   libcurl3-gnutls libdpkg-perl liberror-perl libexpat1 libgcc-10-dev\n#22 2.724   libgdbm-compat4 libgdbm6 libglib2.0-0 libgomp1 libisl23 libitm1\n#22 2.724   libldap-2.4-2 liblsan0 libmpc3 libmpfr6 libnghttp2-14 libnsl-dev libperl5.32\n#22 2.724   libpsl5 libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1\n#22 2.724   libstdc++-10-dev libtirpc-dev libtsan0 libubsan1 linux-libc-dev make patch\n#22 2.724   perl perl-base perl-modules-5.32 xz-utils\n#22 2.725 Suggested packages:\n#22 2.725   binutils-doc bzip2-doc cpp-doc gcc-10-locales debian-keyring g++-multilib\n#22 2.725   g++-10-multilib gcc-10-doc gcc-multilib manpages-dev autoconf automake\n#22 2.725   libtool flex bison gdb gcc-doc gcc-10-multilib gettext-base git-daemon-run\n#22 2.725   | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-cvs\n#22 2.725   git-mediawiki git-svn glibc-doc libc-l10n locales gnupg sensible-utils bzr\n#22 2.725   gdbm-l10n seccomp libstdc++-10-doc make-doc ed diffutils-doc perl-doc\n#22 2.725   libterm-readline-gnu-perl | libterm-readline-perl-perl\n#22 2.725   libtap-harness-archive-perl\n#22 2.725 Recommended packages:\n#22 2.725   fakeroot gnupg libalgorithm-merge-perl ca-certificates less ssh-client\n#22 2.725   manpages manpages-dev libc-devtools libnss-nis libnss-nisplus\n#22 2.725   libfile-fcntllock-perl liblocale-gettext-perl libglib2.0-data\n#22 2.725   shared-mime-info xdg-user-dirs libldap-common publicsuffix libsasl2-modules\n#22 2.725   netbase\n#22 2.964 The following NEW packages will be installed:\n#22 2.964   binutils binutils-common binutils-x86-64-linux-gnu build-essential bzip2 cpp\n#22 2.964   cpp-10 dpkg-dev g++ g++-10 gcc gcc-10 git git-man libasan6 libatomic1\n#22 2.964   libbinutils libbrotli1 libc-dev-bin libc6-dev libcc1-0 libcrypt-dev\n#22 2.964   libctf-nobfd0 libctf0 libcurl3-gnutls libdpkg-perl liberror-perl libexpat1\n#22 2.964   libgcc-10-dev libgdbm-compat4 libgdbm6 libglib2.0-0 libgomp1 libisl23\n#22 2.964   libitm1 libldap-2.4-2 liblsan0 libmpc3 libmpfr6 libnghttp2-14 libnsl-dev\n#22 2.964   libperl5.32 libpsl5 libquadmath0 librtmp1 libsasl2-2 libsasl2-modules-db\n#22 2.964   libseccomp-dev libssh2-1 libstdc++-10-dev libtirpc-dev libtsan0 libubsan1\n#22 2.965   linux-libc-dev make patch perl perl-modules-5.32 pkg-config xz-utils\n#22 2.965 The following packages will be upgraded:\n#22 2.966   libc-bin libc6 perl-base\n#22 2.989 3 upgraded, 60 newly installed, 0 to remove and 15 not upgraded.\n#22 2.989 Need to get 85.2 MB of archives.\n#22 2.989 After this operation, 322 MB of additional disk space will be used.\n#22 2.989 Get:1 http://deb.debian.org/debian-security bullseye-security/main amd64 perl-base amd64 5.32.1-4+deb11u5 [1629 kB]\n#22 3.007 Get:2 http://deb.debian.org/debian-security bullseye-security/main amd64 libc6 amd64 2.31-13+deb11u14 [2820 kB]\n#22 3.029 Get:3 http://deb.debian.org/debian-security bullseye-security/main amd64 libc-bin amd64 2.31-13+deb11u14 [829 kB]\n#22 3.034 Get:4 http://deb.debian.org/debian-security bullseye-security/main amd64 perl-modules-5.32 all 5.32.1-4+deb11u5 [2823 kB]\n#22 3.054 Get:5 http://deb.debian.org/debian bullseye/main amd64 libgdbm6 amd64 1.19-2 [64.9 kB]\n#22 3.056 Get:6 http://deb.debian.org/debian bullseye/main amd64 libgdbm-compat4 amd64 1.19-2 [44.7 kB]\n#22 3.056 Get:7 http://deb.debian.org/debian-security bullseye-security/main amd64 libperl5.32 amd64 5.32.1-4+deb11u5 [4102 kB]\n#22 3.084 Get:8 http://deb.debian.org/debian-security bullseye-security/main amd64 perl amd64 5.32.1-4+deb11u5 [294 kB]\n#22 3.086 Get:9 http://deb.debian.org/debian bullseye/main amd64 bzip2 amd64 1.0.8-4 [49.3 kB]\n#22 3.087 Get:10 http://deb.debian.org/debian bullseye/main amd64 xz-utils amd64 5.2.5-2.1~deb11u1 [220 kB]\n#22 3.089 Get:11 http://deb.debian.org/debian bullseye/main amd64 binutils-common amd64 2.35.2-2 [2220 kB]\n#22 3.103 Get:12 http://deb.debian.org/debian bullseye/main amd64 libbinutils amd64 2.35.2-2 [570 kB]\n#22 3.107 Get:13 http://deb.debian.org/debian bullseye/main amd64 libctf-nobfd0 amd64 2.35.2-2 [110 kB]\n#22 3.109 Get:14 http://deb.debian.org/debian bullseye/main amd64 libctf0 amd64 2.35.2-2 [53.2 kB]\n#22 3.109 Get:15 http://deb.debian.org/debian bullseye/main amd64 binutils-x86-64-linux-gnu amd64 2.35.2-2 [1809 kB]\n#22 3.121 Get:16 http://deb.debian.org/debian bullseye/main amd64 binutils amd64 2.35.2-2 [61.2 kB]\n#22 3.123 Get:17 http://deb.debian.org/debian-security bullseye-security/main amd64 libc-dev-bin amd64 2.31-13+deb11u14 [277 kB]\n#22 3.124 Get:18 http://deb.debian.org/debian-security bullseye-security/main amd64 linux-libc-dev amd64 5.10.259-1 [1917 kB]\n#22 3.132 Get:19 http://deb.debian.org/debian bullseye/main amd64 libcrypt-dev amd64 1:4.4.18-4 [104 kB]\n#22 3.133 Get:20 http://deb.debian.org/debian bullseye/main amd64 libtirpc-dev amd64 1.3.1-1+deb11u1 [191 kB]\n#22 3.134 Get:21 http://deb.debian.org/debian bullseye/main amd64 libnsl-dev amd64 1.3.0-2 [66.4 kB]\n#22 3.135 Get:22 http://deb.debian.org/debian-security bullseye-security/main amd64 libc6-dev amd64 2.31-13+deb11u14 [2360 kB]\n#22 3.145 Get:23 http://deb.debian.org/debian bullseye/main amd64 libisl23 amd64 0.23-1 [676 kB]\n#22 3.149 Get:24 http://deb.debian.org/debian bullseye/main amd64 libmpfr6 amd64 4.1.0-3 [2012 kB]\n#22 3.162 Get:25 http://deb.debian.org/debian bullseye/main amd64 libmpc3 amd64 1.2.0-1 [45.0 kB]\n#22 3.163 Get:26 http://deb.debian.org/debian bullseye/main amd64 cpp-10 amd64 10.2.1-6 [8528 kB]\n#22 3.212 Get:27 http://deb.debian.org/debian bullseye/main amd64 cpp amd64 4:10.2.1-1 [19.7 kB]\n#22 3.212 Get:28 http://deb.debian.org/debian bullseye/main amd64 libcc1-0 amd64 10.2.1-6 [47.0 kB]\n#22 3.215 Get:29 http://deb.debian.org/debian bullseye/main amd64 libgomp1 amd64 10.2.1-6 [99.9 kB]\n#22 3.215 Get:30 http://deb.debian.org/debian bullseye/main amd64 libitm1 amd64 10.2.1-6 [25.8 kB]\n#22 3.215 Get:31 http://deb.debian.org/debian bullseye/main amd64 libatomic1 amd64 10.2.1-6 [9008 B]\n#22 3.215 Get:32 http://deb.debian.org/debian bullseye/main amd64 libasan6 amd64 10.2.1-6 [2065 kB]\n#22 3.229 Get:33 http://deb.debian.org/debian bullseye/main amd64 liblsan0 amd64 10.2.1-6 [828 kB]\n#22 3.237 Get:34 http://deb.debian.org/debian bullseye/main amd64 libtsan0 amd64 10.2.1-6 [2000 kB]\n#22 3.248 Get:35 http://deb.debian.org/debian bullseye/main amd64 libubsan1 amd64 10.2.1-6 [777 kB]\n#22 3.254 Get:36 http://deb.debian.org/debian bullseye/main amd64 libquadmath0 amd64 10.2.1-6 [145 kB]\n#22 3.255 Get:37 http://deb.debian.org/debian bullseye/main amd64 libgcc-10-dev amd64 10.2.1-6 [2328 kB]\n#22 3.268 Get:38 http://deb.debian.org/debian bullseye/main amd64 gcc-10 amd64 10.2.1-6 [17.0 MB]\n#22 3.369 Get:39 http://deb.debian.org/debian bullseye/main amd64 gcc amd64 4:10.2.1-1 [5192 B]\n#22 3.371 Get:40 http://deb.debian.org/debian bullseye/main amd64 libstdc++-10-dev amd64 10.2.1-6 [1741 kB]\n#22 3.381 Get:41 http://deb.debian.org/debian bullseye/main amd64 g++-10 amd64 10.2.1-6 [9380 kB]\n#22 3.447 Get:42 http://deb.debian.org/debian bullseye/main amd64 g++ amd64 4:10.2.1-1 [1644 B]\n#22 3.450 Get:43 http://deb.debian.org/debian bullseye/main amd64 make amd64 4.3-4.1 [396 kB]\n#22 3.451 Get:44 http://deb.debian.org/debian-security bullseye-security/main amd64 libdpkg-perl all 1.20.14 [1555 kB]\n#22 3.459 Get:45 http://deb.debian.org/debian bullseye/main amd64 patch amd64 2.7.6-7 [128 kB]\n#22 3.460 Get:46 http://deb.debian.org/debian-security bullseye-security/main amd64 dpkg-dev all 1.20.14 [2317 kB]\n#22 3.470 Get:47 http://deb.debian.org/debian bullseye/main amd64 build-essential amd64 12.9 [7704 B]\n#22 3.470 Get:48 http://deb.debian.org/debian bullseye/main amd64 libbrotli1 amd64 1.0.9-2+b2 [279 kB]\n#22 3.473 Get:49 http://deb.debian.org/debian bullseye/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-2.1+deb11u1 [69.1 kB]\n#22 3.473 Get:50 http://deb.debian.org/debian bullseye/main amd64 libsasl2-2 amd64 2.1.27+dfsg-2.1+deb11u1 [106 kB]\n#22 3.474 Get:51 http://deb.debian.org/debian bullseye/main amd64 libldap-2.4-2 amd64 2.4.57+dfsg-3+deb11u1 [232 kB]\n#22 3.478 Get:52 http://deb.debian.org/debian-security bullseye-security/main amd64 libnghttp2-14 amd64 1.43.0-1+deb11u3 [77.6 kB]\n#22 3.478 Get:53 http://deb.debian.org/debian bullseye/main amd64 libpsl5 amd64 0.21.0-1.2 [57.3 kB]\n#22 3.479 Get:54 http://deb.debian.org/debian bullseye/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]\n#22 3.479 Get:55 http://deb.debian.org/debian bullseye/main amd64 libssh2-1 amd64 1.9.0-2+deb11u1 [156 kB]\n#22 3.480 Get:56 http://deb.debian.org/debian-security bullseye-security/main amd64 libcurl3-gnutls amd64 7.74.0-1.3+deb11u16 [344 kB]\n#22 3.483 Get:57 http://deb.debian.org/debian-security bullseye-security/main amd64 libexpat1 amd64 2.2.10-2+deb11u7 [99.2 kB]\n#22 3.484 Get:58 http://deb.debian.org/debian bullseye/main amd64 liberror-perl all 0.17029-1 [31.0 kB]\n#22 3.485 Get:59 http://deb.debian.org/debian-security bullseye-security/main amd64 git-man all 1:2.30.2-1+deb11u5 [1831 kB]\n#22 3.493 Err:59 http://deb.debian.org/debian-security bullseye-security/main amd64 git-man all 1:2.30.2-1+deb11u5\n#22 3.493   Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n#22 3.498 Get:60 http://deb.debian.org/debian-security bullseye-security/main amd64 git amd64 1:2.30.2-1+deb11u5 [5568 kB]\n#22 3.540 Get:61 http://deb.debian.org/debian-security bullseye-security/main amd64 libglib2.0-0 amd64 2.66.8-1+deb11u8 [1377 kB]\n#22 3.547 Get:62 http://deb.debian.org/debian bullseye/main amd64 libseccomp-dev amd64 2.5.1-1+deb11u1 [92.4 kB]\n#22 3.549 Get:63 http://deb.debian.org/debian bullseye/main amd64 pkg-config amd64 0.29.2-1 [65.1 kB]\n#22 3.553 Fetched 83.4 MB in 1s (145 MB/s)\n#22 3.553 E: Failed to fetch http://deb.debian.org/debian-security/pool/updates/main/g/git/git-man_2.30.2-1%2bdeb11u5_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n#22 3.553 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\n#22 ERROR: process \"/bin/sh -c rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n2026-07-08T12:16:26.4075566Z\n#23 [qemu-builder 2/3] WORKDIR /artifacts\n#23 CANCELED\n2026-07-08T12:16:26.4076455Z\n#24 [urunc-builder 2/6] RUN apk update \u0026\u0026     apk add --no-cache git make build-base linux-headers\n#24 0.520 v3.24.1-147-g2d8b64ef1ee [https://dl-cdn.alpinelinux.org/alpine/v3.24/main]\n#24 0.520 v3.24.1-151-g84eefe18e0a [https://dl-cdn.alpinelinux.org/alpine/v3.24/community]\n#24 0.520 OK: 28637 distinct packages available\n#24 0.963 ( 1/34) Installing libgcc (15.2.0-r5)\n#24 0.972 ( 2/34) Installing jansson (2.15.0-r0)\n#24 0.975 ( 3/34) Installing libstdc++ (15.2.0-r5)\n#24 0.992 ( 4/34) Installing zstd-libs (1.5.7-r2)\n#24 0.999 ( 5/34) Installing binutils (2.45.1-r1)\n#24 1.079 ( 6/34) Installing libmagic (5.47-r2)\n#24 1.111 ( 7/34) Installing file (5.47-r2)\n#24 1.114 ( 8/34) Installing libgcc-static (15.2.0-r5)\n#24 1.133 ( 9/34) Installing libgomp (15.2.0-r5)\n#24 1.139 (10/34) Installing libatomic (15.2.0-r5)\n#24 1.141 (11/34) Installing gmp (6.3.0-r4)\n#24 1.146 (12/34) Installing isl26 (0.26-r2)\n#24 CANCELED\n------\n\u003e [solo5-builder 2/7] RUN rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*:\n3.485 Get:59 http://deb.debian.org/debian-security bullseye-security/main amd64 git-man all 1:2.30.2-1+deb11u5 [1831 kB]\n3.493 Err:59 http://deb.debian.org/debian-security bullseye-security/main amd64 git-man all 1:2.30.2-1+deb11u5\n3.493   Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n3.498 Get:60 http://deb.debian.org/debian-security bullseye-security/main amd64 git amd64 1:2.30.2-1+deb11u5 [5568 kB]\n3.540 Get:61 http://deb.debian.org/debian-security bullseye-security/main amd64 libglib2.0-0 amd64 2.66.8-1+deb11u8 [1377 kB]\n3.547 Get:62 http://deb.debian.org/debian bullseye/main amd64 libseccomp-dev amd64 2.5.1-1+deb11u1 [92.4 kB]\n3.549 Get:63 http://deb.debian.org/debian bullseye/main amd64 pkg-config amd64 0.29.2-1 [65.1 kB]\n3.553 Fetched 83.4 MB in 1s (145 MB/s)\n3.553 E: Failed to fetch http://deb.debian.org/debian-security/pool/updates/main/g/git/git-man_2.30.2-1%2bdeb11u5_all.deb  Error reading from server - read (104: Connection reset by peer) [IP: 151.101.66.132 80]\n3.553 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\n------\nDockerfile:19\n--------------------\n18 |     # See more: https://stackoverflow.com/questions/78105004/docker-build-fails-because-unable-to-install-libc-bins\n19 | \u003e\u003e\u003e RUN rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026 \\\n20 | \u003e\u003e\u003e     apt-get clean \u0026\u0026 \\\n21 | \u003e\u003e\u003e     apt-get update \u0026\u0026 \\\n22 | \u003e\u003e\u003e     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \\\n23 | \u003e\u003e\u003e     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026 \\\n24 | \u003e\u003e\u003e     rm -rf /var/lib/apt/lists/*\n25 |\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n##[group]Reference\nbuilder-e6590977-4906-485b-aa44-d70f50f44211/builder-e6590977-4906-485b-aa44-d70f50f442110/ym9iaq0egy3o2e55eb31pxci1\n##[endgroup]\n##[group]Check build summary support\nBuild summary supported!\n##[endgroup]\n##[error]buildx failed with: ERROR: failed to build: failed to solve: process \"/bin/sh -c rm -f /var/lib/dpkg/info/libc-bin.* \u0026\u0026     apt-get clean \u0026\u0026     apt-get update \u0026\u0026     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends     libc-bin build-essential libseccomp-dev git pkg-config \u0026\u0026     rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100"
+            },
+            {
+              "id": 85866040745,
+              "name": "Build urunc-deploy container image / manifest",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833305/job/85866040745",
+              "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]Process completed with exit code 1.",
+              "raw_log": "[command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-51ac9f72-af34-441f-8077-fdf812bc314e.config\n[command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-51ac9f72-af34-441f-8077-fdf812bc314e.config\n##[endgroup]\n##[group]Fetching the repository\n[command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b:refs/remotes/origin/main\nFrom https://github.com/urunc-dev/urunc\n* [new ref]         1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b -\u003e origin/main\n[command]/usr/bin/git branch --list --remote origin/main\norigin/main\n[command]/usr/bin/git rev-parse refs/remotes/origin/main\n1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\n##[endgroup]\n##[group]Determining the checkout info\n##[endgroup]\n[command]/usr/bin/git sparse-checkout disable\n[command]/usr/bin/git config --local --unset-all extensions.worktreeConfig\n##[group]Checking out the ref\n[command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main\nSwitched to a new branch 'main'\nbranch 'main' set up to track 'origin/main'.\n##[endgroup]\n[command]/usr/bin/git log -1 --format=%H\n1dba69d8a9b48bd79675ae3b3d182f1e0ebc894b\n##[group]Run # Set SHA_SHORT to be used for the manifest\n# Set SHA_SHORT to be used for the manifest\nSHORT_SHA=$(echo \"${GITHUB_SHA}\" | cut -c1-7)\necho \"SHA_SHORT=${SHORT_SHA}\" \u003e\u003e $GITHUB_ENV\n# Determine the manifests' TAG\nif [[ false == true ]]; then\necho \"Version change detected. Using version: $( cat VERSION ).\"\necho \"TAG=$( cat VERSION ) \" \u003e\u003e $GITHUB_ENV\nelif [[ \"${GITHUB_REF##*/}\" == \"main\" ]]; then\necho \"Change in main branch detected. Using latest tag.\"\necho \"TAG=latest\" \u003e\u003e $GITHUB_ENV\nelse\nSHORT_SHA=$(echo \"${GITHUB_SHA}\" | cut -c1-7)\necho \"Using tag: ${SHORT_SHA}.\"\necho \"TAG=${SHORT_SHA}\" \u003e\u003e $GITHUB_ENV\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nREGISTRY: ghcr.io\n##[endgroup]\nChange in main branch detected. Using latest tag.\n##[group]Run docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121\nwith:\nregistry: ghcr.io\nusername: urunc-bot[bot]\npassword: ***\nlogout: true\nenv:\nREGISTRY: ghcr.io\nSHA_SHORT: 1dba69d\nTAG: latest\n##[endgroup]\nLogging into ghcr.io...\nLogin Succeeded!\n##[group]Run #FIXME: find a way to match runner_archs with the strategy matrix input\n#FIXME: find a way to match runner_archs with the strategy matrix input\nrunner_archs='[\"amd64\", \"arm64\"]'  # Using the input string array\namend_command=\"\"\n# Loop over the architectures and build the amend command\nfor arch in $(echo $runner_archs | jq -r '.[]'); do\namend_command+=\" --amend ghcr.io/urunc-dev/urunc/urunc-deploy:$arch-1dba69d\"\ndone\necho \"-------------------- Amend command constructed -------------------\"\necho \"$amend_command\"\n# Create the docker manifest with the amend command\ndocker manifest create ghcr.io/urunc-dev/urunc/urunc-deploy:latest $amend_command\nVAR=`docker manifest push ghcr.io/urunc-dev/urunc/urunc-deploy:latest | tail -1`\necho \"manifest_sha=$VAR\" \u003e\u003e \"$GITHUB_OUTPUT\"\n# Also tag with commit hash on main branch\nif [[ \"refs/heads/main\" == \"refs/heads/main\" \u0026\u0026 \"false\" != \"true\" ]]; then\ndocker buildx imagetools create -t ghcr.io/urunc-dev/urunc/urunc-deploy:1dba69d \\\nghcr.io/urunc-dev/urunc/urunc-deploy:latest\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nREGISTRY: ghcr.io\nSHA_SHORT: 1dba69d\nTAG: latest\n##[endgroup]\n-------------------- Amend command constructed -------------------\n--amend ghcr.io/urunc-dev/urunc/urunc-deploy:amd64-1dba69d --amend ghcr.io/urunc-dev/urunc/urunc-deploy:arm64-1dba69d\nmanifest unknown\n##[error]Process completed with exit code 1."
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28246713844,
           "name": "🍜 Build/publish urunc-deploy",
@@ -1249,44 +1331,6 @@
               "conclusion": "success",
               "duration_sec": 35,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/25480564460/job/74763792976"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 25314827515,
-          "name": "🍜 Build/publish urunc-deploy",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 219,
-          "created_at": "2026-05-04T10:49:28Z",
-          "updated_at": "2026-05-04T10:52:15Z",
-          "run_started_at": "2026-05-04T10:49:28Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/25314827515",
-          "jobs": [
-            {
-              "name": "get-changed-files",
-              "conclusion": "success",
-              "duration_sec": 11,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/25314827515/job/74209867901"
-            },
-            {
-              "name": "Build urunc-deploy container image / build-all (amd64, ubuntu-22.04)",
-              "conclusion": "success",
-              "duration_sec": 109,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/25314827515/job/74209911469"
-            },
-            {
-              "name": "Build urunc-deploy container image / build-all (arm64, ubuntu-22.04-arm)",
-              "conclusion": "success",
-              "duration_sec": 104,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/25314827515/job/74209911471"
-            },
-            {
-              "name": "Build urunc-deploy container image / manifest",
-              "conclusion": "success",
-              "duration_sec": 19,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/25314827515/job/74210167780"
             }
           ],
           "run_attempt": 1
@@ -2402,7 +2446,7 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 118.05,
+      "avg_duration_secs": 117.7,
       "weather_history": [
         "success",
         "success",
@@ -2413,44 +2457,82 @@
         "success"
       ],
       "last_run": {
-        "id": 28864774279,
+        "id": 28941833270,
         "name": "Build \u0026 Upload",
         "status": "completed",
         "conclusion": "success",
-        "run_number": 136,
-        "created_at": "2026-07-07T12:05:25Z",
-        "updated_at": "2026-07-07T12:07:12Z",
-        "run_started_at": "2026-07-07T12:05:25Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864774279",
+        "run_number": 137,
+        "created_at": "2026-07-08T12:15:42Z",
+        "updated_at": "2026-07-08T12:17:28Z",
+        "run_started_at": "2026-07-08T12:15:42Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270",
         "jobs": [
-          {
-            "name": "Build / build (arm64, ubuntu-22.04-arm)",
-            "conclusion": "success",
-            "duration_sec": 38,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864774279/job/85611954622"
-          },
           {
             "name": "Build / build (amd64, ubuntu-22.04)",
             "conclusion": "success",
-            "duration_sec": 59,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864774279/job/85611954761"
+            "duration_sec": 58,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270/job/85865623506"
+          },
+          {
+            "name": "Build / build (arm64, ubuntu-22.04-arm)",
+            "conclusion": "success",
+            "duration_sec": 42,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270/job/85865623539"
           },
           {
             "name": "Upload / build (arm64, ubuntu-22.04-arm)",
             "conclusion": "success",
-            "duration_sec": 36,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864774279/job/85612159341"
+            "duration_sec": 40,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270/job/85865812059"
           },
           {
             "name": "Upload / build (amd64, ubuntu-22.04)",
             "conclusion": "success",
-            "duration_sec": 36,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864774279/job/85612159354"
+            "duration_sec": 44,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270/job/85865812086"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28941833270,
+          "name": "Build \u0026 Upload",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 137,
+          "created_at": "2026-07-08T12:15:42Z",
+          "updated_at": "2026-07-08T12:17:28Z",
+          "run_started_at": "2026-07-08T12:15:42Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270",
+          "jobs": [
+            {
+              "name": "Build / build (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 58,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270/job/85865623506"
+            },
+            {
+              "name": "Build / build (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 42,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270/job/85865623539"
+            },
+            {
+              "name": "Upload / build (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 40,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270/job/85865812059"
+            },
+            {
+              "name": "Upload / build (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 44,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941833270/job/85865812086"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28864774279,
           "name": "Build \u0026 Upload",
@@ -3169,44 +3251,6 @@
               "conclusion": "success",
               "duration_sec": 43,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26278083373/job/77347327063"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 26218567868,
-          "name": "Build \u0026 Upload",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 117,
-          "created_at": "2026-05-21T09:48:11Z",
-          "updated_at": "2026-05-21T09:50:04Z",
-          "run_started_at": "2026-05-21T09:48:11Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26218567868",
-          "jobs": [
-            {
-              "name": "Build / build (amd64, ubuntu-22.04)",
-              "conclusion": "success",
-              "duration_sec": 60,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26218567868/job/77147259655"
-            },
-            {
-              "name": "Build / build (arm64, ubuntu-22.04-arm)",
-              "conclusion": "success",
-              "duration_sec": 45,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26218567868/job/77147260004"
-            },
-            {
-              "name": "Upload / build (arm64, ubuntu-22.04-arm)",
-              "conclusion": "success",
-              "duration_sec": 40,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26218567868/job/77147431391"
-            },
-            {
-              "name": "Upload / build (amd64, ubuntu-22.04)",
-              "conclusion": "success",
-              "duration_sec": 48,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26218567868/job/77147431497"
             }
           ],
           "run_attempt": 1
@@ -5688,29 +5732,95 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 133.2,
+      "avg_duration_secs": 133.85,
       "weather_history": [
         "action_required",
-        "action_required",
-        "action_required",
         "success",
         "success",
         "action_required",
-        "action_required"
+        "action_required",
+        "success",
+        "success"
       ],
       "last_run": {
-        "id": 28934739041,
+        "id": 28941830316,
         "name": "urunc CI",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 2188,
-        "created_at": "2026-07-08T10:09:56Z",
-        "updated_at": "2026-07-08T10:09:56Z",
-        "run_started_at": "2026-07-08T10:09:56Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28934739041",
+        "conclusion": "success",
+        "run_number": 2190,
+        "created_at": "2026-07-08T12:15:39Z",
+        "updated_at": "2026-07-08T12:15:54Z",
+        "run_started_at": "2026-07-08T12:15:39Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941830316",
+        "jobs": [
+          {
+            "name": "check-labels",
+            "conclusion": "success",
+            "duration_sec": 12,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941830316/job/85865613179"
+          },
+          {
+            "name": "ci-on-push",
+            "conclusion": "skipped",
+            "duration_sec": 0,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941830316/job/85865660017"
+          }
+        ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28941830316,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 2190,
+          "created_at": "2026-07-08T12:15:39Z",
+          "updated_at": "2026-07-08T12:15:54Z",
+          "run_started_at": "2026-07-08T12:15:39Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941830316",
+          "jobs": [
+            {
+              "name": "check-labels",
+              "conclusion": "success",
+              "duration_sec": 12,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941830316/job/85865613179"
+            },
+            {
+              "name": "ci-on-push",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941830316/job/85865660017"
+            }
+          ],
+          "run_attempt": 1
+        },
+        {
+          "id": 28941710370,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 2189,
+          "created_at": "2026-07-08T12:13:39Z",
+          "updated_at": "2026-07-08T12:14:07Z",
+          "run_started_at": "2026-07-08T12:13:49Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941710370",
+          "jobs": [
+            {
+              "name": "check-labels",
+              "conclusion": "success",
+              "duration_sec": 11,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941710370/job/85865260040"
+            },
+            {
+              "name": "ci-on-push",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941710370/job/85865309503"
+            }
+          ],
+          "run_attempt": 2
+        },
         {
           "id": 28934739041,
           "name": "urunc CI",
@@ -6214,44 +6324,6 @@
           "run_started_at": "2026-07-01T22:36:13Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28552282122",
           "run_attempt": 1
-        },
-        {
-          "id": 28552282109,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 2166,
-          "created_at": "2026-07-01T22:36:13Z",
-          "updated_at": "2026-07-01T22:36:31Z",
-          "run_started_at": "2026-07-01T22:36:13Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28552282109",
-          "jobs": [
-            {
-              "name": "check-labels",
-              "conclusion": "success",
-              "duration_sec": 12,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28552282109/job/84652010849"
-            },
-            {
-              "name": "ci-on-push",
-              "conclusion": "skipped",
-              "duration_sec": 0,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28552282109/job/84652049135"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 28552282066,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "cancelled",
-          "run_number": 2165,
-          "created_at": "2026-07-01T22:36:13Z",
-          "updated_at": "2026-07-01T22:36:15Z",
-          "run_started_at": "2026-07-01T22:36:13Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28552282066",
-          "run_attempt": 1
         }
       ]
     },
@@ -6263,29 +6335,95 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 66.65,
+      "avg_duration_secs": 78.9,
       "weather_history": [
         "action_required",
         "success",
-        "action_required",
-        "success",
         "success",
         "action_required",
-        "action_required"
+        "action_required",
+        "success",
+        "success"
       ],
       "last_run": {
-        "id": 28934738753,
+        "id": 28941832859,
         "name": "CodeQL",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 1452,
-        "created_at": "2026-07-08T10:09:55Z",
-        "updated_at": "2026-07-08T10:09:55Z",
-        "run_started_at": "2026-07-08T10:09:55Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28934738753",
+        "conclusion": "success",
+        "run_number": 1454,
+        "created_at": "2026-07-08T12:15:41Z",
+        "updated_at": "2026-07-08T12:17:41Z",
+        "run_started_at": "2026-07-08T12:15:41Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832859",
+        "jobs": [
+          {
+            "name": "Analyze (go)",
+            "conclusion": "success",
+            "duration_sec": 116,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832859/job/85865621376"
+          },
+          {
+            "name": "Analyze (python)",
+            "conclusion": "success",
+            "duration_sec": 67,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832859/job/85865621400"
+          }
+        ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28941832859,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1454,
+          "created_at": "2026-07-08T12:15:41Z",
+          "updated_at": "2026-07-08T12:17:41Z",
+          "run_started_at": "2026-07-08T12:15:41Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832859",
+          "jobs": [
+            {
+              "name": "Analyze (go)",
+              "conclusion": "success",
+              "duration_sec": 116,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832859/job/85865621376"
+            },
+            {
+              "name": "Analyze (python)",
+              "conclusion": "success",
+              "duration_sec": 67,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832859/job/85865621400"
+            }
+          ],
+          "run_attempt": 1
+        },
+        {
+          "id": 28941829758,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1453,
+          "created_at": "2026-07-08T12:15:38Z",
+          "updated_at": "2026-07-08T12:17:43Z",
+          "run_started_at": "2026-07-08T12:15:38Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941829758",
+          "jobs": [
+            {
+              "name": "Analyze (python)",
+              "conclusion": "success",
+              "duration_sec": 69,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941829758/job/85865610776"
+            },
+            {
+              "name": "Analyze (go)",
+              "conclusion": "success",
+              "duration_sec": 121,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941829758/job/85865610901"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28934738753,
           "name": "CodeQL",
@@ -6655,30 +6793,6 @@
           "run_started_at": "2026-06-28T07:26:26Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28315089176",
           "run_attempt": 1
-        },
-        {
-          "id": 28315053010,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1430,
-          "created_at": "2026-06-28T07:24:52Z",
-          "updated_at": "2026-06-28T07:24:52Z",
-          "run_started_at": "2026-06-28T07:24:52Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28315053010",
-          "run_attempt": 1
-        },
-        {
-          "id": 28314422993,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1429,
-          "created_at": "2026-06-28T06:56:28Z",
-          "updated_at": "2026-06-28T06:56:28Z",
-          "run_started_at": "2026-06-28T06:56:28Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28314422993",
-          "run_attempt": 1
         }
       ]
     },
@@ -6690,29 +6804,57 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 7.3,
+      "avg_duration_secs": 7.25,
       "weather_history": [
         "success",
-        "success",
         "action_required",
         "action_required",
         "action_required",
         "action_required",
-        "action_required"
+        "action_required",
+        "success"
       ],
       "last_run": {
-        "id": 28934738731,
+        "id": 28941829736,
         "name": "Dependency Review",
         "status": "completed",
-        "conclusion": "action_required",
-        "run_number": 1222,
-        "created_at": "2026-07-08T10:09:55Z",
-        "updated_at": "2026-07-08T10:09:55Z",
-        "run_started_at": "2026-07-08T10:09:55Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28934738731",
+        "conclusion": "success",
+        "run_number": 1223,
+        "created_at": "2026-07-08T12:15:38Z",
+        "updated_at": "2026-07-08T12:15:51Z",
+        "run_started_at": "2026-07-08T12:15:38Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941829736",
+        "jobs": [
+          {
+            "name": "dependency-review",
+            "conclusion": "success",
+            "duration_sec": 11,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941829736/job/85865610846"
+          }
+        ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28941829736,
+          "name": "Dependency Review",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1223,
+          "created_at": "2026-07-08T12:15:38Z",
+          "updated_at": "2026-07-08T12:15:51Z",
+          "run_started_at": "2026-07-08T12:15:38Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941829736",
+          "jobs": [
+            {
+              "name": "dependency-review",
+              "conclusion": "success",
+              "duration_sec": 11,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941829736/job/85865610846"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28934738731,
           "name": "Dependency Review",
@@ -7004,26 +7146,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 28240218937,
-          "name": "Dependency Review",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 1198,
-          "created_at": "2026-06-26T13:11:08Z",
-          "updated_at": "2026-06-26T13:11:22Z",
-          "run_started_at": "2026-06-26T13:11:08Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28240218937",
-          "jobs": [
-            {
-              "name": "dependency-review",
-              "conclusion": "success",
-              "duration_sec": 11,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28240218937/job/83664945604"
-            }
-          ],
-          "run_attempt": 1
         }
       ]
     },
@@ -7035,7 +7157,7 @@
       "total_runs": 20,
       "failed_runs": 1,
       "failure_rate": 5,
-      "avg_duration_secs": 26.2,
+      "avg_duration_secs": 26.1,
       "weather_history": [
         "success",
         "success",
@@ -7046,26 +7168,46 @@
         "success"
       ],
       "last_run": {
-        "id": 28038465141,
+        "id": 28941808018,
         "name": "Final merge to main",
         "status": "completed",
         "conclusion": "success",
-        "run_number": 291,
-        "created_at": "2026-06-23T15:51:06Z",
-        "updated_at": "2026-06-23T15:51:35Z",
-        "run_started_at": "2026-06-23T15:51:06Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28038465141",
+        "run_number": 292,
+        "created_at": "2026-07-08T12:15:15Z",
+        "updated_at": "2026-07-08T12:15:44Z",
+        "run_started_at": "2026-07-08T12:15:15Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941808018",
         "jobs": [
           {
             "name": "add-trailers-and-merge",
             "conclusion": "success",
             "duration_sec": 25,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28038465141/job/82998108453"
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941808018/job/85865537628"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28941808018,
+          "name": "Final merge to main",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 292,
+          "created_at": "2026-07-08T12:15:15Z",
+          "updated_at": "2026-07-08T12:15:44Z",
+          "run_started_at": "2026-07-08T12:15:15Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941808018",
+          "jobs": [
+            {
+              "name": "add-trailers-and-merge",
+              "conclusion": "success",
+              "duration_sec": 25,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941808018/job/85865537628"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28038465141,
           "name": "Final merge to main",
@@ -7455,26 +7597,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 25480547225,
-          "name": "Final merge to main",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 272,
-          "created_at": "2026-05-07T06:47:30Z",
-          "updated_at": "2026-05-07T06:48:01Z",
-          "run_started_at": "2026-05-07T06:47:30Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/25480547225",
-          "jobs": [
-            {
-              "name": "add-trailers-and-merge",
-              "conclusion": "success",
-              "duration_sec": 28,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/25480547225/job/74763460179"
-            }
-          ],
-          "run_attempt": 1
         }
       ]
     },
@@ -7486,7 +7608,7 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 2.25,
+      "avg_duration_secs": 3.3,
       "weather_history": [
         "skipped",
         "skipped",
@@ -7494,29 +7616,49 @@
         "skipped",
         "skipped",
         "skipped",
-        "skipped"
+        "success"
       ],
       "last_run": {
-        "id": 28860650788,
+        "id": 28941710509,
         "name": "PR Takeover on Label",
         "status": "completed",
-        "conclusion": "skipped",
-        "run_number": 703,
-        "created_at": "2026-07-07T10:51:25Z",
-        "updated_at": "2026-07-07T10:51:27Z",
-        "run_started_at": "2026-07-07T10:51:25Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28860650788",
+        "conclusion": "success",
+        "run_number": 704,
+        "created_at": "2026-07-08T12:13:39Z",
+        "updated_at": "2026-07-08T12:14:01Z",
+        "run_started_at": "2026-07-08T12:13:39Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941710509",
         "jobs": [
           {
             "name": "pr-takeover",
-            "conclusion": "skipped",
-            "duration_sec": 0,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28860650788/job/85598111565"
+            "conclusion": "success",
+            "duration_sec": 18,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941710509/job/85865219558"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28941710509,
+          "name": "PR Takeover on Label",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 704,
+          "created_at": "2026-07-08T12:13:39Z",
+          "updated_at": "2026-07-08T12:14:01Z",
+          "run_started_at": "2026-07-08T12:13:39Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941710509",
+          "jobs": [
+            {
+              "name": "pr-takeover",
+              "conclusion": "success",
+              "duration_sec": 18,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941710509/job/85865219558"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28860650788,
           "name": "PR Takeover on Label",
@@ -7893,26 +8035,6 @@
               "conclusion": "skipped",
               "duration_sec": 0,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28552266127/job/84651958647"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 28552266013,
-          "name": "PR Takeover on Label",
-          "status": "completed",
-          "conclusion": "skipped",
-          "run_number": 684,
-          "created_at": "2026-07-01T22:35:52Z",
-          "updated_at": "2026-07-01T22:35:53Z",
-          "run_started_at": "2026-07-01T22:35:52Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28552266013",
-          "jobs": [
-            {
-              "name": "pr-takeover",
-              "conclusion": "skipped",
-              "duration_sec": 0,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28552266013/job/84651958083"
             }
           ],
           "run_attempt": 1
@@ -8681,7 +8803,7 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 58.7,
+      "avg_duration_secs": 58.25,
       "weather_history": [
         "success",
         "success",
@@ -8692,26 +8814,46 @@
         "success"
       ],
       "last_run": {
-        "id": 28864774160,
+        "id": 28941832950,
         "name": "Scorecard supply-chain security",
         "status": "completed",
         "conclusion": "success",
-        "run_number": 260,
-        "created_at": "2026-07-07T12:05:25Z",
-        "updated_at": "2026-07-07T12:06:27Z",
-        "run_started_at": "2026-07-07T12:05:25Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864774160",
+        "run_number": 261,
+        "created_at": "2026-07-08T12:15:41Z",
+        "updated_at": "2026-07-08T12:16:38Z",
+        "run_started_at": "2026-07-08T12:15:41Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832950",
         "jobs": [
           {
             "name": "Scorecard analysis",
             "conclusion": "success",
-            "duration_sec": 58,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28864774160/job/85611954132"
+            "duration_sec": 54,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832950/job/85865621148"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 28941832950,
+          "name": "Scorecard supply-chain security",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 261,
+          "created_at": "2026-07-08T12:15:41Z",
+          "updated_at": "2026-07-08T12:16:38Z",
+          "run_started_at": "2026-07-08T12:15:41Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832950",
+          "jobs": [
+            {
+              "name": "Scorecard analysis",
+              "conclusion": "success",
+              "duration_sec": 54,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28941832950/job/85865621148"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 28864774160,
           "name": "Scorecard supply-chain security",
@@ -9088,26 +9230,6 @@
               "conclusion": "success",
               "duration_sec": 64,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26817298277/job/79062240511"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 26653059944,
-          "name": "Scorecard supply-chain security",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 241,
-          "created_at": "2026-05-29T17:49:23Z",
-          "updated_at": "2026-05-29T17:50:29Z",
-          "run_started_at": "2026-05-29T17:49:23Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26653059944",
-          "jobs": [
-            {
-              "name": "Scorecard analysis",
-              "conclusion": "success",
-              "duration_sec": 61,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/26653059944/job/78556116537"
             }
           ],
           "run_attempt": 1
