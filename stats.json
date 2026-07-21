@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T09:31:40.092106856Z",
+  "generated_at": "2026-07-21T11:51:22.963841902Z",
   "repo": "urunc-dev/urunc",
   "overall_health": 89.4047619047619,
   "workflows": [
@@ -4470,195 +4470,41 @@
       "total_runs": 20,
       "failed_runs": 3,
       "failure_rate": 15,
-      "avg_duration_secs": 236.95,
+      "avg_duration_secs": 236,
       "weather_history": [
-        "success",
         "action_required",
         "success",
         "success",
         "success",
         "action_required",
-        "failure"
+        "failure",
+        "action_required"
       ],
       "last_run": {
-        "id": 29805737171,
+        "id": 29821877470,
         "name": "urunc CI",
         "status": "completed",
-        "conclusion": "failure",
-        "run_number": 2260,
-        "created_at": "2026-07-21T06:01:44Z",
-        "updated_at": "2026-07-21T06:05:05Z",
-        "run_started_at": "2026-07-21T06:01:44Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171",
-        "jobs": [
-          {
-            "name": "check-labels",
-            "conclusion": "success",
-            "duration_sec": 21,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555773363"
-          },
-          {
-            "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
-            "conclusion": "failure",
-            "duration_sec": 63,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840356"
-          },
-          {
-            "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
-            "conclusion": "failure",
-            "duration_sec": 62,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840379"
-          },
-          {
-            "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 49,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840399"
-          },
-          {
-            "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 34,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840414"
-          },
-          {
-            "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "success",
-            "duration_sec": 31,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840423"
-          },
-          {
-            "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
-            "conclusion": "failure",
-            "duration_sec": 41,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840424"
-          },
-          {
-            "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 42,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840528"
-          },
-          {
-            "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 21,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840589"
-          },
-          {
-            "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "failure",
-            "duration_sec": 106,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556015960"
-          },
-          {
-            "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
-            "conclusion": "failure",
-            "duration_sec": 77,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016054"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
-            "conclusion": "cancelled",
-            "duration_sec": 67,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016126"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
-            "conclusion": "cancelled",
-            "duration_sec": 67,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016131"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
-            "conclusion": "failure",
-            "duration_sec": 64,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016143"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
-            "conclusion": "cancelled",
-            "duration_sec": 67,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016152"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
-            "conclusion": "cancelled",
-            "duration_sec": 76,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016162"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
-            "conclusion": "cancelled",
-            "duration_sec": 73,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016198"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
-            "conclusion": "cancelled",
-            "duration_sec": 75,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016210"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
-            "conclusion": "cancelled",
-            "duration_sec": 76,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016237"
-          }
-        ],
-        "failed_jobs": [
-          {
-            "id": 88555840356,
-            "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840356",
-            "log_snippet": "[Build Failure] — 6 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]pkg/containerd-shim/task_plugin.go:21:2: could not import github.com/containerd/containerd/runtime/v2/shim (/home/runner/go/pkg/mod/github.com/containerd/containerd@v1.7.33/runtime/v2/shim/publisher.go:28:2: could not import github.com/containerd/containerd/pkg/ttrpcutil (-: # github.com/containerd/containerd/pkg/ttrpcutil\n  ##[error]../../../go/pkg/mod/github.com/containerd/containerd@v1.7.33/pkg/ttrpcutil/client.go:91:38: undefined: v1.EventsService\n  ##[error]../../../go/pkg/mod/github.com/containerd/containerd@v1.7.33/pkg/ttrpcutil/client.go:96:12: undefined: v1.NewEventsClient)) (typecheck)\n  ##[error]pkg/containerd-shim/task_service.go:30:10: undefined: taskAPI.TaskService (typecheck)\n  ##[error]pkg/containerd-shim/task_service.go:76:10: undefined: taskAPI.RegisterTaskService (typecheck)\n  ##[error]issues found",
-            "raw_log": "Added go to the path\nSuccessfully set up Go version 1.26.4\ngo version go1.26.4 linux/amd64\n2026-07-21T06:02:27.1647115Z\n##[group]go env\nAR='ar'\nCC='gcc'\nCGO_CFLAGS='-O2 -g'\nCGO_CPPFLAGS=''\nCGO_CXXFLAGS='-O2 -g'\nCGO_ENABLED='1'\nCGO_FFLAGS='-O2 -g'\nCGO_LDFLAGS='-O2 -g'\nCXX='g++'\nGCCGO='gccgo'\nGO111MODULE=''\nGOAMD64='v1'\nGOARCH='amd64'\nGOAUTH='netrc'\nGOBIN=''\nGOCACHE='/home/runner/.cache/go-build'\nGOCACHEPROG=''\nGODEBUG=''\nGOENV='/home/runner/.config/go/env'\nGOEXE=''\nGOEXPERIMENT=''\nGOFIPS140='off'\nGOFLAGS=''\nGOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2734214600=/tmp/go-build -gno-record-gcc-switches'\nGOHOSTARCH='amd64'\nGOHOSTOS='linux'\nGOINSECURE=''\nGOMOD='/home/runner/work/urunc/urunc/go.mod'\nGOMODCACHE='/home/runner/go/pkg/mod'\nGONOPROXY=''\nGONOSUMDB=''\nGOOS='linux'\nGOPATH='/home/runner/go'\nGOPRIVATE=''\nGOPROXY='https://proxy.golang.org,direct'\nGOSUMDB='sum.golang.org'\nGOTELEMETRY='local'\nGOTELEMETRYDIR='/home/runner/.config/go/telemetry'\nGOTMPDIR=''\nGOTOOLCHAIN='local'\nGOVCS=''\nGOVERSION='go1.26.4'\nGOWORK=''\nPKG_CONFIG='pkg-config'\n2026-07-21T06:02:27.7877873Z\n##[endgroup]\nNode 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/\n##[group]Run golangci/golangci-lint-action@4afd733a84b1f43292c63897423277bb7f4313a9\nwith:\nversion: v2.9\nonly-new-issues: true\ninstall-mode: binary\ngithub-token: ***\nverify: true\nskip-cache: false\nskip-save-cache: false\nproblem-matchers: false\ncache-invalidation-interval: 7\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\n##[group]prepare environment\nChecking for go.mod: go.mod\n(node:2583) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)\nCache not found for input keys: golangci-lint.cache-Linux-2950-8a83a1241def84b3d5ef7b3c4932e175353961b8, golangci-lint.cache-Linux-2950-\nFinding needed golangci-lint version...\nRequested golangci-lint 'v2.9', using 'v2.9.0', calculation took 20ms\nInstallation mode: binary\nInstalling golangci-lint binary v2.9.0...\nDownloading binary https://github.com/golangci/golangci-lint/releases/download/v2.9.0/golangci-lint-2.9.0-linux-amd64.tar.gz ...\n[command]/usr/bin/tar xz --overwrite --warning=no-unknown-keyword --overwrite -C /home/runner -f /home/runner/work/_temp/18d0c0dc-7de6-4f9d-9d72-26610b0fa119\nInstalled golangci-lint into /home/runner/golangci-lint-2.9.0-linux-amd64/golangci-lint in 532ms\nWriting patch to /tmp/tmp-2583-sdTTsjZ4Qzm2/pull.patch\nPrepared env in 1130ms\n##[endgroup]\n##[group]run golangci-lint\nonly new issues on pull_request: /tmp/tmp-2583-sdTTsjZ4Qzm2/pull.patch\nRunning [/home/runner/golangci-lint-2.9.0-linux-amd64/golangci-lint config path] in [/home/runner/work/urunc/urunc] ...\nRunning [/home/runner/golangci-lint-2.9.0-linux-amd64/golangci-lint config verify] in [/home/runner/work/urunc/urunc] ...\nRunning [/home/runner/golangci-lint-2.9.0-linux-amd64/golangci-lint run --new-from-patch=/tmp/tmp-2583-sdTTsjZ4Qzm2/pull.patch --new=false --new-from-rev= --new-from-merge-base=] in [/home/runner/work/urunc/urunc] ...\n##[error]pkg/containerd-shim/task_plugin.go:21:2: could not import github.com/containerd/containerd/runtime/v2/shim (/home/runner/go/pkg/mod/github.com/containerd/containerd@v1.7.33/runtime/v2/shim/publisher.go:28:2: could not import github.com/containerd/containerd/pkg/ttrpcutil (-: # github.com/containerd/containerd/pkg/ttrpcutil\n##[error]../../../go/pkg/mod/github.com/containerd/containerd@v1.7.33/pkg/ttrpcutil/client.go:91:38: undefined: v1.EventsService\n##[error]../../../go/pkg/mod/github.com/containerd/containerd@v1.7.33/pkg/ttrpcutil/client.go:96:12: undefined: v1.NewEventsClient)) (typecheck)\n\"github.com/containerd/containerd/runtime/v2/shim\"\n^\n##[error]pkg/containerd-shim/task_service.go:30:10: undefined: taskAPI.TaskService (typecheck)\ntaskAPI.TaskService\n^\n##[error]pkg/containerd-shim/task_service.go:76:10: undefined: taskAPI.RegisterTaskService (typecheck)\ntaskAPI.RegisterTaskService(server, s)\n^\n3 issues:\n* typecheck: 3\n2026-07-21T06:03:08.9654443Z\n##[error]issues found"
-          },
-          {
-            "id": 88555840379,
-            "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840379",
-            "log_snippet": "[Build Failure] — 4 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]vendor/github.com/containerd/containerd/pkg/ttrpcutil/client.go:91:38: undefined: v1.EventsService\n  ##[error]vendor/github.com/containerd/containerd/pkg/ttrpcutil/client.go:96:12: undefined: v1.NewEventsClient\n  make: *** [Makefile:179: /home/runner/work/urunc/urunc/dist/containerd-shim-urunc-v2_static_amd64] Error 1\n  ##[error]Process completed with exit code 2.",
-            "raw_log": "Added go to the path\nSuccessfully set up Go version 1.26.4\ngo version go1.26.4 linux/amd64\n2026-07-21T06:02:29.7342665Z\n##[group]go env\nAR='ar'\nCC='gcc'\nCGO_CFLAGS='-O2 -g'\nCGO_CPPFLAGS=''\nCGO_CXXFLAGS='-O2 -g'\nCGO_ENABLED='1'\nCGO_FFLAGS='-O2 -g'\nCGO_LDFLAGS='-O2 -g'\nCXX='g++'\nGCCGO='gccgo'\nGO111MODULE=''\nGOAMD64='v1'\nGOARCH='amd64'\nGOAUTH='netrc'\nGOBIN=''\nGOCACHE='/home/runner/.cache/go-build'\nGOCACHEPROG=''\nGODEBUG=''\nGOENV='/home/runner/.config/go/env'\nGOEXE=''\nGOEXPERIMENT=''\nGOFIPS140='off'\nGOFLAGS=''\nGOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build500833770=/tmp/go-build -gno-record-gcc-switches'\nGOHOSTARCH='amd64'\nGOHOSTOS='linux'\nGOINSECURE=''\nGOMOD='/home/runner/work/urunc/urunc/go.mod'\nGOMODCACHE='/home/runner/go/pkg/mod'\nGONOPROXY=''\nGONOSUMDB=''\nGOOS='linux'\nGOPATH='/home/runner/go'\nGOPRIVATE=''\nGOPROXY='https://proxy.golang.org,direct'\nGOSUMDB='sum.golang.org'\nGOTELEMETRY='local'\nGOTELEMETRYDIR='/home/runner/.config/go/telemetry'\nGOTMPDIR=''\nGOTOOLCHAIN='local'\nGOVCS=''\nGOVERSION='go1.26.4'\nGOWORK=''\nPKG_CONFIG='pkg-config'\n2026-07-21T06:02:30.2365415Z\n##[endgroup]\n##[group]Run go version\ngo version\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo version go1.26.4 linux/amd64\n##[group]Run if [ \"$EVENT_NAME\" == \"pull_request\" ]; then\nif [ \"$EVENT_NAME\" == \"pull_request\" ]; then\nif [ \"$IS_MERGED\" == \"true\" ]; then\nsha=\"$GITHUB_SHA\"\nbranch=\"$PR_BASE_REF\"\necho \"PR merged. SHA: ${sha}, Branch: ${branch}\"\nelse\nsha=\"$PR_HEAD_SHA\"\nbranch=\"$PR_HEAD_REF\"\necho \"PR not yet merged. SHA: ${sha}, Branch: ${branch}\"\nfi\nelse\nsha=\"$GITHUB_SHA\"\nbranch=\"$REF_NAME\"\necho \"$EVENT_NAME event. SHA: ${sha}, Branch: ${branch}\"\nfi\necho \"sha=${sha}\" \u003e\u003e \"$GITHUB_OUTPUT\"\necho \"branch=${branch}\" \u003e\u003e \"$GITHUB_OUTPUT\"\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\nEVENT_NAME: pull_request\nIS_MERGED: false\nGITHUB_SHA: 5e3c255a055667274504ef02486f6e50caec66aa\nPR_HEAD_SHA: 0b903e92e2abc6fd580fc5b89a6206f59a0d74e7\nPR_HEAD_REF: dependabot/go_modules/backend-8dded6479d\nPR_BASE_REF: main\nREF_NAME: 822/merge\n##[endgroup]\nPR not yet merged. SHA: 0b903e92e2abc6fd580fc5b89a6206f59a0d74e7, Branch: dependabot/go_modules/backend-8dded6479d\n##[group]Run make\nmake\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo mod tidy\ngo: downloading github.com/rs/zerolog v1.35.1\ngo: downloading github.com/containerd/containerd v1.7.33\ngo: downloading github.com/containerd/containerd/api v1.11.1\ngo: downloading github.com/containerd/log v0.1.0\ngo: downloading github.com/opencontainers/runtime-spec v1.2.1\ngo: downloading github.com/containerd/ttrpc v1.2.9\ngo: downloading github.com/jackpal/gateway v1.2.0\ngo: downloading github.com/sirupsen/logrus v1.9.4\ngo: downloading github.com/vishvananda/netlink v1.3.1\ngo: downloading golang.org/x/sys v0.47.0\ngo: downloading github.com/stretchr/testify v1.11.1\ngo: downloading github.com/BurntSushi/toml v1.6.0\ngo: downloading github.com/moby/sys/mount v0.3.5\ngo: downloading github.com/moby/sys/userns v0.1.0\ngo: downloading github.com/elastic/go-seccomp-bpf v1.6.0\ngo: downloading github.com/nubificus/hedge_cli v0.0.3\ngo: downloading github.com/cavaliergopher/cpio v1.0.1\ngo: downloading github.com/hashicorp/go-version v1.9.0\ngo: downloading github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2\ngo: downloading github.com/prometheus-community/pro-bing v0.9.1\ngo: downloading github.com/vishvananda/netns v0.0.5\ngo: downloading k8s.io/cri-api v0.36.2\ngo: downloading github.com/onsi/ginkgo/v2 v2.32.0\ngo: downloading github.com/onsi/gomega v1.40.0\ngo: downloading github.com/creack/pty v1.1.24\ngo: downloading github.com/opencontainers/runc v1.3.6\ngo: downloading github.com/urfave/cli/v3 v3.10.1\ngo: downloading github.com/opencontainers/image-spec v1.1.1\ngo: downloading google.golang.org/grpc v1.82.1\ngo: downloading github.com/mattn/go-colorable v0.1.15\ngo: downloading google.golang.org/protobuf v1.36.12-0.20260120151049-f2248ac996af\ngo: downloading github.com/containerd/cgroups/v3 v3.1.0\ngo: downloading github.com/containerd/go-runc v1.0.0\ngo: downloading github.com/containerd/typeurl/v2 v2.3.0\ngo: downloading github.com/Microsoft/go-winio v0.6.2\ngo: downloading github.com/containerd/fifo v1.1.0\ngo: downloading golang.org/x/sync v0.21.0\ngo: downloading google.golang.org/genproto/googleapis/rpc v0.0.0-20260622175928-b703f567277d\ngo: downloading google.golang.org/genproto v0.0.0-20260622175928-b703f567277d\ngo: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc\ngo: downloading github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2\ngo: downloading github.com/moby/sys/mountinfo v0.7.2\ngo: downloading golang.org/x/net v0.56.0\ngo: downloading github.com/google/uuid v1.6.0\ngo: downloading github.com/google/go-cmp v0.7.0\ngo: downloading github.com/containerd/errdefs v1.0.0\ngo: downloading github.com/containerd/platforms v1.0.0-rc.4\ngo: downloading github.com/opencontainers/go-digest v1.0.0\ngo: downloading github.com/go-logr/logr v1.4.3\ngo: downloading github.com/mattn/go-isatty v0.0.22\ngo: downloading github.com/docker/go-events v0.0.0-20260608200158-dbf6103125a4\ngo: downloading github.com/containerd/console v1.0.5\ngo: downloading github.com/pkg/errors v0.9.1\ngo: downloading github.com/Microsoft/hcsshim v0.13.0\ngo: downloading github.com/prometheus/procfs v0.15.1\ngo: downloading github.com/containerd/continuity v0.5.0\ngo: downloading github.com/moby/sys/user v0.4.0\ngo: downloading github.com/coreos/go-systemd/v22 v22.7.0\ngo: downloading github.com/docker/go-units v0.5.0\ngo: downloading github.com/godbus/dbus/v5 v5.2.2\ngo: downloading github.com/cilium/ebpf v0.21.0\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/moby/sys/sequential v0.7.0\ngo: downloading gopkg.in/yaml.v3 v3.0.1\ngo: downloading github.com/stretchr/objx v0.5.3\ngo: downloading go.yaml.in/yaml/v3 v3.0.4\ngo: downloading github.com/klauspost/compress v1.18.6\ngo: downloading github.com/gkampitakis/go-snaps v0.5.15\ngo: downloading github.com/joshdk/go-junit v1.0.0\ngo: downloading github.com/mfridman/tparse v0.18.0\ngo: downloading github.com/Masterminds/semver/v3 v3.4.0\ngo: downloading github.com/checkpoint-restore/go-criu/v6 v6.3.0\ngo: downloading github.com/cyphar/filepath-securejoin v0.5.2\ngo: downloading github.com/mrunalp/fileutils v0.5.1\ngo: downloading github.com/opencontainers/cgroups v0.0.4\ngo: downloading github.com/opencontainers/selinux v1.13.1\ngo: downloading go.opentelemetry.io/otel v1.43.0\ngo: downloading go.opentelemetry.io/otel/sdk/metric v1.43.0\ngo: downloading go.opentelemetry.io/otel/sdk v1.43.0\ngo: downloading github.com/golang/protobuf v1.5.4\ngo: downloading gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c\ngo: downloading github.com/go-quicktest/qt v1.101.1-0.20240301121107-c6c8733fa1e6\ngo: downloading github.com/jsimonetti/rtnetlink/v2 v2.0.1\ngo: downloading golang.org/x/text v0.38.0\ngo: downloading github.com/go-task/slim-sprig/v3 v3.0.0\ngo: downloading golang.org/x/tools v0.45.0\ngo: downloading github.com/gkampitakis/ciinfo v0.3.2\ngo: downloading github.com/gkampitakis/go-diff v1.3.2\ngo: downloading github.com/goccy/go-yaml v1.18.0\ngo: downloading github.com/kr/pretty v0.3.1\ngo: downloading github.com/maruel/natural v1.1.1\ngo: downloading github.com/tidwall/gjson v1.18.0\ngo: downloading github.com/tidwall/pretty v1.2.1\ngo: downloading github.com/moby/sys/capability v0.4.0\ngo: downloading github.com/seccomp/libseccomp-golang v0.10.0\ngo: downloading go.opentelemetry.io/otel/metric v1.43.0\ngo: downloading go.opentelemetry.io/otel/trace v1.43.0\ngo: downloading go.opencensus.io v0.24.0\ngo: downloading github.com/mdlayher/netlink v1.7.2\ngo: downloading github.com/google/pprof v0.0.0-20260402051712-545e8a4df936\ngo: downloading github.com/tidwall/sjson v1.2.5\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/rogpeppe/go-internal v1.14.1\ngo: downloading github.com/tidwall/match v1.1.1\ngo: downloading github.com/cespare/xxhash/v2 v2.3.0\ngo: downloading github.com/go-logr/stdr v1.2.2\ngo: downloading go.opentelemetry.io/auto/sdk v1.2.1\ngo: downloading gonum.org/v1/gonum v0.17.0\ngo: downloading github.com/containerd/errdefs/pkg v0.3.0\ngo: downloading github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8\ngo: downloading github.com/josharian/native v1.1.0\ngo: downloading github.com/mdlayher/socket v0.5.1\ngo: downloading golang.org/x/mod v0.36.0\ngo mod vendor\ngo mod verify\nall modules verified\nGOOS=linux GOARCH=amd64 CGO_ENABLED=1 go build \\\n-tags \"netgo osusergo\" \\\n-ldflags \"-X main.version=0.7.0-0b903e9 -linkmode external -extldflags -static -s -w\" \\\n-o /home/runner/work/urunc/urunc/dist/urunc_static_amd64 /home/runner/work/urunc/urunc/cmd/urunc\nGOARCH=amd64 CGO_ENABLED=0 go build \\\n-ldflags \"-extldflags -static -s -w\" \\\n-o /home/runner/work/urunc/urunc/dist/containerd-shim-urunc-v2_static_amd64 /home/runner/work/urunc/urunc/cmd/containerd-shim-urunc-v2\n# github.com/containerd/containerd/pkg/ttrpcutil\n##[error]vendor/github.com/containerd/containerd/pkg/ttrpcutil/client.go:91:38: undefined: v1.EventsService\n##[error]vendor/github.com/containerd/containerd/pkg/ttrpcutil/client.go:96:12: undefined: v1.NewEventsClient\nmake: *** [Makefile:179: /home/runner/work/urunc/urunc/dist/containerd-shim-urunc-v2_static_amd64] Error 1\n##[error]Process completed with exit code 2."
-          },
-          {
-            "id": 88555840424,
-            "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88555840424",
-            "log_snippet": "[Build Failure] — 4 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]vendor/github.com/containerd/containerd/pkg/ttrpcutil/client.go:91:38: undefined: v1.EventsService\n  ##[error]vendor/github.com/containerd/containerd/pkg/ttrpcutil/client.go:96:12: undefined: v1.NewEventsClient\n  make: *** [Makefile:179: /home/runner/work/urunc/urunc/dist/containerd-shim-urunc-v2_static_arm64] Error 1\n  ##[error]Process completed with exit code 2.",
-            "raw_log": "Added go to the path\nSuccessfully set up Go version 1.26.4\ngo version go1.26.4 linux/arm64\n2026-07-21T06:02:26.4693678Z\n##[group]go env\nAR='ar'\nCC='gcc'\nCGO_CFLAGS='-O2 -g'\nCGO_CPPFLAGS=''\nCGO_CXXFLAGS='-O2 -g'\nCGO_ENABLED='1'\nCGO_FFLAGS='-O2 -g'\nCGO_LDFLAGS='-O2 -g'\nCXX='g++'\nGCCGO='gccgo'\nGO111MODULE=''\nGOARCH='arm64'\nGOARM64='v8.0'\nGOAUTH='netrc'\nGOBIN=''\nGOCACHE='/home/runner/.cache/go-build'\nGOCACHEPROG=''\nGODEBUG=''\nGOENV='/home/runner/.config/go/env'\nGOEXE=''\nGOEXPERIMENT=''\nGOFIPS140='off'\nGOFLAGS=''\nGOGCCFLAGS='-fPIC -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build883811630=/tmp/go-build -gno-record-gcc-switches'\nGOHOSTARCH='arm64'\nGOHOSTOS='linux'\nGOINSECURE=''\nGOMOD='/home/runner/work/urunc/urunc/go.mod'\nGOMODCACHE='/home/runner/go/pkg/mod'\nGONOPROXY=''\nGONOSUMDB=''\nGOOS='linux'\nGOPATH='/home/runner/go'\nGOPRIVATE=''\nGOPROXY='https://proxy.golang.org,direct'\nGOSUMDB='sum.golang.org'\nGOTELEMETRY='local'\nGOTELEMETRYDIR='/home/runner/.config/go/telemetry'\nGOTMPDIR=''\nGOTOOLCHAIN='local'\nGOVCS=''\nGOVERSION='go1.26.4'\nGOWORK=''\nPKG_CONFIG='pkg-config'\n2026-07-21T06:02:27.0187185Z\n##[endgroup]\n##[group]Run go version\ngo version\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo version go1.26.4 linux/arm64\n##[group]Run if [ \"$EVENT_NAME\" == \"pull_request\" ]; then\nif [ \"$EVENT_NAME\" == \"pull_request\" ]; then\nif [ \"$IS_MERGED\" == \"true\" ]; then\nsha=\"$GITHUB_SHA\"\nbranch=\"$PR_BASE_REF\"\necho \"PR merged. SHA: ${sha}, Branch: ${branch}\"\nelse\nsha=\"$PR_HEAD_SHA\"\nbranch=\"$PR_HEAD_REF\"\necho \"PR not yet merged. SHA: ${sha}, Branch: ${branch}\"\nfi\nelse\nsha=\"$GITHUB_SHA\"\nbranch=\"$REF_NAME\"\necho \"$EVENT_NAME event. SHA: ${sha}, Branch: ${branch}\"\nfi\necho \"sha=${sha}\" \u003e\u003e \"$GITHUB_OUTPUT\"\necho \"branch=${branch}\" \u003e\u003e \"$GITHUB_OUTPUT\"\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\nEVENT_NAME: pull_request\nIS_MERGED: false\nGITHUB_SHA: 5e3c255a055667274504ef02486f6e50caec66aa\nPR_HEAD_SHA: 0b903e92e2abc6fd580fc5b89a6206f59a0d74e7\nPR_HEAD_REF: dependabot/go_modules/backend-8dded6479d\nPR_BASE_REF: main\nREF_NAME: 822/merge\n##[endgroup]\nPR not yet merged. SHA: 0b903e92e2abc6fd580fc5b89a6206f59a0d74e7, Branch: dependabot/go_modules/backend-8dded6479d\n##[group]Run make\nmake\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo mod tidy\ngo: downloading github.com/rs/zerolog v1.35.1\ngo: downloading github.com/stretchr/testify v1.11.1\ngo: downloading github.com/creack/pty v1.1.24\ngo: downloading github.com/moby/sys/userns v0.1.0\ngo: downloading github.com/opencontainers/runc v1.3.6\ngo: downloading github.com/containerd/containerd v1.7.33\ngo: downloading github.com/sirupsen/logrus v1.9.4\ngo: downloading github.com/urfave/cli/v3 v3.10.1\ngo: downloading golang.org/x/sys v0.47.0\ngo: downloading github.com/containerd/containerd/api v1.11.1\ngo: downloading github.com/containerd/log v0.1.0\ngo: downloading github.com/containerd/ttrpc v1.2.9\ngo: downloading github.com/opencontainers/runtime-spec v1.2.1\ngo: downloading github.com/jackpal/gateway v1.2.0\ngo: downloading github.com/vishvananda/netlink v1.3.1\ngo: downloading github.com/BurntSushi/toml v1.6.0\ngo: downloading github.com/elastic/go-seccomp-bpf v1.6.0\ngo: downloading github.com/moby/sys/mount v0.3.5\ngo: downloading github.com/nubificus/hedge_cli v0.0.3\ngo: downloading github.com/cavaliergopher/cpio v1.0.1\ngo: downloading github.com/hashicorp/go-version v1.9.0\ngo: downloading github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2\ngo: downloading github.com/prometheus-community/pro-bing v0.9.1\ngo: downloading github.com/vishvananda/netns v0.0.5\ngo: downloading k8s.io/cri-api v0.36.2\ngo: downloading github.com/opencontainers/image-spec v1.1.1\ngo: downloading github.com/onsi/ginkgo/v2 v2.32.0\ngo: downloading google.golang.org/grpc v1.82.1\ngo: downloading github.com/onsi/gomega v1.40.0\ngo: downloading github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc\ngo: downloading github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2\ngo: downloading github.com/mattn/go-colorable v0.1.15\ngo: downloading google.golang.org/protobuf v1.36.12-0.20260120151049-f2248ac996af\ngo: downloading github.com/containerd/cgroups/v3 v3.1.0\ngo: downloading github.com/containerd/go-runc v1.0.0\ngo: downloading github.com/Microsoft/go-winio v0.6.2\ngo: downloading github.com/containerd/fifo v1.1.0\ngo: downloading github.com/containerd/typeurl/v2 v2.3.0\ngo: downloading golang.org/x/sync v0.21.0\ngo: downloading google.golang.org/genproto/googleapis/rpc v0.0.0-20260622175928-b703f567277d\ngo: downloading github.com/moby/sys/mountinfo v0.7.2\ngo: downloading golang.org/x/net v0.56.0\ngo: downloading google.golang.org/genproto v0.0.0-20260622175928-b703f567277d\ngo: downloading github.com/containerd/errdefs v1.0.0\ngo: downloading github.com/google/uuid v1.6.0\ngo: downloading github.com/containerd/platforms v1.0.0-rc.4\ngo: downloading github.com/opencontainers/go-digest v1.0.0\ngo: downloading github.com/google/go-cmp v0.7.0\ngo: downloading github.com/go-logr/logr v1.4.3\ngo: downloading gopkg.in/yaml.v3 v3.0.1\ngo: downloading github.com/mattn/go-isatty v0.0.22\ngo: downloading github.com/prometheus/procfs v0.15.1\ngo: downloading github.com/checkpoint-restore/go-criu/v6 v6.3.0\ngo: downloading github.com/containerd/console v1.0.5\ngo: downloading github.com/cyphar/filepath-securejoin v0.5.2\ngo: downloading github.com/moby/sys/user v0.4.0\ngo: downloading github.com/mrunalp/fileutils v0.5.1\ngo: downloading github.com/opencontainers/cgroups v0.0.4\ngo: downloading github.com/opencontainers/selinux v1.13.1\ngo: downloading github.com/Microsoft/hcsshim v0.13.0\ngo: downloading github.com/containerd/continuity v0.5.0\ngo: downloading github.com/pkg/errors v0.9.1\ngo: downloading github.com/moby/sys/sequential v0.7.0\ngo: downloading github.com/coreos/go-systemd/v22 v22.7.0\ngo: downloading github.com/docker/go-units v0.5.0\ngo: downloading github.com/godbus/dbus/v5 v5.2.2\ngo: downloading github.com/cilium/ebpf v0.21.0\ngo: downloading go.uber.org/goleak v1.1.12\ngo: downloading github.com/docker/go-events v0.0.0-20260608200158-dbf6103125a4\ngo: downloading github.com/stretchr/objx v0.5.3\ngo: downloading github.com/klauspost/compress v1.18.6\ngo: downloading go.yaml.in/yaml/v3 v3.0.4\ngo: downloading github.com/gkampitakis/go-snaps v0.5.15\ngo: downloading github.com/joshdk/go-junit v1.0.0\ngo: downloading github.com/mfridman/tparse v0.18.0\ngo: downloading github.com/Masterminds/semver/v3 v3.4.0\ngo: downloading gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c\ngo: downloading github.com/moby/sys/capability v0.4.0\ngo: downloading github.com/seccomp/libseccomp-golang v0.10.0\ngo: downloading go.opentelemetry.io/otel v1.43.0\ngo: downloading go.opentelemetry.io/otel/sdk/metric v1.43.0\ngo: downloading go.opentelemetry.io/otel/sdk v1.43.0\ngo: downloading github.com/golang/protobuf v1.5.4\ngo: downloading github.com/go-quicktest/qt v1.101.1-0.20240301121107-c6c8733fa1e6\ngo: downloading github.com/jsimonetti/rtnetlink/v2 v2.0.1\ngo: downloading golang.org/x/text v0.38.0\ngo: downloading github.com/go-task/slim-sprig/v3 v3.0.0\ngo: downloading golang.org/x/tools v0.45.0\ngo: downloading github.com/gkampitakis/ciinfo v0.3.2\ngo: downloading github.com/gkampitakis/go-diff v1.3.2\ngo: downloading github.com/goccy/go-yaml v1.18.0\ngo: downloading github.com/kr/pretty v0.3.1\ngo: downloading github.com/maruel/natural v1.1.1\ngo: downloading github.com/tidwall/gjson v1.18.0\ngo: downloading github.com/tidwall/pretty v1.2.1\ngo: downloading go.opentelemetry.io/otel/metric v1.43.0\ngo: downloading go.opentelemetry.io/otel/trace v1.43.0\ngo: downloading go.opencensus.io v0.24.0\ngo: downloading github.com/mdlayher/netlink v1.7.2\ngo: downloading github.com/google/pprof v0.0.0-20260402051712-545e8a4df936\ngo: downloading github.com/tidwall/sjson v1.2.5\ngo: downloading github.com/kr/text v0.2.0\ngo: downloading github.com/rogpeppe/go-internal v1.14.1\ngo: downloading github.com/tidwall/match v1.1.1\ngo: downloading github.com/cespare/xxhash/v2 v2.3.0\ngo: downloading gonum.org/v1/gonum v0.17.0\ngo: downloading github.com/containerd/errdefs/pkg v0.3.0\ngo: downloading github.com/go-logr/stdr v1.2.2\ngo: downloading go.opentelemetry.io/auto/sdk v1.2.1\ngo: downloading github.com/golang/groupcache v0.0.0-20241129210726-2c02b8208cf8\ngo: downloading github.com/josharian/native v1.1.0\ngo: downloading github.com/mdlayher/socket v0.5.1\ngo: downloading golang.org/x/mod v0.36.0\ngo mod vendor\ngo mod verify\nall modules verified\nGOOS=linux GOARCH=arm64 CGO_ENABLED=1 go build \\\n-tags \"netgo osusergo\" \\\n-ldflags \"-X main.version=0.7.0-0b903e9 -linkmode external -extldflags -static -s -w\" \\\n-o /home/runner/work/urunc/urunc/dist/urunc_static_arm64 /home/runner/work/urunc/urunc/cmd/urunc\nGOARCH=arm64 CGO_ENABLED=0 go build \\\n-ldflags \"-extldflags -static -s -w\" \\\n-o /home/runner/work/urunc/urunc/dist/containerd-shim-urunc-v2_static_arm64 /home/runner/work/urunc/urunc/cmd/containerd-shim-urunc-v2\n# github.com/containerd/containerd/pkg/ttrpcutil\n##[error]vendor/github.com/containerd/containerd/pkg/ttrpcutil/client.go:91:38: undefined: v1.EventsService\n##[error]vendor/github.com/containerd/containerd/pkg/ttrpcutil/client.go:96:12: undefined: v1.NewEventsClient\nmake: *** [Makefile:179: /home/runner/work/urunc/urunc/dist/containerd-shim-urunc-v2_static_arm64] Error 1\n##[error]Process completed with exit code 2."
-          },
-          {
-            "id": 88556015960,
-            "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556015960",
-            "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]Unable to download artifact(s): Artifact not found for name: urunc_static_arm64-29805737171",
-            "raw_log": "Setting up libheif1:arm64 (1.15.1-1+deb12u1) ...\nSetting up binutils-aarch64-linux-gnu (2.40-2) ...\nSetting up binutils (2.40-2) ...\nSetting up perl (5.36.0-7+deb12u3) ...\nSetting up gcc-12 (12.2.0-14+deb12u1) ...\nSetting up libgd3:arm64 (2.3.3-9) ...\nSetting up libdpkg-perl (1.21.23) ...\nSetting up gnupg (2.2.40-1.1+deb12u2) ...\nSetting up libc-devtools (2.36-9+deb12u14) ...\nSetting up g++-12 (12.2.0-14+deb12u1) ...\nSetting up libfile-fcntllock-perl (0.22-4+b1) ...\nSetting up libalgorithm-diff-perl (1.201-1) ...\nSetting up gcc (4:12.2.0-3) ...\nSetting up dpkg-dev (1.21.23) ...\nSetting up liberror-perl (0.17029-2) ...\nSetting up git (1:2.39.5-0+deb12u3) ...\nSetting up g++ (4:12.2.0-3) ...\nupdate-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode\nSetting up build-essential (12.9) ...\nSetting up libalgorithm-diff-xs-perl:arm64 (0.04-8+b1) ...\nSetting up libalgorithm-merge-perl (0.08-5) ...\nProcessing triggers for libc-bin (2.36-9+deb12u14) ...\n##[group]Run docker exec urunc-test-control-plane bash -c '\ndocker exec urunc-test-control-plane bash -c '\nif ! which runc; then\nwget -q https://github.com/opencontainers/runc/releases/download/v1.3.0/runc.$(dpkg --print-architecture)\ninstall -m 755 runc.$(dpkg --print-architecture) /usr/local/sbin/runc\nrm -f ./runc.$(dpkg --print-architecture)\nfi\n'\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n/usr/local/sbin/runc\n##[group]Run docker exec urunc-test-control-plane bash -c '\ndocker exec urunc-test-control-plane bash -c '\nsystemctl status containerd || containerd \u0026\nmkdir -p /etc/containerd\ncontainerd config default \u003e /etc/containerd/config.toml\n'\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n● containerd.service - containerd container runtime\nLoaded: loaded (/etc/systemd/system/containerd.service; enabled; preset: enabled)\nActive: active (running) since Tue 2026-07-21 06:04:06 UTC; 51s ago\nDocs: https://containerd.io\nMain PID: 111 (containerd)\nTasks: 128\nMemory: 795.3M\nCPU: 5.435s\nCGroup: /system.slice/containerd.service\n├─ 111 /usr/local/bin/containerd\n├─ 269 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id aa5a5fb8a1ae225f2ab2f1feea2a32760eee26d1cee6ab9fd0d1d3480cd09bf2 -address /run/containerd/containerd.sock\n├─ 300 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id d494c87e88fd236865bf418ef1682440c38b99da5e193bfd9b18306a7d67f72c -address /run/containerd/containerd.sock\n├─ 316 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 62c28f2ff8f326ca4a8f2744bc5d1d336b20509ded343bddc69daebdd8f562e6 -address /run/containerd/containerd.sock\n├─ 344 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id c1dd51a4822349411da34afeb3d39d061cb59dace7aeae7c6e63f3f9c8bb785b -address /run/containerd/containerd.sock\n├─ 979 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id e29e87ce84dd603e0e3650adb77954e46b112122cac7799c039039ba9ed09e92 -address /run/containerd/containerd.sock\n├─ 996 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id f255ece447b60986ad58e6b8e8af6d5c6fccde7e7cd38daa0f962ebc0b06668b -address /run/containerd/containerd.sock\n├─1804 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 784be0266eef46b6b737bc5a88272f22295f62bd58f321e5bdcb8bc438ecd895 -address /run/containerd/containerd.sock\n├─1841 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id c80173ed57fb2b6156e1aaff1d7c172e4849d0c62715da025eac4d056e6b0439 -address /run/containerd/containerd.sock\n└─1886 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id e7809bc2287befa71d6fe9d9d84022818cdc303a0a1500ddfb5be1a5fe52ea46 -address /run/containerd/containerd.sock\n2026-07-21T06:04:57.9757023Z\nJul 21 06:04:38 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:38.997181804Z\" level=info msg=\"CreateContainer within sandbox \\\"e7809bc2287befa71d6fe9d9d84022818cdc303a0a1500ddfb5be1a5fe52ea46\\\" for \u0026ContainerMetadata{Name:coredns,Attempt:0,} returns container id \\\"8cb537bdef121f3b5820680eee51c4cd160363d779679a56c90ef3d369b6986d\\\"\"\nJul 21 06:04:38 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:38.997619268Z\" level=info msg=\"StartContainer for \\\"8cb537bdef121f3b5820680eee51c4cd160363d779679a56c90ef3d369b6986d\\\"\"\nJul 21 06:04:39 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:39.000394158Z\" level=info msg=\"connecting to shim 8cb537bdef121f3b5820680eee51c4cd160363d779679a56c90ef3d369b6986d\" address=\"unix:///run/containerd/s/b707bb196008dc852923f8d4a4cf16db33428e14f873bbeb5c4c062fbcf379a4\" protocol=ttrpc version=3\nJul 21 06:04:39 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:39.064225462Z\" level=info msg=\"Container 1e966a7aaab4457936854df664b95d8f5b0b8de2f616faeb67e16ffc93938767: CDI devices from CRI Config.CDIDevices: []\"\nJul 21 06:04:39 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:39.084735188Z\" level=info msg=\"CreateContainer within sandbox \\\"c80173ed57fb2b6156e1aaff1d7c172e4849d0c62715da025eac4d056e6b0439\\\" for \u0026ContainerMetadata{Name:local-path-provisioner,Attempt:0,} returns container id \\\"1e966a7aaab4457936854df664b95d8f5b0b8de2f616faeb67e16ffc93938767\\\"\"\nJul 21 06:04:39 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:39.086100375Z\" level=info msg=\"StartContainer for \\\"1e966a7aaab4457936854df664b95d8f5b0b8de2f616faeb67e16ffc93938767\\\"\"\nJul 21 06:04:39 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:39.087103030Z\" level=info msg=\"connecting to shim 1e966a7aaab4457936854df664b95d8f5b0b8de2f616faeb67e16ffc93938767\" address=\"unix:///run/containerd/s/c5f5df53f05d6345095d85d85ec46facbeeae19f1f883dee6acdcccec906b0fe\" protocol=ttrpc version=3\nJul 21 06:04:39 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:39.124089647Z\" level=info msg=\"StartContainer for \\\"8cb537bdef121f3b5820680eee51c4cd160363d779679a56c90ef3d369b6986d\\\" returns successfully\"\nJul 21 06:04:39 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:39.125083383Z\" level=info msg=\"StartContainer for \\\"66c781e00edeccab5af6fbf85f521e6b9afbbf87bc6953e558335fb09033ed52\\\" returns successfully\"\nJul 21 06:04:39 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:39.191571496Z\" level=info msg=\"StartContainer for \\\"1e966a7aaab4457936854df664b95d8f5b0b8de2f616faeb67e16ffc93938767\\\" returns successfully\"\n##[group]Run docker exec urunc-test-control-plane bash -c \\\ndocker exec urunc-test-control-plane bash -c \\\n'sed -i \"s/snapshotter = \\\"devmapper\\\"/snapshotter = \\\"overlayfs\\\"/g\" /etc/containerd/config.toml'\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c\nwith:\nname: urunc_static_arm64-29805737171\npath: ./artifacts\nmerge-multiple: false\nrepository: urunc-dev/urunc\nrun-id: 29805737171\nskip-decompress: false\ndigest-mismatch: error\n##[endgroup]\nDownloading single artifact\n##[error]Unable to download artifact(s): Artifact not found for name: urunc_static_arm64-29805737171"
-          },
-          {
-            "id": 88556016054,
-            "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016054",
-            "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]Unable to download artifact(s): Artifact not found for name: urunc_static_amd64-29805737171",
-            "raw_log": "Created symlink /etc/systemd/user/sockets.target.wants/gpg-agent-browser.socket → /usr/lib/systemd/user/gpg-agent-browser.socket.\n2026-07-21T06:04:22.0510764Z\nCreated symlink /etc/systemd/user/sockets.target.wants/gpg-agent-extra.socket → /usr/lib/systemd/user/gpg-agent-extra.socket.\n2026-07-21T06:04:22.1768150Z\nCreated symlink /etc/systemd/user/sockets.target.wants/gpg-agent-ssh.socket → /usr/lib/systemd/user/gpg-agent-ssh.socket.\n2026-07-21T06:04:22.3036515Z\nCreated symlink /etc/systemd/user/sockets.target.wants/gpg-agent.socket → /usr/lib/systemd/user/gpg-agent.socket.\n2026-07-21T06:04:22.4209744Z\nSetting up libxpm4:amd64 (1:3.5.12-1.1+deb12u1) ...\nSetting up libavif15:amd64 (0.11.1-1+deb12u1) ...\nSetting up fontconfig-config (2.14.1-4) ...\ndebconf: unable to initialize frontend: Dialog\ndebconf: (TERM is not set, so the dialog frontend is not usable.)\ndebconf: falling back to frontend: Readline\ndebconf: unable to initialize frontend: Readline\ndebconf: (This frontend requires a controlling tty.)\ndebconf: falling back to frontend: Teletype\nSetting up openssh-client (1:9.2p1-2+deb12u10) ...\nSetting up gpgsm (2.2.40-1.1+deb12u2) ...\nSetting up libxext6:amd64 (2:1.3.4-1+b1) ...\nSetting up pkgconf:amd64 (1.8.1-1) ...\nSetting up dirmngr (2.2.40-1.1+deb12u2) ...\nCreated symlink /etc/systemd/user/sockets.target.wants/dirmngr.socket → /usr/lib/systemd/user/dirmngr.socket.\n2026-07-21T06:04:22.8552543Z\nSetting up libgprofng0:amd64 (2.40-2) ...\nSetting up libfreetype6:amd64 (2.12.1+dfsg-5+deb12u4) ...\nSetting up libgcc-12-dev:amd64 (12.2.0-14+deb12u1) ...\nSetting up pkg-config:amd64 (1.8.1-1) ...\nSetting up libgdbm-compat4:amd64 (1.23-3) ...\nSetting up libx265-199:amd64 (3.5-2+b1) ...\nSetting up gpg-wks-server (2.2.40-1.1+deb12u2) ...\nSetting up xauth (1:1.1.2-1) ...\nSetting up cpp (4:12.2.0-3) ...\nSetting up libc6-dev:amd64 (2.36-9+deb12u14) ...\nSetting up libfontconfig1:amd64 (2.14.1-4) ...\nSetting up libperl5.36:amd64 (5.36.0-7+deb12u3) ...\nSetting up binutils-x86-64-linux-gnu (2.40-2) ...\nSetting up gpg-wks-client (2.2.40-1.1+deb12u2) ...\nSetting up libstdc++-12-dev:amd64 (12.2.0-14+deb12u1) ...\nSetting up libheif1:amd64 (1.15.1-1+deb12u1) ...\nSetting up binutils (2.40-2) ...\nSetting up perl (5.36.0-7+deb12u3) ...\nSetting up gcc-12 (12.2.0-14+deb12u1) ...\nSetting up libgd3:amd64 (2.3.3-9) ...\nSetting up libdpkg-perl (1.21.23) ...\nSetting up gnupg (2.2.40-1.1+deb12u2) ...\nSetting up libc-devtools (2.36-9+deb12u14) ...\nSetting up g++-12 (12.2.0-14+deb12u1) ...\nSetting up libfile-fcntllock-perl (0.22-4+b1) ...\nSetting up libalgorithm-diff-perl (1.201-1) ...\nSetting up gcc (4:12.2.0-3) ...\nSetting up dpkg-dev (1.21.23) ...\nSetting up liberror-perl (0.17029-2) ...\nSetting up git (1:2.39.5-0+deb12u3) ...\nSetting up g++ (4:12.2.0-3) ...\nupdate-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode\nSetting up build-essential (12.9) ...\nSetting up libalgorithm-diff-xs-perl:amd64 (0.04-8+b1) ...\nSetting up libalgorithm-merge-perl (0.08-5) ...\nProcessing triggers for libc-bin (2.36-9+deb12u14) ...\n##[group]Run docker exec urunc-test-control-plane bash -c '\ndocker exec urunc-test-control-plane bash -c '\nif ! which runc; then\nwget -q https://github.com/opencontainers/runc/releases/download/v1.3.0/runc.$(dpkg --print-architecture)\ninstall -m 755 runc.$(dpkg --print-architecture) /usr/local/sbin/runc\nrm -f ./runc.$(dpkg --print-architecture)\nfi\n'\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n/usr/local/sbin/runc\n##[group]Run docker exec urunc-test-control-plane bash -c '\ndocker exec urunc-test-control-plane bash -c '\nsystemctl status containerd || containerd \u0026\nmkdir -p /etc/containerd\ncontainerd config default \u003e /etc/containerd/config.toml\n'\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n● containerd.service - containerd container runtime\nLoaded: loaded (/etc/systemd/system/containerd.service; enabled; preset: enabled)\nActive: active (running) since Tue 2026-07-21 06:03:54 UTC; 28s ago\nDocs: https://containerd.io\nMain PID: 111 (containerd)\nTasks: 93\nMemory: 669.4M\nCPU: 6.509s\nCGroup: /system.slice/containerd.service\n├─111 /usr/local/bin/containerd\n├─272 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id b6e4215495232f0aac42fc5b3d0a4071be9ec536ede4c31d57f484e9c10cbb77 -address /run/containerd/containerd.sock\n├─274 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 9d9cce7fa5ea766a6d005ccd754f64e47ee71fc26ddb39b907a0aea7fa18479f -address /run/containerd/containerd.sock\n├─314 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 2af09bde763f1a98aa529364542b0f2d4ac4c06e94df15dfdc3d7a3f862b6be3 -address /run/containerd/containerd.sock\n├─320 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 152378c43f2dfb59ce9f92babba79ea32842261dd8c0c0f73e2deab071f5a53c -address /run/containerd/containerd.sock\n├─977 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 3594439ea3e8f6e160c9502d86ce465d0b0bf292a4e06a083e8918a93c0b43ee -address /run/containerd/containerd.sock\n└─994 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id f2a4f08447a2705efc39c6fc035418a9de92bbc17cece217c7751a2bc021bdf4 -address /run/containerd/containerd.sock\n2026-07-21T06:04:23.1827199Z\nJul 21 06:04:12 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:12.721404706Z\" level=info msg=\"CreateContainer within sandbox \\\"f2a4f08447a2705efc39c6fc035418a9de92bbc17cece217c7751a2bc021bdf4\\\" for \u0026ContainerMetadata{Name:kindnet-cni,Attempt:0,} returns container id \\\"db8df93a0f82b924cf17750b89194b22c43dcb27e1161ab0d06a4243d0548981\\\"\"\nJul 21 06:04:12 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:12.722174997Z\" level=info msg=\"StartContainer for \\\"db8df93a0f82b924cf17750b89194b22c43dcb27e1161ab0d06a4243d0548981\\\"\"\nJul 21 06:04:12 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:12.724381854Z\" level=info msg=\"connecting to shim db8df93a0f82b924cf17750b89194b22c43dcb27e1161ab0d06a4243d0548981\" address=\"unix:///run/containerd/s/8489733ea1f86ca57f76ee41786e5bd38d6d3a21f3ea5a1c5322f6c625ff53ed\" protocol=ttrpc version=3\nJul 21 06:04:13 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:13.197883088Z\" level=info msg=\"StartContainer for \\\"db8df93a0f82b924cf17750b89194b22c43dcb27e1161ab0d06a4243d0548981\\\" returns successfully\"\nJul 21 06:04:13 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:13.872911728Z\" level=info msg=\"plugin \\\"external:10-kube-network-policies[1372]\\\" registered as \\\"10-kube-network-policies\\\"\"\nJul 21 06:04:13 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:13.874307502Z\" level=info msg=\"Synchronizing NRI (plugin) with current runtime state\"\nJul 21 06:04:13 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:13.891815009Z\" level=info msg=\"synchronizing plugin 10-kube-network-policies\"\nJul 21 06:04:14 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:14.085019539Z\" level=info msg=\"plugin invocation order\"\nJul 21 06:04:14 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:14.085065094Z\" level=info msg=\"  #1: \\\"10-kube-network-policies\\\" (external:10-kube-network-policies[1372])\"\nJul 21 06:04:14 urunc-test-control-plane containerd[111]: time=\"2026-07-21T06:04:14.085083208Z\" level=info msg=\"plugin \\\"10-kube-network-policies\\\" connected and synchronized\"\n##[group]Run docker exec urunc-test-control-plane bash -c \\\ndocker exec urunc-test-control-plane bash -c \\\n'sed -i \"s/snapshotter = \\\"devmapper\\\"/snapshotter = \\\"overlayfs\\\"/g\" /etc/containerd/config.toml'\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c\nwith:\nname: urunc_static_amd64-29805737171\npath: ./artifacts\nmerge-multiple: false\nrepository: urunc-dev/urunc\nrun-id: 29805737171\nskip-decompress: false\ndigest-mismatch: error\n##[endgroup]\nDownloading single artifact\n##[error]Unable to download artifact(s): Artifact not found for name: urunc_static_amd64-29805737171"
-          },
-          {
-            "id": 88556016143,
-            "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
-            "conclusion": "failure",
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29805737171/job/88556016143",
-            "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]Unable to download artifact(s): Artifact not found for name: urunc_static_amd64-29805737171",
-            "raw_log": "HOSTLINK hvt/solo5-hvt\nHOSTLINK hvt/solo5-hvt-debug\nHOSTLINK spt/solo5-spt\nmake[1]: Leaving directory '/home/runner/work/urunc/urunc/solo5/tenders'\n##[group]Run actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c\nwith:\nname: urunc_static_amd64-29805737171\npath: ./\nmerge-multiple: false\nrepository: urunc-dev/urunc\nrun-id: 29805737171\nskip-decompress: false\ndigest-mismatch: error\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\nDownloading single artifact\n##[error]Unable to download artifact(s): Artifact not found for name: urunc_static_amd64-29805737171"
-          }
-        ],
+        "conclusion": "action_required",
+        "run_number": 2261,
+        "created_at": "2026-07-21T10:20:59Z",
+        "updated_at": "2026-07-21T10:20:59Z",
+        "run_started_at": "2026-07-21T10:20:59Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29821877470",
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 29821877470,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "action_required",
+          "run_number": 2261,
+          "created_at": "2026-07-21T10:20:59Z",
+          "updated_at": "2026-07-21T10:20:59Z",
+          "run_started_at": "2026-07-21T10:20:59Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29821877470",
+          "run_attempt": 1
+        },
         {
           "id": 29805737171,
           "name": "urunc CI",
@@ -6388,32 +6234,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 29572002230,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 2240,
-          "created_at": "2026-07-17T10:00:57Z",
-          "updated_at": "2026-07-17T10:01:16Z",
-          "run_started_at": "2026-07-17T10:00:57Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29572002230",
-          "jobs": [
-            {
-              "name": "check-labels",
-              "conclusion": "success",
-              "duration_sec": 11,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29572002230/job/87857740144"
-            },
-            {
-              "name": "ci-on-push",
-              "conclusion": "skipped",
-              "duration_sec": 0,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29572002230/job/87857798668"
-            }
-          ],
-          "run_attempt": 1
         }
       ]
     },
@@ -6425,29 +6245,41 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 100.9,
+      "avg_duration_secs": 94.25,
       "weather_history": [
-        "success",
         "success",
         "action_required",
         "success",
         "success",
         "success",
+        "action_required",
         "action_required"
       ],
       "last_run": {
-        "id": 29801612622,
+        "id": 29821876533,
         "name": "CodeQL",
         "status": "completed",
         "conclusion": "action_required",
-        "run_number": 1516,
-        "created_at": "2026-07-21T04:34:20Z",
-        "updated_at": "2026-07-21T04:34:20Z",
-        "run_started_at": "2026-07-21T04:34:20Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29801612622",
+        "run_number": 1517,
+        "created_at": "2026-07-21T10:20:59Z",
+        "updated_at": "2026-07-21T10:20:59Z",
+        "run_started_at": "2026-07-21T10:20:59Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29821876533",
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 29821876533,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "action_required",
+          "run_number": 1517,
+          "created_at": "2026-07-21T10:20:59Z",
+          "updated_at": "2026-07-21T10:20:59Z",
+          "run_started_at": "2026-07-21T10:20:59Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29821876533",
+          "run_attempt": 1
+        },
         {
           "id": 29801612622,
           "name": "CodeQL",
@@ -6857,32 +6689,6 @@
           "run_started_at": "2026-07-17T05:56:20Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29558633282",
           "run_attempt": 1
-        },
-        {
-          "id": 29549298582,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 1496,
-          "created_at": "2026-07-17T02:10:54Z",
-          "updated_at": "2026-07-17T02:13:07Z",
-          "run_started_at": "2026-07-17T02:10:54Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29549298582",
-          "jobs": [
-            {
-              "name": "Analyze (go)",
-              "conclusion": "success",
-              "duration_sec": 129,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29549298582/job/87788243373"
-            },
-            {
-              "name": "Analyze (python)",
-              "conclusion": "success",
-              "duration_sec": 64,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29549298582/job/87788243379"
-            }
-          ],
-          "run_attempt": 1
         }
       ]
     },
@@ -6896,27 +6702,39 @@
       "failure_rate": 0,
       "avg_duration_secs": 11.5,
       "weather_history": [
-        "action_required",
         "success",
         "action_required",
         "success",
         "success",
         "success",
+        "action_required",
         "action_required"
       ],
       "last_run": {
-        "id": 29801612641,
+        "id": 29821876728,
         "name": "Dependency Review",
         "status": "completed",
         "conclusion": "action_required",
-        "run_number": 1278,
-        "created_at": "2026-07-21T04:34:20Z",
-        "updated_at": "2026-07-21T04:34:20Z",
-        "run_started_at": "2026-07-21T04:34:20Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29801612641",
+        "run_number": 1279,
+        "created_at": "2026-07-21T10:20:59Z",
+        "updated_at": "2026-07-21T10:20:59Z",
+        "run_started_at": "2026-07-21T10:20:59Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29821876728",
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 29821876728,
+          "name": "Dependency Review",
+          "status": "completed",
+          "conclusion": "action_required",
+          "run_number": 1279,
+          "created_at": "2026-07-21T10:20:59Z",
+          "updated_at": "2026-07-21T10:20:59Z",
+          "run_started_at": "2026-07-21T10:20:59Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29821876728",
+          "run_attempt": 1
+        },
         {
           "id": 29801612641,
           "name": "Dependency Review",
@@ -7247,18 +7065,6 @@
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29520449012/job/87695932859"
             }
           ],
-          "run_attempt": 1
-        },
-        {
-          "id": 29423639684,
-          "name": "Dependency Review",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 1257,
-          "created_at": "2026-07-15T14:27:39Z",
-          "updated_at": "2026-07-15T14:27:39Z",
-          "run_started_at": "2026-07-15T14:27:39Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29423639684",
           "run_attempt": 1
         }
       ]
