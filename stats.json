@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-23T14:08:54.632842265Z",
+  "generated_at": "2026-07-23T16:40:54.725658324Z",
   "repo": "urunc-dev/urunc",
-  "overall_health": 89.64285714285714,
+  "overall_health": 89.4047619047619,
   "workflows": [
     {
       "name": "add-git-trailers",
@@ -4490,147 +4490,391 @@
       "critical": true,
       "required": false,
       "total_runs": 20,
-      "failed_runs": 3,
-      "failure_rate": 15,
-      "avg_duration_secs": 224.25,
+      "failed_runs": 4,
+      "failure_rate": 20,
+      "avg_duration_secs": 300.75,
       "weather_history": [
-        "unknown",
-        "success",
         "action_required",
         "unknown",
         "failure",
         "unknown",
-        "success"
+        "success",
+        "unknown",
+        "failure"
       ],
       "last_run": {
-        "id": 29936006891,
+        "id": 30019348657,
         "name": "urunc CI",
         "status": "completed",
-        "conclusion": "success",
-        "run_number": 2270,
-        "created_at": "2026-07-22T16:00:11Z",
-        "updated_at": "2026-07-22T16:23:37Z",
-        "run_started_at": "2026-07-22T16:00:11Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891",
+        "conclusion": "failure",
+        "run_number": 2272,
+        "created_at": "2026-07-23T15:11:11Z",
+        "updated_at": "2026-07-23T15:36:25Z",
+        "run_started_at": "2026-07-23T15:11:30Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657",
         "jobs": [
           {
             "name": "check-labels",
             "conclusion": "success",
-            "duration_sec": 10,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977624086"
+            "duration_sec": 14,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247773561"
           },
           {
             "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
             "conclusion": "success",
-            "duration_sec": 66,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977862946"
-          },
-          {
-            "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 41,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977863027"
-          },
-          {
-            "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 49,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977863038"
-          },
-          {
-            "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
-            "conclusion": "success",
-            "duration_sec": 20,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977863054"
+            "duration_sec": 67,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948777"
           },
           {
             "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
             "conclusion": "success",
-            "duration_sec": 24,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977863105"
+            "duration_sec": 25,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948847"
+          },
+          {
+            "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 51,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948865"
+          },
+          {
+            "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
+            "conclusion": "success",
+            "duration_sec": 40,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948891"
+          },
+          {
+            "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+            "conclusion": "success",
+            "duration_sec": 31,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948895"
           },
           {
             "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
             "conclusion": "success",
             "duration_sec": 60,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977863108"
-          },
-          {
-            "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "success",
-            "duration_sec": 27,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977863147"
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948902"
           },
           {
             "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
             "conclusion": "success",
-            "duration_sec": 47,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88977863252"
+            "duration_sec": 45,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948913"
+          },
+          {
+            "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+            "conclusion": "failure",
+            "duration_sec": 23,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948929"
           },
           {
             "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
             "conclusion": "success",
-            "duration_sec": 321,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284340"
+            "duration_sec": 360,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400459"
           },
           {
             "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
             "conclusion": "success",
-            "duration_sec": 273,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284408"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
-            "conclusion": "success",
-            "duration_sec": 744,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284483"
+            "duration_sec": 255,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400478"
           },
           {
             "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
             "conclusion": "success",
-            "duration_sec": 319,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284496"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
-            "conclusion": "success",
-            "duration_sec": 249,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284513"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
-            "conclusion": "success",
-            "duration_sec": 1198,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284514"
+            "duration_sec": 254,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400626"
           },
           {
             "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
             "conclusion": "success",
-            "duration_sec": 227,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284559"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
-            "conclusion": "success",
-            "duration_sec": 229,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284580"
-          },
-          {
-            "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
-            "conclusion": "success",
-            "duration_sec": 156,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284590"
+            "duration_sec": 197,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400651"
           },
           {
             "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
             "conclusion": "success",
-            "duration_sec": 253,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936006891/job/88978284596"
+            "duration_sec": 291,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400676"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+            "conclusion": "failure",
+            "duration_sec": 1303,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400716"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
+            "conclusion": "success",
+            "duration_sec": 181,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400719"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
+            "conclusion": "success",
+            "duration_sec": 192,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400749"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
+            "conclusion": "success",
+            "duration_sec": 212,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400751"
+          },
+          {
+            "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
+            "conclusion": "success",
+            "duration_sec": 247,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400948"
           }
         ],
-        "run_attempt": 1
+        "failed_jobs": [
+          {
+            "id": 89247948929,
+            "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+            "conclusion": "failure",
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948929",
+            "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]Process completed with exit code 1.",
+            "raw_log": "2026-07-23T15:13:36.1911853Z\nadded 113 packages in 5s\n2026-07-23T15:13:36.1918709Z\n15 packages are looking for funding\nrun `npm fund` for details\n##[group]Run cspell --config .github/linters/.cspell.json\ncspell --config .github/linters/.cspell.json\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n1/158 .github/linters/actionlint.yml 647.27ms\n2/158 .github/linters/licenserc.yml 7.10ms\n3/158 .github/linters/package.json 91.43ms\n4/158 CHANGELOG.md 57.74ms\n5/158 cmd/containerd-shim-urunc-v2/main.go 119.24ms\n6/158 cmd/urunc/create.go 20.88ms\n7/158 cmd/urunc/delete.go 4.08ms\n8/158 cmd/urunc/kill.go 4.55ms\n9/158 cmd/urunc/log_forward.go 6.75ms\n10/158 cmd/urunc/main.go 7.52ms\n11/158 cmd/urunc/ps.go 2.98ms\n12/158 cmd/urunc/run.go 2.99ms\n13/158 cmd/urunc/start.go 3.75ms\n14/158 cmd/urunc/utils.go 10.70ms\n15/158 CODE_OF_CONDUCT.md 16.20ms\n16/158 CONTRIBUTING.md 2.29ms\n17/158 deployment/urunc-deploy/config.toml 1.88ms\n18/158 deployment/urunc-deploy/Dockerfile 8.96ms\n19/158 deployment/urunc-deploy/runtimeclasses/runtimeclass.yaml 2.97ms\n20/158 deployment/urunc-deploy/scripts/install.sh 13.99ms\n21/158 deployment/urunc-deploy/urunc-cleanup/base/kustomization.yaml 1.67ms\n22/158 deployment/urunc-deploy/urunc-cleanup/base/urunc-cleanup.yaml 1.95ms\n23/158 deployment/urunc-deploy/urunc-cleanup/overlays/k3s/kustomization.yaml 1.38ms\n24/158 deployment/urunc-deploy/urunc-cleanup/overlays/k3s/mount_k3s_conf.yaml 1.54ms\n25/158 deployment/urunc-deploy/urunc-deploy/base/kustomization.yaml 1.48ms\n26/158 deployment/urunc-deploy/urunc-deploy/base/urunc-deploy.yaml 2.10ms\n27/158 deployment/urunc-deploy/urunc-deploy/overlays/k3s/kustomization.yaml 1.43ms\n28/158 deployment/urunc-deploy/urunc-deploy/overlays/k3s/mount_k3s_conf.yaml 2.81ms\n29/158 deployment/urunc-deploy/urunc-rbac/kustomization.yaml 1.40ms\n30/158 deployment/urunc-deploy/urunc-rbac/urunc-rbac.yaml 1.64ms\n31/158 docs/assets/javascripts/console-copy.js 29.73ms\n32/158 docs/assets/stylesheets/theme.css 17.16ms\n33/158 docs/CNAME 1.25ms\n34/158 docs/configuration.md 5.12ms\n35/158 docs/design/index.md 3.28ms\n36/158 docs/design/seccomp.md 5.68ms\n37/158 docs/developer-guide/Code-of-Conduct.md 1.45ms\n38/158 docs/developer-guide/contribute.md 6.21ms\n39/158 docs/developer-guide/debugging.md 2.82ms\n40/158 docs/developer-guide/development.md 2.70ms\n41/158 docs/developer-guide/governance.md 6.61ms\n42/158 docs/developer-guide/index.md 1.59ms\n43/158 docs/developer-guide/llm-policy.md 2.60ms\n44/158 docs/developer-guide/maintainers.md 1.21ms\n45/158 docs/developer-guide/security.md 2.26ms\n46/158 docs/developer-guide/timestamps.md 2.61ms\n47/158 docs/hooks/copyright.py 83.11ms\n48/158 docs/hypervisor-support.md 4.15ms\n49/158 docs/index.md 7.48ms\n50/158 docs/installation.md 4.46ms\n51/158 docs/overrides/main.html 2.06ms\n52/158 docs/overrides/partials/breadcrumb.html 1.91ms\n53/158 docs/overrides/partials/copyright.html 1.90ms\n54/158 docs/overrides/partials/logo.html 1.24ms\n55/158 docs/package/index.md 4.75ms\n56/158 docs/package/pre-built.md 2.05ms\n57/158 docs/package/reuse.md 2.42ms\n58/158 docs/package/rootfs.md 5.37ms\n59/158 docs/quickstart.md 2.57ms\n60/158 docs/Sample-images.md 1.87ms\n61/158 docs/tutorials/eks-tutorial.md 6.34ms\n62/158 docs/tutorials/existing-container-linux.md 5.35ms\n63/158 docs/tutorials/How-to-urunc-on-k8s.md 2.04ms\n64/158 docs/tutorials/index.md 1.15ms\n65/158 docs/tutorials/knative.md 2.14ms\n66/158 docs/tutorials/Non-root-monitor-execution.md 1.74ms\n67/158 docs/tutorials/Running-urunc-with-kind.md 2.42ms\n68/158 docs/tutorials/Running-vaccel-with-urunc.md 2.04ms\n69/158 docs/unikernel-support.md 4.06ms\n70/158 docs/variables/versions.yml 1.10ms\n71/158 GOVERNANCE.md 1.72ms\n72/158 internal/constants/constants.go 1.28ms\n73/158 internal/constants/network_constants.go 1.39ms\n74/158 internal/metrics/metrics_test.go 2.34ms\n75/158 internal/metrics/metrics.go 3.66ms\n76/158 internal/metrics/schema_test.go 1.60ms\n77/158 internal/metrics/schema.go 2.92ms\n78/158 LICENSE 4.71ms\n79/158 MAINTAINERS.md 0.94ms\n80/158 Makefile 14.33ms\n81/158 mkdocs.yml 4.57ms\n82/158 netlify.toml 1.33ms\n83/158 NOTICE 1.10ms\n84/158 pkg/containerd-shim/containerd/annotations.go 5.95ms\n85/158 pkg/containerd-shim/containerd/session.go 7.85ms\n86/158 pkg/containerd-shim/guest_rootfs.go 3.01ms\n87/158 pkg/containerd-shim/task_plugin.go 2.10ms\n88/158 pkg/containerd-shim/task_service.go 4.00ms\n89/158 pkg/network/network_dynamic.go 3.31ms\n90/158 pkg/network/network_static.go 4.66ms\n91/158 pkg/network/network_test.go 2.61ms\n92/158 pkg/network/network.go 11.19ms\n93/158 pkg/unikontainers/block_test.go 2.64ms\n94/158 pkg/unikontainers/block.go 5.26ms\n95/158 pkg/unikontainers/config_test.go 7.82ms X\npkg/unikontainers/config_test.go:41:26 - Unknown word (mynetdev)\npkg/unikontainers/config_test.go:54:22 - Unknown word (mynetdev)\n96/158 pkg/unikontainers/config.go 4.51ms\n97/158 pkg/unikontainers/hypervisors/cloud_hypervisor.go 5.16ms\n98/158 pkg/unikontainers/hypervisors/firecracker.go 4.67ms\n99/158 pkg/unikontainers/hypervisors/hedge.go 2.11ms\n100/158 pkg/unikontainers/hypervisors/hvt.go 5.50ms\n101/158 pkg/unikontainers/hypervisors/qemu_test.go 6.70ms\n102/158 pkg/unikontainers/hypervisors/qemu.go 4.02ms\n103/158 pkg/unikontainers/hypervisors/spt.go 3.31ms\n104/158 pkg/unikontainers/hypervisors/utils_test.go 3.59ms\n105/158 pkg/unikontainers/hypervisors/utils.go 3.29ms\n106/158 pkg/unikontainers/hypervisors/vmm_test.go 3.22ms\n107/158 pkg/unikontainers/hypervisors/vmm.go 4.09ms\n108/158 pkg/unikontainers/initrd_rootfs.go 3.15ms\n109/158 pkg/unikontainers/initrd/initrd.go 2.86ms\n110/158 pkg/unikontainers/ipc_message.go 3.67ms\n111/158 pkg/unikontainers/ipc_test.go 4.65ms\n112/158 pkg/unikontainers/ipc.go 3.64ms\n113/158 pkg/unikontainers/mount.go 6.95ms\n114/158 pkg/unikontainers/rootfs_test.go 2.53ms\n115/158 pkg/unikontainers/rootfs.go 8.73ms\n116/158 pkg/unikontainers/shared_fs.go 3.26ms\n117/158 pkg/unikontainers/types/types.go 4.15ms\n118/158 pkg/unikontainers/unikernels/hermit_rs.go 3.54ms\n119/158 pkg/unikontainers/unikernels/linux.go 5.78ms\n120/158 pkg/unikontainers/unikernels/mewz_test.go 1.84ms\n121/158 pkg/unikontainers/unikernels/mewz.go 2.41ms\n122/158 pkg/unikontainers/unikernels/mirage_test.go 2.49ms X\npkg/unikontainers/unikernels/mirage_test.go:81:68 - Unknown word (mynetdev)\npkg/unikontainers/unikernels/mirage_test.go:84:34 - Unknown word (mynetdev)\npkg/unikontainers/unikernels/mirage_test.go:85:38 - Unknown word (mynetdev)\n123/158 pkg/unikontainers/unikernels/mirage.go 3.06ms\n124/158 pkg/unikontainers/unikernels/rumprun.go 5.97ms\n125/158 pkg/unikontainers/unikernels/unikernel.go 2.70ms\n126/158 pkg/unikontainers/unikernels/unikraft.go 3.88ms\n127/158 pkg/unikontainers/unikernels/utils.go 1.84ms\n128/158 pkg/unikontainers/unikontainers.go 23.86ms\n129/158 pkg/unikontainers/urunc_config_test.go 10.25ms\n130/158 pkg/unikontainers/urunc_config.go 4.36ms\n131/158 pkg/unikontainers/utils_test.go 3.78ms\n132/158 pkg/unikontainers/utils.go 6.92ms\n133/158 pkg/unikontainers/vaccel_test.go 3.00ms\n134/158 pkg/unikontainers/vaccel.go 2.89ms\n135/158 README.md 3.27ms\n136/158 requirements.txt 0.98ms\n137/158 script/dm_create.sh 1.64ms\n138/158 script/dm_reload.service 1.01ms\n139/158 script/dm_reload.sh 1.51ms\n140/158 script/performance/__modules__.py 4.00ms\n141/158 script/performance/measure_single.py 2.95ms\n142/158 script/performance/measure_to_json.py 3.48ms\n143/158 script/performance/measure.py 3.15ms\n144/158 SECURITY.md 1.64ms\n145/158 tests/e2e/common.go 8.45ms\n146/158 tests/e2e/crictl_test.go 2.41ms\n147/158 tests/e2e/crictl.go 5.19ms\n148/158 tests/e2e/ctr_test.go 2.11ms\n149/158 tests/e2e/ctr.go 3.32ms\n150/158 tests/e2e/docker_test.go 2.47ms\n151/158 tests/e2e/docker.go 2.60ms\n152/158 tests/e2e/nerdctl_test.go 2.26ms\n153/158 tests/e2e/nerdctl.go 2.65ms\n154/158 tests/e2e/suite_test.go 3.54ms\n155/158 tests/e2e/test_cases.go 7.73ms\n156/158 tests/e2e/test_functions.go 6.38ms\n157/158 tests/e2e/utils.go 4.88ms\n158/158 VERSION 0.78ms\nCSpell: Files checked: 158, Issues found: 5 in 2 files.\n##[error]Process completed with exit code 1."
+          },
+          {
+            "id": 89248400716,
+            "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+            "conclusion": "failure",
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400716",
+            "log_snippet": "[Crash / Timeout] — 5 signal(s) found\n────────────────────────────────────────────────\n-\u003e Crash / Timeout\n  panic: test timed out after 20m0s\n-\u003e Test Failure\n  FAIL\tgithub.com/urunc-dev/urunc/tests/e2e\t1200.016s\n-\u003e Build Failure\n  elapsed: 1062.2s                                                                  total:  20.0 M (19.3 KiB/s)time=\"2026-07-23T15:34:16Z\" level=fatal msg=\"failed to copy: read tcp 10.1.0.217:56080-\u003e85.73.152.209:443: read: connection timed out\" -- exit status 1. Retrying in 2s...\n  make: *** [Makefile:276: test_nerdctl] Error 1\n  ##[error]Process completed with exit code 2.",
+            "raw_log": "go mod verify\nall modules verified\n##[group]Run # Set up Go environment properly\n# Set up Go environment properly\nexport GOROOT=$(go env GOROOT)\nexport PATH=\"$GOROOT/bin:$PATH\"\ngo version\ngo env GOROOT\nif [ \"amd64\" = \"arm64\" ]; then\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_nerdctl_Spt\nelse\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_nerdctl\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo version go1.26.4 linux/amd64\nTesting nerdctl\n=== RUN   TestE2E\nRunning Suite: E2E Suite - /home/runner/work/urunc/urunc/tests/e2e\n==================================================================\nRandom Seed: 1784819781\n2026-07-23T15:16:21.5408964Z\nWill run 28 of 73 specs\nSSSSSSSSSSSSSSSSS\n------------------------------\nNerdctl foreground containers unikernel containers Hvt-rumprun-capture-hello\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56\n2026/07/23 15:16:21 Pulling image: harbor.nbfc.io/nubificus/urunc/nginx-firecracker-unikraft-initrd:latest\n2026/07/23 15:16:25 Pulling image: harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\n2026/07/23 15:16:29 Pulling image: harbor.nbfc.io/nubificus/urunc/redis-spt-rumprun-raw:latest\n2026/07/23 15:16:34 Pulling image: harbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest\nAttempt 1/5 failed to pull harbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: Pull: harbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.1 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.2 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.3 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.4 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.5 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.6 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.7 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.8 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 0.9 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.0 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.1 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.2 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.3 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.4 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.5 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.6 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.7 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.8 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.9 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   downloading    |--------------------------------------|    0.0 B/3.3 KiB\nelapsed: 2.0 s                                                                    total:  2.6 Ki (1.3 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   downloading    |--------------------------------------|    0.0 B/3.3 KiB\nelapsed: 2.1 s                                                                    total:  2.6 Ki (1.2 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   downloading    |--------------------------------------|    0.0 B/3.3 KiB\nelapsed: 2.2 s                                                                    total:  2.6 Ki (1.2 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.3 s                                                                    total:  5.9 Ki (2.6 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.4 s                                                                    total:  5.9 Ki (2.5 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.5 s                                                                    total:  5.9 Ki (2.4 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.6 s                                                                    total:  5.9 Ki (2.3 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.7 s                                                                    total:  5.9 Ki (2.2 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.8 s                                                                    total:  7.1 Ki (2.5 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.9 s                                                                    total:  10.7 K (3.7 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.0 s                                                                    total:  27.2 K (9.1 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.1 s                                                                    total:  27.2 K (8.8 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.2 s                                                                    total:  27.2 K (8.5 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |++++++++++----------------------------|  1.0 MiB/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.3 s                                                                    total:  1.0 Mi (318.4 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |++++++++++----------------------------|  1.0 MiB/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.4 s                                                                    total:  1.0 Mi (309.0 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |+++++++++++++++++++++-----------------|  2.0 MiB/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.5 s                                                                    total:  2.0 Mi (592.6 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |++++++++++++++++++++++----------------|  1.0 MiB/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.6 s                                                                    total:  4.5 Mi (1.2 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |++------------------------------------|  1.0 MiB/14.8 MiB\nelapsed: 3.7 s                                                                    total:  6.2 Mi (1.7 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |+++++++-------------------------------|  3.0 MiB/14.8 MiB\nelapsed: 3.8 s                                                                    total:  8.2 Mi (2.2 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |++++++++++----------------------------|  4.0 MiB/14.8 MiB\nelapsed: 3.9 s                                                                    total:  9.2 Mi (2.4 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |+++++++++++++++-----------------------|  6.0 MiB/14.8 MiB\nelapsed: 4.0 s                                                                    total:  11.2 M (2.8 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |+++++++++++++++++++++++++-------------| 10.0 MiB/14.8 MiB\nelapsed: 4.1 s                                                                    total:  15.2 M (3.7 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |+++++++++++\n\n[truncated at 50KB — see full log at: https://api.github.com/repos/urunc-dev/urunc/actions/jobs/89248400716/logs]"
+          }
+        ],
+        "run_attempt": 2
       },
       "recent_runs": [
+        {
+          "id": 30019348657,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "failure",
+          "run_number": 2272,
+          "created_at": "2026-07-23T15:11:11Z",
+          "updated_at": "2026-07-23T15:36:25Z",
+          "run_started_at": "2026-07-23T15:11:30Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657",
+          "jobs": [
+            {
+              "name": "check-labels",
+              "conclusion": "success",
+              "duration_sec": 14,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247773561"
+            },
+            {
+              "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 67,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948777"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 25,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948847"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 51,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948865"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 40,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948891"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 31,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948895"
+            },
+            {
+              "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 60,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948902"
+            },
+            {
+              "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 45,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948913"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "duration_sec": 23,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948929"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test / Kubernetes test (amd64, ubuntu-22.04)",
+              "conclusion": "success",
+              "duration_sec": 360,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400459"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test / Kubernetes test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "success",
+              "duration_sec": 255,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400478"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
+              "conclusion": "success",
+              "duration_sec": 254,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400626"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_crictl)",
+              "conclusion": "success",
+              "duration_sec": 197,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400651"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_ctr)",
+              "conclusion": "success",
+              "duration_sec": 291,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400676"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+              "conclusion": "failure",
+              "duration_sec": 1303,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400716"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_crictl)",
+              "conclusion": "success",
+              "duration_sec": 181,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400719"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_ctr)",
+              "conclusion": "success",
+              "duration_sec": 192,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400749"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_docker)",
+              "conclusion": "success",
+              "duration_sec": 212,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400751"
+            },
+            {
+              "name": "ci-on-push / E2E test / VM test (arm64, test_nerdctl)",
+              "conclusion": "success",
+              "duration_sec": 247,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400948"
+            }
+          ],
+          "failed_jobs": [
+            {
+              "id": 89247948929,
+              "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89247948929",
+              "log_snippet": "[Build Failure] — 1 signal(s) found\n────────────────────────────────────────────────\n-\u003e Build Failure\n  ##[error]Process completed with exit code 1.",
+              "raw_log": "2026-07-23T15:13:36.1911853Z\nadded 113 packages in 5s\n2026-07-23T15:13:36.1918709Z\n15 packages are looking for funding\nrun `npm fund` for details\n##[group]Run cspell --config .github/linters/.cspell.json\ncspell --config .github/linters/.cspell.json\nshell: /usr/bin/bash -e {0}\n##[endgroup]\n1/158 .github/linters/actionlint.yml 647.27ms\n2/158 .github/linters/licenserc.yml 7.10ms\n3/158 .github/linters/package.json 91.43ms\n4/158 CHANGELOG.md 57.74ms\n5/158 cmd/containerd-shim-urunc-v2/main.go 119.24ms\n6/158 cmd/urunc/create.go 20.88ms\n7/158 cmd/urunc/delete.go 4.08ms\n8/158 cmd/urunc/kill.go 4.55ms\n9/158 cmd/urunc/log_forward.go 6.75ms\n10/158 cmd/urunc/main.go 7.52ms\n11/158 cmd/urunc/ps.go 2.98ms\n12/158 cmd/urunc/run.go 2.99ms\n13/158 cmd/urunc/start.go 3.75ms\n14/158 cmd/urunc/utils.go 10.70ms\n15/158 CODE_OF_CONDUCT.md 16.20ms\n16/158 CONTRIBUTING.md 2.29ms\n17/158 deployment/urunc-deploy/config.toml 1.88ms\n18/158 deployment/urunc-deploy/Dockerfile 8.96ms\n19/158 deployment/urunc-deploy/runtimeclasses/runtimeclass.yaml 2.97ms\n20/158 deployment/urunc-deploy/scripts/install.sh 13.99ms\n21/158 deployment/urunc-deploy/urunc-cleanup/base/kustomization.yaml 1.67ms\n22/158 deployment/urunc-deploy/urunc-cleanup/base/urunc-cleanup.yaml 1.95ms\n23/158 deployment/urunc-deploy/urunc-cleanup/overlays/k3s/kustomization.yaml 1.38ms\n24/158 deployment/urunc-deploy/urunc-cleanup/overlays/k3s/mount_k3s_conf.yaml 1.54ms\n25/158 deployment/urunc-deploy/urunc-deploy/base/kustomization.yaml 1.48ms\n26/158 deployment/urunc-deploy/urunc-deploy/base/urunc-deploy.yaml 2.10ms\n27/158 deployment/urunc-deploy/urunc-deploy/overlays/k3s/kustomization.yaml 1.43ms\n28/158 deployment/urunc-deploy/urunc-deploy/overlays/k3s/mount_k3s_conf.yaml 2.81ms\n29/158 deployment/urunc-deploy/urunc-rbac/kustomization.yaml 1.40ms\n30/158 deployment/urunc-deploy/urunc-rbac/urunc-rbac.yaml 1.64ms\n31/158 docs/assets/javascripts/console-copy.js 29.73ms\n32/158 docs/assets/stylesheets/theme.css 17.16ms\n33/158 docs/CNAME 1.25ms\n34/158 docs/configuration.md 5.12ms\n35/158 docs/design/index.md 3.28ms\n36/158 docs/design/seccomp.md 5.68ms\n37/158 docs/developer-guide/Code-of-Conduct.md 1.45ms\n38/158 docs/developer-guide/contribute.md 6.21ms\n39/158 docs/developer-guide/debugging.md 2.82ms\n40/158 docs/developer-guide/development.md 2.70ms\n41/158 docs/developer-guide/governance.md 6.61ms\n42/158 docs/developer-guide/index.md 1.59ms\n43/158 docs/developer-guide/llm-policy.md 2.60ms\n44/158 docs/developer-guide/maintainers.md 1.21ms\n45/158 docs/developer-guide/security.md 2.26ms\n46/158 docs/developer-guide/timestamps.md 2.61ms\n47/158 docs/hooks/copyright.py 83.11ms\n48/158 docs/hypervisor-support.md 4.15ms\n49/158 docs/index.md 7.48ms\n50/158 docs/installation.md 4.46ms\n51/158 docs/overrides/main.html 2.06ms\n52/158 docs/overrides/partials/breadcrumb.html 1.91ms\n53/158 docs/overrides/partials/copyright.html 1.90ms\n54/158 docs/overrides/partials/logo.html 1.24ms\n55/158 docs/package/index.md 4.75ms\n56/158 docs/package/pre-built.md 2.05ms\n57/158 docs/package/reuse.md 2.42ms\n58/158 docs/package/rootfs.md 5.37ms\n59/158 docs/quickstart.md 2.57ms\n60/158 docs/Sample-images.md 1.87ms\n61/158 docs/tutorials/eks-tutorial.md 6.34ms\n62/158 docs/tutorials/existing-container-linux.md 5.35ms\n63/158 docs/tutorials/How-to-urunc-on-k8s.md 2.04ms\n64/158 docs/tutorials/index.md 1.15ms\n65/158 docs/tutorials/knative.md 2.14ms\n66/158 docs/tutorials/Non-root-monitor-execution.md 1.74ms\n67/158 docs/tutorials/Running-urunc-with-kind.md 2.42ms\n68/158 docs/tutorials/Running-vaccel-with-urunc.md 2.04ms\n69/158 docs/unikernel-support.md 4.06ms\n70/158 docs/variables/versions.yml 1.10ms\n71/158 GOVERNANCE.md 1.72ms\n72/158 internal/constants/constants.go 1.28ms\n73/158 internal/constants/network_constants.go 1.39ms\n74/158 internal/metrics/metrics_test.go 2.34ms\n75/158 internal/metrics/metrics.go 3.66ms\n76/158 internal/metrics/schema_test.go 1.60ms\n77/158 internal/metrics/schema.go 2.92ms\n78/158 LICENSE 4.71ms\n79/158 MAINTAINERS.md 0.94ms\n80/158 Makefile 14.33ms\n81/158 mkdocs.yml 4.57ms\n82/158 netlify.toml 1.33ms\n83/158 NOTICE 1.10ms\n84/158 pkg/containerd-shim/containerd/annotations.go 5.95ms\n85/158 pkg/containerd-shim/containerd/session.go 7.85ms\n86/158 pkg/containerd-shim/guest_rootfs.go 3.01ms\n87/158 pkg/containerd-shim/task_plugin.go 2.10ms\n88/158 pkg/containerd-shim/task_service.go 4.00ms\n89/158 pkg/network/network_dynamic.go 3.31ms\n90/158 pkg/network/network_static.go 4.66ms\n91/158 pkg/network/network_test.go 2.61ms\n92/158 pkg/network/network.go 11.19ms\n93/158 pkg/unikontainers/block_test.go 2.64ms\n94/158 pkg/unikontainers/block.go 5.26ms\n95/158 pkg/unikontainers/config_test.go 7.82ms X\npkg/unikontainers/config_test.go:41:26 - Unknown word (mynetdev)\npkg/unikontainers/config_test.go:54:22 - Unknown word (mynetdev)\n96/158 pkg/unikontainers/config.go 4.51ms\n97/158 pkg/unikontainers/hypervisors/cloud_hypervisor.go 5.16ms\n98/158 pkg/unikontainers/hypervisors/firecracker.go 4.67ms\n99/158 pkg/unikontainers/hypervisors/hedge.go 2.11ms\n100/158 pkg/unikontainers/hypervisors/hvt.go 5.50ms\n101/158 pkg/unikontainers/hypervisors/qemu_test.go 6.70ms\n102/158 pkg/unikontainers/hypervisors/qemu.go 4.02ms\n103/158 pkg/unikontainers/hypervisors/spt.go 3.31ms\n104/158 pkg/unikontainers/hypervisors/utils_test.go 3.59ms\n105/158 pkg/unikontainers/hypervisors/utils.go 3.29ms\n106/158 pkg/unikontainers/hypervisors/vmm_test.go 3.22ms\n107/158 pkg/unikontainers/hypervisors/vmm.go 4.09ms\n108/158 pkg/unikontainers/initrd_rootfs.go 3.15ms\n109/158 pkg/unikontainers/initrd/initrd.go 2.86ms\n110/158 pkg/unikontainers/ipc_message.go 3.67ms\n111/158 pkg/unikontainers/ipc_test.go 4.65ms\n112/158 pkg/unikontainers/ipc.go 3.64ms\n113/158 pkg/unikontainers/mount.go 6.95ms\n114/158 pkg/unikontainers/rootfs_test.go 2.53ms\n115/158 pkg/unikontainers/rootfs.go 8.73ms\n116/158 pkg/unikontainers/shared_fs.go 3.26ms\n117/158 pkg/unikontainers/types/types.go 4.15ms\n118/158 pkg/unikontainers/unikernels/hermit_rs.go 3.54ms\n119/158 pkg/unikontainers/unikernels/linux.go 5.78ms\n120/158 pkg/unikontainers/unikernels/mewz_test.go 1.84ms\n121/158 pkg/unikontainers/unikernels/mewz.go 2.41ms\n122/158 pkg/unikontainers/unikernels/mirage_test.go 2.49ms X\npkg/unikontainers/unikernels/mirage_test.go:81:68 - Unknown word (mynetdev)\npkg/unikontainers/unikernels/mirage_test.go:84:34 - Unknown word (mynetdev)\npkg/unikontainers/unikernels/mirage_test.go:85:38 - Unknown word (mynetdev)\n123/158 pkg/unikontainers/unikernels/mirage.go 3.06ms\n124/158 pkg/unikontainers/unikernels/rumprun.go 5.97ms\n125/158 pkg/unikontainers/unikernels/unikernel.go 2.70ms\n126/158 pkg/unikontainers/unikernels/unikraft.go 3.88ms\n127/158 pkg/unikontainers/unikernels/utils.go 1.84ms\n128/158 pkg/unikontainers/unikontainers.go 23.86ms\n129/158 pkg/unikontainers/urunc_config_test.go 10.25ms\n130/158 pkg/unikontainers/urunc_config.go 4.36ms\n131/158 pkg/unikontainers/utils_test.go 3.78ms\n132/158 pkg/unikontainers/utils.go 6.92ms\n133/158 pkg/unikontainers/vaccel_test.go 3.00ms\n134/158 pkg/unikontainers/vaccel.go 2.89ms\n135/158 README.md 3.27ms\n136/158 requirements.txt 0.98ms\n137/158 script/dm_create.sh 1.64ms\n138/158 script/dm_reload.service 1.01ms\n139/158 script/dm_reload.sh 1.51ms\n140/158 script/performance/__modules__.py 4.00ms\n141/158 script/performance/measure_single.py 2.95ms\n142/158 script/performance/measure_to_json.py 3.48ms\n143/158 script/performance/measure.py 3.15ms\n144/158 SECURITY.md 1.64ms\n145/158 tests/e2e/common.go 8.45ms\n146/158 tests/e2e/crictl_test.go 2.41ms\n147/158 tests/e2e/crictl.go 5.19ms\n148/158 tests/e2e/ctr_test.go 2.11ms\n149/158 tests/e2e/ctr.go 3.32ms\n150/158 tests/e2e/docker_test.go 2.47ms\n151/158 tests/e2e/docker.go 2.60ms\n152/158 tests/e2e/nerdctl_test.go 2.26ms\n153/158 tests/e2e/nerdctl.go 2.65ms\n154/158 tests/e2e/suite_test.go 3.54ms\n155/158 tests/e2e/test_cases.go 7.73ms\n156/158 tests/e2e/test_functions.go 6.38ms\n157/158 tests/e2e/utils.go 4.88ms\n158/158 VERSION 0.78ms\nCSpell: Files checked: 158, Issues found: 5 in 2 files.\n##[error]Process completed with exit code 1."
+            },
+            {
+              "id": 89248400716,
+              "name": "ci-on-push / E2E test / VM test (amd64, test_nerdctl)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019348657/job/89248400716",
+              "log_snippet": "[Crash / Timeout] — 5 signal(s) found\n────────────────────────────────────────────────\n-\u003e Crash / Timeout\n  panic: test timed out after 20m0s\n-\u003e Test Failure\n  FAIL\tgithub.com/urunc-dev/urunc/tests/e2e\t1200.016s\n-\u003e Build Failure\n  elapsed: 1062.2s                                                                  total:  20.0 M (19.3 KiB/s)time=\"2026-07-23T15:34:16Z\" level=fatal msg=\"failed to copy: read tcp 10.1.0.217:56080-\u003e85.73.152.209:443: read: connection timed out\" -- exit status 1. Retrying in 2s...\n  make: *** [Makefile:276: test_nerdctl] Error 1\n  ##[error]Process completed with exit code 2.",
+              "raw_log": "go mod verify\nall modules verified\n##[group]Run # Set up Go environment properly\n# Set up Go environment properly\nexport GOROOT=$(go env GOROOT)\nexport PATH=\"$GOROOT/bin:$PATH\"\ngo version\ngo env GOROOT\nif [ \"amd64\" = \"arm64\" ]; then\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_nerdctl_Spt\nelse\nsudo -E env \"PATH=$PATH\" \"GOROOT=$GOROOT\" make test_nerdctl\nfi\nshell: /usr/bin/bash -e {0}\nenv:\nGOTOOLCHAIN: local\n##[endgroup]\ngo version go1.26.4 linux/amd64\nTesting nerdctl\n=== RUN   TestE2E\nRunning Suite: E2E Suite - /home/runner/work/urunc/urunc/tests/e2e\n==================================================================\nRandom Seed: 1784819781\n2026-07-23T15:16:21.5408964Z\nWill run 28 of 73 specs\nSSSSSSSSSSSSSSSSS\n------------------------------\nNerdctl foreground containers unikernel containers Hvt-rumprun-capture-hello\n/home/runner/work/urunc/urunc/tests/e2e/suite_test.go:56\n2026/07/23 15:16:21 Pulling image: harbor.nbfc.io/nubificus/urunc/nginx-firecracker-unikraft-initrd:latest\n2026/07/23 15:16:25 Pulling image: harbor.nbfc.io/nubificus/urunc/redis-hvt-rumprun-raw:latest\n2026/07/23 15:16:29 Pulling image: harbor.nbfc.io/nubificus/urunc/redis-spt-rumprun-raw:latest\n2026/07/23 15:16:34 Pulling image: harbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest\nAttempt 1/5 failed to pull harbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: Pull: harbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.1 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.2 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.3 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.4 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.5 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.6 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.7 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest: resolving      |--------------------------------------|\nelapsed: 0.8 s                                              total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 0.9 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.0 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.1 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.2 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.3 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.4 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.5 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.6 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.7 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.8 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: downloading    |--------------------------------------|    0.0 B/2.6 KiB\nelapsed: 1.9 s                                                                    total:   0.0 B (0.0 B/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   downloading    |--------------------------------------|    0.0 B/3.3 KiB\nelapsed: 2.0 s                                                                    total:  2.6 Ki (1.3 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   downloading    |--------------------------------------|    0.0 B/3.3 KiB\nelapsed: 2.1 s                                                                    total:  2.6 Ki (1.2 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   downloading    |--------------------------------------|    0.0 B/3.3 KiB\nelapsed: 2.2 s                                                                    total:  2.6 Ki (1.2 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.3 s                                                                    total:  5.9 Ki (2.6 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.4 s                                                                    total:  5.9 Ki (2.5 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.5 s                                                                    total:  5.9 Ki (2.4 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.6 s                                                                    total:  5.9 Ki (2.3 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    downloading    |--------------------------------------|    0.0 B/293.0 B\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    downloading    |--------------------------------------|    0.0 B/955.0 B\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.7 s                                                                    total:  5.9 Ki (2.2 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    downloading    |--------------------------------------|    0.0 B/402.0 B\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    downloading    |--------------------------------------|    0.0 B/629.0 B\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    downloading    |--------------------------------------|    0.0 B/1.2 KiB\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    downloading    |--------------------------------------|    0.0 B/1.4 KiB\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.8 s                                                                    total:  7.1 Ki (2.5 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    downloading    |--------------------------------------|    0.0 B/16.5 KiB\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 2.9 s                                                                    total:  10.7 K (3.7 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.0 s                                                                    total:  27.2 K (9.1 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.1 s                                                                    total:  27.2 K (8.8 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |--------------------------------------|    0.0 B/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.2 s                                                                    total:  27.2 K (8.5 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |++++++++++----------------------------|  1.0 MiB/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.3 s                                                                    total:  1.0 Mi (318.4 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |++++++++++----------------------------|  1.0 MiB/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.4 s                                                                    total:  1.0 Mi (309.0 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    downloading    |+++++++++++++++++++++-----------------|  2.0 MiB/3.5 MiB\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |--------------------------------------|    0.0 B/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.5 s                                                                    total:  2.0 Mi (592.6 KiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    downloading    |++++++++++++++++++++++----------------|  1.0 MiB/1.7 MiB\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |--------------------------------------|    0.0 B/14.8 MiB\nelapsed: 3.6 s                                                                    total:  4.5 Mi (1.2 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |++------------------------------------|  1.0 MiB/14.8 MiB\nelapsed: 3.7 s                                                                    total:  6.2 Mi (1.7 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |+++++++-------------------------------|  3.0 MiB/14.8 MiB\nelapsed: 3.8 s                                                                    total:  8.2 Mi (2.2 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |++++++++++----------------------------|  4.0 MiB/14.8 MiB\nelapsed: 3.9 s                                                                    total:  9.2 Mi (2.4 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |+++++++++++++++-----------------------|  6.0 MiB/14.8 MiB\nelapsed: 4.0 s                                                                    total:  11.2 M (2.8 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b79e99e69c2d5c870:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:e763a57f9de14868e3beaec0e41dbc1c00174359041e1432dd13252daafdf89f:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:81bd8ed7ec6789b0cb7f1b47ee731c522f6dba83201ec73cd6bca1350f582948:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:b464cfdf2a6319875aeb27359ec549790ce14d8214fcb16ef915e4530e5ed235:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:61ca4f733c802afd9e05a32f0de0361b6d713b8b53292dc15fb093229f648674:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:d7e5070240863957ebb0b5a44a5729963c3462666baa2947d00628cb5f2d5773:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:197eb75867ef4fcecd4724f17b0972ab0489436860a594a9445f8eaff8155053:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3eab733900b0fb14b0a5c9658489f1c74c09df89bc50ce7eeb6a2e0595104ae1:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:34a64644b756511a2e217f0508e11d1a572085d66cd6dc9a555a082ad49a3102:    done           |++++++++++++++++++++++++++++++++++++++|\nlayer-sha256:3bd67c59d9c98f8bd33f5affb73dd45f7d5ac7579e89595775409eb1fec5a585:    downloading    |--------------------------------------|    0.0 B/2.6 MiB\nlayer-sha256:39c2ddfd6010082a4a646e7ca44e95aca9bf3eaebc00f17f7ccc2954004f2a7d:    downloading    |+++++++++++++++++++++++++-------------| 10.0 MiB/14.8 MiB\nelapsed: 4.1 s                                                                    total:  15.2 M (3.7 MiB/s)\nharbor.nbfc.io/nubificus/urunc/nginx-qemu-linux-raw:latest:                       resolved       |++++++++++++++++++++++++++++++++++++++|\nmanifest-sha256:26c404a45f4f508882c4310f8e566d34dc64194a2354734157de89a7c99c0c63: done           |++++++++++++++++++++++++++++++++++++++|\nconfig-sha256:50611f976401e7f432058120c6f41e6ec49e88049e488b35632371ab697247aa:   done           |+++++++++++\n\n[truncated at 50KB — see full log at: https://api.github.com/repos/urunc-dev/urunc/actions/jobs/89248400716/logs]"
+            }
+          ],
+          "run_attempt": 2
+        },
+        {
+          "id": 30018805131,
+          "name": "urunc CI",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "run_number": 2271,
+          "created_at": "2026-07-23T15:04:16Z",
+          "updated_at": "2026-07-23T15:11:34Z",
+          "run_started_at": "2026-07-23T15:10:59Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131",
+          "jobs": [
+            {
+              "name": "check-labels",
+              "conclusion": "success",
+              "duration_sec": 12,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247643239"
+            },
+            {
+              "name": "ci-on-push / Build / build (amd64, ubuntu-22.04)",
+              "conclusion": "cancelled",
+              "duration_sec": 1,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247767417"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "cancelled",
+              "duration_sec": 1,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247767430"
+            },
+            {
+              "name": "ci-on-push / Lint code / lint (amd64, ubuntu-22.04)",
+              "conclusion": "cancelled",
+              "duration_sec": 1,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247767478"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Check License Headers (amd64, ubuntu-22.04)",
+              "conclusion": "cancelled",
+              "duration_sec": 1,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247767483"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Spell Check Repo (amd64, ubuntu-22.04)",
+              "conclusion": "cancelled",
+              "duration_sec": 1,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247767489"
+            },
+            {
+              "name": "ci-on-push / Unit tests / unit-test (amd64, ubuntu-22.04)",
+              "conclusion": "cancelled",
+              "duration_sec": 1,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247767498"
+            },
+            {
+              "name": "ci-on-push / Lint Files \u0026 commits / Lint Commit Messages (amd64, ubuntu-22.04)",
+              "conclusion": "cancelled",
+              "duration_sec": 1,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247767548"
+            },
+            {
+              "name": "ci-on-push / Build / build (arm64, ubuntu-22.04-arm)",
+              "conclusion": "cancelled",
+              "duration_sec": 1,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247767555"
+            },
+            {
+              "name": "ci-on-push / Kubernetes test",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247772328"
+            },
+            {
+              "name": "ci-on-push / E2E test",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018805131/job/89247772885"
+            }
+          ],
+          "run_attempt": 2
+        },
         {
           "id": 29936006891,
           "name": "urunc CI",
@@ -5940,30 +6184,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 29652278613,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 2252,
-          "created_at": "2026-07-18T16:35:41Z",
-          "updated_at": "2026-07-18T16:35:41Z",
-          "run_started_at": "2026-07-18T16:35:41Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29652278613",
-          "run_attempt": 1
-        },
-        {
-          "id": 29650232055,
-          "name": "urunc CI",
-          "status": "completed",
-          "conclusion": "action_required",
-          "run_number": 2251,
-          "created_at": "2026-07-18T15:33:47Z",
-          "updated_at": "2026-07-18T15:33:47Z",
-          "run_started_at": "2026-07-18T15:33:47Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29650232055",
-          "run_attempt": 1
         }
       ]
     },
@@ -5975,43 +6195,69 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 99.65,
+      "avg_duration_secs": 99.35,
       "weather_history": [
         "action_required",
-        "action_required",
         "success",
         "success",
         "action_required",
+        "success",
         "success",
         "success"
       ],
       "last_run": {
-        "id": 29935993670,
+        "id": 30018804333,
         "name": "CodeQL",
         "status": "completed",
         "conclusion": "success",
-        "run_number": 1524,
-        "created_at": "2026-07-22T16:00:02Z",
-        "updated_at": "2026-07-22T16:02:44Z",
-        "run_started_at": "2026-07-22T16:00:02Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29935993670",
+        "run_number": 1525,
+        "created_at": "2026-07-23T15:04:15Z",
+        "updated_at": "2026-07-23T15:12:58Z",
+        "run_started_at": "2026-07-23T15:10:59Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018804333",
         "jobs": [
           {
             "name": "Analyze (go)",
             "conclusion": "success",
-            "duration_sec": 122,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29935993670/job/88977577990"
+            "duration_sec": 114,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018804333/job/89247628693"
           },
           {
             "name": "Analyze (python)",
             "conclusion": "success",
-            "duration_sec": 70,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29935993670/job/88977578106"
+            "duration_sec": 64,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018804333/job/89247628765"
           }
         ],
-        "run_attempt": 1
+        "run_attempt": 2
       },
       "recent_runs": [
+        {
+          "id": 30018804333,
+          "name": "CodeQL",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1525,
+          "created_at": "2026-07-23T15:04:15Z",
+          "updated_at": "2026-07-23T15:12:58Z",
+          "run_started_at": "2026-07-23T15:10:59Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018804333",
+          "jobs": [
+            {
+              "name": "Analyze (go)",
+              "conclusion": "success",
+              "duration_sec": 114,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018804333/job/89247628693"
+            },
+            {
+              "name": "Analyze (python)",
+              "conclusion": "success",
+              "duration_sec": 64,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018804333/job/89247628765"
+            }
+          ],
+          "run_attempt": 2
+        },
         {
           "id": 29935993670,
           "name": "CodeQL",
@@ -6407,32 +6653,6 @@
             }
           ],
           "run_attempt": 1
-        },
-        {
-          "id": 29605842740,
-          "name": "CodeQL",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 1505,
-          "created_at": "2026-07-17T18:59:00Z",
-          "updated_at": "2026-07-17T19:01:05Z",
-          "run_started_at": "2026-07-17T18:59:00Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29605842740",
-          "jobs": [
-            {
-              "name": "Analyze (python)",
-              "conclusion": "success",
-              "duration_sec": 59,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29605842740/job/87968744726"
-            },
-            {
-              "name": "Analyze (go)",
-              "conclusion": "success",
-              "duration_sec": 120,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29605842740/job/87968744756"
-            }
-          ],
-          "run_attempt": 1
         }
       ]
     },
@@ -6444,37 +6664,57 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 19.95,
+      "avg_duration_secs": 20.85,
       "weather_history": [
         "action_required",
-        "action_required",
         "success",
         "success",
         "action_required",
+        "success",
         "success",
         "success"
       ],
       "last_run": {
-        "id": 29935993589,
+        "id": 30018801112,
         "name": "Dependency Review",
         "status": "completed",
         "conclusion": "success",
-        "run_number": 1286,
-        "created_at": "2026-07-22T16:00:02Z",
-        "updated_at": "2026-07-22T16:01:07Z",
-        "run_started_at": "2026-07-22T16:00:02Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29935993589",
+        "run_number": 1287,
+        "created_at": "2026-07-23T15:04:13Z",
+        "updated_at": "2026-07-23T15:11:31Z",
+        "run_started_at": "2026-07-23T15:10:59Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018801112",
         "jobs": [
           {
             "name": "dependency-review",
             "conclusion": "success",
-            "duration_sec": 19,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29935993589/job/88977577905"
+            "duration_sec": 18,
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018801112/job/89247627209"
           }
         ],
-        "run_attempt": 1
+        "run_attempt": 2
       },
       "recent_runs": [
+        {
+          "id": 30018801112,
+          "name": "Dependency Review",
+          "status": "completed",
+          "conclusion": "success",
+          "run_number": 1287,
+          "created_at": "2026-07-23T15:04:13Z",
+          "updated_at": "2026-07-23T15:11:31Z",
+          "run_started_at": "2026-07-23T15:10:59Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018801112",
+          "jobs": [
+            {
+              "name": "dependency-review",
+              "conclusion": "success",
+              "duration_sec": 18,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30018801112/job/89247627209"
+            }
+          ],
+          "run_attempt": 2
+        },
         {
           "id": 29935993589,
           "name": "Dependency Review",
@@ -6795,26 +7035,6 @@
               "conclusion": "success",
               "duration_sec": 12,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29605842679/job/87968744785"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 29605661708,
-          "name": "Dependency Review",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 1267,
-          "created_at": "2026-07-17T18:55:58Z",
-          "updated_at": "2026-07-17T18:56:12Z",
-          "run_started_at": "2026-07-17T18:55:58Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29605661708",
-          "jobs": [
-            {
-              "name": "dependency-review",
-              "conclusion": "success",
-              "duration_sec": 12,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29605661708/job/87968136187"
             }
           ],
           "run_attempt": 1
@@ -7280,7 +7500,7 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 5.3,
+      "avg_duration_secs": 6,
       "weather_history": [
         "skipped",
         "skipped",
@@ -7291,26 +7511,46 @@
         "skipped"
       ],
       "last_run": {
-        "id": 29936011318,
+        "id": 30019351197,
         "name": "PR Takeover on Label",
         "status": "completed",
         "conclusion": "skipped",
-        "run_number": 721,
-        "created_at": "2026-07-22T16:00:14Z",
-        "updated_at": "2026-07-22T16:00:22Z",
-        "run_started_at": "2026-07-22T16:00:14Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936011318",
+        "run_number": 722,
+        "created_at": "2026-07-23T15:11:13Z",
+        "updated_at": "2026-07-23T15:11:29Z",
+        "run_started_at": "2026-07-23T15:11:13Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019351197",
         "jobs": [
           {
             "name": "pr-takeover",
             "conclusion": "skipped",
             "duration_sec": 0,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/29936011318/job/88977635772"
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019351197/job/89247683444"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 30019351197,
+          "name": "PR Takeover on Label",
+          "status": "completed",
+          "conclusion": "skipped",
+          "run_number": 722,
+          "created_at": "2026-07-23T15:11:13Z",
+          "updated_at": "2026-07-23T15:11:29Z",
+          "run_started_at": "2026-07-23T15:11:13Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019351197",
+          "jobs": [
+            {
+              "name": "pr-takeover",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30019351197/job/89247683444"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 29936011318,
           "name": "PR Takeover on Label",
@@ -7687,26 +7927,6 @@
               "conclusion": "skipped",
               "duration_sec": 0,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28860650788/job/85598111565"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 28789554495,
-          "name": "PR Takeover on Label",
-          "status": "completed",
-          "conclusion": "skipped",
-          "run_number": 702,
-          "created_at": "2026-07-06T11:53:20Z",
-          "updated_at": "2026-07-06T11:53:22Z",
-          "run_started_at": "2026-07-06T11:53:20Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28789554495",
-          "jobs": [
-            {
-              "name": "pr-takeover",
-              "conclusion": "skipped",
-              "duration_sec": 0,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/28789554495/job/85364462837"
             }
           ],
           "run_attempt": 1
