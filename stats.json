@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T16:55:56.789346674Z",
+  "generated_at": "2026-08-04T18:31:48.515160688Z",
   "repo": "urunc-dev/urunc",
   "overall_health": 89.64285714285714,
   "workflows": [
@@ -5213,7 +5213,7 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 60.7,
+      "avg_duration_secs": 67.85,
       "weather_history": [
         "success",
         "success",
@@ -5530,13 +5530,27 @@
           "id": 30839931919,
           "name": "CodeQL",
           "status": "completed",
-          "conclusion": "action_required",
+          "conclusion": "success",
           "run_number": 1600,
           "created_at": "2026-08-03T18:08:39Z",
-          "updated_at": "2026-08-03T18:08:39Z",
-          "run_started_at": "2026-08-03T18:08:39Z",
+          "updated_at": "2026-08-04T17:29:30Z",
+          "run_started_at": "2026-08-04T17:27:07Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30839931919",
-          "run_attempt": 1
+          "jobs": [
+            {
+              "name": "Analyze (go)",
+              "conclusion": "success",
+              "duration_sec": 117,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30839931919/job/92075280174"
+            },
+            {
+              "name": "Analyze (python)",
+              "conclusion": "success",
+              "duration_sec": 73,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30839931919/job/92075280229"
+            }
+          ],
+          "run_attempt": 2
         },
         {
           "id": 30837671972,
@@ -5612,7 +5626,7 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 13.3,
+      "avg_duration_secs": 15.45,
       "weather_history": [
         "action_required",
         "success",
@@ -5847,13 +5861,21 @@
           "id": 30839931967,
           "name": "Dependency Review",
           "status": "completed",
-          "conclusion": "action_required",
+          "conclusion": "success",
           "run_number": 1353,
           "created_at": "2026-08-03T18:08:39Z",
-          "updated_at": "2026-08-03T18:08:39Z",
-          "run_started_at": "2026-08-03T18:08:39Z",
+          "updated_at": "2026-08-04T17:27:50Z",
+          "run_started_at": "2026-08-04T17:27:07Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30839931967",
-          "run_attempt": 1
+          "jobs": [
+            {
+              "name": "dependency-review",
+              "conclusion": "success",
+              "duration_sec": 13,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30839931967/job/92075302746"
+            }
+          ],
+          "run_attempt": 2
         },
         {
           "id": 30837672016,
@@ -6410,7 +6432,7 @@
       "total_runs": 20,
       "failed_runs": 0,
       "failure_rate": 0,
-      "avg_duration_secs": 3.55,
+      "avg_duration_secs": 3.6,
       "weather_history": [
         "skipped",
         "skipped",
@@ -6421,26 +6443,46 @@
         "skipped"
       ],
       "last_run": {
-        "id": 30885583596,
+        "id": 30933958333,
         "name": "PR Takeover on Label",
         "status": "completed",
         "conclusion": "skipped",
-        "run_number": 785,
-        "created_at": "2026-08-04T06:52:46Z",
-        "updated_at": "2026-08-04T06:52:47Z",
-        "run_started_at": "2026-08-04T06:52:46Z",
-        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30885583596",
+        "run_number": 786,
+        "created_at": "2026-08-04T17:27:06Z",
+        "updated_at": "2026-08-04T17:27:08Z",
+        "run_started_at": "2026-08-04T17:27:06Z",
+        "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30933958333",
         "jobs": [
           {
             "name": "pr-takeover",
             "conclusion": "skipped",
             "duration_sec": 0,
-            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30885583596/job/91915943731"
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30933958333/job/92075271917"
           }
         ],
         "run_attempt": 1
       },
       "recent_runs": [
+        {
+          "id": 30933958333,
+          "name": "PR Takeover on Label",
+          "status": "completed",
+          "conclusion": "skipped",
+          "run_number": 786,
+          "created_at": "2026-08-04T17:27:06Z",
+          "updated_at": "2026-08-04T17:27:08Z",
+          "run_started_at": "2026-08-04T17:27:06Z",
+          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30933958333",
+          "jobs": [
+            {
+              "name": "pr-takeover",
+              "conclusion": "skipped",
+              "duration_sec": 0,
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30933958333/job/92075271917"
+            }
+          ],
+          "run_attempt": 1
+        },
         {
           "id": 30885583596,
           "name": "PR Takeover on Label",
@@ -6817,26 +6859,6 @@
               "conclusion": "skipped",
               "duration_sec": 0,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30795945320/job/91629439140"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 30721649657,
-          "name": "PR Takeover on Label",
-          "status": "completed",
-          "conclusion": "skipped",
-          "run_number": 766,
-          "created_at": "2026-08-01T22:36:55Z",
-          "updated_at": "2026-08-01T22:36:56Z",
-          "run_started_at": "2026-08-01T22:36:55Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30721649657",
-          "jobs": [
-            {
-              "name": "pr-takeover",
-              "conclusion": "skipped",
-              "duration_sec": 0,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/30721649657/job/91426312965"
             }
           ],
           "run_attempt": 1
