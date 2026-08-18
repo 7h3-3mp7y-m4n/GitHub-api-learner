@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-18T10:33:37.403054337Z",
+  "generated_at": "2026-08-18T11:29:43.44081444Z",
   "repo": "urunc-dev/urunc",
-  "overall_health": 87.97619047619048,
+  "overall_health": 87.73809523809524,
   "workflows": [
     {
       "name": "add-git-trailers",
@@ -4552,9 +4552,9 @@
       "critical": true,
       "required": false,
       "total_runs": 20,
-      "failed_runs": 1,
-      "failure_rate": 5,
-      "avg_duration_secs": 111.7,
+      "failed_runs": 2,
+      "failure_rate": 10,
+      "avg_duration_secs": 319.7,
       "weather_history": [
         "action_required",
         "action_required",
@@ -4562,16 +4562,16 @@
         "action_required",
         "action_required",
         "failure",
-        "unknown"
+        "failure"
       ],
       "last_run": {
         "id": 32121599921,
         "name": "urunc CI",
-        "status": "in_progress",
-        "conclusion": "",
+        "status": "completed",
+        "conclusion": "failure",
         "run_number": 2574,
         "created_at": "2026-08-18T09:26:24Z",
-        "updated_at": "2026-08-18T09:27:45Z",
+        "updated_at": "2026-08-18T10:37:05Z",
         "run_started_at": "2026-08-18T09:26:24Z",
         "html_url": "https://github.com/urunc-dev/urunc/actions/runs/32121599921",
         "jobs": [
@@ -4679,8 +4679,8 @@
           },
           {
             "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
-            "conclusion": "",
-            "duration_sec": 0,
+            "conclusion": "success",
+            "duration_sec": 4163,
             "html_url": "https://github.com/urunc-dev/urunc/actions/runs/32121599921/job/95663359914"
           },
           {
@@ -4706,11 +4706,11 @@
         {
           "id": 32121599921,
           "name": "urunc CI",
-          "status": "in_progress",
-          "conclusion": "",
+          "status": "completed",
+          "conclusion": "failure",
           "run_number": 2574,
           "created_at": "2026-08-18T09:26:24Z",
-          "updated_at": "2026-08-18T09:27:45Z",
+          "updated_at": "2026-08-18T10:37:05Z",
           "run_started_at": "2026-08-18T09:26:24Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/32121599921",
           "jobs": [
@@ -4818,8 +4818,8 @@
             },
             {
               "name": "ci-on-push / E2E test / VM test (amd64, test_docker)",
-              "conclusion": "",
-              "duration_sec": 0,
+              "conclusion": "success",
+              "duration_sec": 4163,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/32121599921/job/95663359914"
             },
             {
