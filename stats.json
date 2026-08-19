@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-19T20:34:26.123539197Z",
+  "generated_at": "2026-08-19T21:29:28.733166922Z",
   "repo": "urunc-dev/urunc",
-  "overall_health": 85.4421768707483,
+  "overall_health": 84.76190476190476,
   "workflows": [
     {
       "name": "add-git-trailers",
@@ -10270,12 +10270,12 @@
       "description": "VM tests",
       "critical": true,
       "required": false,
-      "total_runs": 7,
+      "total_runs": 6,
       "failed_runs": 6,
-      "failure_rate": 85.71428571428571,
-      "avg_duration_secs": 9928327,
+      "failure_rate": 100,
+      "avg_duration_secs": 5792885.666666667,
       "weather_history": [
-        "success",
+        "unknown",
         "failure",
         "failure",
         "failure",
@@ -10424,44 +10424,6 @@
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/16074210649/job/45365459601",
               "log_snippet": "Process completed with exit code 2.",
               "raw_log": "(log expired — annotations only)\n\nProcess completed with exit code 2.\n\nSee: https://github.com/urunc-dev/urunc/actions/runs/16074210649/job/45365459601"
-            }
-          ],
-          "run_attempt": 1
-        },
-        {
-          "id": 16057716456,
-          "name": "custom VM spawner",
-          "status": "completed",
-          "conclusion": "success",
-          "run_number": 311,
-          "created_at": "2025-07-03T18:15:36Z",
-          "updated_at": "2026-08-09T20:31:51Z",
-          "run_started_at": "2025-07-03T18:15:36Z",
-          "html_url": "https://github.com/urunc-dev/urunc/actions/runs/16057716456",
-          "jobs": [
-            {
-              "name": "VM test (test_crictl)",
-              "conclusion": "success",
-              "duration_sec": 264,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/16057716456/job/45316152430"
-            },
-            {
-              "name": "VM test (test_ctr)",
-              "conclusion": "success",
-              "duration_sec": 318,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/16057716456/job/45316152431"
-            },
-            {
-              "name": "VM test (test_nerdctl)",
-              "conclusion": "success",
-              "duration_sec": 410,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/16057716456/job/45316152442"
-            },
-            {
-              "name": "VM test (test_docker)",
-              "conclusion": "success",
-              "duration_sec": 323,
-              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/16057716456/job/45316152453"
             }
           ],
           "run_attempt": 1
