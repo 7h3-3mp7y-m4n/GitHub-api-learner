@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-10-22T01:22:48.021144889Z",
+  "generated_at": "2026-10-22T07:19:19.989058218Z",
   "repo": "urunc-dev/urunc",
-  "overall_health": 90,
+  "overall_health": 89.75,
   "workflows": [
     {
       "name": "add-git-trailers",
@@ -1905,9 +1905,9 @@
       "critical": true,
       "required": false,
       "total_runs": 20,
-      "failed_runs": 12,
-      "failure_rate": 60,
-      "avg_duration_secs": 788.9,
+      "failed_runs": 13,
+      "failure_rate": 65,
+      "avg_duration_secs": 977.3,
       "weather_history": [
         "failure",
         "failure",
@@ -1915,23 +1915,23 @@
         "failure",
         "failure",
         "failure",
-        "unknown"
+        "failure"
       ],
       "last_run": {
         "id": 39701460947,
         "name": "urunc CI (nightly)",
-        "status": "in_progress",
-        "conclusion": "",
+        "status": "completed",
+        "conclusion": "failure",
         "run_number": 369,
         "created_at": "2026-10-22T00:44:06Z",
-        "updated_at": "2026-10-22T00:45:26Z",
+        "updated_at": "2026-10-22T01:48:14Z",
         "run_started_at": "2026-10-22T00:44:06Z",
         "html_url": "https://github.com/urunc-dev/urunc/actions/runs/39701460947",
         "jobs": [
           {
             "name": "Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
-            "conclusion": "",
-            "duration_sec": 0,
+            "conclusion": "failure",
+            "duration_sec": 3843,
             "html_url": "https://github.com/urunc-dev/urunc/actions/runs/39701460947/job/119571423296"
           },
           {
@@ -2027,6 +2027,14 @@
         ],
         "failed_jobs": [
           {
+            "id": 119571423296,
+            "name": "Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+            "conclusion": "failure",
+            "html_url": "https://github.com/urunc-dev/urunc/actions/runs/39701460947/job/119571423296",
+            "log_snippet": "The hosted runner lost communication with the server. Anything in your workflow that terminates the runner process, starves it for CPU/Memory, or blocks its network access can cause this error.",
+            "raw_log": "(log expired — annotations only)\n\nThe hosted runner lost communication with the server. Anything in your workflow that terminates the runner process, starves it for CPU/Memory, or blocks its network access can cause this error.\n\nSee: https://github.com/urunc-dev/urunc/actions/runs/39701460947/job/119571423296"
+          },
+          {
             "id": 119571830599,
             "name": "urunc-deploy test / urunc-deploy (amd64, ubuntu-22.04)",
             "conclusion": "failure",
@@ -2041,18 +2049,18 @@
         {
           "id": 39701460947,
           "name": "urunc CI (nightly)",
-          "status": "in_progress",
-          "conclusion": "",
+          "status": "completed",
+          "conclusion": "failure",
           "run_number": 369,
           "created_at": "2026-10-22T00:44:06Z",
-          "updated_at": "2026-10-22T00:45:26Z",
+          "updated_at": "2026-10-22T01:48:14Z",
           "run_started_at": "2026-10-22T00:44:06Z",
           "html_url": "https://github.com/urunc-dev/urunc/actions/runs/39701460947",
           "jobs": [
             {
               "name": "Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
-              "conclusion": "",
-              "duration_sec": 0,
+              "conclusion": "failure",
+              "duration_sec": 3843,
               "html_url": "https://github.com/urunc-dev/urunc/actions/runs/39701460947/job/119571423296"
             },
             {
@@ -2147,6 +2155,14 @@
             }
           ],
           "failed_jobs": [
+            {
+              "id": 119571423296,
+              "name": "Unit tests / unit-test (arm64, ubuntu-22.04-arm)",
+              "conclusion": "failure",
+              "html_url": "https://github.com/urunc-dev/urunc/actions/runs/39701460947/job/119571423296",
+              "log_snippet": "The hosted runner lost communication with the server. Anything in your workflow that terminates the runner process, starves it for CPU/Memory, or blocks its network access can cause this error.",
+              "raw_log": "(log expired — annotations only)\n\nThe hosted runner lost communication with the server. Anything in your workflow that terminates the runner process, starves it for CPU/Memory, or blocks its network access can cause this error.\n\nSee: https://github.com/urunc-dev/urunc/actions/runs/39701460947/job/119571423296"
+            },
             {
               "id": 119571830599,
               "name": "urunc-deploy test / urunc-deploy (amd64, ubuntu-22.04)",
